@@ -1,0 +1,78 @@
+{
+  "name": "trave",
+  "$schema": "node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "./src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/trave"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "trave:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "trave:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "trave:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "trave:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "trave:build:development"
+        },
+        "production": {
+          "buildTarget": "trave:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/trave"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "coverage/trave"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["./src/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "trave:build"
+      }
+    }
+  },
+  "tags": []
+}
