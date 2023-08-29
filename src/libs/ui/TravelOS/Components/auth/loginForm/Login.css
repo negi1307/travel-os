@@ -1,0 +1,45 @@
+.form_style_hight {
+  /* background-image: url('../../../../../../public/staticImage/background.jpg'); */
+  height: 980px !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.font_style {
+  color: white;
+}
+.form_style_hight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 58rem;
+}
+.input_style {
+  display: flex;
+  align-items: center;
+  padding: 0px 0px;
+  border-radius: 7px;
+  border: 2px solid white;
+}
+.icon_style {
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+.input_Style1 {
+  background: transparent;
+  flex: 1;
+  /* border: 3px solid red; */
+  padding: 9px;
+  outline: none;
+  border: 0;
+  color: white;
+}
+
+.login_Registerdiv {
+  /* border: 1px solid red !important; */
+  flex: 1 !important;
+}

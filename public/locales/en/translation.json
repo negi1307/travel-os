@@ -1,0 +1,28 @@
+{
+    "businessConnect":"BUSINESS CONNECT",
+    "forgot":"forgot / Change Password",
+    "login":"LOG IN",
+    "language":"Language",
+    "register":"Register",
+
+    "guidelinesHeading":"Registration Guidelines",
+    "guidelines":"Jumeirah Business Connect is Jumeirah's proprietary agency portal which allows our partners access to view book and cancel the contracted dynamic rates.If you choose to partner with us. please click on continue to proceed with complering the Expression of Interest by providing us with your detailsYour request will be channeled to our respective teams for review and will reach out to you for further discussion.",
+    "registration":"CONTINUE",
+
+    "registerTitle":"Please fill in the details below, the expression of interest will be submitted to the Global Sales team and they will contact you after review.",
+    "rgFistName":"FIRST NAME",
+    "rgLastName":"LAST NAME",
+    "rgNumber":"AGENT CONTACT NUMBER",
+    "rgEmail":"EMAIL",
+    "rgCode":"AGENT IATA-CODE",
+    "rgName":"AGENCY NAME",
+    "rgCountry":"COUNTRY",
+    "rgCity":"CITY",
+    "rgdocument":"DOCUMENT UPLOADED",
+    "rgAddFile":"ADD FILE",
+    "rgGuideline":"THE EXPECTED DOCUMENTS ARE: AGENCY PROFILE, TRADE LICENCE. MAXIMUM OF 3 DOCUMENTS CAN BE UPLOADED. THE DOCUMENT FORMAT SHOULD BE IN PDF OR JPEG. THE MAXIMUM DOCUMENT SIZE WILL BE 3MB.",
+    "rgExpression":"EXPRESSION OF INTEREST",
+    "back":"Back"
+
+
+}

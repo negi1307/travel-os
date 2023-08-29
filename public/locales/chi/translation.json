@@ -1,0 +1,27 @@
+{
+    "businessConnect":"商业联系",
+    "forgot":"忘记/更改密码",
+    "login":"登录",
+    "language":"语言",
+    "register":"登记",
+
+    "guidelinesHeading":"注册须知",
+    "guidelines":"卓美亚 商业联系 是卓美亚的专有代理门户，允许我们的合作伙伴查看预订并取消约定的动态房价。 如果您选择与我们合作。 请点击“继续”，向我们提供您的详细信息，完成意向书 您的请求将转交给我们各自的团队进行审核，并将与您联系进行进一步讨论。",
+    "registration":"继续",
+
+    "registerTitle":"请填写以下详细信息，意向书将提交给全球销售团队，他们将在审核后与您联系。",
+    "rgFistName":"名",
+    "rgLastName":"姓",
+    "rgNumber":"代理联系电话",
+    "rgEmail":"电子邮件",
+    "rgCode":"代理 国际航空运输协会 代码",
+    "rgName":"机构名称",
+    "rgCountry":"国家",
+    "rgCity":"城市",
+    "rgdocument":"文件已上传",
+    "rgAddFile":"添加文件",
+    "rgGuideline":"预期的文件是：机构简介、贸易许可证。 最多可上传 3 个文档。 文档格式应为 PDF 或 JPEG。 最大文档大小为 3MB。",
+    "rgExpression":"表达兴趣",
+    "back":"后退"
+
+}

@@ -1,0 +1,8 @@
+.main_body_style {
+  border: solid;
+  height: 61rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(214, 182, 118);
+}

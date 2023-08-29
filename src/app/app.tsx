@@ -1,14 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.css';
+import React from 'react';
 
-import NxWelcome from './nx-welcome';
-
-export function App() {
-  return (
-    <div>
-      <NxWelcome title="trave" />
-    </div>
-  );
-}
+import AuthIndex from '../libs/ui/TravelOS/Components/auth/AuthIndex';
+export const App: React.FC = (props: any) => {
+  let { meneItme } = props;
+  return <div>{<AuthIndex meneItme={meneItme} />}</div>;
+};
 
 export default App;
