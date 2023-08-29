@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Grid,
   Button,
@@ -31,6 +31,58 @@ const Login: React.FC = (props: any) => {
     setSelected(getLanguage);
   };
 
+  // login form data get
+  const [loginInput, setLoginInput] = useState({
+    email: '',
+    password: '',
+  });
+  const [errorCheck, setErrorCheck] = useState(false);
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [validEmail, setValidEmail] = useState(false);
+  const [errorPassword, setPassword] = useState(false);
+
+  const onchangetInput = (e: any) => {
+    const { name, value } = e.target;
+    setLoginInput({ ...loginInput, [name]: value });
+  };
+
+  const onSubmitInput = () => {
+    setErrorCheck(true);
+    if (loginInput.email !== '') {
+      var validRegex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (loginInput.email.match(validRegex)) {
+        if (loginInput.password !== '') {
+          console.log(loginInput);
+        }
+      }
+    }
+  };
+  useEffect(() => {
+    if (errorCheck) {
+      if (loginInput.email !== '') {
+        setErrorEmail(false);
+
+        var validRegex =
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+        if (loginInput.email.match(validRegex)) {
+          setValidEmail(false);
+
+          if (loginInput.password !== '') {
+            setPassword(false);
+          } else {
+            setPassword(true);
+          }
+        } else {
+          setValidEmail(true);
+          setPassword(false);
+        }
+      } else {
+        setErrorEmail(true);
+        setPassword(false);
+      }
+    }
+  }, [errorCheck, loginInput.email, loginInput.password]);
   return (
     <>
       <Grid
@@ -122,10 +174,33 @@ const Login: React.FC = (props: any) => {
                 width: '60%',
                 borderRadius: '10px',
               }}
+              name="email"
+              onChange={(e) => {
+                onchangetInput(e);
+              }}
               // placeholder="partner@agency.com"
             >
               <PersonIcon />
             </TextField>
+            <span>
+              {errorEmail ? (
+                <>
+                  <span style={{ color: 'red' }}>Please Enter Your Email</span>
+                </>
+              ) : (
+                <>
+                  {validEmail ? (
+                    <>
+                      <span style={{ color: 'red' }}>
+                        Please Enter Valid Email Address
+                      </span>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </>
+              )}
+            </span>
             <TextField
               InputProps={{
                 inputProps: {
@@ -147,7 +222,20 @@ const Login: React.FC = (props: any) => {
                 borderRadius: '10px',
                 color: 'white',
               }}
+              name="password"
+              onChange={(e) => {
+                onchangetInput(e);
+              }}
             />
+            <span>
+              {errorPassword ? (
+                <>
+                  <span style={{ color: 'red' }}>Please Enter Password</span>
+                </>
+              ) : (
+                <></>
+              )}
+            </span>
             <Button
               variant="contained"
               color="primary"
@@ -158,6 +246,9 @@ const Login: React.FC = (props: any) => {
                 marginTop: '2rem',
                 height: '50px',
                 width: '60%',
+              }}
+              onClick={() => {
+                onSubmitInput();
               }}
             >
               {t(`${meneItme[0]?.loginBtn}`)}
