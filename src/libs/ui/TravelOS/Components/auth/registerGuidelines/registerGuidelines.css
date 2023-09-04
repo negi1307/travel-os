@@ -6,3 +6,23 @@
   align-items: center;
   color: rgb(214, 182, 118);
 }
+
+.registerGuideline {
+  background-color: black;
+}
+
+.back_arrow {
+  width: 40px !important;
+  height: 40px !important;
+  color: white !important;
+  border: 1px solid #8f7f67 !important;
+  border-radius: 150px !important;
+  margin: 12px !important;
+  padding: 12px !important;
+}
+
+.continueButton {
+  border-radius: 0 !important;
+  margin-top: 4rem !important;
+  height: 50px !important;
+}

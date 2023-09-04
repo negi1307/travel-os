@@ -1,6 +1,6 @@
 .form_style_hight {
-  /* background-image: url('../../../../../../public/staticImage/background.jpg'); */
-  height: 980px !important;
+  /* background-image: url("/public/staticImage/background1.avif"); */
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -13,7 +13,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 58rem;
 }
 .input_style {
   display: flex;
@@ -32,7 +31,6 @@
 .input_Style1 {
   background: transparent;
   flex: 1;
-  /* border: 3px solid red; */
   padding: 9px;
   outline: none;
   border: 0;
@@ -40,6 +38,77 @@
 }
 
 .login_Registerdiv {
-  /* border: 1px solid red !important; */
+  display: flex;
+  justify-content: end;
   flex: 1 !important;
+  margin-top: 12px;
+}
+
+/* .navbarRegisterBtn {
+  margin-right: 20px !important;
+} */
+
+.textfieldUsername {
+  border: white 2px solid !important;
+  margin-bottom: 20px !important;
+  margin-top: 20px !important;
+  width: 60% !important;
+  border-radius: 10px !important;
+}
+
+.login_btn_width {
+  width: 60%;
+  padding: 12px !important;
+}
+
+.languageChangeBtn {
+  width: 150px !important;
+  height: 50px;
+  margin-right: 15px;
+}
+.forgotPasswordLink {
+  cursor: pointer;
+}
+.media_Btn_size {
+  display: flex;
+  /* align-items: center; */
+  align-items: end;
+}
+
+.navbarRegisterBtn {
+  padding: 12px !important;
+  width: 143px;
+  margin-right: 20px !important;
+}
+@media (max-width: 768px) {
+  .textfieldUsername {
+    width: 90% !important;
+    margin-top: 20px !important;
+  }
+  .login_btn_width {
+    width: 90%;
+    padding: 12px !important;
+  }
+  .login_Registerdiv {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+  .language_btn_padding {
+    padding: 12px;
+  }
+  .navbarRegisterBtn {
+    padding: 6px !important;
+    width: 143px;
+    margin-right: 20px !important;
+  }
+  .media_Btn_size {
+    display: flex;
+    align-items: end;
+  }
+  .languageChangeBtn {
+    height: 40px;
+    width: 134px;
+    margin-right: 0px;
+  }
 }

@@ -5,24 +5,24 @@ import {
   TextField,
   Typography,
   Link,
-  Box,
   Select,
-  InputLabel,
   MenuItem,
   InputAdornment,
   FormControl,
+  Box,
 } from '@mui/material';
 import './Login.css';
+import ForgetChangePassword from '../../../../../models/forgetChangePassword/ForgetChangePassword';
 import PersonIcon from '@mui/icons-material/Person';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
-import { Height } from '@mui/icons-material';
-
+import { useMediaQuery } from '@mui/material';
 const Login: React.FC = (props: any) => {
   const { connectUpdate, meneItme } = props;
   const { t } = useTranslation();
+  const matches = useMediaQuery('(min-width:600px)');
 
   const [selected, setSelected] = useState('');
   const handleChangeLanguage = (e: any) => {
@@ -40,6 +40,7 @@ const Login: React.FC = (props: any) => {
   const [errorEmail, setErrorEmail] = useState(false);
   const [validEmail, setValidEmail] = useState(false);
   const [errorPassword, setPassword] = useState(false);
+  const [comfim, setComfim] = useState(false);
 
   const onchangetInput = (e: any) => {
     const { name, value } = e.target;
@@ -48,41 +49,42 @@ const Login: React.FC = (props: any) => {
 
   const onSubmitInput = () => {
     setErrorCheck(true);
-    if (loginInput.email !== '') {
-      var validRegex =
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-      if (loginInput.email.match(validRegex)) {
-        if (loginInput.password !== '') {
-          console.log(loginInput);
-        }
-      }
+    if (comfim) {
+      console.log(loginInput);
     }
   };
   useEffect(() => {
     if (errorCheck) {
       if (loginInput.email !== '') {
         setErrorEmail(false);
-
         var validRegex =
           /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
         if (loginInput.email.match(validRegex)) {
           setValidEmail(false);
-
           if (loginInput.password !== '') {
             setPassword(false);
+            setComfim(true);
           } else {
             setPassword(true);
+            setComfim(false);
           }
         } else {
           setValidEmail(true);
           setPassword(false);
+          setComfim(false);
         }
       } else {
         setErrorEmail(true);
         setPassword(false);
+        setComfim(false);
       }
     }
   }, [errorCheck, loginInput.email, loginInput.password]);
+
+  // model forget/ChangePassword
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   return (
     <>
       <Grid
@@ -93,47 +95,35 @@ const Login: React.FC = (props: any) => {
           backgroundImage: `url(${meneItme[0]?.backgroundImage})`,
         }}
       >
-        <Grid
-          marginTop={'15px'}
-          justifyContent={'end'}
-          direction={'row'}
-          container
-          xs={12}
-          className="login_Registerdiv"
-        >
-          <Button
-            variant="contained"
-            onClick={() => {
-              connectUpdate(2);
-            }}
-            style={{ height: '40px', marginTop: '10px', marginRight: '20px' }}
-          >
-            {t(`${meneItme[0]?.register}`)}
-          </Button>
-          <Grid width={'150px'} direction={'row'}>
-            <Grid item>
-              <FormControl>
-                <InputLabel id="demo-simple-select-label">
-                  {t(`${meneItme[0]?.language}`)}
-                </InputLabel>
-
-                <Select
-                  style={{ width: '150px' }}
-                  labelId="demo-simple-select-label"
-                  id="demo-simple-select"
-                  value={selected}
-                  label="Language"
-                  onChange={(e) => {
-                    handleChangeLanguage(e);
-                  }}
-                >
-                  <MenuItem value="en">English</MenuItem>
-                  <MenuItem value="chi">Chinese </MenuItem>
-                </Select>
-              </FormControl>
-            </Grid>
-          </Grid>
-        </Grid>
+        <Box display="flex" justifyContent={'end'} marginY={matches ? 5 : 1}>
+          <Box className="media_Btn_size">
+            <Button
+              variant="contained"
+              className="navbarRegisterBtn media_Btn_size"
+              onClick={() => {
+                connectUpdate(2);
+              }}
+            >
+              {t(`${meneItme[0]?.register}`)}
+            </Button>
+          </Box>
+          <Box marginRight={matches ? 0 : 4}>
+            <FormControl>
+              <label>{t(`${meneItme[0]?.language}`)}</label>
+              <Select
+                className="languageChangeBtn "
+                value={selected}
+                label="Language"
+                onChange={(e) => {
+                  handleChangeLanguage(e);
+                }}
+              >
+                <MenuItem value="en">English</MenuItem>
+                <MenuItem value="chi">Chinese </MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
+        </Box>
         <Grid
           container
           height={'100vh'}
@@ -148,7 +138,11 @@ const Login: React.FC = (props: any) => {
             justifyItems={'center'}
             spacing={'20px'}
             direction={'column'}
-            xs={5}
+            xs={12}
+            md={5}
+            lg={4}
+            xl={4}
+            sm={12}
           >
             <Typography color={'white'} variant="h4">
               {meneItme[0]?.logo}
@@ -163,22 +157,15 @@ const Login: React.FC = (props: any) => {
                 },
                 startAdornment: (
                   <InputAdornment position="start">
-                    <AccountCircleOutlinedIcon style={{ color: 'white' }} />
+                    <AccountCircleOutlinedIcon className="usernameFieldIcon" />
                   </InputAdornment>
                 ),
               }}
-              style={{
-                border: 'white 2px solid',
-                marginBottom: '20px',
-                marginTop: '60px',
-                width: '60%',
-                borderRadius: '10px',
-              }}
+              className="textfieldUsername"
               name="email"
               onChange={(e) => {
                 onchangetInput(e);
               }}
-              // placeholder="partner@agency.com"
             >
               <PersonIcon />
             </TextField>
@@ -201,6 +188,7 @@ const Login: React.FC = (props: any) => {
                 </>
               )}
             </span>
+
             <TextField
               InputProps={{
                 inputProps: {
@@ -209,19 +197,12 @@ const Login: React.FC = (props: any) => {
                 startAdornment: (
                   <>
                     <InputAdornment position="start">
-                      <LockOutlinedIcon style={{ color: 'white' }} />
+                      <LockOutlinedIcon />
                     </InputAdornment>
                   </>
                 ),
               }}
-              style={{
-                border: 'white 2px solid',
-                marginBottom: '20px',
-                marginTop: '20px',
-                width: '60%',
-                borderRadius: '10px',
-                color: 'white',
-              }}
+              className="textfieldUsername "
               name="password"
               onChange={(e) => {
                 onchangetInput(e);
@@ -239,14 +220,7 @@ const Login: React.FC = (props: any) => {
             <Button
               variant="contained"
               color="primary"
-              style={{
-                // backgroundColor: 'rgb(214, 192, 138)',
-                //   color: {theme().palette.primary.main},
-                borderRadius: '0',
-                marginTop: '2rem',
-                height: '50px',
-                width: '60%',
-              }}
+              className="login_btn_width"
               onClick={() => {
                 onSubmitInput();
               }}
@@ -257,17 +231,22 @@ const Login: React.FC = (props: any) => {
               marginTop={'10px'}
               underline="none"
               color={'white'}
-              letterSpacing={'2px'}
-              fontSize={'13px'}
+              fontSize={'15px'}
               fontWeight={'100'}
-              style={{ cursor: 'pointer' }}
+              className="forgotPasswordLink"
               variant="body2"
+              onClick={() => {
+                handleOpen();
+              }}
             >
               {t(`${meneItme[0]?.forgot}`)}
             </Link>
           </Grid>
         </Grid>
       </Grid>
+      <>
+        <ForgetChangePassword open={open} handleClose={handleClose} />
+      </>
     </>
   );
 };

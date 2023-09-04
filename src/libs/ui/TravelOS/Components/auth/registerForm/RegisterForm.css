@@ -175,3 +175,55 @@
   border: 0px !important;
   outline: none !important;
 }
+
+.back_arrow {
+  width: 40px;
+  height: 40px;
+  color: white;
+  border: 1px solid #8f7f67;
+  border-radius: 150px;
+  margin: 12px;
+  padding: 12px;
+}
+.register_form_main {
+  background-color: black;
+  height: 100vh;
+}
+.firstName_textfield {
+  border-bottom: 1px solid white !important;
+  margin-top: 15px !important;
+}
+
+.country_textfield {
+  border-bottom: 1px solid white !important;
+  margin-top: 15px !important;
+  width: 98%;
+}
+
+.button_addfile {
+  display: none !important;
+}
+
+.button_addfield_color {
+  background-color: rgb(236, 167, 46) !important;
+}
+
+.plusIcon_addfile_button {
+  color: white;
+}
+
+.textarea {
+  padding: 10px;
+  background: black;
+  border: 1px solid rgb(251, 232, 200);
+  margin-top: 15px;
+  color: white;
+  width: 100%;
+}
+
+.expressionOfInterest_button {
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
+  color: rgb(251, 232, 200) !important;
+  border-color: rgb(251, 232, 200) !important;
+}

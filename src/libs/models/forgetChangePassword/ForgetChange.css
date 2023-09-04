@@ -1,0 +1,26 @@
+.close_icon {
+  font-size: -webkit-xxx-large !important;
+  cursor: pointer;
+}
+.btn_hight {
+  height: 52px;
+}
+.model_padding {
+  padding-right: 199px !important;
+  padding-left: 199px !important;
+  padding-bottom: 5px !important;
+}
+
+@media (max-width: 768px) {
+  .btn_hight {
+    height: 40px;
+  }
+  .model_padding {
+    padding-right: 30px !important;
+    padding-left: 20px !important;
+    /* padding-bottom: 5px !important; */
+  }
+  .media_width {
+    width: 373px;
+  }
+}
