@@ -11,10 +11,12 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import './RegisterForm.css';
 import { useTranslation } from 'react-i18next';
-
+import { useMediaQuery } from '@mui/material';
 const RegisterForm = (props: any) => {
   const { connectUpdate, meneItme } = props;
   const { t } = useTranslation();
+  const matches = useMediaQuery('(min-width:600px)');
+
   const {
     registerTitle,
     rgAddFile,
@@ -140,34 +142,30 @@ const RegisterForm = (props: any) => {
 
   return (
     <>
-      <Grid container className="register_form_main" direction={'row'} xs={12}>
-        <Grid xs={3} container>
-          <Grid item xs={7} md={3} lg={2}>
-            <ArrowBackIosNewIcon
-              className="back_arrow"
-              onClick={() => {
-                connectUpdate(2);
-              }}
-            />
-          </Grid>
-          <Grid item xs={5}>
-            <Typography
-              variant="body1"
-              color="#8f7f67"
-              marginTop="15px"
-              fontSize="23px"
-            >
-              {t(`${back}`)}
-            </Typography>
-          </Grid>
-        </Grid>
-        <Grid xs={12} marginTop={'20px'} justifyContent={'center'} container>
-          <Grid xs={10} item>
+      <Box className="register_form_main">
+        <Box display="flex">
+          <ArrowBackIosNewIcon
+            className="back_arrow"
+            onClick={() => {
+              connectUpdate(2);
+            }}
+          />
+          <Typography
+            variant="body1"
+            color="#8f7f67"
+            marginTop="15px"
+            fontSize="23px"
+          >
+            {t(`${back}`)}
+          </Typography>
+        </Box>
+        <Box padding={matches ? 10 : 2}>
+          <Box>
             <Typography color={'white'} fontSize={'20px'} variant="body1">
               {t(`${registerTitle}`)}
             </Typography>
-          </Grid>
-          <Grid xs={10} item>
+          </Box>
+          <Box>
             <TextField
               InputLabelProps={{
                 style: { color: 'white' },
@@ -191,8 +189,8 @@ const RegisterForm = (props: any) => {
                 <></>
               )}
             </span>
-          </Grid>
-          <Grid xs={10} item>
+          </Box>
+          <Box>
             <TextField
               InputLabelProps={{
                 style: { color: 'white' },
@@ -219,8 +217,8 @@ const RegisterForm = (props: any) => {
                 <></>
               )}
             </span>
-          </Grid>
-          <Grid xs={10} item>
+          </Box>
+          <Box>
             <TextField
               InputLabelProps={{
                 style: { color: 'white' },
@@ -244,8 +242,8 @@ const RegisterForm = (props: any) => {
                 <></>
               )}
             </span>
-          </Grid>
-          <Grid xs={10} item>
+          </Box>
+          <Box>
             <TextField
               InputLabelProps={{
                 style: { color: 'white' },
@@ -269,8 +267,8 @@ const RegisterForm = (props: any) => {
                 <></>
               )}
             </span>
-          </Grid>
-          <Grid xs={10} item>
+          </Box>
+          <Box>
             <TextField
               InputLabelProps={{
                 style: { color: 'white' },
@@ -294,8 +292,8 @@ const RegisterForm = (props: any) => {
                 <></>
               )}
             </span>
-          </Grid>
-          <Grid xs={10} item>
+          </Box>
+          <Box>
             <TextField
               InputLabelProps={{
                 style: { color: 'white' },
@@ -319,162 +317,144 @@ const RegisterForm = (props: any) => {
                 <></>
               )}
             </span>
-          </Grid>
-          <Grid xs={10} container>
-            <Grid
-              xs={12}
-              sm={12}
-              md={6}
-              item
-              alignItems={'center'}
-              justifyContent={'center'}
-            >
-              <TextField
-                InputLabelProps={{
-                  style: { color: 'white' },
-                }}
-                className="country_textfield"
-                type="dropdown"
-                id="standard-basic"
-                label={t(`${rgCountry}`)}
-                variant="standard"
-                name="country"
-                onChange={(e) => {
-                  onchangeRegister(e);
-                }}
-              />
-              <span>
-                {countryError ? (
-                  <>
-                    <span className="text-danger">Please Enter Country</span>
-                  </>
-                ) : (
-                  <></>
-                )}
-              </span>
-            </Grid>
-            <Grid justifyContent={'flex-end'} xs={12} sm={12} md={6} item>
-              <TextField
-                InputLabelProps={{
-                  style: { color: 'white' },
-                }}
-                className="firstName_textfield"
-                fullWidth
-                id="standard-basic"
-                label={t(`${rgCity}`)}
-                variant="standard"
-                name="city"
-                onChange={(e) => {
-                  onchangeRegister(e);
-                }}
-              />
-              <span>
-                {cityError ? (
-                  <>
-                    <span className="text-danger">Please Enter City</span>
-                  </>
-                ) : (
-                  <></>
-                )}
-              </span>
-            </Grid>
-
-            <Grid marginTop={'30px'} xs={8} container>
-              <Grid item xs={8} sm={8}>
-                <Typography color="white" variant="caption">
-                  {t(`${rgdocument}`)}
-                </Typography>
-              </Grid>
-              <Grid item xs={8}>
-                <input
-                  accept="image/*"
-                  className="button_addfile"
-                  id="file-input"
-                  type="file"
-                  name="file"
+          </Box>
+          <Box display="flex" justifyContent="space-between">
+            <Grid container spacing={2}>
+              <Grid item xs={6}>
+                <TextField
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
+                  className="country_textfield"
+                  type="dropdown"
+                  id="standard-basic"
+                  label={t(`${rgCountry}`)}
+                  variant="standard"
+                  name="country"
                   onChange={(e) => {
                     onchangeRegister(e);
                   }}
                 />
                 <span>
-                  {fileError ? (
+                  {countryError ? (
                     <>
-                      <span className="text-danger">Please Enter File</span>
+                      <span className="text-danger">Please Enter Country</span>
                     </>
                   ) : (
                     <></>
                   )}
                 </span>
-                <label htmlFor="file-input">
-                  <Button
-                    variant="contained"
-                    className="button_addfield_color"
-                    component="span"
-                  >
-                    <AddCircleIcon className="plusIcon_addfile_button" />
-                    {t(`${rgAddFile}`)}
-                  </Button>
-                </label>
+              </Grid>
+              <Grid item xs={6}>
+                <TextField
+                  InputLabelProps={{
+                    style: { color: 'white' },
+                  }}
+                  className="firstName_textfield"
+                  fullWidth
+                  id="standard-basic"
+                  label={t(`${rgCity}`)}
+                  variant="standard"
+                  name="city"
+                  onChange={(e) => {
+                    onchangeRegister(e);
+                  }}
+                />
+                <span>
+                  {cityError ? (
+                    <>
+                      <span className="text-danger">Please Enter City</span>
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </span>
               </Grid>
             </Grid>
-            <Box marginTop={2}>
-              <Grid container>
-                <Typography>
-                  <Grid item>
-                    <Typography color={'white'} variant="caption">
-                      {t(`${rgGuideline}`)}
-                    </Typography>
-                  </Grid>
-                </Typography>
-              </Grid>
+          </Box>
+          <Box marginTop={3} marginBottom={2}>
+            <Box>
+              <Typography color="white" variant="caption">
+                {t(`${rgdocument}`)}
+              </Typography>
             </Box>
-            <Grid container xs={12}>
-              <TextareaAutosize
-                aria-label="minimum height"
-                minRows={4}
-                color="black"
-                className="textarea"
-                name="message"
+
+            <Box>
+              <input
+                accept="image/*"
+                className="button_addfile"
+                id="file-input"
+                type="file"
+                name="file"
                 onChange={(e) => {
                   onchangeRegister(e);
                 }}
               />
               <span>
-                {messageError ? (
+                {fileError ? (
                   <>
-                    <span className="text-danger">Please Enter Message</span>
+                    <span className="text-danger">Please Enter File</span>
                   </>
                 ) : (
                   <></>
                 )}
               </span>
-            </Grid>
-            <Grid justifyContent={'flex-end'} container xs={12}>
-              <Typography color={'white'} variant="caption">
-                500 Words left
-              </Typography>
-            </Grid>
-            <Grid xs={4} container>
-              {/* <ReCAPTCHA
-                style={{ width: '100%' }}
-                className="text-start mt-3"
-                sitekey="6LcIuconAAAAAGqGZ4_daYgUoj4OHVZEUFdEQC3f"
-              /> */}
-            </Grid>
-            <Grid xs={12} container>
-              <Button
-                className="expressionOfInterest_button"
-                variant="outlined"
-                onClick={() => {
-                  registerSubmit();
-                }}
-              >
-                {t(`${rgExpression}`)}
-              </Button>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+              <label htmlFor="file-input">
+                <Button
+                  variant="contained"
+                  className="button_addfield_color"
+                  component="span"
+                >
+                  <AddCircleIcon className="plusIcon_addfile_button" />
+                  {t(`${rgAddFile}`)}
+                </Button>
+              </label>
+            </Box>
+          </Box>
+          <Box width={matches ? ' 20%' : '100%'}>
+            <Typography color={'white'} variant="caption">
+              {t(`${rgGuideline}`)}
+            </Typography>
+          </Box>
+          <Box>
+            <TextareaAutosize
+              aria-label="minimum height"
+              minRows={4}
+              color="black"
+              className="textarea"
+              name="message"
+              onChange={(e) => {
+                onchangeRegister(e);
+              }}
+            />
+            <span>
+              {messageError ? (
+                <>
+                  <span className="text-danger">Please Enter Message</span>
+                </>
+              ) : (
+                <></>
+              )}
+            </span>
+          </Box>
+          <Box>
+            <Typography color={'white'} variant="caption">
+              500 Words left
+            </Typography>
+          </Box>
+          <Box>
+            <Button
+              className="expressionOfInterest_button"
+              variant="outlined"
+              onClick={() => {
+                registerSubmit();
+              }}
+            >
+              {t(`${rgExpression}`)}
+            </Button>
+          </Box>
+        </Box>
+      </Box>
     </>
   );
 };
