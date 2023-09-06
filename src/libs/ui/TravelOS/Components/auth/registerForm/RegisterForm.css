@@ -70,8 +70,8 @@
 }
 
 .textArea {
-  color: black;
-  background-color: black;
+  /* color: black; */
+  /* background-color: black; */
 }
 
 .para {
@@ -88,23 +88,19 @@
 /* .MuiFormControl-root {
     } */
 
-.MuiInput-input {
-  color: white !important;
-}
-
 .MuiSelect-select:after {
   border-bottom-color: rgb(251, 232, 200) !important ;
 }
 
 .back_arrowIcon .MuiSvgIcon-root {
-  border: 1px solid rgb(236, 167, 46) !important;
-  width: 1.2rem !important    ;
+  /* border: 1px solid rgb(236, 167, 46) !important; */
+  /* width: 1.2rem !important    ;
   height: 1.2rem !important   ;
   border-radius: 14px !important    ;
   display: flex !important    ;
   align-items: center !important    ;
   justify-content: center !important    ;
-  padding: 3px !important   ;
+  padding: 3px !important   ; */
 }
 
 .back_arrowIcon {
@@ -177,16 +173,16 @@
 }
 
 .back_arrow {
-  width: 40px;
-  height: 40px;
-  color: white;
-  border: 1px solid #8f7f67;
-  border-radius: 150px;
-  margin: 12px;
-  padding: 12px;
+  /* width: 40px; */
+  /* height: 40px; */
+  /* color: white; */
+  /* border: 1px solid #8f7f67; */
+  /* border-radius: 150px; */
+  /* margin: 12px; */
+  /* padding: 12px; */
 }
 .register_form_main {
-  background-color: black;
+  /* background-color: black; */
   height: auto;
 }
 .firstName_textfield {
@@ -205,7 +201,7 @@
 }
 
 .button_addfield_color {
-  background-color: rgb(236, 167, 46) !important;
+  /* background-color: rgb(236, 167, 46) !important; */
 }
 
 .plusIcon_addfile_button {
@@ -214,16 +210,23 @@
 
 .textarea {
   padding: 10px;
-  background: black;
-  border: 1px solid rgb(251, 232, 200);
+  outline: none;
+  /* background: black; */
+  /* border: 1px solid rgb(251, 232, 200); */
   margin-top: 15px;
-  color: white;
+  /* color: white; */
   width: 100%;
 }
 
 .expressionOfInterest_button {
   margin-top: 20px !important;
   margin-bottom: 20px !important;
-  color: rgb(251, 232, 200) !important;
-  border-color: rgb(251, 232, 200) !important;
+  /* color: rgb(251, 232, 200) !important; */
+  /* border-color: rgb(251, 232, 200) !important; */
+}
+
+.icon_style {
+  padding: 6px;
+  margin-left: 2px;
+  margin-right: 2px;
 }

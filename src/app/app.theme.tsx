@@ -37,4 +37,21 @@ export const meneItme: any = [
     rgExpression: 'rgExpression',
     back: 'back',
   },
+  {
+    logErrorEmailRquid: 'logErrorEmailRquid',
+    logErrorEmailVlid: 'logErrorEmailVlid',
+    logErroPassword: 'logErroPassword',
+  },
+  {
+    rgErrorFstName: 'rgErrorFstName',
+    rgErrorLstName: 'rgErrorLstName',
+    rgErrorNumber: 'rgErrorNumber',
+    rgErrorEmail: 'rgErrorEmail',
+    reErrorCode: 'reErrorCode',
+    rgErrorAgencyName: 'rgErrorAgencyName',
+    rgErrorCountry: 'rgErrorCountry',
+    rgErrorCity: 'rgErrorCity',
+    rgErrorFile: 'rgErrorFile',
+    rgErrorMessage: 'rgErrorMessage',
+  },
 ];

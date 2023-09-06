@@ -18,11 +18,12 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
-import { useMediaQuery } from '@mui/material';
 const Login: React.FC = (props: any) => {
   const { connectUpdate, meneItme } = props;
+  const { logErrorEmailRquid, logErrorEmailVlid, logErroPassword } =
+    meneItme?.[3];
+
   const { t } = useTranslation();
-  const matches = useMediaQuery('(min-width:600px)');
 
   const [selected, setSelected] = useState('');
   const handleChangeLanguage = (e: any) => {
@@ -87,16 +88,16 @@ const Login: React.FC = (props: any) => {
   const handleClose = () => setOpen(false);
   return (
     <>
-      <Grid
-        direction={'column'}
-        alignItems={'end'}
-        className="form_style_hight"
+      <Box
         style={{
           backgroundImage: `url(${meneItme[0]?.backgroundImage})`,
         }}
+        className="form_style_hight"
+        display={'flex'}
+        flexDirection={'column'}
       >
-        <Box display="flex" justifyContent={'end'} marginY={matches ? 5 : 1}>
-          <Box className="media_Btn_size">
+        <Box className="login_top_btn">
+          <Box marginTop={4}>
             <Button
               variant="contained"
               className="navbarRegisterBtn media_Btn_size"
@@ -107,13 +108,14 @@ const Login: React.FC = (props: any) => {
               {t(`${meneItme[0]?.register}`)}
             </Button>
           </Box>
-          <Box marginRight={matches ? 0 : 4}>
+          <Box marginTop={2}>
             <FormControl>
-              <label>{t(`${meneItme[0]?.language}`)}</label>
+              <Typography variant="body2">
+                {t(`${meneItme[0]?.language}`)}
+              </Typography>
               <Select
                 className="languageChangeBtn "
                 value={selected}
-                label="Language"
                 onChange={(e) => {
                   handleChangeLanguage(e);
                 }}
@@ -124,126 +126,122 @@ const Login: React.FC = (props: any) => {
             </FormControl>
           </Box>
         </Box>
-        <Grid
-          container
-          height={'100vh'}
-          xs={12}
-          justifyContent={'center'}
-          alignItems={'center'}
-          className="login_background"
-        >
-          <Grid
-            container
-            alignItems={'center'}
-            justifyItems={'center'}
-            spacing={'20px'}
-            direction={'column'}
-            xs={12}
-            md={5}
-            lg={4}
-            xl={4}
-            sm={12}
-          >
-            <Typography color={'white'} variant="h4">
-              {meneItme[0]?.logo}
-            </Typography>
-            <Typography color={'white'} marginTop={'-10px'} variant="body1">
-              {t(`${meneItme[0]?.logoName}`)}{' '}
-            </Typography>
-            <TextField
-              InputProps={{
-                inputProps: {
-                  style: { color: 'white' },
-                },
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <AccountCircleOutlinedIcon className="usernameFieldIcon" />
-                  </InputAdornment>
-                ),
-              }}
-              className="textfieldUsername"
-              name="email"
-              onChange={(e) => {
-                onchangetInput(e);
-              }}
-            >
-              <PersonIcon />
-            </TextField>
-            <span>
-              {errorEmail ? (
-                <>
-                  <span style={{ color: 'red' }}>Please Enter Your Email</span>
-                </>
-              ) : (
-                <>
-                  {validEmail ? (
-                    <>
-                      <span style={{ color: 'red' }}>
-                        Please Enter Valid Email Address
-                      </span>
-                    </>
-                  ) : (
-                    <></>
-                  )}
-                </>
-              )}
-            </span>
 
-            <TextField
-              InputProps={{
-                inputProps: {
-                  style: { color: 'white' },
-                },
-                startAdornment: (
-                  <>
-                    <InputAdornment position="start">
-                      <LockOutlinedIcon />
-                    </InputAdornment>
-                  </>
-                ),
-              }}
-              className="textfieldUsername "
-              name="password"
-              onChange={(e) => {
-                onchangetInput(e);
-              }}
-            />
-            <span>
-              {errorPassword ? (
-                <>
-                  <span style={{ color: 'red' }}>Please Enter Password</span>
-                </>
-              ) : (
-                <></>
-              )}
-            </span>
-            <Button
-              variant="contained"
-              color="primary"
-              className="login_btn_width"
-              onClick={() => {
-                onSubmitInput();
-              }}
-            >
-              {t(`${meneItme[0]?.loginBtn}`)}
-            </Button>
-            <Link
-              marginTop={'10px'}
-              underline="none"
-              color={'white'}
-              fontSize={'15px'}
-              fontWeight={'100'}
-              className="forgotPasswordLink"
-              variant="body2"
-              onClick={() => {
-                handleOpen();
-              }}
-            >
-              {t(`${meneItme[0]?.forgot}`)}
-            </Link>
-          </Grid>
-        </Grid>
-      </Grid>
+        <Box
+          display={'flex'}
+          justifyContent={'center'}
+          flex={'auto'}
+          alignItems={'center'}
+        >
+          <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
+            <Box>
+              <Box textAlign={'center'}>
+                <Typography variant={'h1'} color="warning.contrastText">
+                  {meneItme[0]?.logo}
+                </Typography>
+              </Box>
+              <Box textAlign={'center'}>
+                <Typography variant={'body1'} color="warning.contrastText">
+                  {t(`${meneItme[0]?.logoName}`)}{' '}
+                </Typography>
+              </Box>
+            </Box>
+            <Box>
+              <Box marginTop={4}>
+                <TextField
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <AccountCircleOutlinedIcon />
+                      </InputAdornment>
+                    ),
+                  }}
+                  className="input_Style"
+                  name="email"
+                  onChange={(e) => {
+                    onchangetInput(e);
+                  }}
+                >
+                  <PersonIcon />
+                </TextField>
+                <Box marginTop={2}>
+                  <span>
+                    {errorEmail ? (
+                      <>
+                        <span>{t(`${logErrorEmailRquid}`)}</span>
+                      </>
+                    ) : (
+                      <>
+                        {validEmail ? (
+                          <>
+                            <span>{t(`${logErrorEmailVlid}`)}</span>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    )}
+                  </span>
+                </Box>
+              </Box>
+              <Box marginY={4}>
+                <TextField
+                  InputProps={{
+                    startAdornment: (
+                      <>
+                        <InputAdornment position="start">
+                          <LockOutlinedIcon />
+                        </InputAdornment>
+                      </>
+                    ),
+                  }}
+                  className="input_Style"
+                  name="password"
+                  onChange={(e) => {
+                    onchangetInput(e);
+                  }}
+                />
+                <Box marginTop={2}>
+                  <span>
+                    {errorPassword ? (
+                      <>
+                        <span>{t(`${logErroPassword}`)}</span>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </span>
+                </Box>
+              </Box>
+              <Box>
+                <Button
+                  fullWidth
+                  variant="contained"
+                  color="primary"
+                  onClick={() => {
+                    onSubmitInput();
+                  }}
+                >
+                  {t(`${meneItme[0]?.loginBtn}`)}
+                </Button>
+              </Box>
+            </Box>
+            <Box marginTop={3}>
+              <Typography variant={'body1'}>
+                <Link
+                  underline="none"
+                  color="warning.contrastText"
+                  onClick={() => {
+                    handleOpen();
+                  }}
+                >
+                  {t(`${meneItme[0]?.forgot}`)}
+                </Link>
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </Box>
       <>
         <ForgetChangePassword open={open} handleClose={handleClose} />
       </>

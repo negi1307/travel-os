@@ -1,11 +1,25 @@
 // import jwtDecode from 'jwt-decode';
-import axios from "axios";
-import config from "../../../app/config";
+import axios from 'axios';
+import config from '../../../app/config';
 // import config from '../../config';
 
 // content type
-axios.defaults.headers.post["Content-Type"] = "application/json";
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 axios.defaults.baseURL = config.API_URL;
+
+axios.interceptors.request.use(
+  function (config) {
+    config.headers['x-device-details'] = '';
+    config.headers['language'] = '';
+    config.headers['x-partner-code'] = '';
+    console.log('INTERCEPTERS REQUEST :', config);
+    return config;
+  },
+  function (error) {
+    // Do something with request error
+    return Promise.reject(error);
+  }
+);
 
 // intercepting to capture errors
 axios.interceptors.response.use(
@@ -19,22 +33,22 @@ axios.interceptors.response.use(
     if (error && error.response && error.response.status === 404) {
       // window.location.href = '/not-found';
     } else if (error && error.response && error.response.status === 403) {
-      window.location.href = "/access-denied";
+      window.location.href = '/access-denied';
     } else {
       switch (error.response.status) {
         case 401:
-          message = "Invalid credentials";
+          message = 'Invalid credentials';
           break;
         case 403:
-          message = "Access Forbidden";
+          message = 'Access Forbidden';
           break;
         case 404:
-          message = "Sorry! the data you are looking for could not be found";
+          message = 'Sorry! the data you are looking for could not be found';
           break;
         default: {
           message =
             error.response && error.response.data
-              ? error.response.data["message"]
+              ? error.response.data['message']
               : error.message || error;
         }
       }
@@ -43,20 +57,20 @@ axios.interceptors.response.use(
   }
 );
 
-const AUTH_SESSION_KEY = "hyper_user";
+const AUTH_SESSION_KEY = 'hyper_user';
 
 /**
  * Sets the default authorization
  * @param {*} token
  */
 const setAuthorization = (token) => {
-  if (token) axios.defaults.headers.common["Authorization"] = "JWT " + token;
-  else delete axios.defaults.headers.common["Authorization"];
+  if (token) axios.defaults.headers.common['Authorization'] = 'JWT ' + token;
+  else delete axios.defaults.headers.common['Authorization'];
 };
 
 const getUserFromSession = () => {
   const user = sessionStorage.getItem(AUTH_SESSION_KEY);
-  return user ? (typeof user == "object" ? user : JSON.parse(user)) : null;
+  return user ? (typeof user == 'object' ? user : JSON.parse(user)) : null;
 };
 class APICore {
   /**
@@ -67,9 +81,9 @@ class APICore {
     if (params) {
       var queryString = params
         ? Object.keys(params)
-            .map((key) => key + "=" + params[key])
-            .join("&")
-        : "";
+            .map((key) => key + '=' + params[key])
+            .join('&')
+        : '';
       response = axios.get(`${url}?${queryString}`, params);
     } else {
       response = axios.get(`${url}`, params);
@@ -82,25 +96,25 @@ class APICore {
     if (params) {
       var queryString = params
         ? Object.keys(params)
-            .map((key) => key + "=" + params[key])
-            .join("&")
-        : "";
-      response = axios.get(`${url}?${queryString}`, { responseType: "blob" });
+            .map((key) => key + '=' + params[key])
+            .join('&')
+        : '';
+      response = axios.get(`${url}?${queryString}`, { responseType: 'blob' });
     } else {
-      response = axios.get(`${url}`, { responseType: "blob" });
+      response = axios.get(`${url}`, { responseType: 'blob' });
     }
     return response;
   };
 
   getMultiple = (urls, params) => {
     const reqs = [];
-    let queryString = "";
+    let queryString = '';
     if (params) {
       queryString = params
         ? Object.keys(params)
-            .map((key) => key + "=" + params[key])
-            .join("&")
-        : "";
+            .map((key) => key + '=' + params[key])
+            .join('&')
+        : '';
     }
 
     for (const url of urls) {
@@ -149,7 +163,7 @@ class APICore {
     const config = {
       headers: {
         ...axios.defaults.headers,
-        "content-type": "multipart/form-data",
+        'content-type': 'multipart/form-data',
       },
     };
     return axios.post(url, formData, config);
@@ -167,7 +181,7 @@ class APICore {
     const config = {
       headers: {
         ...axios.defaults.headers,
-        "content-type": "multipart/form-data",
+        'content-type': 'multipart/form-data',
       },
     };
     return axios.patch(url, formData, config);

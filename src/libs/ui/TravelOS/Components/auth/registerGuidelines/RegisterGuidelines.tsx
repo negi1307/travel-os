@@ -21,48 +21,46 @@ const RegistraterGuidelines = (props: any) => {
 
   const { title, registrationGudl, registrationBtn } = meneItme[1];
   const theme = useTheme();
-  const matches = useMediaQuery('(min-width:600px)');
+  console.log(theme, 'testing');
 
   return (
     <>
-      <Box height={'100vh'} display="flex" flexDirection="column">
-        <Box display="flex">
-          <ArrowBackIosNewIcon
-            className="back_arrow"
-            onClick={() => {
-              connectUpdate(1);
-            }}
-          />
-
-          <Typography
-            variant="body1"
-            color="#8f7f67"
-            marginTop="15px"
-            fontSize="23px"
+      <Box display="flex" flexDirection="column" height={'100vh'}>
+        <Box display="flex" marginLeft={3} marginTop={3}>
+          <Box
+            border={2}
+            display={'flex'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            borderRadius={10}
           >
-            {t(`${meneItme?.[2]?.back}`)}
-          </Typography>
+            <Typography color="primary">
+              <ArrowBackIosNewIcon
+                className="icon_style"
+                onClick={() => {
+                  connectUpdate(1);
+                }}
+              />
+            </Typography>
+          </Box>
+          <Box marginLeft={2} display={'flex'} alignItems={'center'}>
+            <Typography variant="h6" color="primary">
+              {t(`${meneItme?.[2]?.back}`)}
+            </Typography>
+          </Box>
         </Box>
         <Box margin="auto">
           <Box display="flex" justifyContent={'center'}>
-            <Typography
-              variant={!matches ? 'h5' : 'h3'}
-              color={'rgb(214, 182, 118)'}
-            >
+            <Typography variant={'h1'} color="warning.main">
               {t(registrationGudl)}
             </Typography>
           </Box>
 
-          <Box marginTop={2} display="flex" justifyContent={'center'}>
+          <Box marginTop={4} display="flex" justifyContent={'center'}>
             {title?.map((item: any) => {
               return (
                 <>
-                  <Box
-                    width={!matches ? '95%' : '50%'}
-                    marginTop={!matches ? '10px' : '50px'}
-                    textAlign={!matches ? 'center' : 'center'}
-                    lineHeight={!matches ? '1px' : "'40px'"}
-                  >
+                  <Box className="guideline_point_style" marginTop={3}>
                     <Typography variant="body1" color="pramiry">
                       {t(`${item?.point1}`)}
                     </Typography>
@@ -71,12 +69,11 @@ const RegistraterGuidelines = (props: any) => {
               );
             })}
           </Box>
-          <Box mt={3} display="flex" justifyContent={'center'}>
+          <Box mt={4} display="flex" justifyContent={'center'}>
             <Typography>
               <Button
                 variant="contained"
                 color="primary"
-                // className="continueButton"
                 onClick={() => {
                   connectUpdate(3);
                 }}

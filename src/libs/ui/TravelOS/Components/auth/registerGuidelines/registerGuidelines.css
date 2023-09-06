@@ -1,28 +1,41 @@
-.main_body_style {
+/* .main_body_style {
   border: solid;
   height: 61rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgb(214, 182, 118);
-}
+} */
 
-.registerGuideline {
+/* .registerGuideline {
   background-color: black;
-}
+} */
 
-.back_arrow {
-  width: 40px !important;
-  height: 40px !important;
-  color: white !important;
-  border: 1px solid #8f7f67 !important;
-  border-radius: 150px !important;
-  margin: 12px !important;
-  padding: 12px !important;
-}
-
-.continueButton {
+/* .continueButton {
   border-radius: 0 !important;
   margin-top: 4rem !important;
   height: 50px !important;
+} */
+
+.guideline_point_style {
+  width: 50%;
+  text-align: center;
+}
+
+/* // new css */
+.icon_style {
+  padding: 7px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+@media (max-width: 768px) {
+  .guideline_point_style {
+    width: 95%;
+    text-align: center;
+  }
+  .icon_style {
+    padding: 6px;
+    margin-left: 3px;
+    margin-right: 3px;
+  }
 }
