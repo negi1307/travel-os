@@ -18,6 +18,7 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
+import ErrorHandlingLogin from './errorLogin/ErrorHandlingLogin';
 const Login: React.FC = (props: any) => {
   const { connectUpdate, meneItme } = props;
   const { logErrorEmailRquid, logErrorEmailVlid, logErroPassword } =
@@ -32,55 +33,25 @@ const Login: React.FC = (props: any) => {
     setSelected(getLanguage);
   };
 
-  // login form data get
-  const [loginInput, setLoginInput] = useState({
-    email: '',
-    password: '',
+  //start login form data get & error handling
+  const [parentOutData, setParentOutData] = useState<any>({
+    first: '',
+    second: '',
   });
-  const [errorCheck, setErrorCheck] = useState(false);
-  const [errorEmail, setErrorEmail] = useState(false);
-  const [validEmail, setValidEmail] = useState(false);
-  const [errorPassword, setPassword] = useState(false);
-  const [comfim, setComfim] = useState(false);
+  const [childInComing, setChildIncoming] = useState<any>('');
 
-  const onchangetInput = (e: any) => {
-    const { name, value } = e.target;
-    setLoginInput({ ...loginInput, [name]: value });
-  };
-
-  const onSubmitInput = () => {
-    setErrorCheck(true);
-    if (comfim) {
-      console.log(loginInput);
+  const parentDataOut = (a: any, b: any) => {
+    if (b === 'input') {
+      setParentOutData({ first: a, second: b });
+    } else if (b === 'btn') {
+      setParentOutData({ first: a, second: b });
     }
   };
-  useEffect(() => {
-    if (errorCheck) {
-      if (loginInput.email !== '') {
-        setErrorEmail(false);
-        var validRegex =
-          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        if (loginInput.email.match(validRegex)) {
-          setValidEmail(false);
-          if (loginInput.password !== '') {
-            setPassword(false);
-            setComfim(true);
-          } else {
-            setPassword(true);
-            setComfim(false);
-          }
-        } else {
-          setValidEmail(true);
-          setPassword(false);
-          setComfim(false);
-        }
-      } else {
-        setErrorEmail(true);
-        setPassword(false);
-        setComfim(false);
-      }
-    }
-  }, [errorCheck, loginInput.email, loginInput.password]);
+
+  const childDataIn = (item: any) => {
+    setChildIncoming(item);
+  };
+  //end login form data get & error handling
 
   // model forget/ChangePassword
   const [open, setOpen] = useState(false);
@@ -110,7 +81,7 @@ const Login: React.FC = (props: any) => {
           </Box>
           <Box marginTop={2}>
             <FormControl>
-              <Typography variant="body2">
+              <Typography variant={'body2'}>
                 {t(`${meneItme[0]?.language}`)}
               </Typography>
               <Select
@@ -136,22 +107,21 @@ const Login: React.FC = (props: any) => {
           <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
             <Box>
               <Box textAlign={'center'}>
-                <Typography variant={'h1'} color="warning.contrastText">
-                  {meneItme[0]?.logo}
-                </Typography>
+                <img src={meneItme[0]?.logo} alt="" width={'35%'} />
+                {/* {meneItme[0]?.logo} */}
               </Box>
-              <Box textAlign={'center'}>
+              {/* <Box textAlign={'center'}>
                 <Typography variant={'body1'} color="warning.contrastText">
                   {t(`${meneItme[0]?.logoName}`)}{' '}
                 </Typography>
-              </Box>
+              </Box> */}
             </Box>
             <Box>
               <Box marginTop={4}>
                 <TextField
                   InputProps={{
                     startAdornment: (
-                      <InputAdornment position="start">
+                      <InputAdornment position={'start'}>
                         <AccountCircleOutlinedIcon />
                       </InputAdornment>
                     ),
@@ -159,22 +129,34 @@ const Login: React.FC = (props: any) => {
                   className="input_Style"
                   name="email"
                   onChange={(e) => {
-                    onchangetInput(e);
+                    parentDataOut(e, 'input');
                   }}
                 >
                   <PersonIcon />
                 </TextField>
                 <Box marginTop={2}>
                   <span>
-                    {errorEmail ? (
+                    {childInComing.typeOne === 'email' ? (
                       <>
-                        <span>{t(`${logErrorEmailRquid}`)}</span>
+                        {childInComing.typeTwo === 'error' ? (
+                          <>
+                            <span>{t(`${logErrorEmailRquid}`)}</span>
+                          </>
+                        ) : (
+                          <></>
+                        )}
                       </>
                     ) : (
                       <>
-                        {validEmail ? (
+                        {childInComing.typeOne === 'emailValid' ? (
                           <>
-                            <span>{t(`${logErrorEmailVlid}`)}</span>
+                            {childInComing.typeTwo === 'error' ? (
+                              <>
+                                <span>{t(`${logErrorEmailVlid}`)}</span>
+                              </>
+                            ) : (
+                              <></>
+                            )}
                           </>
                         ) : (
                           <></>
@@ -189,7 +171,7 @@ const Login: React.FC = (props: any) => {
                   InputProps={{
                     startAdornment: (
                       <>
-                        <InputAdornment position="start">
+                        <InputAdornment position={'start'}>
                           <LockOutlinedIcon />
                         </InputAdornment>
                       </>
@@ -198,14 +180,20 @@ const Login: React.FC = (props: any) => {
                   className="input_Style"
                   name="password"
                   onChange={(e) => {
-                    onchangetInput(e);
+                    parentDataOut(e, 'input');
                   }}
                 />
                 <Box marginTop={2}>
                   <span>
-                    {errorPassword ? (
+                    {childInComing.typeOne === 'password' ? (
                       <>
-                        <span>{t(`${logErroPassword}`)}</span>
+                        {childInComing.typeTwo === 'error' ? (
+                          <>
+                            <span>{t(`${logErroPassword}`)}</span>
+                          </>
+                        ) : (
+                          <></>
+                        )}
                       </>
                     ) : (
                       <></>
@@ -216,10 +204,10 @@ const Login: React.FC = (props: any) => {
               <Box>
                 <Button
                   fullWidth
-                  variant="contained"
-                  color="primary"
+                  variant={'contained'}
+                  color={'primary'}
                   onClick={() => {
-                    onSubmitInput();
+                    parentDataOut('button', 'btn');
                   }}
                 >
                   {t(`${meneItme[0]?.loginBtn}`)}
@@ -230,7 +218,7 @@ const Login: React.FC = (props: any) => {
               <Typography variant={'body1'}>
                 <Link
                   underline="none"
-                  color="warning.contrastText"
+                  color={'warning.contrastText'}
                   onClick={() => {
                     handleOpen();
                   }}
@@ -244,6 +232,10 @@ const Login: React.FC = (props: any) => {
       </Box>
       <>
         <ForgetChangePassword open={open} handleClose={handleClose} />
+        <ErrorHandlingLogin
+          parentsDataIn={parentOutData}
+          ChildDataOut={childDataIn}
+        />
       </>
     </>
   );

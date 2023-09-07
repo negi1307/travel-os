@@ -155,15 +155,9 @@ const RegisterForm = (props: any) => {
   return (
     <>
       <Box className="register_form_main">
-        <Box display="flex" marginLeft={3} marginTop={3}>
-          <Box
-            border={2}
-            display={'flex'}
-            justifyContent={'center'}
-            alignItems={'center'}
-            borderRadius={6}
-          >
-            <Typography color="primary">
+        <Box display={'flex'} marginLeft={3} marginTop={3}>
+          <Box>
+            <Typography color={'primary'}>
               <ArrowBackIosNewIcon
                 className="icon_style"
                 onClick={() => {
@@ -173,22 +167,22 @@ const RegisterForm = (props: any) => {
             </Typography>
           </Box>
           <Box marginLeft={2} display={'flex'} alignItems={'center'}>
-            <Typography variant="h6" color="primary">
+            <Typography variant={'h6'} color={'primary'}>
               {t(`${meneItme?.[2]?.back}`)}
             </Typography>
           </Box>
         </Box>
         <Box marginLeft={4} marginRight={4} marginTop={4}>
           <Box>
-            <Typography variant="body1">{t(`${registerTitle}`)}</Typography>
+            <Typography variant={'body1'}>{t(`${registerTitle}`)}</Typography>
           </Box>
           <Box>
             <Typography color={'primary'}>
               <TextField
                 fullWidth
-                color="primary"
+                color={'primary'}
                 label={t(`${rgFistName}`)}
-                variant="standard"
+                variant={'standard'}
                 name="fName"
                 onChange={(e) => {
                   onchangeRegister(e);
@@ -198,7 +192,7 @@ const RegisterForm = (props: any) => {
             <span>
               {fNameError ? (
                 <>
-                  <span className="text-danger">{t(`${rgErrorFstName}`)}</span>
+                  <span>{t(`${rgErrorFstName}`)}</span>
                 </>
               ) : (
                 <></>
@@ -211,7 +205,7 @@ const RegisterForm = (props: any) => {
               fullWidth
               id="standard-basic"
               label={t(`${rgLastName}`)}
-              variant="standard"
+              variant={'standard'}
               name="lName"
               onChange={(e) => {
                 onchangeRegister(e);
@@ -220,7 +214,7 @@ const RegisterForm = (props: any) => {
             <span>
               {lNameError ? (
                 <>
-                  <span className="text-danger">{t(`${rgErrorLstName}`)}</span>
+                  <span>{t(`${rgErrorLstName}`)}</span>
                 </>
               ) : (
                 <></>
@@ -232,7 +226,7 @@ const RegisterForm = (props: any) => {
               fullWidth
               id="standard-basic"
               label={t(`${rgNumber}`)}
-              variant="standard"
+              variant={'standard'}
               name="cNumber"
               onChange={(e) => {
                 onchangeRegister(e);
@@ -241,7 +235,7 @@ const RegisterForm = (props: any) => {
             <span>
               {cNumberError ? (
                 <>
-                  <span className="text-danger">{t(`${rgErrorNumber}`)}</span>
+                  <span>{t(`${rgErrorNumber}`)}</span>
                 </>
               ) : (
                 <></>
@@ -253,7 +247,7 @@ const RegisterForm = (props: any) => {
               fullWidth
               id="standard-basic"
               label={t(`${rgEmail}`)}
-              variant="standard"
+              variant={'standard'}
               name="email"
               onChange={(e) => {
                 onchangeRegister(e);
@@ -262,7 +256,7 @@ const RegisterForm = (props: any) => {
             <span>
               {emailError ? (
                 <>
-                  <span className="text-danger">{t(`${rgErrorEmail}`)}</span>
+                  <span>{t(`${rgErrorEmail}`)}</span>
                 </>
               ) : (
                 <></>
@@ -283,7 +277,7 @@ const RegisterForm = (props: any) => {
             <span>
               {codeError ? (
                 <>
-                  <span className="text-danger">{t(`${reErrorCode}`)}</span>
+                  <span>{t(`${reErrorCode}`)}</span>
                 </>
               ) : (
                 <></>
@@ -296,7 +290,7 @@ const RegisterForm = (props: any) => {
               fullWidth
               id="standard-basic"
               label={t(`${rgName}`)}
-              variant="standard"
+              variant={'standard'}
               name="AgencyName"
               onChange={(e) => {
                 onchangeRegister(e);
@@ -305,16 +299,14 @@ const RegisterForm = (props: any) => {
             <span>
               {agencyNameError ? (
                 <>
-                  <span className="text-danger">
-                    {t(`${rgErrorAgencyName}`)}
-                  </span>
+                  <span>{t(`${rgErrorAgencyName}`)}</span>
                 </>
               ) : (
                 <></>
               )}
             </span>
           </Box>
-          <Box display="flex" justifyContent="space-between">
+          <Box display={'flex'} justifyContent={'space-between'}>
             <Grid container spacing={2}>
               <Grid item xs={matches ? 6 : 12}>
                 <TextField
@@ -322,7 +314,7 @@ const RegisterForm = (props: any) => {
                   type="dropdown"
                   id="standard-basic"
                   label={t(`${rgCountry}`)}
-                  variant="standard"
+                  variant={'standard'}
                   name="country"
                   onChange={(e) => {
                     onchangeRegister(e);
@@ -331,9 +323,7 @@ const RegisterForm = (props: any) => {
                 <span>
                   {countryError ? (
                     <>
-                      <span className="text-danger">
-                        {t(`${rgErrorCountry}`)}
-                      </span>
+                      <span>{t(`${rgErrorCountry}`)}</span>
                     </>
                   ) : (
                     <></>
@@ -346,7 +336,7 @@ const RegisterForm = (props: any) => {
                   fullWidth
                   id="standard-basic"
                   label={t(`${rgCity}`)}
-                  variant="standard"
+                  variant={'standard'}
                   name="city"
                   onChange={(e) => {
                     onchangeRegister(e);
@@ -355,7 +345,7 @@ const RegisterForm = (props: any) => {
                 <span>
                   {cityError ? (
                     <>
-                      <span className="text-danger">{t(`${rgErrorCity}`)}</span>
+                      <span>{t(`${rgErrorCity}`)}</span>
                     </>
                   ) : (
                     <></>
@@ -366,7 +356,7 @@ const RegisterForm = (props: any) => {
           </Box>
           <Box marginTop={3} marginBottom={2}>
             <Box>
-              <Typography variant="caption">{t(`${rgdocument}`)}</Typography>
+              <Typography variant={'caption'}>{t(`${rgdocument}`)}</Typography>
             </Box>
 
             <Box>
@@ -383,8 +373,8 @@ const RegisterForm = (props: any) => {
 
               <label htmlFor="file-input">
                 <Button
-                  variant="contained"
-                  component="span"
+                  variant={'contained'}
+                  component={'span'}
                   startIcon={<AddCircleIcon />}
                 >
                   {t(`${rgAddFile}`)}
@@ -395,7 +385,7 @@ const RegisterForm = (props: any) => {
               <span>
                 {fileError ? (
                   <>
-                    <span className="text-danger">{t(`${rgErrorFile}`)}</span>
+                    <span>{t(`${rgErrorFile}`)}</span>
                   </>
                 ) : (
                   <></>
@@ -404,7 +394,7 @@ const RegisterForm = (props: any) => {
             </Box>
           </Box>
           <Box>
-            <Typography variant="body1">{t(`${rgGuideline}`)}</Typography>
+            <Typography variant={'body1'}>{t(`${rgGuideline}`)}</Typography>
           </Box>
           <Box>
             <TextareaAutosize
@@ -419,7 +409,7 @@ const RegisterForm = (props: any) => {
             <span>
               {messageError ? (
                 <>
-                  <span className="text-danger">{t(`${rgErrorMessage}`)}</span>
+                  <span>{t(`${rgErrorMessage}`)}</span>
                 </>
               ) : (
                 <></>
@@ -427,12 +417,12 @@ const RegisterForm = (props: any) => {
             </span>
           </Box>
           <Box>
-            <Typography variant="caption">500 Words left</Typography>
+            <Typography variant={'caption'}>500 Words left</Typography>
           </Box>
           <Box>
             <Button
               className="expressionOfInterest_button"
-              variant="outlined"
+              variant={'outlined'}
               onClick={() => {
                 registerSubmit();
               }}

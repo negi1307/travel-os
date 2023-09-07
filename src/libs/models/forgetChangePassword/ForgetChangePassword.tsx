@@ -1,20 +1,20 @@
-import React from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import TextField from "@mui/material/TextField";
-import "./ForgetChange.css";
+import React from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import TextField from '@mui/material/TextField';
+import './ForgetChange.css';
 const ForgetChangePassword = (props: any) => {
   const { open, handleClose } = props;
   const style = {
-    position: "absolute" as "absolute",
-    top: "20%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "auto",
-    bgcolor: "background.paper",
+    position: 'absolute' as 'absolute',
+    top: '15%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 'auto',
+    bgcolor: 'background.paper',
     boxShadow: 24,
     p: 4,
   };
@@ -38,8 +38,8 @@ const ForgetChangePassword = (props: any) => {
             </Typography>
             <Typography
               id="modal-modal-description"
-              variant="h5"
-              align="center" //   sx={{ mt: 2 }}
+              variant={'h5'}
+              align={'center'} //   sx={{ mt: 2 }}
             >
               Forget/Change Password
             </Typography>
@@ -49,15 +49,15 @@ const ForgetChangePassword = (props: any) => {
                 //   id="standard-basic"
                 //   label="Standard"
                 placeholder="Please Enter Your Registered Email"
-                variant="standard"
+                variant={'standard'}
               />
             </Typography>
             <Typography>
               <Button
                 fullWidth
-                variant="contained"
+                variant={'contained'}
                 className="btn_hight"
-                color="primary"
+                color={'primary'}
               >
                 SEND REQUEST
               </Button>

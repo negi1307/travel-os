@@ -7,16 +7,16 @@ export const darkTheme = createTheme({
     primary: {
       light: '#ff7961',
       main: '#a1887f',
+      // main: '#ffa726',
       dark: '#bcaaa4',
       contrastText: '#fff',
-
-      // light: '#ff7961',
-      // main: '#a1887f',
-      // dark: '#bcaaa4',
-      // contrastText: '#fff'
     },
     warning: {
       main: '#a1887f',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#212121',
     },
   },
 
@@ -25,9 +25,9 @@ export const darkTheme = createTheme({
     body1: {
       fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       fontSize: '0.95rem',
-      fontWeight: 400,
+      fontWeight: 500,
       letterSpacing: '0.08333em',
-      lineHeight: 1.66,
+      // lineHeight: 1.66,
       // textTransform: 'uppercase',
 
       '@media (min-width:600px)': {
@@ -44,6 +44,12 @@ export const darkTheme = createTheme({
       fontSize: '1.75rem',
       fontWeight: 700,
       letterSpacing: '0.08333em',
+
+      //       fontFamily: "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+      // fontSize: "1rem",
+      // fontWeight: 400,
+      // letterSpacing: "0.00938em",
+      // lineHeight: 1.75,
       '@media (min-width:600px)': {
         fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
         fontSize: '2.85rem',

@@ -24,7 +24,7 @@
 }
 
 .icon_style {
-  padding: 6px;
-  margin-left: 2px;
-  margin-right: 2px;
+  border: solid;
+  border-radius: 12px;
+  padding: 3px;
 }

@@ -1,10 +1,11 @@
 import bckGroundImg from '../../public/staticImage/background.avif';
 import bckGroundImg1 from '../../public/staticImage/background1.avif';
 import bckGroundImg2 from '../../public/staticImage/background2.avif';
+import jumeirahLogo from '../../public/staticImage/jumeirahLogo.jpeg';
 
 export const meneItme: any = [
   {
-    logo: 'Jumeirah ',
+    logo: jumeirahLogo,
     logoName: 'businessConnect',
     loginBtn: 'login',
     backgroundImage: bckGroundImg1,
