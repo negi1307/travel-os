@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Grid,
@@ -12,7 +12,8 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import './RegisterForm.css';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@mui/material';
-const RegisterForm = (props: any) => {
+import ErrorHandlingRegister from './errorRegister/ErrorHandlingRegister';
+const RegisterForm: React.FC = (props: any) => {
   const { connectUpdate, meneItme } = props;
   const {
     rgErrorFstName,
@@ -46,111 +47,26 @@ const RegisterForm = (props: any) => {
     back,
   } = meneItme?.[2];
 
-  const [registerInput, setRegisterInput] = useState({
-    fName: '',
-    lName: '',
-    cNumber: '',
-    email: '',
-    code: '',
-    AgencyName: '',
-    country: '',
-    city: '',
-    file: '',
-    message: '',
+  //start login form data get & error handling
+  const [parentOutData, setParentOutData] = useState<any>({
+    first: '',
+    second: '',
   });
-  const [errorCheck, setErrorCheck] = useState(false);
-  const [fNameError, setFNameError] = useState(false);
-  const [lNameError, setLNameError] = useState(false);
-  const [cNumberError, setCNumberError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [codeError, setCodeError] = useState(false);
-  const [agencyNameError, setAgencyNameError] = useState(false);
-  const [countryError, setCountryError] = useState(false);
-  const [cityError, setCityError] = useState(false);
-  const [fileError, setFileError] = useState(false);
-  const [messageError, setMessageError] = useState(false);
-  const [confim, setConfim] = useState(false);
+  const [childInComing, setChildIncoming] = useState<any>('');
 
-  const onchangeRegister = (e: any) => {
-    const { name, value } = e.target;
-    setRegisterInput({ ...registerInput, [name]: value });
-  };
-
-  const registerSubmit = () => {
-    setErrorCheck(true);
-    if (confim) {
-      console.log(registerInput, 'check');
+  const parentDataOut = (a: any, b: any) => {
+    if (b === 'input') {
+      setParentOutData({ first: a, second: b });
+    } else if (b === 'btn') {
+      setParentOutData({ first: a, second: b });
     }
   };
 
-  useEffect(() => {
-    if (errorCheck) {
-      if (registerInput.fName !== '') {
-        setFNameError(false);
-        if (registerInput.lName !== '') {
-          setLNameError(false);
-          if (registerInput.cNumber !== '') {
-            setCNumberError(false);
-            if (registerInput.email !== '') {
-              setEmailError(false);
-              if (registerInput.code !== '') {
-                setCodeError(false);
-                if (registerInput.AgencyName !== '') {
-                  setAgencyNameError(false);
-                  if (registerInput.country !== '') {
-                    setCountryError(false);
-                    if (registerInput.city !== '') {
-                      setCityError(false);
-                      if (registerInput.file !== '') {
-                        setFileError(false);
-                        if (registerInput.message !== '') {
-                          setMessageError(false);
-                          setConfim(true);
-                        } else {
-                          setMessageError(true);
-                          setConfim(false);
-                        }
-                      } else {
-                        setFileError(true);
-                      }
-                    } else {
-                      setCityError(true);
-                    }
-                  } else {
-                    setCountryError(true);
-                  }
-                } else {
-                  setAgencyNameError(true);
-                }
-              } else {
-                setCodeError(true);
-              }
-            } else {
-              setEmailError(true);
-            }
-          } else {
-            setCNumberError(true);
-          }
-        } else {
-          setLNameError(true);
-        }
-      } else {
-        setFNameError(true);
-      }
-    }
-  }, [
-    errorCheck,
-    registerInput.fName,
-    registerInput.lName,
-    registerInput.cNumber,
-    registerInput.email,
-    registerInput.code,
-    registerInput.AgencyName,
-    registerInput.country,
-    registerInput.city,
-    registerInput.file,
-    registerInput.message,
-  ]);
+  const childDataIn = (item: any) => {
+    setChildIncoming(item);
+    console.log(item, 'testing');
+  };
+  //end login form data get & error handling
 
   return (
     <>
@@ -185,19 +101,29 @@ const RegisterForm = (props: any) => {
                 variant={'standard'}
                 name="fName"
                 onChange={(e) => {
-                  onchangeRegister(e);
+                  parentDataOut(e, 'input');
                 }}
               />
             </Typography>
-            <span>
-              {fNameError ? (
-                <>
-                  <span>{t(`${rgErrorFstName}`)}</span>
-                </>
-              ) : (
-                <></>
-              )}
-            </span>
+            {
+              <>
+                {childInComing.typeOne === 'fName' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorFstName}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
           </Box>
           <Box>
             <TextField
@@ -208,18 +134,28 @@ const RegisterForm = (props: any) => {
               variant={'standard'}
               name="lName"
               onChange={(e) => {
-                onchangeRegister(e);
+                parentDataOut(e, 'input');
               }}
             />
-            <span>
-              {lNameError ? (
-                <>
-                  <span>{t(`${rgErrorLstName}`)}</span>
-                </>
-              ) : (
-                <></>
-              )}
-            </span>
+            {
+              <>
+                {childInComing.typeOne === 'lName' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorLstName}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
           </Box>
           <Box>
             <TextField
@@ -229,18 +165,28 @@ const RegisterForm = (props: any) => {
               variant={'standard'}
               name="cNumber"
               onChange={(e) => {
-                onchangeRegister(e);
+                parentDataOut(e, 'input');
               }}
             />
-            <span>
-              {cNumberError ? (
-                <>
-                  <span>{t(`${rgErrorNumber}`)}</span>
-                </>
-              ) : (
-                <></>
-              )}
-            </span>
+            {
+              <>
+                {childInComing.typeOne === 'cNumber' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorNumber}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
           </Box>
           <Box>
             <TextField
@@ -250,18 +196,28 @@ const RegisterForm = (props: any) => {
               variant={'standard'}
               name="email"
               onChange={(e) => {
-                onchangeRegister(e);
+                parentDataOut(e, 'input');
               }}
             />
-            <span>
-              {emailError ? (
-                <>
-                  <span>{t(`${rgErrorEmail}`)}</span>
-                </>
-              ) : (
-                <></>
-              )}
-            </span>
+            {
+              <>
+                {childInComing.typeOne === 'email' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorEmail}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
           </Box>
           <Box>
             <TextField
@@ -271,18 +227,28 @@ const RegisterForm = (props: any) => {
               variant="standard"
               name="code"
               onChange={(e) => {
-                onchangeRegister(e);
+                parentDataOut(e, 'input');
               }}
             />
-            <span>
-              {codeError ? (
-                <>
-                  <span>{t(`${reErrorCode}`)}</span>
-                </>
-              ) : (
-                <></>
-              )}
-            </span>
+            {
+              <>
+                {childInComing.typeOne === 'code' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${reErrorCode}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
           </Box>
           <Box>
             <TextField
@@ -293,18 +259,28 @@ const RegisterForm = (props: any) => {
               variant={'standard'}
               name="AgencyName"
               onChange={(e) => {
-                onchangeRegister(e);
+                parentDataOut(e, 'input');
               }}
             />
-            <span>
-              {agencyNameError ? (
-                <>
-                  <span>{t(`${rgErrorAgencyName}`)}</span>
-                </>
-              ) : (
-                <></>
-              )}
-            </span>
+            {
+              <>
+                {childInComing.typeOne === 'agencyName' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorAgencyName}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
           </Box>
           <Box display={'flex'} justifyContent={'space-between'}>
             <Grid container spacing={2}>
@@ -317,18 +293,28 @@ const RegisterForm = (props: any) => {
                   variant={'standard'}
                   name="country"
                   onChange={(e) => {
-                    onchangeRegister(e);
+                    parentDataOut(e, 'input');
                   }}
                 />
-                <span>
-                  {countryError ? (
-                    <>
-                      <span>{t(`${rgErrorCountry}`)}</span>
-                    </>
-                  ) : (
-                    <></>
-                  )}
-                </span>
+                {
+                  <>
+                    {childInComing.typeOne === 'country' ? (
+                      <>
+                        {childInComing.typeTwo === 'error' ? (
+                          <>
+                            <Typography color={'error'}>
+                              {t(`${rgErrorCountry}`)}
+                            </Typography>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                }
               </Grid>
               <Grid item xs={matches ? 6 : 12}>
                 <TextField
@@ -339,18 +325,28 @@ const RegisterForm = (props: any) => {
                   variant={'standard'}
                   name="city"
                   onChange={(e) => {
-                    onchangeRegister(e);
+                    parentDataOut(e, 'input');
                   }}
                 />
-                <span>
-                  {cityError ? (
-                    <>
-                      <span>{t(`${rgErrorCity}`)}</span>
-                    </>
-                  ) : (
-                    <></>
-                  )}
-                </span>
+                {
+                  <>
+                    {childInComing.typeOne === 'city' ? (
+                      <>
+                        {childInComing.typeTwo === 'error' ? (
+                          <>
+                            <Typography color={'error'}>
+                              {t(`${rgErrorCity}`)}
+                            </Typography>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                }
               </Grid>
             </Grid>
           </Box>
@@ -367,7 +363,7 @@ const RegisterForm = (props: any) => {
                 type="file"
                 name="file"
                 onChange={(e) => {
-                  onchangeRegister(e);
+                  parentDataOut(e, 'input');
                 }}
               />
 
@@ -382,15 +378,25 @@ const RegisterForm = (props: any) => {
               </label>
             </Box>
             <Box>
-              <span>
-                {fileError ? (
-                  <>
-                    <span>{t(`${rgErrorFile}`)}</span>
-                  </>
-                ) : (
-                  <></>
-                )}
-              </span>
+              {
+                <>
+                  {childInComing.typeOne === 'file' ? (
+                    <>
+                      {childInComing.typeTwo === 'error' ? (
+                        <>
+                          <Typography color={'error'}>
+                            {t(`${rgErrorFile}`)}
+                          </Typography>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </>
+              }
             </Box>
           </Box>
           <Box>
@@ -403,18 +409,28 @@ const RegisterForm = (props: any) => {
               className="textarea"
               name="message"
               onChange={(e) => {
-                onchangeRegister(e);
+                parentDataOut(e, 'input');
               }}
             />
-            <span>
-              {messageError ? (
-                <>
-                  <span>{t(`${rgErrorMessage}`)}</span>
-                </>
-              ) : (
-                <></>
-              )}
-            </span>
+            {
+              <>
+                {childInComing.typeOne === 'message' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorMessage}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
           </Box>
           <Box>
             <Typography variant={'caption'}>500 Words left</Typography>
@@ -424,13 +440,19 @@ const RegisterForm = (props: any) => {
               className="expressionOfInterest_button"
               variant={'outlined'}
               onClick={() => {
-                registerSubmit();
+                parentDataOut('button', 'btn');
               }}
             >
               {t(`${rgExpression}`)}
             </Button>
           </Box>
         </Box>
+      </Box>
+      <Box>
+        <ErrorHandlingRegister
+          parentsDataIn={parentOutData}
+          ChildDataOut={childDataIn}
+        />
       </Box>
     </>
   );

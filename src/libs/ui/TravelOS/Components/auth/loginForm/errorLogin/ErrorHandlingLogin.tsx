@@ -5,7 +5,7 @@ interface dataType {
   second?: string;
 }
 
-const ErrorHandlingLogin = (props: dataType | any) => {
+const ErrorHandlingLogin: React.FC<dataType> = (props: any) => {
   const { parentsDataIn, ChildDataOut } = props;
   const [loginInput, setLoginInput] = useState({
     email: '',

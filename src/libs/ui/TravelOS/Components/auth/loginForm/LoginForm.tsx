@@ -60,7 +60,7 @@ const Login: React.FC = (props: any) => {
   return (
     <>
       <Box
-        style={{
+        sx={{
           backgroundImage: `url(${meneItme[0]?.backgroundImage})`,
         }}
         className="form_style_hight"
@@ -70,7 +70,7 @@ const Login: React.FC = (props: any) => {
         <Box className="login_top_btn">
           <Box marginTop={4}>
             <Button
-              variant="contained"
+              variant={'contained'}
               className="navbarRegisterBtn media_Btn_size"
               onClick={() => {
                 connectUpdate(2);
@@ -108,7 +108,6 @@ const Login: React.FC = (props: any) => {
             <Box>
               <Box textAlign={'center'}>
                 <img src={meneItme[0]?.logo} alt="" width={'35%'} />
-                {/* {meneItme[0]?.logo} */}
               </Box>
               {/* <Box textAlign={'center'}>
                 <Typography variant={'body1'} color="warning.contrastText">
@@ -140,7 +139,9 @@ const Login: React.FC = (props: any) => {
                       <>
                         {childInComing.typeTwo === 'error' ? (
                           <>
-                            <span>{t(`${logErrorEmailRquid}`)}</span>
+                            <Typography color={'error'}>
+                              {t(`${logErrorEmailRquid}`)}
+                            </Typography>
                           </>
                         ) : (
                           <></>
@@ -152,7 +153,9 @@ const Login: React.FC = (props: any) => {
                           <>
                             {childInComing.typeTwo === 'error' ? (
                               <>
-                                <span>{t(`${logErrorEmailVlid}`)}</span>
+                                <Typography color={'error'}>
+                                  {t(`${logErrorEmailVlid}`)}
+                                </Typography>
                               </>
                             ) : (
                               <></>
@@ -189,7 +192,9 @@ const Login: React.FC = (props: any) => {
                       <>
                         {childInComing.typeTwo === 'error' ? (
                           <>
-                            <span>{t(`${logErroPassword}`)}</span>
+                            <Typography color={'error'}>
+                              {t(`${logErroPassword}`)}
+                            </Typography>
                           </>
                         ) : (
                           <></>

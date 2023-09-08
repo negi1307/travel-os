@@ -18,20 +18,25 @@ export const darkTheme = createTheme({
     secondary: {
       main: '#212121',
     },
+    error: {
+      main: '#f44336',
+    },
   },
 
   spacing: [0, 4, 8, 16, 32, 64],
   typography: {
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+
+    button: {
+      textTransform: 'uppercase',
+    },
     body1: {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       fontSize: '0.95rem',
       fontWeight: 500,
       letterSpacing: '0.08333em',
       // lineHeight: 1.66,
-      // textTransform: 'uppercase',
 
       '@media (min-width:600px)': {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
         fontSize: '0.95rem',
         fontWeight: 900,
         letterSpacing: '0.08333em',
@@ -40,18 +45,10 @@ export const darkTheme = createTheme({
     },
 
     h1: {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       fontSize: '1.75rem',
       fontWeight: 700,
       letterSpacing: '0.08333em',
-
-      //       fontFamily: "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
-      // fontSize: "1rem",
-      // fontWeight: 400,
-      // letterSpacing: "0.00938em",
-      // lineHeight: 1.75,
       '@media (min-width:600px)': {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
         fontSize: '2.85rem',
         fontWeight: 900,
         letterSpacing: '0.08333em',
@@ -59,13 +56,11 @@ export const darkTheme = createTheme({
     },
 
     h2: {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       fontSize: '1.25rem',
       fontWeight: 500,
       letterSpacing: '0.0075em',
       lineHeight: 1.6,
       '@media (min-width:600px)': {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
         fontSize: '1.25rem',
         fontWeight: 500,
         letterSpacing: '0.0075em',
@@ -73,11 +68,9 @@ export const darkTheme = createTheme({
       },
     },
     h6: {
-      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
       fontSize: '1.00rem',
       fontWeight: 400,
       '@media (min-width:600px)': {
-        fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
         fontSize: '1.00rem',
         fontWeight: 400,
       },
