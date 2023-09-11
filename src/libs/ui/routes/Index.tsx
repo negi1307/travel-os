@@ -9,6 +9,11 @@ const AuthIndex = React.lazy(
   () => import('../TravelOS/Components/auth/AuthIndex')
 );
 
+const SectionIndex = React.lazy(
+  () => import('../TravelOS/Components/pages/PageIndex')
+);
+import HomeIndex from '../TravelOS/Components/pages/section/home/HomeIndex';
+
 const TestingComponent = React.lazy(
   () => import('../TravelOS/Components/auth/TestingComponent')
 );
@@ -53,14 +58,31 @@ const AllRoutes = (props: any) => {
     },
     {
       path: '/',
-      element: <PrivateRoute roles={'Admin'} component={TestingComponent} />,
+      element: (
+        <PrivateRoute
+          roles={'Admin'}
+          component={SectionIndex}
+          meneItme={meneItme}
+        />
+      ),
       children: [
         {
           path: 'dashboard',
           children: [
             {
-              path: 'ecommerce',
-              element: <LoadComponent component={TestingComponent} />,
+              path: 'home',
+              element: (
+                <LoadComponent component={HomeIndex} meneItme={meneItme} />
+              ),
+            },
+            {
+              path: 'dashboards',
+              element: (
+                <LoadComponent
+                  component={TestingComponent}
+                  meneItme={meneItme}
+                />
+              ),
             },
           ],
         },

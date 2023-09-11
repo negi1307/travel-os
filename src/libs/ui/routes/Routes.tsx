@@ -1,5 +1,5 @@
-import { BrowserRouter } from "react-router-dom";
-import { AllRoutes } from "./Index";
+import { BrowserRouter } from 'react-router-dom';
+import { AllRoutes } from './Index';
 
 const Routes = (props: any) => {
   const { meneItme } = props;

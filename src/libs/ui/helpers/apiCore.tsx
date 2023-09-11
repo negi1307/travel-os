@@ -63,7 +63,7 @@ const AUTH_SESSION_KEY = 'hyper_user';
  * Sets the default authorization
  * @param {*} token
  */
-const setAuthorization = (token) => {
+const setAuthorization = (token: any) => {
   if (token) axios.defaults.headers.common['Authorization'] = 'JWT ' + token;
   else delete axios.defaults.headers.common['Authorization'];
 };
@@ -76,7 +76,7 @@ class APICore {
   /**
    * Fetches data from given url
    */
-  get = (url, params) => {
+  get = (url: any, params: any) => {
     let response;
     if (params) {
       var queryString = params
@@ -91,7 +91,7 @@ class APICore {
     return response;
   };
 
-  getFile = (url, params) => {
+  getFile = (url: any, params: any) => {
     let response;
     if (params) {
       var queryString = params
@@ -106,7 +106,7 @@ class APICore {
     return response;
   };
 
-  getMultiple = (urls, params) => {
+  getMultiple = (urls: any, params: any) => {
     const reqs = [];
     let queryString = '';
     if (params) {
@@ -126,35 +126,35 @@ class APICore {
   /**
    * post given data to url
    */
-  create = (url, data) => {
+  create = (url: any, data: any) => {
     return axios.post(url, data);
   };
 
   /**
    * Updates patch data
    */
-  updatePatch = (url, data) => {
+  updatePatch = (url: any, data: any) => {
     return axios.patch(url, data);
   };
 
   /**
    * Updates data
    */
-  update = (url, data) => {
+  update = (url: any, data: any) => {
     return axios.put(url, data);
   };
 
   /**
    * Deletes data
    */
-  delete = (url) => {
+  delete = (url: any) => {
     return axios.delete(url);
   };
 
   /**
    * post given data to url with file
    */
-  createWithFile = (url, data) => {
+  createWithFile = (url: any, data: any) => {
     const formData = new FormData();
     for (const k in data) {
       formData.append(k, data[k]);
@@ -172,7 +172,7 @@ class APICore {
   /**
    * post given data to url with file
    */
-  updateWithFile = (url, data) => {
+  updateWithFile = (url: any, data: any) => {
     const formData = new FormData();
     for (const k in data) {
       formData.append(k, data[k]);
@@ -192,6 +192,9 @@ class APICore {
     if (!user || (user && !user.token)) {
       return false;
     }
+    if (!user.token) {
+      return false;
+    }
     return true;
     // const decoded = jwtDecode(user.token);
     // const currentTime = Date.now() / 1000;
@@ -203,7 +206,7 @@ class APICore {
     // }
   };
 
-  setLoggedInUser = (session) => {
+  setLoggedInUser = (session: any) => {
     if (session)
       sessionStorage.setItem(AUTH_SESSION_KEY, JSON.stringify(session));
     else {

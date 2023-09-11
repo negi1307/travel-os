@@ -55,4 +55,16 @@ export const meneItme: any = [
     rgErrorFile: 'rgErrorFile',
     rgErrorMessage: 'rgErrorMessage',
   },
+
+  [
+    {
+      imgPath: bckGroundImg,
+    },
+    {
+      imgPath: bckGroundImg1,
+    },
+    {
+      imgPath: bckGroundImg2,
+    },
+  ],
 ];

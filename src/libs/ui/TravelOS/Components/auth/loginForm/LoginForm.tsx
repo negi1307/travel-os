@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Grid,
   Button,
   TextField,
   Typography,
@@ -19,6 +18,9 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
 import ErrorHandlingLogin from './errorLogin/ErrorHandlingLogin';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 const Login: React.FC = (props: any) => {
   const { connectUpdate, meneItme } = props;
   const { logErrorEmailRquid, logErrorEmailVlid, logErroPassword } =
@@ -57,6 +59,18 @@ const Login: React.FC = (props: any) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  // auth protect routing
+  const store = useSelector((state) => state);
+  const user = store?.Auth?.user;
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (user !== null) {
+      navigate('/');
+    }
+  }, [user]);
+
   return (
     <>
       <Box

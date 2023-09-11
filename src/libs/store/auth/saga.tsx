@@ -1,14 +1,15 @@
-import { all, fork, put, takeEvery, call } from "redux-saga/effects";
-import { SagaIterator } from "@redux-saga/core";
-import { APICore, setAuthorization } from "../../../libs/ui/helpers/apiCore";
+import { all, fork, put, takeEvery, call } from 'redux-saga/effects';
+import { SagaIterator } from '@redux-saga/core';
+import { APICore, setAuthorization } from '../../../libs/ui/helpers/apiCore';
+
 // import {
 //   login as loginApi,
 //   logout as logoutApi,
 //   signup as signupApi,
 //   forgotPassword as forgotPasswordApi,
 // } from "helpers";
-import { authApiResponseSuccess, authApiResponseError } from "./actions";
-import { AuthActionTypes } from "./constants";
+import { authApiResponseSuccess, authApiResponseError } from './actions';
+import { AuthActionTypes } from './constants';
 
 type UserData = {
   payload: {
@@ -30,26 +31,30 @@ function* login({
   payload: { username, password },
   type,
 }: UserData): SagaIterator {
+  // const navigate = useNavigate();
+
   try {
-    const response = "";
+    // const response = '';
     //  yield call(loginApi, { username, password });
     // const user = response.data;
 
     // NOTE - You can change this according to response format from your api
     const TOKEN =
-      "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb2RlcnRoZW1lcyIsImlhdCI6MTU4NzM1NjY0OSwiZXhwIjoxOTAyODg5NDQ5LCJhdWQiOiJjb2RlcnRoZW1lcy5jb20iLCJzdWIiOiJzdXBwb3J0QGNvZGVydGhlbWVzLmNvbSIsImxhc3ROYW1lIjoiVGVzdCIsIkVtYWlsIjoic3VwcG9ydEBjb2RlcnRoZW1lcy5jb20iLCJSb2xlIjoiQWRtaW4iLCJmaXJzdE5hbWUiOiJIeXBlciJ9.P27f7JNBF-vOaJFpkn-upfEh3zSprYfyhTOYhijykdI";
+      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjb2RlcnRoZW1lcyIsImlhdCI6MTU4NzM1NjY0OSwiZXhwIjoxOTAyODg5NDQ5LCJhdWQiOiJjb2RlcnRoZW1lcy5jb20iLCJzdWIiOiJzdXBwb3J0QGNvZGVydGhlbWVzLmNvbSIsImxhc3ROYW1lIjoiVGVzdCIsIkVtYWlsIjoic3VwcG9ydEBjb2RlcnRoZW1lcy5jb20iLCJSb2xlIjoiQWRtaW4iLCJmaXJzdE5hbWUiOiJIeXBlciJ9.P27f7JNBF-vOaJFpkn-upfEh3zSprYfyhTOYhijykdI';
 
     const user = {
       id: 1,
-      username: "test",
-      password: "test",
-      firstName: "Test",
-      lastName: "User",
-      role: "Admin",
+      username: 'test',
+      password: 'test',
+      firstName: 'Test',
+      lastName: 'User',
+      role: 'Admin',
       token: TOKEN,
     };
+    localStorage.setItem('token', TOKEN);
+
     api.setLoggedInUser(user);
-    setAuthorization(user["token"]);
+    setAuthorization(user['token']);
     yield put(authApiResponseSuccess(AuthActionTypes.LOGIN_USER, user));
   } catch (error: any) {
     yield put(authApiResponseError(AuthActionTypes.LOGIN_USER, error));
@@ -66,6 +71,7 @@ function* logout(): SagaIterator {
     // yield call(logoutApi);
     api.setLoggedInUser(null);
     setAuthorization(null);
+    localStorage.clear();
     yield put(authApiResponseSuccess(AuthActionTypes.LOGOUT_USER, {}));
   } catch (error: any) {
     yield put(authApiResponseError(AuthActionTypes.LOGOUT_USER, error));
@@ -76,7 +82,7 @@ function* signup({
   payload: { fullname, email, password },
 }: UserData): SagaIterator {
   try {
-    const response = "";
+    const response = '';
     // yield call(signupApi, { fullname, email, password });
     const user = response.data;
     // api.setLoggedInUser(user);
@@ -91,7 +97,7 @@ function* signup({
 
 function* forgotPassword({ payload: { username } }: UserData): SagaIterator {
   try {
-    const response = "";
+    const response = '';
     // yield call(forgotPasswordApi, { username });
     yield put(
       authApiResponseSuccess(AuthActionTypes.FORGOT_PASSWORD, response.data)

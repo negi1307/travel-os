@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../../../../../store/auth/actions';
 
 interface dataType {
   first?: string;
@@ -7,6 +9,7 @@ interface dataType {
 
 const ErrorHandlingLogin: React.FC<dataType> = (props: any) => {
   const { parentsDataIn, ChildDataOut } = props;
+  const dispatch = useDispatch();
   const [loginInput, setLoginInput] = useState({
     email: '',
     password: '',
@@ -25,9 +28,18 @@ const ErrorHandlingLogin: React.FC<dataType> = (props: any) => {
 
   const onSubmitInput = () => {
     setErrorCheck(true);
-    if (comfim) {
-      console.log(loginInput, 'success');
+    if (loginInput.email !== '') {
+      var validRegex =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+      if (loginInput.email.match(validRegex)) {
+        if (loginInput.password !== '') {
+          dispatch(loginUser('a', 'b', 'c'));
+        }
+      }
     }
+    // if (comfim) {
+    //   dispatch(loginUser('a', 'b', 'c'));
+    // }
   };
 
   useEffect(() => {

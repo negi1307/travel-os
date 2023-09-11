@@ -1,0 +1,54 @@
+.navbar_backGroud_clr {
+  background-color: #252525;
+}
+.toggle_parent {
+  position: relative;
+  width: 10rem;
+}
+.toggle_parent .inner_toggleParent {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.toggle_parent .css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+  background-color: #252525;
+}
+.toggle_parent .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root {
+  min-height: 20px !important;
+  position: relative;
+}
+.toggle_parent .css-o4b71y-MuiAccordionSummary-content {
+  margin: 0px !important;
+}
+
+.toggle_parent .css-pwcg7p-MuiCollapse-root {
+  min-height: 0px;
+  height: 0px;
+  background: rgb(37, 37, 37);
+}
+
+/* // new css */
+.iconsNavbar {
+  margin-bottom: 3px;
+  height: 17px !important;
+}
+
+.navbarLinks {
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 19px;
+  padding-right: 5px;
+  padding-left: 5px;
+  height: 37px;
+}
+
+/* .navbarItems:hover {
+  color: white;
+} */
+.navBar_link {
+  text-decoration: none;
+  color: wheat;
+}
