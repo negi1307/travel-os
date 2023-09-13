@@ -1,0 +1,6 @@
+.point_cursor {
+  cursor: pointer;
+}
+.point_cursor:hover {
+  background-color: antiquewhite;
+}

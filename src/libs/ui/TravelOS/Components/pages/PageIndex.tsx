@@ -80,9 +80,12 @@ const PageIndex: React.FC = (props: any) => {
             <Outlet />
           </Suspense>
         </Box>
-        <Box className="footer_parentBox">
+        {/* <Box className="footer_parentBox">
           <Footer />
-        </Box>
+        </Box> */}
+      </Box>
+      <Box>
+        <Footer />
       </Box>
     </div>
   );
