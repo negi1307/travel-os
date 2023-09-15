@@ -1,6 +1,59 @@
 .point_cursor {
   cursor: pointer;
 }
-.point_cursor:hover {
+.destination_selectorBox .point_cursor:hover {
   background-color: antiquewhite;
+  color: #000;
+}
+
+.destination_select {
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+  padding: 0px !important;
+  /* font-weight: 100 !important; */
+  /* font-size: 1rem !important; */
+  /* color: wheat !important; */
+}
+.destination_selectorBox {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.destination_selectorBox
+  .css-yw020d-MuiAccordionSummary-expandIconWrapper.Mui-expanded {
+  transform: rotate(0deg) !important;
+  -webkit-transform: rotate(0deg) !important;
+}
+.destination_selectorBox .css-o4b71y-MuiAccordionSummary-content.Mui-expanded,
+.destination_selectorBox .css-1ddsz0-MuiTypography-root {
+  margin: 0 !important;
+}
+.destination_selectorBox
+  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded,
+.destination_selectorBox
+  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  height: 0px !important;
+}
+.destination_selectorBox .css-150nlgc-MuiAccordionDetails-root {
+  padding: 5px 14px 8px !important;
+}
+.css-150nlgc-MuiAccordionDetails-root
+  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  background-color: #393732;
+  height: 0px !important;
+  min-height: 33px !important;
+  border-radius: 5px !important;
+}
+/* .destination_select .css-6ks0vp-MuiTypography-root {
+  margin: 13px 0 !important;
+  background-color: red !important;
+} */
+/* 
+.destination_selectorBox .css-o4b71y-MuiAccordionSummary-content {
+  margin: 13px 0 !important;
+} */
+.destination_selectorBox .MuiBox-root .css-1iszri5-MuiTypography-root {
+  margin-bottom: 10px !important;
+  /* border: 2px solid red !important; */
 }

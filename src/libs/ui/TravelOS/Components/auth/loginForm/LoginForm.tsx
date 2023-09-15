@@ -121,7 +121,7 @@ const Login: React.FC = (props: any) => {
           <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
             <Box>
               <Box textAlign={'center'}>
-                <img src={meneItme[0]?.logo} alt="" width={'35%'} />
+                <img src={meneItme[0]?.logo} alt="" width={'50%'} />
               </Box>
               {/* <Box textAlign={'center'}>
                 <Typography variant={'body1'} color="warning.contrastText">

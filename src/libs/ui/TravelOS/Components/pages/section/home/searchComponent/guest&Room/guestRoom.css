@@ -4,3 +4,33 @@
   color: wheat;
   cursor: pointer;
 }
+.guest_select {
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+  padding: 0px !important;
+}
+.guest_inputParent {
+  width: 100%;
+  position: relative;
+}
+.guest_inputParent .css-8eaegj-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+  position: relative;
+}
+.guest_inputParent .css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
+  margin: 0 !important;
+}
+.guest_inputParent .css-pwcg7p-MuiCollapse-root {
+  position: absolute;
+  background: #252525;
+  left: 0;
+  right: 0;
+  transform: translate(-25rem, 0px);
+  width: 58rem !important;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.guest_inputParent .css-150nlgc-MuiAccordionDetails-root {
+  padding: 4px 42px 8px;
+}
+.guest_inputParent .MuiBox-root .css-4ukj1x-MuiTypography-root {
+  margin-bottom: 10px !important;
+}

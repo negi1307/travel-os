@@ -37,7 +37,21 @@
     "rgErrorCountry":"Please Enter Country",
     "rgErrorCity":"Please Enter City",
     "rgErrorFile":"Please Enter File",
-    "rgErrorMessage":"Please Enter Message"
+    "rgErrorMessage":"Please Enter Message",
+
+    "nvBarHome":"HOME",
+    "nvBarDashbaod":"DASHBOARD",
+    "nvBarInsights":"INSIGHTS",
+    "nvBarBusinees":"BUSINESS ADMIN",
+    "nvBarMyAccount":"MY ACCOUNT",
+    "nvBarFAQs":"FAQs",
+    "nvBarHotelInfo":"HOTELINFO",
+
+"homeDestination":"DESTINATION",
+"homeStayDate":"STAY DATE",
+"homeGuestRoom":"Gu"
+
+
     
 
 }

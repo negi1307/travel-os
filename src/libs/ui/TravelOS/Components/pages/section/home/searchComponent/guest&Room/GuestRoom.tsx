@@ -12,39 +12,87 @@ import ClearIcon from '@mui/icons-material/Clear';
 import './guestRoom.css';
 
 const GuestRoom = () => {
+  const [expanded, setExpanded] = useState(false);
   const [guestAdults, setGuestAdults] = useState(0);
   const [guestChildren, setGuestChildren] = useState(0);
   const [guestBox, setGuestBox] = useState([1]);
+  const [guestCalculator, setGuestCalculator] = useState(1);
+  const [show, seShow] = useState(false);
+  const [getGuestRoom, setGetGuestRoom] = useState<any>({
+    adults: '',
+    children: '',
+    rooms: '',
+  });
 
   const addBox = () => {
     setGuestBox([...guestBox, 1]);
+    setGuestCalculator(guestCalculator + 1);
   };
 
   const Remove = (id: any) => {
     const fileterData = guestBox?.filter((ite, index) => id !== index);
     setGuestBox(fileterData);
+    setGuestCalculator(guestCalculator - 1);
+  };
+
+  const submitGuestRoom = () => {
+    seShow(true);
+    setExpanded(false);
+    setGetGuestRoom({
+      ...getGuestRoom,
+      adults: guestAdults,
+      children: guestChildren,
+      rooms: guestCalculator,
+    });
   };
 
   return (
-    <div>
+    <div className="guest_inputParent">
       <Accordion
+        expanded={expanded}
         sx={{
           backgroundColor: '#252525',
         }}
       >
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          onClick={() => setExpanded(true)}
+          expandIcon={<ExpandMoreIcon color="primary" />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
           <Box pl={2}>
-            <Typography color={'primary'}>Destination</Typography>
+            <Typography color={'primary'}>
+              {show ? (
+                <>
+                  <Typography className="guest_select" sx={{ color: 'wheat' }}>
+                    Guest and Rooms
+                  </Typography>
+                  <Typography
+                    className="guest_select"
+                    color={'warning.main'}
+                    // marginY={2}
+                    marginTop={2}
+                    marginBottom={2}
+                  >
+                    {' '}
+                    {`${getGuestRoom.rooms} Rooms (${getGuestRoom.adults} Adult, ${getGuestRoom.children} Children)`}
+                  </Typography>
+                </>
+              ) : (
+                <>
+                  <Typography paddingY={1} sx={{ color: 'wheat' }}>
+                    Guest and Rooms
+                  </Typography>
+                </>
+              )}
+              {/* 1 Rooms (2 Adult, 0 Children) */}
+            </Typography>
           </Box>
         </AccordionSummary>
         <AccordionDetails>
           <Box>
             <Box>
-              <Typography color={'primary'}>Room</Typography>
+              <Typography color={'primary'}>ROOM</Typography>
             </Box>
             {guestBox?.map((item, index) => {
               return (
@@ -172,11 +220,14 @@ const GuestRoom = () => {
               <Grid item xs={6} padding={3}>
                 <Box display={'flex'} justifyContent={'center'} marginY={3}>
                   <Button
-                    startIcon={<AddIcon />}
+                    // startIcon={<AddIcon />}
                     variant={'contained'}
                     color={'primary'}
+                    onClick={() => {
+                      submitGuestRoom();
+                    }}
                   >
-                    ADD ANOTHER ROOM
+                    CONFIRM GUESTS
                   </Button>
                 </Box>
               </Grid>

@@ -2,10 +2,12 @@ import bckGroundImg from '../../public/staticImage/background.avif';
 import bckGroundImg1 from '../../public/staticImage/background1.avif';
 import bckGroundImg2 from '../../public/staticImage/background2.avif';
 import jumeirahLogo from '../../public/staticImage/jumeirahLogo.avif';
+import downIcon from '../../public/staticImage/downIcon.png';
+import mainLogo from '../../public/staticImage/mainLogo.webp';
 
 export const meneItme: any = [
   {
-    logo: jumeirahLogo,
+    logo: mainLogo,
     logoName: 'businessConnect',
     loginBtn: 'login',
     backgroundImage: bckGroundImg1,
@@ -67,4 +69,5 @@ export const meneItme: any = [
       imgPath: bckGroundImg2,
     },
   ],
+  { downIcon: downIcon },
 ];

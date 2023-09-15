@@ -1,0 +1,80 @@
+.Mui-selected {
+  border-radius: 10px !important;
+}
+.Mui-selected:hover {
+  border: none !important;
+}
+
+.MuiDateRangePickerDay-dayOutsideRangeInterval {
+  color: white !important;
+  font-size: larger !important;
+}
+
+.MuiDateRangePickerDay-dayInsideRangeInterval {
+  color: white !important;
+  font-size: larger !important;
+}
+
+.MuiSvgIcon-fontSizeInherit {
+  border-radius: 100%;
+  color: white;
+  border: 1px solid #a1887f;
+}
+
+.MuiDayCalendar-header .MuiDayCalendar-weekDayLabel {
+  color: white !important;
+}
+
+.confirmDatebutton {
+  height: 45px;
+  border-radius: 0 !important;
+  width: 250px;
+}
+
+.MuiPickersDay-today {
+  border: 0 !important;
+}
+
+.stay_select {
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+  padding: 0px !important;
+}
+/* 
+.date_pickerBox
+  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  border: 2px solid red;
+  position: relative;
+}
+.date_pickerBox .css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
+  margin: 0px !important;
+}
+.date_pickerBox .css-pwcg7p-MuiCollapse-root {
+  position: absolute;
+} */
+.date_pickerBox {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.date_pickerBox
+  .css-8eaegj-MuiPaper-root-MuiAccordion-root.Mui-expanded:last-of-type,
+.date_pickerBox
+  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  position: relative;
+}
+.date_pickerBox .css-pwcg7p-MuiCollapse-root {
+  position: absolute;
+  transform: translate(0px, -18px);
+  width: 50rem;
+}
+.date_pickerBox .css-1aetuey-MuiDateRangeCalendar-root {
+  justify-content: space-around !important;
+}
+.date_pickerBox .css-1aetuey-MuiDateRangeCalendar-root div[style] {
+  display: none;
+}
+.date_pickerBox .MuiBox-root .css-4ukj1x-MuiTypography-root {
+  margin-bottom: 10px !important;
+  /* border: 2px solid red !important; */
+}

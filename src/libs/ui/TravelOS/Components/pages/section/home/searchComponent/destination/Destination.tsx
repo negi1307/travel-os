@@ -7,67 +7,84 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { DummyData } from './dummydata';
 import './Destination.css';
 
-import ListSubheader from '@mui/material/ListSubheader';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import InputLabel from '@mui/material/InputLabel';
+const Destination: React.FC = (props: any) => {
+  const { meneItme } = props;
+  const dropIcon = meneItme?.[6];
+  const [expanded, setExpanded] = useState(false);
 
-const Destination: React.FC = () => {
+  const [destinationData, setDestinationData] = useState('');
+
   const getAcc = (e: any) => {
-    console.log(e, 'ccca');
+    setExpanded(false);
+    setDestinationData(e);
   };
-  const [accordionSelec, setAccordionSelec] = useState('');
-  console.log(accordionSelec, 'll');
-  return (
-    <div>
-      {/* <FormControl fullWidth>
-        <InputLabel>Destination</InputLabel>
 
-        <Select value={accordionSelec} id="grouped-select" label="Grouping">
-          {DummyData?.map((item) => {
-            const secondType = item?.secondType;
-            return (
-              <>
-                <ListSubheader>{item?.firstType}</ListSubheader>
-                {secondType?.map((items) => {
-                  return (
-                    <>
-                      <MenuItem
-                        value={accordionSelec}
-                        onClick={() => {
-                          setAccordionSelec(items.typeName);
-                        }}
-                      >
-                        {items.typeName}
-                      </MenuItem>
-                    </>
-                  );
-                })}
-              </>
-            );
-          })}
-        </Select>
-      </FormControl> */}
+  return (
+    <div className="destination_selectorBox">
       <Accordion
+        expanded={expanded}
         sx={{
           backgroundColor: '#252525',
         }}
       >
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          onClick={() => setExpanded(true)}
+          expandIcon={<ExpandMoreIcon color="primary" />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
           <Box pl={2}>
-            <Typography color={'primary'}>Destination</Typography>
+            <Typography color={'primary'}>
+              {destinationData !== '' ? (
+                <>
+                  <Typography
+                    className="destination_select"
+                    variant="h6"
+                    marginLeft={3}
+                    sx={{ color: 'wheat' }}
+                  >
+                    Destination
+                  </Typography>
+                  <Typography
+                    marginTop={2}
+                    marginBottom={2}
+                    color={'warning.main'}
+                    className="destination_select"
+                    marginLeft={3}
+                  >
+                    {destinationData}
+                  </Typography>
+                </>
+              ) : (
+                <>
+                  <Typography
+                    paddingY={1}
+                    sx={{ color: 'wheat' }}
+                    marginLeft={3}
+                  >
+                    Destination
+                  </Typography>
+                </>
+              )}
+            </Typography>
           </Box>
         </AccordionSummary>
-        {DummyData?.map((item) => {
-          const secondType = item?.secondType;
-          return (
-            <>
-              <AccordionDetails>
+        <AccordionDetails>
+          <Typography
+            color={'secondary.main'}
+            paddingX={2}
+            paddingY={1}
+            marginY={5}
+            variant={'button'}
+          >
+            MIDDLE EAST
+          </Typography>
+          {DummyData?.map((item) => {
+            const secondType = item?.secondType;
+            return (
+              <>
                 <Accordion
+                  expanded={true}
                   sx={{
                     backgroundColor: '#252525',
                   }}
@@ -76,12 +93,18 @@ const Destination: React.FC = () => {
                   }}
                 >
                   <AccordionSummary
-                    expandIcon={<ExpandMoreIcon />}
+                    expandIcon={
+                      <Typography color={'secondary.main'} variant={'button'}>
+                        Select All
+                      </Typography>
+                    }
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                     className="point_cursor"
                   >
-                    <Typography color={'primary'}>{item.firstType}</Typography>
+                    <Typography color={'secondary.main'} variant={'button'}>
+                      {item.firstType}
+                    </Typography>
                   </AccordionSummary>
                   <AccordionDetails>
                     {secondType?.map((items) => {
@@ -89,10 +112,11 @@ const Destination: React.FC = () => {
                         <>
                           <Box>
                             <Typography
-                              color={'primary'}
+                              color={'secondary.main'}
                               className="point_cursor"
                               marginY={2}
                               paddingX={2}
+                              variant={'subtitle1'}
                               onClick={() => {
                                 getAcc(items.typeName);
                               }}
@@ -105,10 +129,10 @@ const Destination: React.FC = () => {
                     })}
                   </AccordionDetails>
                 </Accordion>
-              </AccordionDetails>
-            </>
-          );
-        })}
+              </>
+            );
+          })}
+        </AccordionDetails>
       </Accordion>
     </div>
   );

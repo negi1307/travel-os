@@ -3,14 +3,14 @@ import { Typography, Button, Box } from '@mui/material';
 import './registerGuidelines.css';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useTranslation } from 'react-i18next';
-// import { useTheme } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 const RegistraterGuidelines: React.FC = (props: any) => {
   const { connectUpdate, meneItme } = props;
   const { t } = useTranslation();
 
   const { title, registrationGudl, registrationBtn } = meneItme[1];
-  // const theme = useTheme();
-  // console.log(theme, 'testing');
+  const theme = useTheme();
+  console.log(theme, 'testing');
 
   return (
     <>

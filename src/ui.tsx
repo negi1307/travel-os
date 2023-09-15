@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material';
 
 export const darkTheme = createTheme({
   palette: {
-    mode: 'light',
+    mode: 'dark',
 
     primary: {
       light: '#ff7961',
@@ -12,24 +12,37 @@ export const darkTheme = createTheme({
       contrastText: '#fff',
     },
     warning: {
-      main: '#a1887f',
+      main: '#e8eaf6',
       contrastText: '#fff',
     },
     secondary: {
-      main: '#212121',
+      main: '#fff',
     },
     error: {
       main: '#f44336',
     },
   },
-
   spacing: [0, 4, 8, 16, 32, 64],
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
 
     button: {
       textTransform: 'uppercase',
+      fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      fontSize: '1rem',
+      fontWeight: 500,
+      letterSpacing: '0.02857em',
+      lineHeight: 1.75,
     },
+
+    subtitle1: {
+      // fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+      fontSize: '0.88rem',
+      fontWeight: 100,
+      letterSpacing: '0.00938em',
+      lineHeight: 1.75,
+    },
+
     body1: {
       fontSize: '0.95rem',
       fontWeight: 500,
@@ -69,10 +82,14 @@ export const darkTheme = createTheme({
     },
     h6: {
       fontSize: '1.00rem',
-      fontWeight: 400,
+      fontWeight: 900,
+      lineHeight: 1.6,
+      letterSpacing: '0.0085em',
+
       '@media (min-width:600px)': {
         fontSize: '1.00rem',
         fontWeight: 400,
+        lineHeight: 1.6,
       },
     },
   },
