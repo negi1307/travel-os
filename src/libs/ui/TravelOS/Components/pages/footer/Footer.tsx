@@ -4,106 +4,95 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import './Footer.css';
 
-const Footer = () => {
-  const footerData = [
-    {
-      footerType: 'ABOUT JUMEIRAH GROUP',
-    },
-    {
-      footerType: 'HOTEL DEVELOPMENT',
-    },
-    {
-      footerType: 'RESIDENCES',
-    },
-    {
-      footerType: 'PRESS CENTRE',
-    },
-    {
-      footerType: 'PRIVACY POLICY',
-    },
-    {
-      footerType: 'TERMS & CONDITIONS',
-    },
-  ];
+type Props = {};
 
-  const footerData2 = [
-    {
-      footerType: 'PHISHING',
-    },
-    {
-      footerType: 'CONTACT US',
-    },
-    {
-      footerType: 'COVID-19 UPDATES',
-    },
-  ];
-
+const Footer = (props: Props) => {
   return (
-    <Box border={1} sx={{ backgroundColor: '#252525' }}>
-      <Container>
-        <Box display={'flex'} paddingY={5} justifyContent={'space-between'}>
-          <Box display={'flex'}>
-            <Box>
-              {footerData?.map((item) => {
-                return (
-                  <>
-                    <Typography color={'primary'} marginY={4} variant={'body2'}>
-                      {item.footerType}
-                    </Typography>
-                  </>
-                );
-              })}
+    <Box
+      className="footer_parentBox"
+      display={'flex'}
+      pt={5}
+      pb={3}
+      width={'100%'}
+      flexDirection={'column'}
+      justifyContent={'flex-end'}
+      bgcolor={'info'}
+    >
+      <Box display={'flex'} justifyContent={'center'} flexDirection={'column'}>
+        <Box
+          display={'flex'}
+          pt={6}
+          pb={3}
+          justifyContent={'center'}
+          flexDirection={'row'}
+          width={'100%'}
+        >
+          <Box
+            justifyContent={'center'}
+            display={'flex'}
+            flexDirection={'row'}
+            width={'70%'}
+          >
+            <Box width={'60%'}>
+              <Box flexDirection={'column'} display={'flex'}>
+                <Typography variant="subtitle2" p={1}>
+                  ABOUT JUMERIAH GROUP
+                </Typography>
+                <Typography variant="subtitle2" p={1}>
+                  HOTEL DEVELOPEMENT
+                </Typography>
+                <Typography variant="subtitle2" p={1}>
+                  RESIDENCIES
+                </Typography>
+                <Typography variant="subtitle2" p={1}>
+                  PRESS CENTER
+                </Typography>
+                <Typography variant="subtitle2" p={1}>
+                  PRIVACY POLICY
+                </Typography>
+                <Typography variant="subtitle2" p={1}>
+                  TERMS & CONDITIONS
+                </Typography>
+              </Box>
             </Box>
-            <Box marginLeft={5}>
-              {footerData2?.map((item) => {
-                return (
-                  <>
-                    <Typography color={'primary'} marginY={4} variant={'body2'}>
-                      {item.footerType}
-                    </Typography>
-                  </>
-                );
-              })}
+            <Box width={'100%'}>
+              <Typography p={1} variant="subtitle2">
+                PHISHING
+              </Typography>
+              <Typography p={1} variant="subtitle2">
+                CONTACT US
+              </Typography>
+              <Typography p={1} variant="subtitle2">
+                COVID-19 UPDATES
+              </Typography>
             </Box>
-          </Box>
-          <Box marginY={4}>
-            <Typography variant="h2" color={'primary'}>
-              Sign up to the Jumeirah newsletter
-            </Typography>
-            <Box display={'flex'} justifyContent={'space-between'}>
+            <Box width={'100%'}>
               <Box>
-                <Typography color={'primary'}>
-                  {' '}
-                  <FacebookIcon />
+                <Typography variant="h6">
+                  Sign up to Jumeiriah newsletter
                 </Typography>
               </Box>
-              <Box>
-                <Typography color={'primary'}>
-                  {' '}
-                  <InstagramIcon />
-                </Typography>
-              </Box>
-              <Box>
-                <Typography color={'primary'}>
-                  {' '}
-                  <TwitterIcon />
-                </Typography>
-              </Box>
-              <Box>
-                <Typography color={'primary'}>
-                  {' '}
-                  <YouTubeIcon />
-                </Typography>
+              <Box
+                display={'flex'}
+                width={'50%'}
+                justifyContent={'space-between'}
+                mt={1}
+              >
+                <FacebookIcon />
+                <InstagramIcon />
+                <TwitterIcon />
+                <YouTubeIcon />
               </Box>
             </Box>
           </Box>
         </Box>
-      </Container>
-      <Box>
-        <Typography textAlign={'center'} color={'primary'}>
-          COPYRIGHT JUMEIRAH INTERNATIONAL LLC $(YEAR)
-        </Typography>
+        <Box display={'flex'} justifyContent={'center'}>
+          <Typography variant="subtitle2">
+            <span>Ⓒ</span> COPYRIGHT JUMEIRAH INTERNATION LLC $ 2023
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );

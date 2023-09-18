@@ -11,6 +11,7 @@ import {
   Box,
 } from '@mui/material';
 import './Login.css';
+import '../../../../TravelOS/Components/pages/style.css';
 import ForgetChangePassword from '../../../../../models/forgetChangePassword/ForgetChangePassword';
 import PersonIcon from '@mui/icons-material/Person';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
@@ -23,12 +24,16 @@ import { useSelector } from 'react-redux';
 
 const Login: React.FC = (props: any) => {
   const { connectUpdate, meneItme } = props;
-  const { logErrorEmailRquid, logErrorEmailVlid, logErroPassword } =
-    meneItme?.[3];
+  const {
+    logErrorEmailRquid,
+    logErrorEmailVlid,
+    logErroPassword,
+    psWord_icon,
+  } = meneItme?.[3];
 
   const { t } = useTranslation();
 
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState('en');
   const handleChangeLanguage = (e: any) => {
     const getLanguage = e.target.value;
     i18next.changeLanguage(getLanguage);
@@ -73,180 +78,183 @@ const Login: React.FC = (props: any) => {
 
   return (
     <>
+      <Box className="language_parentBox" marginTop={4}>
+        <FormControl>
+          <Select
+            className="languageChangeBtn "
+            value={selected}
+            onChange={(e) => {
+              handleChangeLanguage(e);
+            }}
+          >
+            <MenuItem value="en">EN</MenuItem>
+            <MenuItem value="chi">CH </MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+
       <Box
-        sx={{
-          backgroundImage: `url(${meneItme[0]?.backgroundImage})`,
-        }}
-        className="form_style_hight"
         display={'flex'}
-        flexDirection={'column'}
+        justifyContent={'center'}
+        flex={'auto'}
+        flexGrow={1}
+        flexShrink={1}
+        flexBasis={'0%'}
+        marginTop={'5rem'}
       >
-        <Box className="login_top_btn">
-          <Box marginTop={4}>
-            <Button
-              variant={'contained'}
-              className="navbarRegisterBtn media_Btn_size"
-              onClick={() => {
-                connectUpdate(2);
-              }}
+        {/* display={'flex'} flexDirection={'column'} alignItems={'center'} */}
+        <Box>
+          <Box>
+            <Box
+              position={'relative'}
+              height={'7rem'}
+              className="logo_parentBox"
             >
-              {t(`${meneItme[0]?.register}`)}
-            </Button>
+              <img src={meneItme[0]?.logo} alt="" />
+            </Box>
           </Box>
-          <Box marginTop={2}>
-            <FormControl>
-              <Typography variant={'body2'}>
-                {t(`${meneItme[0]?.language}`)}
-              </Typography>
-              <Select
-                className="languageChangeBtn "
-                value={selected}
+          <Box>
+            <Box marginY={4}>
+              <TextField
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position={'start'}>
+                      <img src={meneItme[0]?.lg_user_logo} alt="" />
+                    </InputAdornment>
+                  ),
+                }}
+                className="input_Style"
+                placeholder="lorem@ipsum.com"
+                name="email"
                 onChange={(e) => {
-                  handleChangeLanguage(e);
+                  parentDataOut(e, 'input');
+                }}
+              ></TextField>
+              <Box marginTop={2}>
+                <span>
+                  {childInComing.typeOne === 'email' ? (
+                    <>
+                      {childInComing.typeTwo === 'error' ? (
+                        <>
+                          <Typography color={'error'}>
+                            {t(`${logErrorEmailRquid}`)}
+                          </Typography>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </>
+                  ) : (
+                    <>
+                      {childInComing.typeOne === 'emailValid' ? (
+                        <>
+                          {childInComing.typeTwo === 'error' ? (
+                            <>
+                              <Typography color={'error'}>
+                                {t(`${logErrorEmailVlid}`)}
+                              </Typography>
+                            </>
+                          ) : (
+                            <></>
+                          )}
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </>
+                  )}
+                </span>
+              </Box>
+            </Box>
+            <Box marginY={4}>
+              <TextField
+                InputProps={{
+                  endAdornment: (
+                    <>
+                      <InputAdornment position={'start'}>
+                        <img src={meneItme[0]?.psWord_icon} alt="" />
+                      </InputAdornment>
+                    </>
+                  ),
+                  startAdornment: (
+                    <>
+                      <InputAdornment position={'start'}>
+                        <img src={meneItme[0]?.lg_user_psword} alt="" />
+                      </InputAdornment>
+                    </>
+                  ),
+                }}
+                className="input_Style"
+                name="password"
+                placeholder="******"
+                onChange={(e) => {
+                  parentDataOut(e, 'input');
+                }}
+              />
+              <Box marginTop={5}>
+                <span>
+                  {childInComing.typeOne === 'password' ? (
+                    <>
+                      {childInComing.typeTwo === 'error' ? (
+                        <>
+                          <Typography color={'error'}>
+                            {t(`${logErroPassword}`)}
+                          </Typography>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </span>
+              </Box>
+            </Box>
+            <Box>
+              <Button
+                fullWidth
+                className="login_button"
+                variant={'contained'}
+                color={'primary'}
+                onClick={() => {
+                  parentDataOut('button', 'btn');
                 }}
               >
-                <MenuItem value="en">English</MenuItem>
-                <MenuItem value="chi">Chinese </MenuItem>
-              </Select>
-            </FormControl>
+                {t(`${meneItme[0]?.loginBtn}`)}
+              </Button>
+            </Box>
           </Box>
-        </Box>
+          <Box
+            marginBottom={5}
+            display={'flex'}
+            justifyContent={'center'}
+            alignContent={'center'}
+          >
+            <Typography variant={'h6'}>
+              <Link
+                underline="none"
+                color={'secondary'}
+                onClick={() => {
+                  handleOpen();
+                }}
+              >
+                {t(`${meneItme[0]?.forgot}`)}
+              </Link>
+            </Typography>
+          </Box>
 
-        <Box
-          display={'flex'}
-          justifyContent={'center'}
-          flex={'auto'}
-          alignItems={'center'}
-        >
-          <Box display={'flex'} flexDirection={'column'} alignItems={'center'}>
-            <Box>
-              <Box textAlign={'center'}>
-                <img src={meneItme[0]?.logo} alt="" width={'50%'} />
-              </Box>
-              {/* <Box textAlign={'center'}>
-                <Typography variant={'body1'} color="warning.contrastText">
-                  {t(`${meneItme[0]?.logoName}`)}{' '}
-                </Typography>
-              </Box> */}
-            </Box>
-            <Box>
-              <Box marginTop={4}>
-                <TextField
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position={'start'}>
-                        <AccountCircleOutlinedIcon />
-                      </InputAdornment>
-                    ),
-                  }}
-                  className="input_Style"
-                  name="email"
-                  onChange={(e) => {
-                    parentDataOut(e, 'input');
-                  }}
-                >
-                  <PersonIcon />
-                </TextField>
-                <Box marginTop={2}>
-                  <span>
-                    {childInComing.typeOne === 'email' ? (
-                      <>
-                        {childInComing.typeTwo === 'error' ? (
-                          <>
-                            <Typography color={'error'}>
-                              {t(`${logErrorEmailRquid}`)}
-                            </Typography>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                      </>
-                    ) : (
-                      <>
-                        {childInComing.typeOne === 'emailValid' ? (
-                          <>
-                            {childInComing.typeTwo === 'error' ? (
-                              <>
-                                <Typography color={'error'}>
-                                  {t(`${logErrorEmailVlid}`)}
-                                </Typography>
-                              </>
-                            ) : (
-                              <></>
-                            )}
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                      </>
-                    )}
-                  </span>
-                </Box>
-              </Box>
-              <Box marginY={4}>
-                <TextField
-                  InputProps={{
-                    startAdornment: (
-                      <>
-                        <InputAdornment position={'start'}>
-                          <LockOutlinedIcon />
-                        </InputAdornment>
-                      </>
-                    ),
-                  }}
-                  className="input_Style"
-                  name="password"
-                  onChange={(e) => {
-                    parentDataOut(e, 'input');
-                  }}
-                />
-                <Box marginTop={2}>
-                  <span>
-                    {childInComing.typeOne === 'password' ? (
-                      <>
-                        {childInComing.typeTwo === 'error' ? (
-                          <>
-                            <Typography color={'error'}>
-                              {t(`${logErroPassword}`)}
-                            </Typography>
-                          </>
-                        ) : (
-                          <></>
-                        )}
-                      </>
-                    ) : (
-                      <></>
-                    )}
-                  </span>
-                </Box>
-              </Box>
-              <Box>
-                <Button
-                  fullWidth
-                  variant={'contained'}
-                  color={'primary'}
-                  onClick={() => {
-                    parentDataOut('button', 'btn');
-                  }}
-                >
-                  {t(`${meneItme[0]?.loginBtn}`)}
-                </Button>
-              </Box>
-            </Box>
-            <Box marginTop={3}>
-              <Typography variant={'body1'}>
-                <Link
-                  underline="none"
-                  color={'warning.contrastText'}
-                  onClick={() => {
-                    handleOpen();
-                  }}
-                >
-                  {t(`${meneItme[0]?.forgot}`)}
-                </Link>
-              </Typography>
-            </Box>
-          </Box>
+          <Button
+            variant={'contained'}
+            fullWidth
+            color={'warning'}
+            className="login_button border"
+            onClick={() => {
+              connectUpdate(2);
+            }}
+          >
+            {t(`${meneItme[0]?.register}`)}
+          </Button>
         </Box>
       </Box>
       <>

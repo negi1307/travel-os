@@ -1,25 +1,20 @@
-import React, { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-
+import React from 'react';
+import Login from './LoginForm';
 import { Box } from '@mui/material';
-import NavBar from './navbar/NavBar';
-import Footer from './footer/Footer';
-
 import Paper from '@mui/material/Paper';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import './PageIndex.css';
+// import './PageIndex.css';
+import './Login.css';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const loading = () => <div className=""></div>;
-
-const PageIndex: React.FC = (props: any) => {
-  const { meneItme } = props;
+const LoginIndex = (props: any) => {
+  const { meneItme, connectUpdate } = props;
   const pageBackgroudImage = meneItme?.[5];
 
   return (
-    <div>
-      <Box>
+    <Box position={'relative'}>
+      <Box className="bg_carouselParent">
         <Paper
           square
           elevation={0}
@@ -28,7 +23,7 @@ const PageIndex: React.FC = (props: any) => {
             alignItems: 'center',
             height: '100%',
             pl: 2,
-            bgcolor: 'background.default',
+            // bgcolor: 'background.default',
           }}
         ></Paper>
         <AutoPlaySwipeableViews>
@@ -47,21 +42,11 @@ const PageIndex: React.FC = (props: any) => {
           ))}
         </AutoPlaySwipeableViews>
       </Box>
-      <Box className="main_Box">
-        <Box>
-          <NavBar meneItme={meneItme} />
-        </Box>
-        <Box className="center_parentBox">
-          <Suspense fallback={loading()}>
-            <Outlet />
-          </Suspense>
-        </Box>
+      <Box position={'absolute'} top={0} left={0} right={0} bottom={0}>
+        <Login meneItme={meneItme} connectUpdate={connectUpdate} />
       </Box>
-      <Box>
-        <Footer />
-      </Box>
-    </div>
+    </Box>
   );
 };
 
-export default PageIndex;
+export default LoginIndex;

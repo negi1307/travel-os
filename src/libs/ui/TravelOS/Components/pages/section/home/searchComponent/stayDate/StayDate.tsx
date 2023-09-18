@@ -9,6 +9,8 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
 import './StayDate.css';
 
+import '../destination/Destination.css';
+
 const StayDate = () => {
   const [expanded, setExpanded] = useState(false);
 
@@ -72,7 +74,7 @@ const StayDate = () => {
       <Accordion
         expanded={expanded}
         sx={{
-          backgroundColor: '#252525',
+          backgroundColor: 'white',
         }}
       >
         <AccordionSummary
@@ -86,12 +88,12 @@ const StayDate = () => {
               {' '}
               {getDate.secondDate !== '' ? (
                 <>
-                  <Typography className="stay_select" sx={{ color: 'wheat' }}>
+                  <Typography className="destination_select">
                     Stay Date
                   </Typography>
                   <Typography
-                    className="stay_select"
-                    color={'warning.main'}
+                    // color={'warning.main'}
+                    className="destination_select"
                     marginTop={2}
                     marginBottom={2}
                   >
@@ -100,7 +102,11 @@ const StayDate = () => {
                 </>
               ) : (
                 <>
-                  <Typography paddingY={1} sx={{ color: 'wheat' }}>
+                  <Typography
+                    paddingY={1}
+                    className="destination_select_first"
+                    color={'primary.light'}
+                  >
                     Stay Date
                   </Typography>
                 </>

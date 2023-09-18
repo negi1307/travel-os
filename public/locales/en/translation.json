@@ -39,13 +39,11 @@
     "rgErrorFile":"Please Enter File",
     "rgErrorMessage":"Please Enter Message",
 
-    "nvBarHome":"HOME",
-    "nvBarDashbaod":"DASHBOARD",
-    "nvBarInsights":"INSIGHTS",
-    "nvBarBusinees":"BUSINESS ADMIN",
-    "nvBarMyAccount":"MY ACCOUNT",
+    "nvBarHome":"Home",
+    "nvBarDashbaod":"Dashboard",
+    "nvBarMyAccount":"My Account",
     "nvBarFAQs":"FAQs",
-    "nvBarHotelInfo":"HOTELINFO",
+    "nvBarHoteInfo":"Hote Info",
 
 "homeDestination":"DESTINATION",
 "homeStayDate":"STAY DATE",

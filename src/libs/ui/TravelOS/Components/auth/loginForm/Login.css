@@ -1,6 +1,19 @@
 .form_style_hight {
   height: 100vh;
-  background-position: center;
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: contain; */
+  /* height: -webkit-fill-available; */
+  /* width: 100%; */
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg_carouselParent .css-1ejzhdh,
+.bg_carouselParent .css-18n711y,
+.bg_carouselParent .css-2dm4k {
+  /* height: 100vh; */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -11,6 +24,14 @@
 
 .input_Style {
   width: 25rem;
+  border: solid 2px !important;
+  border-radius: 6px !important;
+}
+.input_Style .css-1ea1xhh-MuiInputBase-input-MuiOutlinedInput-input,
+.input_Style .css-vxvc7x-MuiInputBase-input-MuiOutlinedInput-input {
+  font-weight: 400 !important;
+  padding-left: 20px !important;
+  font-size: 16.25px !important;
 }
 .languageChangeBtn {
   width: 150px !important;
@@ -22,6 +43,29 @@
   padding: 12px !important;
   width: 143px;
   margin-right: 20px !important;
+}
+
+/* // new css */
+.language_parentBox .css-1wu7ecg-MuiSvgIcon-root-MuiSelect-icon {
+  position: absolute;
+  transform: translate(-70px, 0px);
+}
+.language_parentBox .css-gofekn-MuiSvgIcon-root-MuiSelect-icon {
+  transform: translate(-70px, 0px) rotate(180deg);
+}
+.language_parentBox .css-9425fu-MuiOutlinedInput-notchedOutline {
+  border: 0px !important;
+}
+.login_button {
+  padding: 12px 0 !important;
+  box-shadow: none !important;
+}
+.logo_parentBox img {
+  width: -webkit-fill-available;
+  position: absolute;
+  top: 0;
+  transform: scale(1.33);
+  object-fit: scale-down;
 }
 @media (max-width: 768px) {
   .input_Style {

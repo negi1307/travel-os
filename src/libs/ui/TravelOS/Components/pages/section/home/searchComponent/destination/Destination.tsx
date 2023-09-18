@@ -24,7 +24,7 @@ const Destination: React.FC = (props: any) => {
       <Accordion
         expanded={expanded}
         sx={{
-          backgroundColor: '#252525',
+          backgroundColor: 'white',
         }}
       >
         <AccordionSummary
@@ -38,17 +38,18 @@ const Destination: React.FC = (props: any) => {
               {destinationData !== '' ? (
                 <>
                   <Typography
-                    className="destination_select"
+                    // className="destination_select"
+                    color={'primary.light'}
                     variant="h6"
                     marginLeft={3}
-                    sx={{ color: 'wheat' }}
+                    // sx={{ color: 'wheat' }}
                   >
                     Destination
                   </Typography>
                   <Typography
                     marginTop={2}
                     marginBottom={2}
-                    color={'warning.main'}
+                    color={'primary.main'}
                     className="destination_select"
                     marginLeft={3}
                   >
@@ -59,7 +60,8 @@ const Destination: React.FC = (props: any) => {
                 <>
                   <Typography
                     paddingY={1}
-                    sx={{ color: 'wheat' }}
+                    color={'primary.light'}
+                    className="destination_select_first"
                     marginLeft={3}
                   >
                     Destination
@@ -70,7 +72,7 @@ const Destination: React.FC = (props: any) => {
           </Box>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography
+          {/* <Typography
             color={'secondary.main'}
             paddingX={2}
             paddingY={1}
@@ -78,7 +80,7 @@ const Destination: React.FC = (props: any) => {
             variant={'button'}
           >
             MIDDLE EAST
-          </Typography>
+          </Typography> */}
           {DummyData?.map((item) => {
             const secondType = item?.secondType;
             return (
@@ -86,7 +88,7 @@ const Destination: React.FC = (props: any) => {
                 <Accordion
                   expanded={true}
                   sx={{
-                    backgroundColor: '#252525',
+                    backgroundColor: 'white',
                   }}
                   onChange={() => {
                     getAcc(item.firstType);
@@ -94,15 +96,15 @@ const Destination: React.FC = (props: any) => {
                 >
                   <AccordionSummary
                     expandIcon={
-                      <Typography color={'secondary.main'} variant={'button'}>
+                      <Typography color={'primary.light'} variant={'subtitle1'}>
                         Select All
                       </Typography>
                     }
                     aria-controls="panel1a-content"
                     id="panel1a-header"
-                    className="point_cursor"
+                    className="destination_hding_css"
                   >
-                    <Typography color={'secondary.main'} variant={'button'}>
+                    <Typography color={'primary.light'} variant={'subtitle1'}>
                       {item.firstType}
                     </Typography>
                   </AccordionSummary>
@@ -112,8 +114,8 @@ const Destination: React.FC = (props: any) => {
                         <>
                           <Box>
                             <Typography
-                              color={'secondary.main'}
-                              className="point_cursor"
+                              color={'primary.contrastText'}
+                              className="destination_type_css"
                               marginY={2}
                               paddingX={2}
                               variant={'subtitle1'}

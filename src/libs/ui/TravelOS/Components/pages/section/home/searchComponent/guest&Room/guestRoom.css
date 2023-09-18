@@ -21,7 +21,7 @@
 }
 .guest_inputParent .css-pwcg7p-MuiCollapse-root {
   position: absolute;
-  background: #252525;
+  background: #ffff;
   left: 0;
   right: 0;
   transform: translate(-25rem, 0px);
@@ -29,8 +29,28 @@
   transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .guest_inputParent .css-150nlgc-MuiAccordionDetails-root {
-  padding: 4px 42px 8px;
+  padding: 4px 25px 8px;
 }
 .guest_inputParent .MuiBox-root .css-4ukj1x-MuiTypography-root {
   margin-bottom: 10px !important;
+}
+.guest_inputParent .css-1l53c0y-MuiGrid-root .MuiBox-root svg {
+  color: #0057b7;
+  border: 1px solid #0057b7;
+}
+.incremen_plus {
+  background-color: blue;
+  color: white !important;
+  border: solid;
+  border-radius: 12px;
+  /* color: wheat; */
+  cursor: pointer;
+}
+.decremen_minus {
+  background-color: white;
+  color: black;
+  border: solid;
+  border-radius: 12px;
+  /* color: wheat; */
+  cursor: pointer;
 }

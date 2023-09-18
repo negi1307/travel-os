@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Login from './loginForm/LoginForm';
+import LoginIndex from './loginForm/LoginIndex';
 import RegisterForm from './registerForm/RegisterForm';
 import RegistraterGuidelines from './registerGuidelines/RegisterGuidelines';
 interface connectType {
@@ -18,7 +19,7 @@ const AuthIndex: React.FC<connectType> = (props: any) => {
     <div>
       {connectComponent === 1 ? (
         <>
-          <Login connectUpdate={connectUpdate} meneItme={meneItme} />
+          <LoginIndex connectUpdate={connectUpdate} meneItme={meneItme} />
         </>
       ) : connectComponent === 2 ? (
         <>

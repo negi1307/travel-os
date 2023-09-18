@@ -8,7 +8,6 @@ import './search.css';
 
 const SearchIndex = (props: any) => {
   const { meneItme } = props;
-  console.log(meneItme, 'pp');
   return (
     <div>
       <Box paddingX={4} marginTop={'180px'}>
@@ -16,7 +15,7 @@ const SearchIndex = (props: any) => {
           container
           // marginTop={5}
           border={2}
-          borderColor={'wheat'}
+          borderColor={'primary.main'}
           borderRadius={2}
           height={'4.8rem'}
           position={'relative'}
@@ -30,7 +29,7 @@ const SearchIndex = (props: any) => {
             xs={4}
             borderLeft={2}
             borderRight={2}
-            borderColor={'wheat'}
+            borderColor={'primary.main'}
           >
             <StayDate meneItme={meneItme} />
           </Grid>

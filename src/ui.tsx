@@ -5,23 +5,25 @@ export const darkTheme = createTheme({
     mode: 'dark',
 
     primary: {
-      light: '#ff7961',
-      main: '#a1887f',
+      light: '#252525',
+      main: '#0057B7',
       // main: '#ffa726',
-      dark: '#bcaaa4',
+      // dark: '#bcaaa4',
       contrastText: '#fff',
     },
     warning: {
-      main: '#e8eaf6',
-      contrastText: '#fff',
+      main: '#fff',
+      contrastText: '#0057B7',
     },
     secondary: {
       main: '#fff',
+      light: '#3C3C3C',
     },
     error: {
       main: '#f44336',
     },
   },
+
   spacing: [0, 4, 8, 16, 32, 64],
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
@@ -34,13 +36,12 @@ export const darkTheme = createTheme({
       letterSpacing: '0.02857em',
       lineHeight: 1.75,
     },
-
     subtitle1: {
       // fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-      fontSize: '0.88rem',
-      fontWeight: 100,
+      fontSize: '13px',
+      fontWeight: 500,
       letterSpacing: '0.00938em',
-      lineHeight: 1.75,
+      lineHeight: '15.75px',
     },
 
     body1: {
@@ -81,9 +82,9 @@ export const darkTheme = createTheme({
       },
     },
     h6: {
-      fontSize: '1.00rem',
-      fontWeight: 900,
-      lineHeight: 1.6,
+      fontSize: '12px',
+      fontWeight: 400,
+      lineHeight: 14.52,
       letterSpacing: '0.0085em',
 
       '@media (min-width:600px)': {

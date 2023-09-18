@@ -11,6 +11,8 @@ import ClearIcon from '@mui/icons-material/Clear';
 
 import './guestRoom.css';
 
+import '../destination/Destination.css';
+
 const GuestRoom = () => {
   const [expanded, setExpanded] = useState(false);
   const [guestAdults, setGuestAdults] = useState(0);
@@ -51,7 +53,7 @@ const GuestRoom = () => {
       <Accordion
         expanded={expanded}
         sx={{
-          backgroundColor: '#252525',
+          backgroundColor: 'white',
         }}
       >
         <AccordionSummary
@@ -64,12 +66,15 @@ const GuestRoom = () => {
             <Typography color={'primary'}>
               {show ? (
                 <>
-                  <Typography className="guest_select" sx={{ color: 'wheat' }}>
+                  <Typography
+                    className="destination_select"
+                    color={'primary.light'}
+                  >
                     Guest and Rooms
                   </Typography>
                   <Typography
-                    className="guest_select"
-                    color={'warning.main'}
+                    className="destination_select"
+                    color={'primary.main'}
                     // marginY={2}
                     marginTop={2}
                     marginBottom={2}
@@ -80,7 +85,11 @@ const GuestRoom = () => {
                 </>
               ) : (
                 <>
-                  <Typography paddingY={1} sx={{ color: 'wheat' }}>
+                  <Typography
+                    paddingY={1}
+                    className="destination_select_first"
+                    color={'primary.light'}
+                  >
                     Guest and Rooms
                   </Typography>
                 </>
@@ -92,7 +101,7 @@ const GuestRoom = () => {
         <AccordionDetails>
           <Box>
             <Box>
-              <Typography color={'primary'}>ROOM</Typography>
+              <Typography className="destination_type_css">ROOM</Typography>
             </Box>
             {guestBox?.map((item, index) => {
               return (
@@ -119,7 +128,7 @@ const GuestRoom = () => {
                         display={'flex '}
                         justifyContent={'space-between'}
                         borderBottom={3}
-                        borderColor={'white'}
+                        borderColor={'#252525'}
                       >
                         <Box>
                           <Typography color={'primary'}>ADULTS</Typography>
@@ -128,7 +137,7 @@ const GuestRoom = () => {
                           <Box>
                             <Typography>
                               <RemoveIcon
-                                className="guest_icon"
+                                className=" decremen_minus"
                                 onClick={() => {
                                   setGuestAdults(guestAdults - 1);
                                 }}
@@ -142,7 +151,7 @@ const GuestRoom = () => {
                           </Box>
                           <Box>
                             <AddIcon
-                              className="guest_icon"
+                              className="incremen_plus"
                               onClick={() => {
                                 setGuestAdults(guestAdults + 1);
                               }}
@@ -151,7 +160,7 @@ const GuestRoom = () => {
                         </Box>
                       </Box>
                       <Box marginTop={2}>
-                        <Typography variant={'body2'} color={'primary'}>
+                        <Typography className="destination_type_css">
                           12 YEARS AND OLDER
                         </Typography>
                       </Box>
@@ -162,7 +171,7 @@ const GuestRoom = () => {
                         display={'flex '}
                         justifyContent={'space-between'}
                         borderBottom={3}
-                        borderColor={'white'}
+                        borderColor={'#252525'}
                       >
                         <Box>
                           <Typography color={'primary'}>CHILDREN</Typography>
@@ -171,7 +180,7 @@ const GuestRoom = () => {
                           <Box>
                             <Typography>
                               <RemoveIcon
-                                className="guest_icon"
+                                className="decremen_minus"
                                 onClick={() => {
                                   setGuestChildren(guestChildren - 1);
                                 }}
@@ -185,7 +194,7 @@ const GuestRoom = () => {
                           </Box>
                           <Box>
                             <AddIcon
-                              className="guest_icon"
+                              className="incremen_plus"
                               onClick={() => {
                                 setGuestChildren(guestChildren + 1);
                               }}
@@ -194,7 +203,7 @@ const GuestRoom = () => {
                         </Box>
                       </Box>
                       <Box marginTop={2}>
-                        <Typography variant={'body2'} color={'primary'}>
+                        <Typography className="destination_type_css">
                           11 YEARS AND YOUNGER
                         </Typography>
                       </Box>
@@ -205,10 +214,17 @@ const GuestRoom = () => {
             })}
             <Grid container spacing={2}>
               <Grid item xs={6} padding={3}>
-                <Box display={'flex'} justifyContent={'center'} marginY={3}>
+                <Box
+                  display={'flex'}
+                  // borderBottom={5}
+                  // borderColor={'primary'}
+                  justifyContent={'center'}
+                  marginY={3}
+                >
                   <Button
                     startIcon={<AddIcon />}
-                    color={'info'}
+                    className="destination_type_Btn_css"
+                    color={'primary'}
                     onClick={() => {
                       addBox();
                     }}

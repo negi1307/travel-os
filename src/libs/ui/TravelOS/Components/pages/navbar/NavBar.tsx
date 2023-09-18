@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react';
 import { Box, Button, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+import i18next from 'i18next';
+
 import HomeIcon from '@mui/icons-material/Home';
 import SpeedIcon from '@mui/icons-material/Speed';
 import InsightsIcon from '@mui/icons-material/Insights';
@@ -23,124 +26,176 @@ import { useLocation } from 'react-router-dom';
 
 const NavBar: React.FC = (props: any) => {
   const { meneItme } = props;
-  const jumeirahLogo = meneItme?.[0]?.logo;
+  const { t } = useTranslation();
+
+  const {
+    home_navBar_icon,
+    home,
+    speed,
+    user,
+    information,
+    hotel,
+    bell,
+    navBar_bground,
+  } = meneItme?.[7]?.homepg?.[0]?.nvBarIcon?.[0];
+  const { nvBarHome, nvBarDashbaod, nvBarMyAccount, nvBarFAQs, nvBarHoteInfo } =
+    meneItme?.[7]?.homepg?.[0]?.nvBarText?.[0];
+  // common use margine,border,bgColor
+  let marginLeft2 = 2;
+  let borderRadius5 = 5;
+  let paddingX2 = 2;
+  let marginX4 = 5;
+  let bgcolorPrimaryMain = 'primary.main';
+
   const location = useLocation();
   const dispatch = useDispatch();
 
   const store = useSelector((state) => state);
-  const user = store?.Auth?.user;
+  const userd = store?.Auth?.user;
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user == null) {
+    if (userd == null) {
       navigate('/');
     }
-  }, [user]);
+  }, [userd]);
 
   return (
     <div>
       <Box
         display={'flex'}
-        padding={3}
+        sx={{ backgroundImage: `url("${navBar_bground}")` }}
+        height={'102px'}
+        paddingLeft={4}
+        paddingRight={4}
+        alignItems={'center'}
         justifyContent={'space-between'}
-        className="navbar_backGroud_clr"
       >
         <Box
           display={'flex'}
           justifyContent={'space-between'}
           alignItems={'center'}
+          flexGrow={1}
+          flexShrink={1}
+          flexBasis={1}
         >
-          <Box marginX={4}>
-            <img src={jumeirahLogo} alt="" width={'125px'} />
+          <Box>
+            <img src={home_navBar_icon} alt="companyLogo" />
           </Box>
           <Box
-            className={
-              location?.pathname === '/dashboard/home' ? 'navbarLinks' : ''
-            }
             display={'flex'}
+            flexGrow={1}
+            flexShrink={1}
+            flexBasis={1}
+            paddingLeft={4}
+            alignItems={'center'}
           >
-            <Box>
-              <HomeIcon className="iconsNavbar" />
+            <Box
+              className={
+                location?.pathname === '/dashboard/home'
+                  ? 'navbar_linkcss'
+                  : 'navbar_notActive'
+              }
+              display={'flex'}
+              alignItems={'center'}
+              paddingLeft={2}
+              paddingRight={2}
+              // paddingX={paddingX2}
+              // borderRadius={
+              //   location?.pathname === '/dashboard/home' ? borderRadius5 : ''
+              // }
+              // bgcolor={
+              //   location?.pathname === '/dashboard/home'
+              //     ? bgcolorPrimaryMain
+              //     : ''
+              // }
+            >
+              <Box>
+                <img src={home} alt="" />
+              </Box>
+              <Box className="navbar_linkFont" marginLeft={2}>
+                <Typography>
+                  <Link to="/dashboard/home" className="navBar_link">
+                    {t(`${nvBarHome}`)}
+                  </Link>
+                </Typography>
+              </Box>
             </Box>
-            <Box>
-              <Link to="/dashboard/home" className="navBar_link">
-                Home
-              </Link>
+            <Box
+              marginX={marginX4}
+              paddingX={paddingX2}
+              display={'flex'}
+              // borderRadius={
+              //   location?.pathname === '/dashboard/dashboards'
+              //     ? borderRadius5
+              //     : ''
+              // }
+              // bgcolor={
+              //   location?.pathname === '/dashboard/dashboards'
+              //     ? bgcolorPrimaryMain
+              //     : ''
+              // }
+              className={
+                location?.pathname === '/dashboard/dashboards'
+                  ? 'navbar_linkcss'
+                  : ''
+              }
+            >
+              <Box>
+                <img src={speed} alt="" />
+              </Box>
+              <Box
+                className="navbar_linkFont active_link"
+                marginLeft={marginLeft2}
+              >
+                <Typography>
+                  <Link to="/dashboard/dashboards" className="navBar_link">
+                    {t(`${nvBarDashbaod}`)}
+                  </Link>
+                </Typography>
+              </Box>
             </Box>
-          </Box>
-          <Box
-            marginX={4}
-            className={
-              location?.pathname === '/dashboard/dashboards'
-                ? 'navbarLinks'
-                : ''
-            }
-            display={'flex'}
-          >
-            <Box>
-              <SpeedIcon className="iconsNavbar" />
+            <Box display={'flex'}>
+              <Box>
+                <img src={user} alt="" />
+              </Box>
+              <Box marginLeft={marginLeft2}>
+                <Link to="/" className="navBar_link">
+                  {t(`${nvBarMyAccount}`)}
+                </Link>
+              </Box>
             </Box>
-            <Box>
-              <Link to="/dashboard/dashboards" className="navBar_link">
-                Dashboard
-              </Link>
+            <Box marginX={marginX4} display={'flex'}>
+              <Box>
+                <img src={information} alt="" />
+              </Box>
+              <Box marginLeft={marginLeft2}>
+                <Link to="/" className="navBar_link">
+                  {t(`${nvBarFAQs}`)}
+                </Link>
+              </Box>
             </Box>
-          </Box>
-          <Box display={'flex'}>
-            <Box>
-              <InsightsIcon className="iconsNavbar" />
-            </Box>
-            <Box>
-              <Link to="/" className="navBar_link">
-                Insights
-              </Link>
-            </Box>
-          </Box>
-          <Box marginX={4} display={'flex'}>
-            <Box>
-              <PeopleAltIcon className="iconsNavbar" />
-            </Box>
-            <Box>
-              <Link to="/" className="navBar_link">
-                Business Admin
-              </Link>
-            </Box>
-          </Box>
-          <Box display={'flex'}>
-            <Box>
-              <PermIdentityIcon className="iconsNavbar" />
-            </Box>
-            <Box>
-              <Link to="/" className="navBar_link">
-                My Account
-              </Link>
-            </Box>
-          </Box>
-          <Box marginX={4} display={'flex'}>
-            <Box>
-              <HelpIcon className="iconsNavbar" />
-            </Box>
-            <Box>
-              <Link to="/" className="navBar_link">
-                FAQs
-              </Link>
-            </Box>
-          </Box>
-          <Box display={'flex'}>
-            <Box>
-              <BusinessOutlinedIcon className="iconsNavbar" />
-            </Box>
-            <Box>
-              <Link to="/" className="navBar_link">
-                Hotel Info
-              </Link>
+            <Box display={'flex'}>
+              <Box>
+                <img src={hotel} alt="" />
+              </Box>
+              <Box marginLeft={marginLeft2}>
+                <Link to="/" className="navBar_link">
+                  {t(`${nvBarHoteInfo}`)}
+                </Link>
+              </Box>
             </Box>
           </Box>
         </Box>
         <Box className="toggle_parent" display={'flex'} alignItems={'center'}>
           <Box>
-            <NotificationsNoneOutlinedIcon />
+            {/* <NotificationsNoneOutlinedIcon /> */}
+            <img src={bell} alt="" />
           </Box>
+          <Box marginX={4}>
+            <Typography color={'primary.main'}>Ruben</Typography>
+          </Box>
+          <Box>1</Box>
           <Box className="inner_toggleParent">
             <Accordion className="navbar_logOut">
               <AccordionSummary
