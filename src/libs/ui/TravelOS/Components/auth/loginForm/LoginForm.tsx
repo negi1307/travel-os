@@ -78,7 +78,7 @@ const Login: React.FC = (props: any) => {
 
   return (
     <>
-      <Box className="language_parentBox" marginTop={4}>
+      {/* <Box className="language_parentBox" marginTop={4}>
         <FormControl>
           <Select
             className="languageChangeBtn "
@@ -89,6 +89,24 @@ const Login: React.FC = (props: any) => {
           >
             <MenuItem value="en">EN</MenuItem>
             <MenuItem value="chi">CH </MenuItem>
+          </Select>
+        </FormControl>
+      </Box> */}
+      <Box className="language_parentBox" marginTop={4}>
+        <FormControl>
+          <Select
+            className="languageChangeBtn "
+            value={selected}
+            onChange={(e) => {
+              handleChangeLanguage(e);
+            }}
+          >
+            <MenuItem className="custom-menu-item text-primary" value="en">
+              EN
+            </MenuItem>
+            <MenuItem className="custom-menu-item text-primary" value="chi">
+              CH{' '}
+            </MenuItem>
           </Select>
         </FormControl>
       </Box>
@@ -114,7 +132,7 @@ const Login: React.FC = (props: any) => {
             </Box>
           </Box>
           <Box>
-            <Box marginY={4}>
+            <Box marginY={4} position={'relative'}>
               <TextField
                 InputProps={{
                   startAdornment: (

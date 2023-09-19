@@ -27,6 +27,21 @@
   border: solid 2px !important;
   border-radius: 6px !important;
 }
+.input_Style::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  background-color: #898ea6;
+  top: 0;
+  bottom: 0;
+  opacity: 0.44;
+}
+.input_Style .css-182ct6p-MuiInputBase-root-MuiOutlinedInput-root,
+.input_Style .css-zcz383-MuiInputBase-root-MuiOutlinedInput-root {
+  position: relative;
+  z-index: 1;
+}
 .input_Style .css-1ea1xhh-MuiInputBase-input-MuiOutlinedInput-input,
 .input_Style .css-vxvc7x-MuiInputBase-input-MuiOutlinedInput-input {
   font-weight: 400 !important;
@@ -66,6 +81,32 @@
   top: 0;
   transform: scale(1.33);
   object-fit: scale-down;
+}
+
+.MuiMenu-paper {
+  padding: y 0px !important;
+  background: transparent !important;
+}
+.Mui-selected.custom-menu-item {
+  border-radius: 0% !important;
+  /* / background: transparent !important; / */
+  transform: scale(1.3) translateX(15px) !important;
+}
+.custom-menu-item {
+  /* / margin: y 5px; / */
+  background: whitesmoke !important;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 0.5 !important;
+}
+
+.custom-menu-item:hover {
+  transform: scale(1.3) translateX(19px) !important;
+  background: transparent !important;
+  width: auto !important;
+  line-height: 1.5;
 }
 @media (max-width: 768px) {
   .input_Style {

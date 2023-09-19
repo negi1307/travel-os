@@ -22,11 +22,16 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 import { useLocation } from 'react-router-dom';
+
+import { useStyles } from '../../../../../../ui';
 
 const NavBar: React.FC = (props: any) => {
   const { meneItme } = props;
   const { t } = useTranslation();
+  const classes = useStyles();
 
   const {
     home_navBar_icon,
@@ -64,20 +69,24 @@ const NavBar: React.FC = (props: any) => {
     <div>
       <Box
         display={'flex'}
-        sx={{ backgroundImage: `url("${navBar_bground}")` }}
+        // sx={{ backgroundImage: `url("${navBar_bground}")` }}
         height={'102px'}
         paddingLeft={4}
         paddingRight={4}
         alignItems={'center'}
         justifyContent={'space-between'}
+        className="navbar_parent"
+        position={'relative'}
       >
         <Box
+          className="z_index"
           display={'flex'}
           justifyContent={'space-between'}
           alignItems={'center'}
           flexGrow={1}
           flexShrink={1}
           flexBasis={1}
+          position={'relative'}
         >
           <Box>
             <img src={home_navBar_icon} alt="companyLogo" />
@@ -159,7 +168,10 @@ const NavBar: React.FC = (props: any) => {
               <Box>
                 <img src={user} alt="" />
               </Box>
-              <Box marginLeft={marginLeft2}>
+              <Box
+                marginLeft={marginLeft2}
+                className="navbar_linkFont active_link"
+              >
                 <Link to="/" className="navBar_link">
                   {t(`${nvBarMyAccount}`)}
                 </Link>
@@ -187,7 +199,12 @@ const NavBar: React.FC = (props: any) => {
             </Box>
           </Box>
         </Box>
-        <Box className="toggle_parent" display={'flex'} alignItems={'center'}>
+        <Box
+          className="toggle_parent z_index"
+          position={'relative'}
+          display={'flex'}
+          alignItems={'center'}
+        >
           <Box>
             {/* <NotificationsNoneOutlinedIcon /> */}
             <img src={bell} alt="" />
@@ -195,11 +212,20 @@ const NavBar: React.FC = (props: any) => {
           <Box marginX={4}>
             <Typography color={'primary.main'}>Ruben</Typography>
           </Box>
-          <Box>1</Box>
-          <Box className="inner_toggleParent">
+          <Box color="primary.main">
+            {' '}
+            <KeyboardArrowDownIcon
+              onClick={() => {
+                dispatch(logoutUser());
+              }}
+            />
+            {/* <Button className={classes.testing}>Hook</Button> */}
+          </Box>
+          {/* <Box className="inner_toggleParent">
             <Accordion className="navbar_logOut">
               <AccordionSummary
-                className="navbar_logOut"
+                // className="navbar_logOut"
+
                 expandIcon={<ExpandMoreIcon color={'primary'} />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
@@ -220,7 +246,7 @@ const NavBar: React.FC = (props: any) => {
                 </Box>
               </AccordionDetails>
             </Accordion>
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     </div>

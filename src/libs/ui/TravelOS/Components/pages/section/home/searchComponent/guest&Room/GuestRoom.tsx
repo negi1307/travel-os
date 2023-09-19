@@ -57,7 +57,7 @@ const GuestRoom = () => {
         }}
       >
         <AccordionSummary
-          onClick={() => setExpanded(true)}
+          onClick={() => setExpanded(!expanded)}
           expandIcon={<ExpandMoreIcon color="primary" />}
           aria-controls="panel1a-content"
           id="panel1a-header"
@@ -72,16 +72,18 @@ const GuestRoom = () => {
                   >
                     Guest and Rooms
                   </Typography>
-                  <Typography
-                    className="destination_select"
-                    color={'primary.main'}
-                    // marginY={2}
-                    marginTop={2}
-                    marginBottom={2}
-                  >
-                    {' '}
-                    {`${getGuestRoom.rooms} Rooms (${getGuestRoom.adults} Adult, ${getGuestRoom.children} Children)`}
-                  </Typography>
+                  <Box marginY={1}>
+                    <Typography
+                      className="destination_select"
+                      color={'primary.main'}
+                      // marginY={2}
+                      marginTop={2}
+                      marginBottom={2}
+                    >
+                      {' '}
+                      {`${getGuestRoom.rooms} Rooms (${getGuestRoom.adults} Adult, ${getGuestRoom.children} Children)`}
+                    </Typography>
+                  </Box>
                 </>
               ) : (
                 <>

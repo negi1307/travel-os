@@ -24,13 +24,41 @@ const StayDate = () => {
   });
 
   // console.log(nDate, nDates);
-  const handleConfirm = () => {
-    setErrorShow(true);
+  // const handleConfirm = () => {
+  //   setErrorShow(true);
+  //   if (value?.[0] !== null) {
+  //     setErrorFirstDate(false);
+
+  //     if (value?.[1] !== null) {
+  //       let dates = value?.[1]?.toJSON().slice(0, 10);
+  //       let nDates =
+  //         dates.slice(8, 10) +
+  //         '/' +
+  //         dates.slice(5, 7) +
+  //         '/' +
+  //         dates.slice(0, 4);
+  //       setGetDate({ ...getDate, secondDate: nDates });
+
+  //       setErrorSecondDate(false);
+
+  //       setExpanded(false);
+  //     } else {
+  //       setErrorSecondDate(true);
+  //     }
+  //   } else {
+  //     setErrorFirstDate(true);
+  //   }
+  // };
+
+  useEffect(() => {
     if (value?.[0] !== null) {
-      setErrorFirstDate(false);
+      let date = value?.[0]?.toJSON().slice(0, 10);
+      let nDate =
+        date.slice(8, 10) + '/' + date.slice(5, 7) + '/' + date.slice(0, 4);
+      setGetDate({ ...getDate, firstDate: nDate });
+      let dates = value?.[1]?.toJSON().slice(0, 10);
 
       if (value?.[1] !== null) {
-        let dates = value?.[1]?.toJSON().slice(0, 10);
         let nDates =
           dates.slice(8, 10) +
           '/' +
@@ -38,37 +66,12 @@ const StayDate = () => {
           '/' +
           dates.slice(0, 4);
         setGetDate({ ...getDate, secondDate: nDates });
-
-        setErrorSecondDate(false);
-
         setExpanded(false);
       } else {
-        setErrorSecondDate(true);
       }
     } else {
-      setErrorFirstDate(true);
     }
-  };
-
-  useEffect(() => {
-    if (errorShow) {
-      if (value?.[0] !== null) {
-        setErrorFirstDate(false);
-        let date = value?.[0]?.toJSON().slice(0, 10);
-        let nDate =
-          date.slice(8, 10) + '/' + date.slice(5, 7) + '/' + date.slice(0, 4);
-        setGetDate({ ...getDate, firstDate: nDate });
-
-        if (value?.[1] !== null) {
-          setErrorSecondDate(false);
-        } else {
-          setErrorSecondDate(true);
-        }
-      } else {
-        setErrorFirstDate(true);
-      }
-    }
-  }, [errorShow, value?.[0], value?.[1]]);
+  }, [value?.[0], value?.[1]]);
   return (
     <div className="date_pickerBox">
       <Accordion
@@ -78,7 +81,7 @@ const StayDate = () => {
         }}
       >
         <AccordionSummary
-          onClick={() => setExpanded(true)}
+          onClick={() => setExpanded(!expanded)}
           expandIcon={<ExpandMoreIcon color="primary" />}
           aria-controls="panel1a-content"
           id="panel1a-header"
@@ -88,17 +91,23 @@ const StayDate = () => {
               {' '}
               {getDate.secondDate !== '' ? (
                 <>
-                  <Typography className="destination_select">
+                  <Typography
+                    className="destination_select"
+                    color={'primary.light'}
+                    marginY={5}
+                  >
                     Stay Date
                   </Typography>
-                  <Typography
-                    // color={'warning.main'}
-                    className="destination_select"
-                    marginTop={2}
-                    marginBottom={2}
-                  >
-                    {`${getDate.firstDate}-${getDate.secondDate}`}
-                  </Typography>
+                  <Box marginY={1}>
+                    <Typography
+                      // color={'warning.main'}
+                      className="destination_select"
+                      marginTop={2}
+                      marginBottom={2}
+                    >
+                      {`${getDate.firstDate}-${getDate.secondDate}`}
+                    </Typography>
+                  </Box>
                 </>
               ) : (
                 <>
@@ -133,7 +142,7 @@ const StayDate = () => {
                   )}
                 </Typography>
               </Box>
-              <Box display={'flex'}>
+              {/* <Box display={'flex'}>
                 <Box width={'100%'}></Box>
                 <Box
                   pb={3}
@@ -149,7 +158,7 @@ const StayDate = () => {
                     CONFIRM DATES
                   </Button>
                 </Box>
-              </Box>
+              </Box> */}
             </Box>
           </LocalizationProvider>
         </Box>

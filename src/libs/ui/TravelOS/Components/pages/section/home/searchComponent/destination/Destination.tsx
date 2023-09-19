@@ -28,7 +28,7 @@ const Destination: React.FC = (props: any) => {
         }}
       >
         <AccordionSummary
-          onClick={() => setExpanded(true)}
+          onClick={() => setExpanded(!expanded)}
           expandIcon={<ExpandMoreIcon color="primary" />}
           aria-controls="panel1a-content"
           id="panel1a-header"

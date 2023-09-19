@@ -8,6 +8,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Provider } from 'react-redux';
 import { configureStore } from './libs/store/store';
 import { darkTheme } from './ui';
+import { useStyles } from './ui';
 import { meneItme } from './app/app.theme';
 import './app/i18n';
 
@@ -18,7 +19,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <Provider store={configureStore({})}>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={darkTheme} useStyles={useStyles}>
         <CssBaseline />
         <main>
           <App meneItme={meneItme} />

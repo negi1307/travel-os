@@ -71,7 +71,7 @@
 .date_pickerBox .css-fz8a21-MuiDateRangeCalendar-root {
   justify-content: space-around !important;
 }
-.date_pickerBox .css-1aetuey-MuiDateRangeCalendar-root div[style] {
+.date_pickerBox .css-fz8a21-MuiDateRangeCalendar-root div[style] {
   display: none;
 }
 .date_pickerBox .MuiBox-root .css-4ukj1x-MuiTypography-root {
@@ -100,4 +100,9 @@
   font-size: 22px;
   font-weight: 500;
   line-height: 20px;
+}
+.date_pickerBox
+  .css-cyzddl-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition:not {
+  color: white !important;
+  /* background-color: blue; */
 }
