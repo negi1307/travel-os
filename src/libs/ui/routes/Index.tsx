@@ -83,7 +83,7 @@ const AllRoutes = (props: any) => {
               ),
             },
             {
-              path: 'dashboards',
+              path: 'search',
               element: (
                 <LoadComponent component={FilterIndex} meneItme={meneItme} />
               ),
