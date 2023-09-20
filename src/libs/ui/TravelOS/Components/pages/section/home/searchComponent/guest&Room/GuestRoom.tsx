@@ -8,6 +8,7 @@ import { Box, Grid, Button } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import ClearIcon from '@mui/icons-material/Clear';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 import './guestRoom.css';
 
@@ -50,7 +51,195 @@ const GuestRoom = () => {
 
   return (
     <div className="guest_inputParent">
-      <Accordion
+      <Box onClick={() => setExpanded(!expanded)}>
+        <Box color={'primary.main'} bgcolor={'primary.contrastText'}>
+          <Box display={'flex'} justifyContent={'space-between'}>
+            <Box>
+              <Typography
+                className="destination_select_first"
+                color={'primary.light'}
+              >
+                Guest and Rooms
+              </Typography>{' '}
+            </Box>
+            <Box>
+              <KeyboardArrowDownIcon />
+            </Box>
+          </Box>
+          <div className="dateShow_text destination_select">
+            <Typography
+              className="destination_select"
+              color={'primary.main'}
+              // marginY={2}
+              marginTop={2}
+              marginBottom={2}
+            >
+              {show ? (
+                <>
+                  {' '}
+                  {`${getGuestRoom.rooms} Rooms (${getGuestRoom.adults} Adult, ${getGuestRoom.children} Children)`}
+                </>
+              ) : (
+                <>
+                  <Typography></Typography>
+                </>
+              )}
+            </Typography>
+          </div>
+        </Box>
+      </Box>
+      {expanded ? (
+        <Box className="open_guestDropdown">
+          <Box>
+            <Typography className="destination_type_css">ROOM</Typography>
+          </Box>
+          {guestBox?.map((item, index) => {
+            return (
+              <>
+                {guestBox.length > 1 ? (
+                  <Box display={'flex'} justifyContent={'end'} marginRight={3}>
+                    <ClearIcon
+                      onClick={() => {
+                        Remove(index);
+                      }}
+                    />
+                  </Box>
+                ) : (
+                  ''
+                )}
+
+                <Grid container spacing={2}>
+                  <Grid item xs={6} padding={3}>
+                    <Box
+                      display={'flex '}
+                      justifyContent={'space-between'}
+                      borderBottom={3}
+                      borderColor={'#252525'}
+                    >
+                      <Box>
+                        <Typography color={'primary'}>ADULTS</Typography>
+                      </Box>
+                      <Box display={'flex'}>
+                        <Box>
+                          <Typography>
+                            <RemoveIcon
+                              className=" decremen_minus"
+                              onClick={() => {
+                                setGuestAdults(guestAdults - 1);
+                              }}
+                            />
+                          </Typography>
+                        </Box>
+                        <Box marginX={4}>
+                          <Typography color={'primary'}>
+                            {guestAdults}
+                          </Typography>
+                        </Box>
+                        <Box>
+                          <AddIcon
+                            className="incremen_plus"
+                            onClick={() => {
+                              setGuestAdults(guestAdults + 1);
+                            }}
+                          />
+                        </Box>
+                      </Box>
+                    </Box>
+                    <Box marginTop={2}>
+                      <Typography className="destination_type_css">
+                        12 YEARS AND OLDER
+                      </Typography>
+                    </Box>
+                  </Grid>
+
+                  <Grid item xs={6} padding={3}>
+                    <Box
+                      display={'flex '}
+                      justifyContent={'space-between'}
+                      borderBottom={3}
+                      borderColor={'#252525'}
+                    >
+                      <Box>
+                        <Typography color={'primary'}>CHILDREN</Typography>
+                      </Box>
+                      <Box display={'flex'}>
+                        <Box>
+                          <Typography>
+                            <RemoveIcon
+                              className="decremen_minus"
+                              onClick={() => {
+                                setGuestChildren(guestChildren - 1);
+                              }}
+                            />
+                          </Typography>
+                        </Box>
+                        <Box marginX={4}>
+                          <Typography color={'primary'}>
+                            {guestChildren}
+                          </Typography>
+                        </Box>
+                        <Box>
+                          <AddIcon
+                            className="incremen_plus"
+                            onClick={() => {
+                              setGuestChildren(guestChildren + 1);
+                            }}
+                          />
+                        </Box>
+                      </Box>
+                    </Box>
+                    <Box marginTop={2}>
+                      <Typography className="destination_type_css">
+                        11 YEARS AND YOUNGER
+                      </Typography>
+                    </Box>
+                  </Grid>
+                </Grid>
+              </>
+            );
+          })}
+          <Grid container spacing={2}>
+            <Grid item xs={6} padding={3}>
+              <Box
+                display={'flex'}
+                // borderBottom={5}
+                // borderColor={'primary'}
+                justifyContent={'center'}
+                marginY={3}
+              >
+                <Button
+                  startIcon={<AddIcon />}
+                  className="destination_type_Btn_css"
+                  color={'primary'}
+                  onClick={() => {
+                    addBox();
+                  }}
+                >
+                  ADD ANOTHER ROOM
+                </Button>
+              </Box>
+            </Grid>
+            <Grid item xs={6} padding={3}>
+              <Box display={'flex'} justifyContent={'center'} marginY={3}>
+                <Button
+                  // startIcon={<AddIcon />}
+                  variant={'contained'}
+                  color={'primary'}
+                  onClick={() => {
+                    submitGuestRoom();
+                  }}
+                >
+                  CONFIRM GUESTS
+                </Button>
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+      ) : (
+        <></>
+      )}
+
+      {/* <Accordion
         expanded={expanded}
         sx={{
           backgroundColor: 'white',
@@ -96,7 +285,6 @@ const GuestRoom = () => {
                   </Typography>
                 </>
               )}
-              {/* 1 Rooms (2 Adult, 0 Children) */}
             </Typography>
           </Box>
         </AccordionSummary>
@@ -216,13 +404,7 @@ const GuestRoom = () => {
             })}
             <Grid container spacing={2}>
               <Grid item xs={6} padding={3}>
-                <Box
-                  display={'flex'}
-                  // borderBottom={5}
-                  // borderColor={'primary'}
-                  justifyContent={'center'}
-                  marginY={3}
-                >
+                <Box display={'flex'} justifyContent={'center'} marginY={3}>
                   <Button
                     startIcon={<AddIcon />}
                     className="destination_type_Btn_css"
@@ -252,7 +434,7 @@ const GuestRoom = () => {
             </Grid>
           </Box>
         </AccordionDetails>
-      </Accordion>
+      </Accordion> */}
     </div>
   );
 };

@@ -9,7 +9,7 @@ const HomeIndex: React.FC = (props: any) => {
   return (
     <>
       <Box>
-        <Box>
+        <Box marginTop={'180px'}>
           <SearchIndex meneItme={meneItme} />
         </Box>
         {/* <Box>

@@ -78,9 +78,51 @@
   margin-bottom: 10px !important;
   /* border: 2px solid red !important; */
 }
+.date_pickerBox .css-cxmp86 {
+  padding: 0px 15px;
+}
 .date_pickerBox .css-1v6chqf {
   background-color: #ffffff;
+  width: 76rem;
+  position: absolute;
+  top: 73px;
 }
+
+.date_active .css-1v6chqf {
+  -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes css-1v6chqf {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+
 .date_pickerBox .css-1v8yqdb-MuiPickersArrowSwitcher-root,
 .date_pickerBox .css-i5q14k-MuiDayCalendar-header span,
 .date_pickerBox .css-12p2adl-MuiDayCalendar-monthContainer button {
@@ -105,4 +147,19 @@
   .css-cyzddl-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition:not {
   color: white !important;
   /* background-color: blue; */
+}
+/* 
+.css-1anqmj6-MuiPopper-root-MuiPickersPopper-root {
+  width: 76rem !important;
+} */
+
+.date_pickerBox .dateShow_text {
+  display: block;
+  height: 1.42rem;
+  transform: translate(0px, -10px);
+}
+.date_pickerBox .css-gg4vpm,
+.date_pickerBox .css-1cpssoz-MuiTypography-root {
+  display: flex;
+  align-items: center;
 }

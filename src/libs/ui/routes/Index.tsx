@@ -18,6 +18,13 @@ const TestingComponent = React.lazy(
   () => import('../TravelOS/Components/auth/TestingComponent')
 );
 
+const FilterIndex = React.lazy(
+  () =>
+    import(
+      '../TravelOS/Components/pages/section/home/filterComponent/FilterIndex'
+    )
+);
+
 const loading = () => <div className=""></div>;
 
 type LoadComponentProps = {
@@ -72,16 +79,13 @@ const AllRoutes = (props: any) => {
             {
               path: 'home',
               element: (
-                <LoadComponent component={HomeIndex} meneItme={meneItme} />
+                <LoadComponent component={SectionIndex} meneItme={meneItme} />
               ),
             },
             {
               path: 'dashboards',
               element: (
-                <LoadComponent
-                  component={TestingComponent}
-                  meneItme={meneItme}
-                />
+                <LoadComponent component={FilterIndex} meneItme={meneItme} />
               ),
             },
           ],

@@ -107,9 +107,30 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import './Footer.css';
 
-type Props = {};
+const Footer = (props: any) => {
+  const { meneItme } = props;
+  const { faceBookIcon, instagramIcon, twitterIcon, youTubeIcon } =
+    meneItme?.[8]?.footerIcon?.[0];
 
-const Footer = (props: Props) => {
+  console.log(meneItme?.[8]?.footerIcon?.[0], 'kkkks');
+  let footerData = [
+    {
+      item: 'About Kerzner Group',
+    },
+    {
+      item: 'Our Resorts',
+    },
+    {
+      item: 'Press Centre',
+    },
+    {
+      item: 'Privacy Policy',
+    },
+    {
+      item: 'Terms & Conditions',
+    },
+  ];
+  let footerdataleftSide = [{ item: 'Phishing' }, { item: 'Contact Us' }];
   return (
     <Box
       className="footer_parentBox"
@@ -127,83 +148,62 @@ const Footer = (props: Props) => {
         flexDirection={'column'}
         bgcolor="info.dark"
       >
-        <Box
-          display={'flex'}
-          pt={6}
-          pb={3}
-          justifyContent={'center'}
-          flexDirection={'row'}
-          width={'100%'}
-        >
-          <Box
-            justifyContent={'center'}
-            display={'flex'}
-            flexDirection={'row'}
-            width={'70%'}
-          >
-            <Box width={'100%'} mt={4}>
-              <Box flexDirection={'column'} display={'flex'}>
-                <Typography variant="subtitle1" p={3}>
-                  ABOUT JUMERIAH GROUP
-                </Typography>
-                <Typography variant="subtitle1" p={3}>
-                  HOTEL DEVELOPEMENT
-                </Typography>
-                <Typography variant="subtitle1" p={3}>
-                  RESIDENCIES
-                </Typography>
-                <Typography variant="subtitle1" p={3}>
-                  PRESS CENTER
-                </Typography>
-                <Typography variant="subtitle1" p={3}>
-                  PRIVACY POLICY
-                </Typography>
-                <Typography variant="subtitle1" p={3}>
-                  TERMS & CONDITIONS
-                </Typography>
-              </Box>
+        <Box display={'flex'} justifyContent={'space-between'}>
+          <Box display={'flex'}>
+            <Box>
+              {footerData?.map((items) => {
+                return (
+                  <>
+                    <Typography className="footer_text_font" marginY={4}>
+                      {items.item}
+                    </Typography>
+                  </>
+                );
+              })}
             </Box>
-            <Box mt={4} width={'100%'}>
-              <Typography p={3} variant="subtitle1">
-                PHISHING
-              </Typography>
-              <Typography p={3} variant="subtitle1">
-                CONTACT US
-              </Typography>
-              <Typography p={3} variant="subtitle1">
-                COVID-19 UPDATES
-              </Typography>
+            <Box marginLeft={5} paddingLeft={5}>
+              {footerdataleftSide.map((itees) => {
+                return (
+                  <>
+                    <Typography className="footer_text_font" marginY={4}>
+                      {itees.item}
+                    </Typography>
+                  </>
+                );
+              })}
             </Box>
-            <Box width={'100%'} mt={4}>
-              <Box>
-                <Typography variant="h5">
-                  Sign up to Jumeiriah newsletter
-                </Typography>
-              </Box>
-              <Box
-                paddingLeft={2}
-                display="flex"
-                width="50%"
-                justifyContent="space-between"
-                mt={3}
+          </Box>
+          <Box paddingRight={5}>
+            <Box>
+              <Typography
+                variant="h5"
+                marginTop={4}
+                className="footer_right_side_text"
               >
-                <IconButton style={{ marginRight: '1.5rem' }}>
-                  <FacebookIcon />
-                </IconButton>
-                <IconButton style={{ marginRight: '1.5rem' }}>
-                  <InstagramIcon />
-                </IconButton>
-                <IconButton style={{ marginRight: '1.5rem' }}>
-                  <TwitterIcon />
-                </IconButton>
-                <IconButton>
-                  <YouTubeIcon />
-                </IconButton>
+                Sign up to Jumeiriah newsletter
+              </Typography>
+            </Box>
+            <Box display={'flex'}>
+              <Box>
+                {/* <FacebookIcon /> */}
+                <img src={faceBookIcon} alt="" />
+              </Box>
+              <Box marginX={4}>
+                {/* <InstagramIcon /> */}
+                <img src={instagramIcon} alt="" />
+              </Box>
+              <Box>
+                {/* <TwitterIcon /> */}
+                <img src={twitterIcon} alt="" />
+              </Box>
+              <Box marginX={4}>
+                {/* <YouTubeIcon /> */}
+                <img src={youTubeIcon} alt="" />
               </Box>
             </Box>
           </Box>
         </Box>
-        <Box display={'flex'} justifyContent={'center'}>
+        <Box display={'flex'} justifyContent={'center'} marginTop={5}>
           <Typography variant="subtitle1">
             <span>Ⓒ</span> COPYRIGHT JUMEIRAH INTERNATION LLC $ 2023
           </Typography>

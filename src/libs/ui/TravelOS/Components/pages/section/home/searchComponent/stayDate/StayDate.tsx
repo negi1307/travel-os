@@ -11,11 +11,20 @@ import './StayDate.css';
 
 import '../destination/Destination.css';
 
+import dayjs, { Dayjs } from 'dayjs';
+import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
+// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateRange } from '@mui/x-date-pickers-pro';
+import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+
 const StayDate = () => {
   const [expanded, setExpanded] = useState(false);
 
   const [value, setValue] = useState<any>([null, null]); // Initial date range is null
   const [errorFirtsData, setErrorFirstDate] = useState(false);
+  console.log(expanded, 'shiiii');
   const [errorSecondData, setErrorSecondDate] = useState(false);
   const [errorShow, setErrorShow] = useState(false);
   const [getDate, setGetDate] = useState({
@@ -73,8 +82,68 @@ const StayDate = () => {
     }
   }, [value?.[0], value?.[1]]);
   return (
-    <div className="date_pickerBox">
-      <Accordion
+    <div className="date_pickerBox date_active">
+      <Box
+        onClick={() => setExpanded(!expanded)}
+        sx={{ backgroundColor: 'white' }}
+      >
+        <Box color={'primary.main'}>
+          <Box display={'flex'} justifyContent={'space-between'}>
+            <Box>
+              <Typography
+                className="destination_select_first"
+                color={'primary.light'}
+              >
+                Stay Date
+              </Typography>{' '}
+            </Box>
+            <Box>
+              <KeyboardArrowDownIcon />
+            </Box>
+          </Box>
+          <div className="dateShow_text destination_select">
+            {getDate.secondDate !== '' ? (
+              <>{`${getDate.firstDate}-${getDate.secondDate}`}</>
+            ) : (
+              <></>
+            )}{' '}
+          </div>
+        </Box>
+      </Box>
+      <Box>
+        {expanded === true ? (
+          <>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <Box sx={{ backgroundColor: '#252525' }}>
+                <DateRangeCalendar
+                  sx={{ color: 'primary.main' }}
+                  value={value}
+                  onChange={(newValue) => setValue(newValue)}
+                />
+                <Box textAlign={'center'}>
+                  <Typography color={'error'}>
+                    {errorFirtsData ? (
+                      <>Please Select First Date</>
+                    ) : (
+                      <>
+                        {errorSecondData ? (
+                          <>Please Select Second Date</>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    )}
+                  </Typography>
+                </Box>
+              </Box>
+            </LocalizationProvider>
+          </>
+        ) : (
+          <></>
+        )}
+      </Box>
+
+      {/* <Accordion
         expanded={expanded}
         sx={{
           backgroundColor: 'white',
@@ -142,27 +211,10 @@ const StayDate = () => {
                   )}
                 </Typography>
               </Box>
-              {/* <Box display={'flex'}>
-                <Box width={'100%'}></Box>
-                <Box
-                  pb={3}
-                  display={'flex'}
-                  justifyContent={'center'}
-                  width={'100%'}
-                >
-                  <Button
-                    onClick={handleConfirm}
-                    className="confirmDatebutton"
-                    variant="contained"
-                  >
-                    CONFIRM DATES
-                  </Button>
-                </Box>
-              </Box> */}
             </Box>
           </LocalizationProvider>
         </Box>
-      </Accordion>
+      </Accordion> */}
     </div>
   );
 };

@@ -13,6 +13,7 @@ type PrivateRouteProps = {
  * @param {*} param0
  * @returns
  */
+const loading = () => <div className=""></div>;
 
 const PrivateRoute = ({
   component: RouteComponent,
@@ -39,12 +40,12 @@ const PrivateRoute = ({
     return <Navigate to={{ pathname: '/' }} />;
   }
 
-  return <RouteComponent meneItme={meneItme} />;
-  // return (
-  //   <Suspense fallback={loading()}>
-  //     <Outlet />
-  //   </Suspense>
-  // );
+  // return <RouteComponent meneItme={meneItme} />;
+  return (
+    <Suspense fallback={loading()}>
+      <Outlet meneItme={meneItme} />
+    </Suspense>
+  );
 };
 
 export default PrivateRoute;

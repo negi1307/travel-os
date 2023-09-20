@@ -20,3 +20,20 @@
 .footer_parentBox .css-ati914-MuiTypography-root span {
   font-size: 12px;
 }
+
+.footer_text_font {
+  line-height: 12.1px !important;
+  letter-spacing: 8% !important;
+  font-weight: 400 !important;
+  font-size: 10px !important;
+}
+
+.footer_parentBox .css-12y4fal {
+  margin: 0 auto;
+  width: 85rem;
+}
+.footer_right_side_text {
+  line-height: 20.51px !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+}

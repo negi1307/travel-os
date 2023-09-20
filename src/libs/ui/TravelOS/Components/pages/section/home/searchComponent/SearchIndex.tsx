@@ -5,12 +5,13 @@ import Destination from './destination/Destination';
 import StayDate from './stayDate/StayDate';
 import GuestRoom from './guest&Room/GuestRoom';
 import './search.css';
+import { Link } from 'react-router-dom';
 
 const SearchIndex = (props: any) => {
   const { meneItme } = props;
   return (
     <div>
-      <Box paddingX={4} marginTop={'180px'}>
+      <Box paddingX={4}>
         <Grid
           container
           // marginTop={5}
@@ -40,15 +41,18 @@ const SearchIndex = (props: any) => {
               flexDirection={'row'}
             >
               <GuestRoom meneItme={meneItme} />
-              <Button
-                // fullWidth
+              <Link to="/dashboard/dashboards" className="navBar_link">
+                <Button
+                  // fullWidth
 
-                className="homePage_searchButton"
-                color="primary"
-                variant="contained"
-              >
-                SEARCH
-              </Button>
+                  className="homePage_searchButton"
+                  color="primary"
+                  variant="contained"
+                >
+                  {/* {t(`${nvBarHome}`)} */}
+                  SEARCH
+                </Button>
+              </Link>
             </Grid>
           </Grid>
         </Grid>

@@ -26,6 +26,12 @@ import hotel from '../../public/staticImage/Hotel_icon5.png';
 import bell from '../../public/staticImage/Bell_icon6.png';
 import navBar_bground from '../../public/staticImage/navBar_bground.png';
 
+// footer Icon
+import faceBookIcon from '../../public/staticImage/FacebookAppSymbol.png';
+import instagramIcon from '../../public/staticImage/Instagram.png';
+import youTubeIcon from '../../public/staticImage/Youtube.png';
+import twitterIcon from '../../public/staticImage/Twitter.png';
+
 export const meneItme: any = [
   {
     logo: atlantis_logo,
@@ -119,6 +125,17 @@ export const meneItme: any = [
             nvBarHoteInfo: 'nvBarHoteInfo',
           },
         ],
+      },
+    ],
+  },
+
+  {
+    footerIcon: [
+      {
+        faceBookIcon,
+        instagramIcon,
+        youTubeIcon,
+        twitterIcon,
       },
     ],
   },

@@ -38,6 +38,7 @@
   color: #0057b7;
   border: 1px solid #0057b7;
 }
+
 .incremen_plus {
   background-color: blue;
   color: white !important;
@@ -53,4 +54,61 @@
   border-radius: 12px;
   /* color: wheat; */
   cursor: pointer;
+}
+.guest_inputParent .open_guestDropdown {
+  background: #ffffff;
+  position: absolute;
+  left: -190px;
+  right: 0;
+  top: 73px;
+  width: 50rem;
+  z-index: 99;
+  padding: 5px;
+  padding: 10px 20px;
+}
+.guest_inputParent .open_guestDropdown {
+  -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes open_guestDropdown {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+.guest_roomsBox .css-19zvbik {
+  padding: 0 15px;
+}
+.guest_roomsBox .css-1cpssoz-MuiTypography-root,
+.guest_roomsBox .css-gg4vpm {
+  display: flex;
+  align-items: center;
+}
+.guest_roomsBox .destination_select {
+  height: 1.42rem;
+  transform: translate(0px, -5px);
 }

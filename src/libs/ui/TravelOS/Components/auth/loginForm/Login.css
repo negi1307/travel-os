@@ -23,6 +23,7 @@
 }
 
 .input_Style {
+  border: 2px solid red !important;
   width: 25rem;
   border: solid 2px !important;
   border-radius: 6px !important;
@@ -37,8 +38,7 @@
   bottom: 0;
   opacity: 0.44;
 }
-.input_Style .css-182ct6p-MuiInputBase-root-MuiOutlinedInput-root,
-.input_Style .css-zcz383-MuiInputBase-root-MuiOutlinedInput-root {
+.input_Style div {
   position: relative;
   z-index: 1;
 }

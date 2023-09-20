@@ -9,7 +9,11 @@ import Paper from '@mui/material/Paper';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import './PageIndex.css';
+import HomeIndex from './section/home/HomeIndex';
+
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
+// import FilterIndex from './section/home/filterComponent/FilterIndex';
 
 const loading = () => <div className=""></div>;
 
@@ -31,7 +35,7 @@ const PageIndex: React.FC = (props: any) => {
             bgcolor: 'background.default',
           }}
         ></Paper>
-        <AutoPlaySwipeableViews>
+        <AutoPlaySwipeableViews interval={4000}>
           {pageBackgroudImage?.map((step, index) => (
             <>
               <Box
@@ -52,13 +56,14 @@ const PageIndex: React.FC = (props: any) => {
           <NavBar meneItme={meneItme} />
         </Box>
         <Box className="center_parentBox">
-          <Suspense fallback={loading()}>
+          <HomeIndex />
+          {/* <Suspense fallback={loading()}>
             <Outlet />
-          </Suspense>
+          </Suspense> */}
         </Box>
       </Box>
       <Box>
-        <Footer />
+        <Footer meneItme={meneItme} />
       </Box>
     </div>
   );
