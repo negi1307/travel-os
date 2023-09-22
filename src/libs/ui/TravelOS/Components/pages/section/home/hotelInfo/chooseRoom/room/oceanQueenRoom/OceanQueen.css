@@ -1,0 +1,83 @@
+.ocean_start_fom_flex {
+  display: flex;
+  justify-content: end;
+  /* align-items: center; */
+}
+.ocean_heading_font_style {
+  line-height: 26.47px !important;
+  font-weight: 700 !important;
+  font-size: 27.77px !important;
+  color: #000000 !important;
+}
+.ocean_text_font_style {
+  line-height: 15.6px !important;
+  font-weight: 400 !important;
+  /* border: solid; */
+  font-size: Averta Demo !important;
+  font-size: 13px !important;
+  width: 350px !important;
+  color: #3c3c3c !important;
+}
+.ocean_btn_font_style {
+  font-size: 13.81px !important;
+  border: 0 !important;
+  font-weight: 400 !important;
+  line-height: 16.58px !important;
+}
+.ocean_starting_font_style {
+  font-size: 13.81px !important;
+  font-weight: 400 !important;
+  color: #6c87a5 !important;
+  line-height: 16.58px !important;
+}
+.ocen_aed_font_style {
+  line-height: 25.76px !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  letter-spacing: 11% !important;
+}
+.ocen_exc_font_style {
+  font-size: 13.29px !important;
+  font-weight: 400 !important;
+  color: #6c87a5 !important;
+  line-height: 15.95px !important;
+}
+.ocen_unit_btn_font_style {
+  line-height: 15.95px;
+  font-size: 400;
+  font-weight: 400;
+  width: 237px;
+  border-radius: 25px !important;
+  background-color: blue !important;
+  color: white !important;
+  font-size: 13.29px !important;
+  font-weight: 400 !important;
+}
+.choose_roomCardParent {
+  height: 210px !important;
+  padding: 15px 20px !important;
+  margin-left: 0 !important;
+}
+.custom_heigth {
+  height: -webkit-fill-available;
+}
+.choose_roomCardbox1 img {
+  width: -webkit-fill-available;
+}
+.choose_roomCardbox2 {
+  padding-left: 30px !important ;
+}
+.choose_roomCardbox2 .child_box {
+  height: -webkit-fill-available;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.choose_roomCardbox2 button {
+  padding-left: 0 !important;
+}
+.choose_roomCardbox3 .child_box {
+  padding-top: 10px;
+  margin-right: 79px;
+  /* border: 2px solid red; */
+}

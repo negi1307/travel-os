@@ -38,7 +38,7 @@ const FilterIndex: React.FC = (props: any) => {
         </Grid>
       </Box>
       <Box>
-        <HotelInfoIndex />
+        <HotelInfoIndex meneItme={meneItme} />
       </Box>
     </>
   );

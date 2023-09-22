@@ -7,6 +7,7 @@ import MuiAccordionSummary, {
 } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
+import { Box, Button } from '@mui/material';
 
 const SidebarAccordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -51,37 +52,84 @@ const HorizontalLine = styled('hr')({
 });
 
 const SelectionSummary = () => {
+  const hoteData = [
+    { item: 'HOTEL', items: 'ATANTIS, THE PALM' },
+    { item: '1 ROOM(S) - 2 GUEST(S)', items: '' },
+    { item: '2 NIGHT', items: '20 SEP-22 SEP 2023' },
+    {
+      item: 'OCEAN QUEEN ROOM',
+      items: 'BIRTHDAY SALE - ADVANCE PURCHASE OFFER',
+    },
+    {
+      item: 'TOTAL ROOM COST EXCLUDING TAXES & FEES',
+      items: 'AED 2.202',
+    },
+    {
+      item: 'APPLICABLE TAXES & FEES',
+      items: 'AED 2.202',
+      itemss:
+        'Room rote is subject to 10% Service Charge 7% Municipality Free, and 5% Vat',
+    },
+  ];
+
   return (
     <>
-      <SidebarAccordion>
-        <SidebarAccordionSummary
-          aria-controls="panel1d-content"
-          id="panel1d-header"
-        >
+      <Box p={3}>
+        <Box>
+          <Typography>SAVE FOR LATER</Typography>
+        </Box>
+        <Box display={'flex'} borderBottom={1}>
+          <Box mr={2}>1</Box>
+
           <Typography>Selection Summary</Typography>
-        </SidebarAccordionSummary>
-        <SidebarAccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada
-            lacus ex, sit amet blandit leo lobortis eget.
+        </Box>
+        {hoteData?.map((item) => {
+          return (
+            <>
+              <Box borderBottom={1} mt={3}>
+                <Typography variant="subtitle1">{item.item}</Typography>
+                <Typography my={2} variant="subtitle1">
+                  {item.items}
+                </Typography>
+                <Typography mt={2} mb={3} variant="subtitle1">
+                  {item.itemss}
+                </Typography>
+              </Box>
+            </>
+          );
+        })}
+        <Box mt={3}>
+          <Typography variant="subtitle1">
+            TOTAL ROOM COST FOR 2 NIGHTS
           </Typography>
-        </SidebarAccordionDetails>
-      </SidebarAccordion>
-      {/* Horizontal Line */}
-      <HorizontalLine />
-      {/* Hotel Name */}
-      <Typography variant="subtitle1">HOTEL</Typography>
-      <Typography variant="subtitle2"> Atlantis the Palm</Typography>
-      {/* Horizontal Line */}
-      <HorizontalLine />
-      {/* Rooms */}
-      <Typography variant="subtitle2">1 Room(s) 2-Guest(s)</Typography>
-      {/* Horizontal Line */}
-      <HorizontalLine />
-      {/* Nights */}
-      <Typography variant="subtitle2">2-Nights</Typography>
+          <Typography mt={2} mb={3} variant="h2">
+            AED 5.425
+          </Typography>
+        </Box>
+        <Box mt={5}>
+          <Button variant="contained" color="primary" fullWidth>
+            CONTINUE TO CHECK OUT
+          </Button>
+        </Box>
+        {/* <Box borderBottom={1} mt={3}>
+          <Typography variant="subtitle1">HOTEL</Typography>
+          <Typography mt={2} mb={3} variant="subtitle1">
+            ATLANTIS, THE PALM
+          </Typography>
+        </Box>
+        <Box borderBottom={1} mt={3}>
+          <Typography variant="subtitle1">HOTEL</Typography>
+          <Typography mt={2} mb={3} variant="subtitle1">
+            ATLANTIS, THE PALM
+          </Typography>
+        </Box>
+        <Box borderBottom={1} mt={3}>
+          <Typography variant="subtitle1">HOTEL</Typography>
+          <Typography mt={2} mb={3} variant="subtitle1">
+            ATLANTIS, THE PALM
+          </Typography>
+        </Box> */}
+      </Box>
     </>
   );
 };

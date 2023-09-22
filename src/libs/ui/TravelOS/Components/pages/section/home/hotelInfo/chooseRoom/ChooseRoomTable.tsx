@@ -18,264 +18,242 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
 // import RoomPage from './RoomsPage';
 import Room from './room/Room';
+import './ChooseRoom.css';
 
-const ChooseRoomTable = () => {
+const ChooseRoomTable = (props: any) => {
+  const { meneItme } = props;
+  const { left_side_arrow, choose_Room_top, hotel } =
+    meneItme?.[9]?.chooseRoomImg?.[0];
+
   return (
     <div>
       <Box
+        padding={5}
         sx={{
-          padding: 4,
-          backgroundColor: '#f5f5f5',
+          // padding: 4,
+          // backgroundColor: '#f5f5f5',
           minHeight: '100vh',
         }}
       >
-        <Grid container spacing={2}>
-          <Grid
-            item
-            xs={12}
-            sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}
-          >
-            <IconButton sx={{ color: '#2196F3' }}>
-              <ArrowCircleLeftOutlinedIcon />
-              <Typography variant="body2">Back</Typography>
-            </IconButton>
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              color: '#666',
-              marginBottom: 2,
-            }}
-          >
-            <Typography
-              variant="h4"
-              sx={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: 1 }}
-            >
-              Atlantis the Palm
-              <Typography> Dubai</Typography>
+        <Box>
+          <IconButton sx={{ color: '#2196F3' }}>
+            {/* <ArrowCircleLeftOutlinedIcon /> */}
+            <img src={left_side_arrow} alt="" />
+            <Typography className="back_btn_top" marginLeft={2}>
+              Back
             </Typography>
-            <IconButton>
-              <LocationCityOutlinedIcon />
-              <Typography>
-                <u>Hotel Info</u>
+          </IconButton>
+        </Box>
+        <Box
+          display={'flex'}
+          justifyContent={'space-between'}
+          alignItems={'center'}
+        >
+          <Box display={'flex'} alignItems={'center'}>
+            <Box>
+              <img
+                src={choose_Room_top}
+                alt=""
+                className="choose_room_img_radius"
+              />
+            </Box>
+            <Box marginLeft={4}>
+              <Typography
+                // variant="h4"
+                // sx={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: 1 }}
+                className="atlantis_font_style"
+              >
+                ATLANTIS THE PALM
               </Typography>
-            </IconButton>
-          </Grid>
-          {/* <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'space-between', color: '#666', marginBottom: 2 }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                        <HotelIcon sx={{ marginRight: 1, color: '#888' }} />
-                        <Typography variant="body2">Luxury 5-star hotel in Dubai</Typography>
-                    </Box>
-                    <Typography variant="body2">Grouped by: room types</Typography>
-                </Grid> */}
-          <Grid item xs={12}>
-            <Typography
-              variant="subtitle2"
-              sx={{
-                color: '#2196F3',
-                borderBottom: '2px solid #2196F3',
-                paddingBottom: 2,
-              }}
-            >
-              Room & Rates
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            {/* <Divider sx={{ borderBottom: '1px solid #ccc' }} /> */}
-          </Grid>
-          <Grid
-            item
-            xs={12}
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              color: '#666',
-              marginBottom: 2,
-            }}
-          >
-            <Typography variant="body2">12 room types / 30 rates</Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
-              <Switch />
-              <Typography variant="body2" sx={{ marginRight: 1 }}>
-                View rates without tax
+
+              <Typography
+                marginTop={2}
+                paddingTop={2}
+                className="choose_dubai_font_style"
+              >
+                {' '}
+                Dubai
               </Typography>
             </Box>
-            <Typography variant="body2">Grouped by: room types</Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant="h5" color={'primary'}>
-              Choose Room
+          </Box>
+          <Box display={'flex'} alignItems={'center'}>
+            <Box>
+              <img src={hotel} alt="" />
+            </Box>
+            <Box marginLeft={1}>
+              <a href="" className="choose_right_hotel_font_style">
+                Hotel Info
+              </a>
+            </Box>
+          </Box>
+        </Box>
+
+        <Box borderBottom={1} marginY={3} borderColor={'primary.main'}>
+          <Typography className="choose_roomRate_ront_style">
+            Room / Rates
+          </Typography>
+        </Box>
+
+        <Box display={'flex'} justifyContent={'space-between'}>
+          <Box>
+            <Typography className="choose_roomType_font_style">
+              12 room types | 30 room rates
             </Typography>
-            <Accordion
-              sx={{
-                border: '2px solid #2196F3',
-                marginTop: '15px',
-                marginBottom: '15px',
-                boxShadow: 'none',
-                minHeight: 'unset',
-                '& .MuiAccordionSummary-root .css-o4b71y-MuiAccordionSummary-content':
-                  {
-                    margin: '0',
-                  },
-                '& .MuiAccordionSummary-content': {
-                  alignItems: 'center',
-                  gap: '12px',
-                },
-              }}
-            >
-              <AccordionSummary
-                expandIcon={<ArrowDropDownCircleOutlinedIcon color="primary" />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography
-                  sx={{ flexGrow: 5, fontWeight: 'light', fontSize: '14px' }}
-                >
-                  Queen Rooms
-                </Typography>
-                <Typography
-                  sx={{ flexGrow: 0, fontWeight: 'light', fontSize: '12px' }}
-                >
-                  2 Queen Beds
-                </Typography>
-                <IconButton sx={{ flexGrow: 2 }}>
-                  <PersonOutlineOutlinedIcon />
-                  <Typography sx={{ fontWeight: 'light', fontSize: '12px' }}>
-                    x3
-                  </Typography>
-                </IconButton>
-                <Typography
-                  sx={{ flexGrow: 1, fontWeight: 'light', fontSize: '12px' }}
-                >
-                  3 Rates
-                </Typography>
-                <Typography
-                  sx={{ flexGrow: 0.5, fontWeight: 'light', fontSize: '14px' }}
-                >
-                  From AED2050
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Room />
-              </AccordionDetails>
-            </Accordion>
+          </Box>
+          <Box>
+            <Typography className="choose_roomType_font_style">
+              GROUPED BY: ROOM TYPES
+            </Typography>
+          </Box>
+        </Box>
 
-            <Accordion
-              sx={{
-                border: '2px solid #2196F3',
-                // borderRadius: '4px',
-                marginBottom: '15px',
-                boxShadow: 'none',
-                minHeight: 'unset',
-                '& .MuiAccordionSummary-root .css-o4b71y-MuiAccordionSummary-content':
-                  {
-                    margin: '0',
-                  },
-                '& .MuiAccordionSummary-content': {
-                  alignItems: 'center',
-                  gap: '12px',
-                },
-              }}
-            >
-              <AccordionSummary
-                expandIcon={<ArrowDropDownCircleOutlinedIcon color="primary" />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography
-                  sx={{ flexGrow: 5, fontWeight: 'light', fontSize: '14px' }}
-                >
-                  Atlantis Rooms
-                </Typography>
-                <Typography
-                  sx={{ flexGrow: 0, fontWeight: 'light', fontSize: '12px' }}
-                >
-                  2 Queen Beds
-                </Typography>
-                <IconButton sx={{ flexGrow: 2 }}>
-                  <PersonOutlineOutlinedIcon />
-                  <Typography sx={{ fontWeight: 'light', fontSize: '12px' }}>
-                    x4
-                  </Typography>
-                </IconButton>
-                <Typography
-                  sx={{ flexGrow: 1, fontWeight: 'light', fontSize: '12px' }}
-                >
-                  2 Rates
-                </Typography>
-                <Typography
-                  sx={{ flexGrow: 0.5, fontWeight: 'light', fontSize: '14px' }}
-                >
-                  From AED2499
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                Another room info
-                {/* <RoomPage /> */}
-              </AccordionDetails>
-            </Accordion>
+        <Box marginTop={4}>
+          <Typography className="choose_room_hding_style">
+            Choose Room
+          </Typography>
+        </Box>
+        <Box>
+          <Room meneItme={meneItme} />
+          <Room meneItme={meneItme} />
+          <Room meneItme={meneItme} />
+        </Box>
 
-            <Accordion
-              sx={{
-                border: '2px solid #2196F3',
-                // borderRadius: '4px',
-                marginBottom: '15px',
-                boxShadow: 'none',
-                minHeight: 'unset',
-                '& .MuiAccordionSummary-root .css-o4b71y-MuiAccordionSummary-content':
-                  {
-                    margin: '0',
-                  },
-                '& .MuiAccordionSummary-content': {
-                  alignItems: 'center',
-                  gap: '12px',
-                },
-              }}
+        {/* <Box border={1} borderColor={'primary.main'} marginTop={3}>
+          <Box
+            display={'flex'}
+            width={'100%'}
+            justifyContent={'space-between'}
+            alignItems={'center'}
+          >
+            <Box flex={'1.5'} marginLeft={2}>
+              <Typography className="choose_accordin_text_font_style">
+                Ocean Queen Room
+              </Typography>
+            </Box>
+            <Box flex={1}>
+              <Typography className="choose_accordin_text_font_style">
+                2 Queen Beds
+              </Typography>
+            </Box>
+            <Box
+              display={'flex'}
+              flex={1}
+              alignItems={'center'}
+              justifyContent={'space-evenly'}
             >
-              <AccordionSummary
-                expandIcon={<ArrowDropDownCircleOutlinedIcon color="primary" />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
+              <Box display={'flex'}>
+                <img src={choose_user} alt="" />
+
+                <Typography
+                  marginLeft={2}
+                  className="choose_accordin_text_font_style"
+                >
+                  {' '}
+                  x2
+                </Typography>
+              </Box>
+              <Box>
+                <Typography className="choose_accordin_text_font_style">
+                  4 Rates
+                </Typography>
+              </Box>
+              <Box>
+                <Typography className="choose_accordin_text_font_style">
+                  From AED 2,050
+                </Typography>
+              </Box>
+            </Box>
+
+            <Box marginRight={2}>
+              <img
+                src={choose_down_arrow_img}
+                alt=""
+                className="choose_accordin_right_side_down_img"
+              />
+            </Box>
+          </Box>
+        </Box> */}
+
+        {/* <Box>
+          <Accordion
+            sx={{
+              border: '2px solid #2196F3',
+              marginTop: '15px',
+              marginBottom: '15px',
+              boxShadow: 'none',
+              minHeight: 'unset',
+              '& .MuiAccordionSummary-root .css-o4b71y-MuiAccordionSummary-content':
+                {
+                  margin: '0',
+                },
+              '& .MuiAccordionSummary-content': {
+                alignItems: 'center',
+                gap: '12px',
+              },
+            }}
+          >
+            <AccordionSummary
+              expandIcon={
+                <img
+                  src={choose_down_arrow_img}
+                  alt=""
+                  className="choose_accordin_right_side_down_img"
+                />
+              }
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Box
+                display={'flex'}
+                width={'100%'}
+                justifyContent={'space-between'}
+                alignItems={'center'}
               >
-                <Typography
-                  sx={{ flexGrow: 5, fontWeight: 'light', fontSize: '14px' }}
-                >
-                  The Palm Rooms
-                </Typography>
-                <Typography
-                  sx={{ flexGrow: 0, fontWeight: 'light', fontSize: '12px' }}
-                >
-                  1 King Bed
-                </Typography>
-                <IconButton sx={{ flexGrow: 2 }}>
-                  <PersonOutlineOutlinedIcon />
-                  <Typography sx={{ fontWeight: 'light', fontSize: '12px' }}>
-                    x2
+                <Box flex={'1.5'}>
+                  <Typography className="choose_accordin_text_font_style">
+                    Ocean Queen Room
                   </Typography>
-                </IconButton>
-                <Typography
-                  sx={{ flexGrow: 1, fontWeight: 'light', fontSize: '12px' }}
+                </Box>
+                <Box flex={1}>
+                  <Typography className="choose_accordin_text_font_style">
+                    2 Queen Beds
+                  </Typography>
+                </Box>
+                <Box
+                  display={'flex'}
+                  flex={1}
+                  alignItems={'center'}
+                  justifyContent={'space-evenly'}
                 >
-                  5 Rates
-                </Typography>
-                <Typography
-                  sx={{ flexGrow: 0.5, fontWeight: 'light', fontSize: '14px' }}
-                >
-                  From AED2199
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                ADD PALM ROOMS
-                {/* <RoomPage /> */}
-              </AccordionDetails>
-            </Accordion>
-          </Grid>
-        </Grid>
+                  <Box display={'flex'}>
+                    <img src={choose_user} alt="" />
+
+                    <Typography
+                      marginLeft={2}
+                      className="choose_accordin_text_font_style"
+                    >
+                      {' '}
+                      x2
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography className="choose_accordin_text_font_style">
+                      4 Rates
+                    </Typography>
+                  </Box>
+                  <Box>
+                    <Typography className="choose_accordin_text_font_style">
+                      From AED 2,050
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Room />
+            </AccordionDetails>
+          </Accordion>
+        </Box> */}
       </Box>
     </div>
   );

@@ -32,6 +32,13 @@ import instagramIcon from '../../public/staticImage/Instagram.png';
 import youTubeIcon from '../../public/staticImage/Youtube.png';
 import twitterIcon from '../../public/staticImage/Twitter.png';
 
+// choose room img
+import left_side_arrow from '../../public/staticImage/left_Side_img.png';
+import choose_Room_top from '../../public/staticImage/choose_room_img.png';
+import choose_Room_section from '../../public/staticImage/choose_room_img1.png';
+import choose_user from '../../public/staticImage/choose_user_img.png';
+import choose_down_arrow_img from '../../public/staticImage/choose_down_img_arrow.png';
+
 export const meneItme: any = [
   {
     logo: atlantis_logo,
@@ -136,6 +143,18 @@ export const meneItme: any = [
         instagramIcon,
         youTubeIcon,
         twitterIcon,
+      },
+    ],
+  },
+  {
+    chooseRoomImg: [
+      {
+        left_side_arrow,
+        choose_Room_top,
+        choose_Room_section,
+        hotel,
+        choose_user,
+        choose_down_arrow_img,
       },
     ],
   },
