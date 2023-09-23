@@ -9,6 +9,8 @@ import NavBar from '../../../navbar/NavBar';
 import SearchIndex from '../searchComponent/SearchIndex';
 import HotelInfoIndex from '../hotelInfo/HotelInfoIndex';
 
+import IndexDashboardSeaction from '../../dashboard/dashboarSection/IndexDashboardSection';
+
 const FilterIndex: React.FC = (props: any) => {
   const { meneItme } = props;
   return (
@@ -37,8 +39,11 @@ const FilterIndex: React.FC = (props: any) => {
           </Grid>
         </Grid>
       </Box>
-      <Box>
+      {/* <Box>
         <HotelInfoIndex meneItme={meneItme} />
+      </Box> */}
+      <Box>
+        <IndexDashboardSeaction meneItme={meneItme} />
       </Box>
     </>
   );

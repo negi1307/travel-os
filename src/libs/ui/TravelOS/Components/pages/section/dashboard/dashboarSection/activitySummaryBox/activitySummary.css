@@ -1,0 +1,39 @@
+.activity_box_color {
+  width: 96px !important;
+  display: flex !important;
+  justify-content: solid !important;
+  justify-content: center !important;
+  align-items: center !important;
+  color: #ffffff !important;
+  height: 48px !important;
+}
+.activity_typo_font_style {
+  line-height: 27.95px !important;
+  font-weight: 400 !important;
+  /* border: solid red; */
+  font-size: 13.09px !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+.activity_hding_font_style {
+  font-size: 15.83px !important;
+  font-weight: 500 !important;
+  line-height: 19.16px !important;
+}
+.activity_quotation_font_style {
+  font-size: 12.88px !important;
+  font-weight: 400 !important;
+  line-height: 15.59px !important;
+}
+.activity_bgColor1 {
+  background-color: #e49225 !important;
+}
+.activity_bgColor2 {
+  background-color: #bf0030 !important;
+}
+.activity_bgColor3 {
+  background-color: #1fa355 !important;
+}
+.activity_bgColor4 {
+  background-color: #720072 !important;
+}

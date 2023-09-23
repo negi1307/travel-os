@@ -39,6 +39,13 @@ import choose_Room_section from '../../public/staticImage/choose_room_img1.png';
 import choose_user from '../../public/staticImage/choose_user_img.png';
 import choose_down_arrow_img from '../../public/staticImage/choose_down_img_arrow.png';
 
+// dashboard search img
+import table_card1 from '../../public/staticImage/tableCard_img.png';
+import table_card2_right_side_dwnl from '../../public/staticImage/tableCard_down_img.png';
+import table_card3_right_side_cros from '../../public/staticImage/error_tableCard_img.png';
+import mainTable_plus from '../../public/staticImage/mainTable_+.png';
+import mainTable_mainus from '../../public/staticImage/mainTable_.png';
+
 export const meneItme: any = [
   {
     logo: atlantis_logo,
@@ -155,6 +162,17 @@ export const meneItme: any = [
         hotel,
         choose_user,
         choose_down_arrow_img,
+      },
+    ],
+  },
+  {
+    dashboardSearhImg: [
+      {
+        table_card1,
+        table_card2_right_side_dwnl,
+        table_card3_right_side_cros,
+        mainTable_plus,
+        mainTable_mainus,
       },
     ],
   },

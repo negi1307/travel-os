@@ -11,6 +11,7 @@ import { darkTheme } from './ui';
 import { useStyles } from './ui';
 import { meneItme } from './app/app.theme';
 import './app/i18n';
+import './app/AppMain.css';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
