@@ -14,9 +14,9 @@ const HotelInfoIndex: React.FC = (props: any) => {
     <Grid container spacing={2} height={'100vh'}>
       <Grid item xs={12} sm={10} sx={{ backgroundColor: '#ecf7fa' }}>
         <ChooseRoomTable meneItme={meneItme} />
-        {/* <Experience /> */}
-        {/* <GuestDetail /> */}
-        {/* <PaymentInformation /> */}
+        <Experience />
+        <GuestDetail />
+        <PaymentInformation />
       </Grid>
       <Grid item xs={12} sm={2} sx={{ backgroundColor: '#f9fdfe' }}>
         <SelectionSummary />
