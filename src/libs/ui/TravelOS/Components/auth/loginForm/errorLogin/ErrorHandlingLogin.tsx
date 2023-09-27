@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../../../../store/auth/actions';
 
 interface dataType {
-  first?: string;
-  second?: string;
+  ChildDataOut?: any;
+  parentsDataIn?: any;
 }
 
-const ErrorHandlingLogin: React.FC<dataType> = (props: any) => {
+const ErrorHandlingLogin = (props: dataType) => {
   const { parentsDataIn, ChildDataOut } = props;
   const dispatch = useDispatch();
   const [loginInput, setLoginInput] = useState({
@@ -83,8 +83,7 @@ const ErrorHandlingLogin: React.FC<dataType> = (props: any) => {
     }
   }, [errorMessage]);
   //out useEffect use out
-
-  return;
+  return null;
 };
 
 export default ErrorHandlingLogin;

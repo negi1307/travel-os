@@ -24,7 +24,6 @@ const StayDate = () => {
 
   const [value, setValue] = useState<any>([null, null]); // Initial date range is null
   const [errorFirtsData, setErrorFirstDate] = useState(false);
-  console.log(expanded, 'shiiii');
   const [errorSecondData, setErrorSecondDate] = useState(false);
   const [errorShow, setErrorShow] = useState(false);
   const [getDate, setGetDate] = useState({

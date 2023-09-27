@@ -31,16 +31,21 @@ type LoadComponentProps = {
   component: React.LazyExoticComponent<() => JSX.Element>;
 };
 
+interface MyComponentProps {
+  meneItme?: any; // Declare the prop here
+  component?: any;
+}
+
 const LoadComponent = ({
   component: Component,
   meneItme,
-}: LoadComponentProps) => (
+}: MyComponentProps) => (
   <Suspense fallback={loading()}>
     <Component meneItme={meneItme} />
   </Suspense>
 );
 
-const AllRoutes = (props: any) => {
+const AllRoutes = (props: MyComponentProps) => {
   const { meneItme } = props;
 
   return useRoutes([

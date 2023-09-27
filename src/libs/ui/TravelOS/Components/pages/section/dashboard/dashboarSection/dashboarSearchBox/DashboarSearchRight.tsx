@@ -15,7 +15,6 @@ const DashboarSearchRight = () => {
 
   return (
     <Box
-      position={'relative.'}
       className="heigth selector_parentBox"
       marginRight={'auto'}
       marginLeft={'auto'}

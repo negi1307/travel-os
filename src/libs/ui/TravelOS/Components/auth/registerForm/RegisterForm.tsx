@@ -9,11 +9,17 @@ import {
 } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import './RegisterForm.css';
+// import './RegisterForm.css';
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from '@mui/material';
 import ErrorHandlingRegister from './errorRegister/ErrorHandlingRegister';
-const RegisterForm: React.FC = (props: any) => {
+
+interface MyComponentProps {
+  meneItme: any; // Declare the prop here
+  connectUpdate: any;
+}
+
+const RegisterForm = (props: MyComponentProps) => {
   const { connectUpdate, meneItme } = props;
   const {
     rgErrorFstName,
@@ -64,7 +70,6 @@ const RegisterForm: React.FC = (props: any) => {
 
   const childDataIn = (item: any) => {
     setChildIncoming(item);
-    console.log(item, 'testing');
   };
   //end login form data get & error handling
 

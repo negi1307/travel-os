@@ -105,14 +105,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import './Footer.css';
+// import './Footer.css';
 
 const Footer = (props: any) => {
   const { meneItme } = props;
   const { faceBookIcon, instagramIcon, twitterIcon, youTubeIcon } =
     meneItme?.[8]?.footerIcon?.[0];
 
-  console.log(meneItme?.[8]?.footerIcon?.[0], 'kkkks');
   let footerData = [
     {
       item: 'About Kerzner Group',

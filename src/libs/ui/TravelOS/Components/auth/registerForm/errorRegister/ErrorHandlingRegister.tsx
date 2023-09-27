@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
 interface dataType {
-  first?: string;
-  second?: string;
+  first?: any;
+  second?: any;
 }
 
-const ErrorHandlingRegister: React.FC = (props: dataType | any) => {
+const ErrorHandlingRegister = (props: dataType | any) => {
   const { parentsDataIn, ChildDataOut } = props;
   const [registerInput, setRegisterInput] = useState({
     fName: '',
@@ -130,8 +130,7 @@ const ErrorHandlingRegister: React.FC = (props: dataType | any) => {
     }
   }, [errorMessage]);
   //out useEffect use out
-
-  return;
+  return null;
 };
 
 export default ErrorHandlingRegister;

@@ -6,6 +6,7 @@ import { APICore } from '../helpers/apiCore';
 type PrivateRouteProps = {
   component: React.ComponentType;
   roles?: string;
+  meneItme: any;
 };
 
 /**
@@ -24,7 +25,6 @@ const PrivateRoute = ({
   let location = useLocation();
   const api = new APICore();
   const loggedInUser = api.getLoggedInUser();
-  console.log(meneItme, 'meneItme333');
   /**
    * not logged in so redirect to login page with the return url
    */

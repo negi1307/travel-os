@@ -9,7 +9,7 @@ const loading = () => <div className=""></div>;
 
 type DefaultLayoutProps = {};
 
-const DefaultLayout = (props: DefaultLayoutProps): React$Element<any> => {
+const DefaultLayout = (props: DefaultLayoutProps) => {
   //   const { layoutColor } = useSelector((state) => ({
   //     layoutColor: state.Layout.layoutColor,
   //   }));

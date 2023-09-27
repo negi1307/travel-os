@@ -1,10 +1,16 @@
 import React from 'react';
 import { Typography, Button, Box } from '@mui/material';
-import './registerGuidelines.css';
+// import './registerGuidelines.css';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
-const RegistraterGuidelines: React.FC = (props: any) => {
+
+interface MyComponentProps {
+  meneItme: any; // Declare the prop here
+  connectUpdate: any;
+}
+
+const RegistraterGuidelines = (props: MyComponentProps) => {
   const { connectUpdate, meneItme } = props;
   const { t } = useTranslation();
 

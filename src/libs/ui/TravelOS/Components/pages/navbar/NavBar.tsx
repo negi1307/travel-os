@@ -13,7 +13,7 @@ import BusinessOutlinedIcon from '@mui/icons-material/BusinessOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import { Link } from 'react-router-dom';
 
-import './NavBar.css';
+// import './NavBar.css';
 import { logoutUser } from '../../../../../store/auth/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -28,7 +28,11 @@ import { useLocation } from 'react-router-dom';
 
 import { useStyles } from '../../../../../../ui';
 
-const NavBar: React.FC = (props: any) => {
+interface MyComponentProps {
+  meneItme: any; // Declare the prop here
+}
+
+const NavBar = (props: MyComponentProps) => {
   const { meneItme } = props;
   const { t } = useTranslation();
   const classes = useStyles();
@@ -55,7 +59,7 @@ const NavBar: React.FC = (props: any) => {
   const location = useLocation();
   const dispatch = useDispatch();
 
-  const store = useSelector((state) => state);
+  const store = useSelector((state: any) => state);
   const userd = store?.Auth?.user;
   const navigate = useNavigate();
 

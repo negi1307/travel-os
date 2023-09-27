@@ -1,7 +1,11 @@
 import { BrowserRouter } from 'react-router-dom';
 import { AllRoutes } from './Index';
 
-const Routes = (props: any) => {
+interface MyComponentProps {
+  meneItme: any; // Declare the prop here
+}
+
+const Routes = (props: MyComponentProps) => {
   const { meneItme } = props;
   return (
     <BrowserRouter>

@@ -7,7 +7,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { DummyData } from './dummydata';
 import './Destination.css';
 
-const Destination: React.FC = (props: any) => {
+interface MyComponentProps {
+  meneItme: any; // Declare the prop here
+}
+
+const Destination = (props: MyComponentProps) => {
   const { meneItme } = props;
   const dropIcon = meneItme?.[6];
   const [expanded, setExpanded] = useState(false);

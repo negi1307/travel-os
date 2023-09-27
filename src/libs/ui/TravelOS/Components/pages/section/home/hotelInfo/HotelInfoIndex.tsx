@@ -7,7 +7,12 @@ import SelectionSummary from './selectionSummary/SelectionSummary';
 import Experience from './payment/Experience';
 import GuestDetail from './payment/GuestDetail';
 import PaymentInformation from './payment/PaymentInformation';
-const HotelInfoIndex: React.FC = (props: any) => {
+
+interface MyComponentProps {
+  meneItme: any; // Declare the prop here
+}
+
+const HotelInfoIndex = (props: MyComponentProps) => {
   const { meneItme } = props;
 
   return (

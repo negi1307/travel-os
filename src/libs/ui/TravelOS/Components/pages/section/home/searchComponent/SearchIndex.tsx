@@ -32,7 +32,7 @@ const SearchIndex = (props: any) => {
             borderRight={2}
             borderColor={'primary.main'}
           >
-            <StayDate meneItme={meneItme} />
+            <StayDate />
           </Grid>
           <Grid position={'relative'} item xs={4}>
             <Grid
@@ -40,7 +40,7 @@ const SearchIndex = (props: any) => {
               display={'flex'}
               flexDirection={'row'}
             >
-              <GuestRoom meneItme={meneItme} />
+              <GuestRoom />
               <Link to="/dashboard/search" className="navBar_link">
                 <Button
                   // fullWidth

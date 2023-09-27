@@ -166,7 +166,7 @@ class APICore {
         'content-type': 'multipart/form-data',
       },
     };
-    return axios.post(url, formData, config);
+    return axios.post(url, formData);
   };
 
   /**
@@ -184,7 +184,7 @@ class APICore {
         'content-type': 'multipart/form-data',
       },
     };
-    return axios.patch(url, formData, config);
+    return axios.patch(url, formData);
   };
 
   isUserAuthenticated = () => {
@@ -221,7 +221,7 @@ class APICore {
     return getUserFromSession();
   };
 
-  setUserInSession = (modifiedUser) => {
+  setUserInSession = (modifiedUser: any) => {
     let userInfo = sessionStorage.getItem(AUTH_SESSION_KEY);
     if (userInfo) {
       const { token, user } = JSON.parse(userInfo);

@@ -1,11 +1,5 @@
-.form_style_hight {
+/* .form_style_hight {
   height: 100vh;
-  /* background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-size: contain; */
-  /* height: -webkit-fill-available; */
-  /* width: 100%; */
   background-size: cover;
   background-position: center center;
 }
@@ -13,7 +7,6 @@
 .bg_carouselParent .css-1ejzhdh,
 .bg_carouselParent .css-18n711y,
 .bg_carouselParent .css-2dm4k {
-  /* height: 100vh; */
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -60,7 +53,6 @@
   margin-right: 20px !important;
 }
 
-/* // new css */
 .language_parentBox .css-1wu7ecg-MuiSvgIcon-root-MuiSelect-icon {
   position: absolute;
   transform: translate(-70px, 0px);
@@ -89,11 +81,9 @@
 }
 .Mui-selected.custom-menu-item {
   border-radius: 0% !important;
-  /* / background: transparent !important; / */
   transform: scale(1.3) translateX(15px) !important;
 }
 .custom-menu-item {
-  /* / margin: y 5px; / */
   background: whitesmoke !important;
   transition: transform 0.2s ease, background-color 0.2s ease;
   display: flex;
@@ -126,4 +116,4 @@
     width: 134px;
     margin-right: 0px;
   }
-}
+} */

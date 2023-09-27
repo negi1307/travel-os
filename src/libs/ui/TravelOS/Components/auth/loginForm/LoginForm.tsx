@@ -10,7 +10,7 @@ import {
   FormControl,
   Box,
 } from '@mui/material';
-import './Login.css';
+// import './Login.css';
 import '../../../../TravelOS/Components/pages/style.css';
 import ForgetChangePassword from '../../../../../models/forgetChangePassword/ForgetChangePassword';
 import PersonIcon from '@mui/icons-material/Person';
@@ -22,7 +22,12 @@ import ErrorHandlingLogin from './errorLogin/ErrorHandlingLogin';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-const Login: React.FC = (props: any) => {
+interface MyComponentProps {
+  meneItme: any; // Declare the prop here
+  connectUpdate: any;
+}
+
+const Login = (props: MyComponentProps) => {
   const { connectUpdate, meneItme } = props;
   const {
     logErrorEmailRquid,
@@ -66,7 +71,7 @@ const Login: React.FC = (props: any) => {
   const handleClose = () => setOpen(false);
 
   // auth protect routing
-  const store = useSelector((state) => state);
+  const store = useSelector((state: any) => state);
   const user = store?.Auth?.user;
   const navigate = useNavigate();
 

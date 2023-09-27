@@ -84,7 +84,7 @@ function* signup({
   try {
     const response = '';
     // yield call(signupApi, { fullname, email, password });
-    const user = response.data;
+    const user = response;
     // api.setLoggedInUser(user);
     // setAuthorization(user['token']);
     yield put(authApiResponseSuccess(AuthActionTypes.SIGNUP_USER, user));
@@ -100,7 +100,7 @@ function* forgotPassword({ payload: { username } }: UserData): SagaIterator {
     const response = '';
     // yield call(forgotPasswordApi, { username });
     yield put(
-      authApiResponseSuccess(AuthActionTypes.FORGOT_PASSWORD, response.data)
+      authApiResponseSuccess(AuthActionTypes.FORGOT_PASSWORD, response)
     );
   } catch (error: any) {
     yield put(authApiResponseError(AuthActionTypes.FORGOT_PASSWORD, error));

@@ -8,7 +8,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Provider } from 'react-redux';
 import { configureStore } from './libs/store/store';
 import { darkTheme } from './ui';
-import { useStyles } from './ui';
 import { meneItme } from './app/app.theme';
 import './app/i18n';
 import './app/AppMain.css';

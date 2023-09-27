@@ -8,7 +8,7 @@ import Footer from './footer/Footer';
 import Paper from '@mui/material/Paper';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import './PageIndex.css';
+// import './PageIndex.css';
 import HomeIndex from './section/home/HomeIndex';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
@@ -36,7 +36,7 @@ const PageIndex: React.FC = (props: any) => {
           }}
         ></Paper>
         <AutoPlaySwipeableViews interval={4000}>
-          {pageBackgroudImage?.map((step, index) => (
+          {pageBackgroudImage?.map((step: any, index: any) => (
             <>
               <Box
                 className="carousel_parentBox"

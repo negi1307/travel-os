@@ -5,7 +5,7 @@ import Paper from '@mui/material/Paper';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 // import './PageIndex.css';
-import './Login.css';
+// import './Login.css';
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
 const LoginIndex = (props: any) => {
@@ -27,7 +27,7 @@ const LoginIndex = (props: any) => {
           }}
         ></Paper>
         <AutoPlaySwipeableViews>
-          {pageBackgroudImage?.map((step, index) => (
+          {pageBackgroudImage?.map((step: any, index: number) => (
             <>
               <Box
                 className="carousel_parentBox"

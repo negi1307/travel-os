@@ -11,7 +11,7 @@ const AuthIndex: React.FC<connectType> = (props: any) => {
 
   const [connectComponent, setConnectComponent] = useState(1);
 
-  const connectUpdate = (item: number) => {
+  const connectUpdate = (item: any) => {
     setConnectComponent(item);
   };
 
