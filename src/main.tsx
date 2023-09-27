@@ -20,7 +20,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <StrictMode>
     <Provider store={configureStore({})}>
-      <ThemeProvider theme={darkTheme} useStyles={useStyles}>
+      <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <main>
           <App meneItme={meneItme} />
