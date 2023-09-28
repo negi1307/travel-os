@@ -11,11 +11,13 @@ import HotelInfoIndex from '../hotelInfo/HotelInfoIndex';
 
 import IndexDashboardSeaction from '../../dashboard/dashboarSection/IndexDashboardSection';
 
+
+import DefaultIndex from '../../defaultPages/DefaultIndex';
 const FilterIndex: React.FC = (props: any) => {
   const { meneItme } = props;
   return (
     <>
-      <Box>
+      <Box sx={{backgroundColor:'#EDF7F9'}}>
         <Box>
           <NavBar meneItme={meneItme} />
         </Box>
@@ -26,7 +28,7 @@ const FilterIndex: React.FC = (props: any) => {
           <Grid item xs={12} md={11}>
             <FilterNavBar />
           </Grid>
-          <Grid container sx={{ background: 'wheat' }}>
+          <Grid container>
             <Grid item md={6} xs={12}>
               <Box width={'85%'}>
                 <FilterItemOne />
@@ -42,9 +44,13 @@ const FilterIndex: React.FC = (props: any) => {
       <Box>
         <HotelInfoIndex meneItme={meneItme} />
       </Box>
+      
       {/* <Box>
         <IndexDashboardSeaction meneItme={meneItme} />
       </Box> */}
+      <Box>
+        <DefaultIndex/>
+      </Box>
     </>
   );
 };

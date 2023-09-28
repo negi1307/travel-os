@@ -5,8 +5,7 @@ import { Paper } from '@mui/material';
 const Map = ({ latitude, longitude }: any) => {
   const mapStyles = {
     width: '100%',
-    height: '60rem',
-    borderRadius: '20px',
+    height: '589px',
   };
 
   const center = {
@@ -15,7 +14,7 @@ const Map = ({ latitude, longitude }: any) => {
   };
   return (
     <Paper elevation={3} sx={{ marginBottom: 4 }}>
-      <LoadScript googleMapsApiKey="  key  ">
+      <LoadScript googleMapsApiKey="  .....key......  ">
         <GoogleMap mapContainerStyle={mapStyles} center={center} zoom={15}>
           <Marker position={center} />
         </GoogleMap>
