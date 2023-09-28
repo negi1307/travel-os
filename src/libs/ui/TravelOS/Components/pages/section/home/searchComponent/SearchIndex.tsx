@@ -41,7 +41,7 @@ const SearchIndex = (props: any) => {
               flexDirection={'row'}
             >
               <GuestRoom />
-              <Link to="/dashboard/search" className="navBar_link">
+              <Link to="/dashboard/search" className="navBar_link_btn">
                 <Button
                   // fullWidth
 

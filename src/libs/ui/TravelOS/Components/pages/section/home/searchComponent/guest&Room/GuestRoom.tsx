@@ -10,9 +10,9 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import ClearIcon from '@mui/icons-material/Clear';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-import './guestRoom.css';
+// import './guestRoom.css';
 
-import '../destination/Destination.css';
+// import '../destination/Destination.css';
 
 const GuestRoom = () => {
   const [expanded, setExpanded] = useState(false);
@@ -56,7 +56,7 @@ const GuestRoom = () => {
           <Box display={'flex'} justifyContent={'space-between'}>
             <Box>
               <Typography
-                className="destination_select_first"
+                className="destination_select_second"
                 color={'primary.light'}
               >
                 Guest and Rooms

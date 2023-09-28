@@ -3,11 +3,11 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import { Typography, Box, Grid, MenuItem, Button } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import './StayDate.css';
+// import './StayDate.css';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
-import './StayDate.css';
+// import './StayDate.css';
 
 import '../destination/Destination.css';
 
@@ -30,33 +30,6 @@ const StayDate = () => {
     firstDate: '',
     secondDate: '',
   });
-
-  // console.log(nDate, nDates);
-  // const handleConfirm = () => {
-  //   setErrorShow(true);
-  //   if (value?.[0] !== null) {
-  //     setErrorFirstDate(false);
-
-  //     if (value?.[1] !== null) {
-  //       let dates = value?.[1]?.toJSON().slice(0, 10);
-  //       let nDates =
-  //         dates.slice(8, 10) +
-  //         '/' +
-  //         dates.slice(5, 7) +
-  //         '/' +
-  //         dates.slice(0, 4);
-  //       setGetDate({ ...getDate, secondDate: nDates });
-
-  //       setErrorSecondDate(false);
-
-  //       setExpanded(false);
-  //     } else {
-  //       setErrorSecondDate(true);
-  //     }
-  //   } else {
-  //     setErrorFirstDate(true);
-  //   }
-  // };
 
   useEffect(() => {
     if (value?.[0] !== null) {
@@ -90,7 +63,7 @@ const StayDate = () => {
           <Box display={'flex'} justifyContent={'space-between'}>
             <Box>
               <Typography
-                className="destination_select_first"
+                className="destination_select_second"
                 color={'primary.light'}
               >
                 Stay Date

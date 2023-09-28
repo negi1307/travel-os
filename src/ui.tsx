@@ -59,7 +59,7 @@ export const darkTheme = createTheme({
     },
 
     h1: {
-      fontSize: '1.75rem',
+      fontSize: '1.65rem',
       fontWeight: 700,
       letterSpacing: '0.08333em',
       '@media (min-width:600px)': {

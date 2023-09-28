@@ -16,7 +16,6 @@ const RegistraterGuidelines = (props: MyComponentProps) => {
 
   const { title, registrationGudl, registrationBtn } = meneItme[1];
   const theme = useTheme();
-  console.log(theme, 'testing');
 
   return (
     <>
@@ -33,16 +32,14 @@ const RegistraterGuidelines = (props: MyComponentProps) => {
             </Typography>
           </Box>
           <Box marginLeft={2} display={'flex'} alignItems={'center'}>
-            <Typography variant={'h6'} color={'primary'}>
+            <Typography color={'primary'}>
               {t(`${meneItme?.[2]?.back}`)}
             </Typography>
           </Box>
         </Box>
         <Box margin={'auto'}>
           <Box display={'flex'} justifyContent={'center'}>
-            <Typography variant={'h1'} color={'warning.main'}>
-              {t(registrationGudl)}
-            </Typography>
+            <Typography variant={'h1'}>{t(registrationGudl)}</Typography>
           </Box>
 
           <Box marginTop={4} display={'flex'} justifyContent={'center'}>
@@ -50,7 +47,7 @@ const RegistraterGuidelines = (props: MyComponentProps) => {
               return (
                 <>
                   <Box className="guideline_point_style" marginTop={3}>
-                    <Typography variant={'body1'} color={'secondary'}>
+                    <Typography variant={'body1'}>
                       {t(`${item?.point1}`)}
                     </Typography>
                   </Box>

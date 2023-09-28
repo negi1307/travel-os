@@ -1,6 +1,5 @@
 .point_cursor {
   cursor: pointer;
-  /* background-color: blue; */
 }
 .destination_hding_css {
   cursor: pointer !important;
@@ -32,10 +31,6 @@
   cursor: pointer;
   border-bottom: 1px blue !important;
 }
-/* .destination_selectorBox .point_cursor:hover {
-  background-color: antiquewhite;
-  color: #000;
-} */
 
 .destination_select {
   font-size: 16px !important;
@@ -90,17 +85,8 @@
   min-height: 33px !important;
   border-radius: 5px !important;
 }
-/* .destination_select .css-6ks0vp-MuiTypography-root {
-  margin: 13px 0 !important;
-  background-color: red !important;
-} */
-/* 
-.destination_selectorBox .css-o4b71y-MuiAccordionSummary-content {
-  margin: 13px 0 !important;
-} */
 .destination_selectorBox .MuiBox-root .css-1iszri5-MuiTypography-root {
   margin-bottom: 10px !important;
-  /* border: 2px solid red !important; */
 }
 .destination_selectorBox .css-klkp6i-MuiPaper-root-MuiAccordion-root {
   box-shadow: none !important;

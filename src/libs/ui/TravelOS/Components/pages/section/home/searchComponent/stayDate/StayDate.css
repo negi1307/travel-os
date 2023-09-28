@@ -1,4 +1,4 @@
-.Mui-selected {
+/* .Mui-selected {
   border-radius: 10px !important;
 }
 .Mui-selected:hover {
@@ -40,18 +40,7 @@
   line-height: 1 !important;
   padding: 0px !important;
 }
-/* 
-.date_pickerBox
-  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
-  border: 2px solid red;
-  position: relative;
-}
-.date_pickerBox .css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
-  margin: 0px !important;
-}
-.date_pickerBox .css-pwcg7p-MuiCollapse-root {
-  position: absolute;
-} */
+
 .date_pickerBox {
   position: absolute;
   left: 0;
@@ -76,7 +65,6 @@
 }
 .date_pickerBox .MuiBox-root .css-4ukj1x-MuiTypography-root {
   margin-bottom: 10px !important;
-  /* border: 2px solid red !important; */
 }
 .date_pickerBox .css-cxmp86 {
   padding: 0px 15px;
@@ -146,12 +134,7 @@
 .date_pickerBox
   .css-cyzddl-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition:not {
   color: white !important;
-  /* background-color: blue; */
 }
-/* 
-.css-1anqmj6-MuiPopper-root-MuiPickersPopper-root {
-  width: 76rem !important;
-} */
 
 .date_pickerBox .dateShow_text {
   display: block;
@@ -162,4 +145,4 @@
 .date_pickerBox .css-1cpssoz-MuiTypography-root {
   display: flex;
   align-items: center;
-}
+} */

@@ -1,4 +1,4 @@
-.guest_icon {
+/* .guest_icon {
   border: solid;
   border-radius: 12px;
   color: wheat;
@@ -44,7 +44,6 @@
   color: white !important;
   border: solid;
   border-radius: 12px;
-  /* color: wheat; */
   cursor: pointer;
 }
 .decremen_minus {
@@ -52,7 +51,6 @@
   color: black;
   border: solid;
   border-radius: 12px;
-  /* color: wheat; */
   cursor: pointer;
 }
 .guest_inputParent .open_guestDropdown {
@@ -111,4 +109,4 @@
 .guest_roomsBox .destination_select {
   height: 1.42rem;
   transform: translate(0px, -5px);
-}
+} */
