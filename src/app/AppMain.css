@@ -341,3 +341,21 @@
     margin-right: 0px;
   }
 }
+
+/* ----------------------------card hotel details with map */
+.card-content-paragraph{
+  padding: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.my-account-fc-label .MuiTypography-root .MuiTypography-caption .css-15b6asd-MuiTypography-root{
+  font-size: '12px';
+  line-height: '0px' !important;
+}
+
+.my-ac-select-menu{
+  background-color: #ffffff !important;
+}
+.my-ac-select-menu:hover{
+  background: #d9d7d7 !important;
+}

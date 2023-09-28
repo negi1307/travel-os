@@ -1,14 +1,9 @@
-import React, { useState } from 'react';
-import { Box, Slider, Typography } from '@mui/material';
+import React from 'react';
+import { Box, IconButton,  Typography } from '@mui/material';
 import AppsRoundedIcon from '@mui/icons-material/AppsRounded';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 const FilterNavBar: React.FC = () => {
-  const [priceRange, setPriceRange] = useState([200, 3200]);
-
-  const handlePriceRangeChange = (event: any, newValue: any) => {
-    setPriceRange(newValue);
-  };
 
   return (
     <>
@@ -19,19 +14,11 @@ const FilterNavBar: React.FC = () => {
           justifyContent={'start'}
           width={'30%'}
         >
-          <Typography p={2} variant="h5" color="primary">
-            Price Range:
-          </Typography>
-          <Box display={'flex'} alignItems={'center'} width={'50%'}>
-            <Slider
-              value={priceRange}
-              onChange={handlePriceRangeChange}
-              valueLabelDisplay="on"
-              max={3146}
-              min={250}
-              color="primary"
-            />
-          </Box>
+          <IconButton>
+            <ArrowCircleLeftOutlinedIcon/> 
+           <strong> Back</strong>
+          </IconButton>
+          
         </Box>
         <Box
           width="70%"
@@ -39,7 +26,7 @@ const FilterNavBar: React.FC = () => {
           alignItems="center"
           justifyContent="flex-end"
         >
-          <Typography variant="h5" color="primary">
+          <Typography sx={{fontSize:'12px'}} color="primary">
             View As
           </Typography>
           <LocationOnIcon color="primary" />
