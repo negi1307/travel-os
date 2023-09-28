@@ -1,0 +1,4 @@
+.price_RangeParentbox .css-1es7ukv-MuiSlider-thumb::after {
+  background: red !important;
+  clip-path: polygon(100% 50%, 0 0, 0 100%) !important;
+}

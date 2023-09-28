@@ -1,0 +1,34 @@
+.tableCard_main_hight_wigth {
+  height: 138px !important;
+  width: 1138px !important;
+}
+.tableCard_atlantis_font_style {
+  font-size: 11.17px !important;
+  font-weight: 400 !important;
+  line-height: 13.51px !important;
+}
+.tableCard_hotel_font_style {
+  font-weight: 400 !important;
+  font-size: 8.19px !important;
+  line-height: 9.91px !important;
+}
+.tabelCard_ocean_font_style {
+  font-size: 10.744px !important;
+  font-weight: 400 !important;
+  line-height: 13.03px !important;
+}
+.tableCard_roomType_font_Style {
+  font-size: 10.77px !important;
+  font-weight: 300 !important;
+  line-height: 13.03px !important;
+}
+.tableCard_right_text_font_style {
+  font-weight: 300 !important;
+  font-size: 10.77px !important;
+  line-height: 13.03px !important;
+  color: #046bdd;
+}
+.tableCard_right_img {
+  height: 20px !important;
+  width: 20px !important;
+}

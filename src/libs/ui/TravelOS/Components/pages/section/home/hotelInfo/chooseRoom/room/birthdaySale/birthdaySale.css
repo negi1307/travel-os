@@ -1,0 +1,50 @@
+.birthday_sale_hading_font_style {
+  line-height: 19.44px !important;
+  font-weight: 700 !important;
+  font-size: 21.13px !important;
+}
+.birthday_daily_font_style {
+  line-height: 13.83px !important;
+  font-size: 12px !important;
+  font-weight: 300 !important;
+}
+.birthday_atlantis_btn_font_style {
+  font-weight: 400 !important;
+  border: solid !important;
+  font-size: 12.46px !important;
+  line-height: 14.95px !important;
+  width: 304px !important;
+  border-radius: 40px !important;
+  background-color: #046bdd !important  ;
+  color: #ffffff !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+.birthday_aed_font_Style {
+  font-size: 19.5px !important;
+  font-weight: 700 !important;
+  line-height: 17.94px !important;
+}
+.birthday_exc_font_style {
+  font-size: 11.44px !important;
+  font-weight: 400 !important;
+  line-height: 17.74px !important;
+  color: #6c87a5;
+}
+.birthday_select_btn_font_style {
+  font-size: 13.81px !important;
+  font-weight: 400 !important;
+  width: 233px !important;
+  /* border: solid red; */
+  background-color: #0057b7 !important;
+  color: #ffffff !important;
+  height: 71px !important;
+  border-radius: 0 !important;
+  font-size: 400 !important;
+  line-height: 13.58px !important;
+}
+.choose_birthdaySection {
+  padding: 50px 70px !important;
+}
+.choose_birthdaySection .child_birthdaybox {
+}

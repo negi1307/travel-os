@@ -22,7 +22,34 @@
     "rgAddFile":"ADD FILE",
     "rgGuideline":"THE EXPECTED DOCUMENTS ARE: AGENCY PROFILE, TRADE LICENCE. MAXIMUM OF 3 DOCUMENTS CAN BE UPLOADED. THE DOCUMENT FORMAT SHOULD BE IN PDF OR JPEG. THE MAXIMUM DOCUMENT SIZE WILL BE 3MB.",
     "rgExpression":"EXPRESSION OF INTEREST",
-    "back":"Back"
+    "back":"Back",
 
+    "logErrorEmailRquid":"Please Enter Your Email",
+    "logErrorEmailVlid":"Please Enter Valid Email",
+    "logErroPassword":"Please Enter Your Password",
+
+    "rgErrorFstName":"Please Enter Name",
+    "rgErrorLstName":"Please Enter Last Name",
+    "rgErrorNumber":"Please Enter Number",
+    "rgErrorEmail":"Please Enter Email",
+    "reErrorCode":"Please Enter Code",
+    "rgErrorAgencyName":"Please Enter Agency Name",
+    "rgErrorCountry":"Please Enter Country",
+    "rgErrorCity":"Please Enter City",
+    "rgErrorFile":"Please Enter File",
+    "rgErrorMessage":"Please Enter Message",
+
+    "nvBarHome":"Home",
+    "nvBarDashbaod":"Dashboard",
+    "nvBarMyAccount":"My Account",
+    "nvBarFAQs":"FAQs",
+    "nvBarHoteInfo":"Hote Info",
+
+"homeDestination":"DESTINATION",
+"homeStayDate":"STAY DATE",
+"homeGuestRoom":"Gu"
+
+
+    
 
 }

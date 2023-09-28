@@ -1,45 +1,119 @@
-.form_style_hight {
-  /* background-image: url('../../../../../../public/staticImage/background.jpg'); */
-  height: 980px !important;
-  background-position: center;
+/* .form_style_hight {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg_carouselParent .css-1ejzhdh,
+.bg_carouselParent .css-18n711y,
+.bg_carouselParent .css-2dm4k {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.font_style {
-  color: white;
+.login_top_btn {
+  display: flex;
+  justify-content: end;
 }
-.form_style_hight {
+
+.input_Style {
+  border: 2px solid red !important;
+  width: 25rem;
+  border: solid 2px !important;
+  border-radius: 6px !important;
+}
+.input_Style::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  background-color: #898ea6;
+  top: 0;
+  bottom: 0;
+  opacity: 0.44;
+}
+.input_Style div {
+  position: relative;
+  z-index: 1;
+}
+.input_Style .css-1ea1xhh-MuiInputBase-input-MuiOutlinedInput-input,
+.input_Style .css-vxvc7x-MuiInputBase-input-MuiOutlinedInput-input {
+  font-weight: 400 !important;
+  padding-left: 20px !important;
+  font-size: 16.25px !important;
+}
+.languageChangeBtn {
+  width: 150px !important;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.navbarRegisterBtn {
+  padding: 12px !important;
+  width: 143px;
+  margin-right: 20px !important;
+}
+
+.language_parentBox .css-1wu7ecg-MuiSvgIcon-root-MuiSelect-icon {
+  position: absolute;
+  transform: translate(-70px, 0px);
+}
+.language_parentBox .css-gofekn-MuiSvgIcon-root-MuiSelect-icon {
+  transform: translate(-70px, 0px) rotate(180deg);
+}
+.language_parentBox .css-9425fu-MuiOutlinedInput-notchedOutline {
+  border: 0px !important;
+}
+.login_button {
+  padding: 12px 0 !important;
+  box-shadow: none !important;
+}
+.logo_parentBox img {
+  width: -webkit-fill-available;
+  position: absolute;
+  top: 0;
+  transform: scale(1.33);
+  object-fit: scale-down;
+}
+
+.MuiMenu-paper {
+  padding: y 0px !important;
+  background: transparent !important;
+}
+.Mui-selected.custom-menu-item {
+  border-radius: 0% !important;
+  transform: scale(1.3) translateX(15px) !important;
+}
+.custom-menu-item {
+  background: whitesmoke !important;
+  transition: transform 0.2s ease, background-color 0.2s ease;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 58rem;
-}
-.input_style {
-  display: flex;
-  align-items: center;
-  padding: 0px 0px;
-  border-radius: 7px;
-  border: 2px solid white;
-}
-.icon_style {
-  padding: 0 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-}
-.input_Style1 {
-  background: transparent;
-  flex: 1;
-  /* border: 3px solid red; */
-  padding: 9px;
-  outline: none;
-  border: 0;
-  color: white;
+  line-height: 0.5 !important;
 }
 
-.login_Registerdiv {
-  /* border: 1px solid red !important; */
-  flex: 1 !important;
+.custom-menu-item:hover {
+  transform: scale(1.3) translateX(19px) !important;
+  background: transparent !important;
+  width: auto !important;
+  line-height: 1.5;
 }
+@media (max-width: 768px) {
+  .input_Style {
+    width: 21rem;
+  }
+  .login_top_btn {
+    display: flex;
+    justify-content: center;
+  }
+  .navbarRegisterBtn {
+    padding: 6px !important;
+    width: 143px;
+    margin-right: 20px !important;
+  }
+  .languageChangeBtn {
+    height: 40px;
+    width: 134px;
+    margin-right: 0px;
+  }
+} */

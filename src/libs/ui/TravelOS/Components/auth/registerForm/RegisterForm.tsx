@@ -1,18 +1,41 @@
+import React, { useState } from 'react';
 import {
   Button,
   Grid,
   TextField,
   TextareaAutosize,
   Typography,
+  Box,
 } from '@mui/material';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import './RegisterForm.css';
+// import './RegisterForm.css';
 import { useTranslation } from 'react-i18next';
+import { useMediaQuery } from '@mui/material';
+import ErrorHandlingRegister from './errorRegister/ErrorHandlingRegister';
 
-const RegisterForm = (props: any) => {
+interface MyComponentProps {
+  meneItme: any; // Declare the prop here
+  connectUpdate: any;
+}
+
+const RegisterForm = (props: MyComponentProps) => {
   const { connectUpdate, meneItme } = props;
+  const {
+    rgErrorFstName,
+    rgErrorLstName,
+    rgErrorNumber,
+    rgErrorEmail,
+    reErrorCode,
+    rgErrorAgencyName,
+    rgErrorCountry,
+    rgErrorCity,
+    rgErrorFile,
+    rgErrorMessage,
+  } = meneItme?.[4];
   const { t } = useTranslation();
+  const matches = useMediaQuery('(min-width:600px)');
+
   const {
     registerTitle,
     rgAddFile,
@@ -29,242 +52,413 @@ const RegisterForm = (props: any) => {
     rgdocument,
     back,
   } = meneItme?.[2];
-  console.log(meneItme?.[2], 'testing');
+
+  //start login form data get & error handling
+  const [parentOutData, setParentOutData] = useState<any>({
+    first: '',
+    second: '',
+  });
+  const [childInComing, setChildIncoming] = useState<any>('');
+
+  const parentDataOut = (a: any, b: any) => {
+    if (b === 'input') {
+      setParentOutData({ first: a, second: b });
+    } else if (b === 'btn') {
+      setParentOutData({ first: a, second: b });
+    }
+  };
+
+  const childDataIn = (item: any) => {
+    setChildIncoming(item);
+  };
+  //end login form data get & error handling
 
   return (
     <>
-      <Grid
-        container
-        style={{ backgroundColor: 'black' }}
-        direction={'row'}
-        xs={12}
-      >
-        <Grid xs={2} container>
-          <Grid item xs={3}>
-            <ArrowBackIosNewIcon
-              style={{
-                width: '40px',
-                height: '40px',
-                color: 'white',
-                border: '1px solid #8f7f67',
-                borderRadius: '150px',
-                margin: '12px',
-                padding: '12px',
-              }}
-              onClick={() => {
-                connectUpdate(2);
-              }}
-            />
-          </Grid>
-          <Grid item xs={9}>
-            <Typography
-              variant="body1"
-              color="#8f7f67"
-              marginTop="15px"
-              fontSize="23px"
-            >
-              {t(`${back}`)}
+      <Box className="register_form_main">
+        <Box display={'flex'} marginLeft={3} marginTop={3}>
+          <Box>
+            <Typography color={'primary'}>
+              <ArrowBackIosNewIcon
+                className="icon_style"
+                onClick={() => {
+                  connectUpdate(2);
+                }}
+              />
             </Typography>
-          </Grid>
-        </Grid>
-        <Grid xs={12} marginTop={'20px'} justifyContent={'center'} container>
-          <Grid xs={10} item>
-            <Typography color={'white'} fontSize={'20px'} variant="body1">
-              {t(`${registerTitle}`)}
-              {/* Please fill in the details below, the expression of interest will
-              be submitted to the Global Sales team and they will contact you
-              after review. */}
+          </Box>
+          <Box marginLeft={2} display={'flex'} alignItems={'center'}>
+            <Typography color={'primary'}>
+              {t(`${meneItme?.[2]?.back}`)}
             </Typography>
-          </Grid>
-          <Grid xs={10} marginTop={'50px'} item>
+          </Box>
+        </Box>
+        <Box marginLeft={4} marginRight={4} marginTop={4}>
+          <Box>
+            <Typography variant={'body1'}>{t(`${registerTitle}`)}</Typography>
+          </Box>
+          <Box>
+            <Typography color={'primary'}>
+              <TextField
+                fullWidth
+                color={'primary'}
+                label={t(`${rgFistName}`)}
+                variant={'standard'}
+                name="fName"
+                onChange={(e) => {
+                  parentDataOut(e, 'input');
+                }}
+              />
+            </Typography>
+            {
+              <>
+                {childInComing.typeOne === 'fName' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorFstName}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
+          </Box>
+          <Box>
             <TextField
-              InputLabelProps={{
-                style: { color: 'white' },
-              }}
-              //   style={{ width: '100%' }}
-              fullWidth
-              style={{ borderBottom: '1px solid white', marginTop: '15px' }}
-              id="standard-basic"
-              label={t(`${rgFistName}`)}
-              variant="standard"
-            />
-          </Grid>
-          <Grid xs={10} item>
-            <TextField
-              InputLabelProps={{
-                style: { color: 'white' },
-              }}
-              inputProps={{
-                style: { borderBottomColor: 'white' }, // Change the border bottom color here
-              }}
-              style={{ borderBottom: '1px solid white', marginTop: '15px' }}
+              className="firstName_textfield"
               fullWidth
               id="standard-basic"
               label={t(`${rgLastName}`)}
-              variant="standard"
-            />
-          </Grid>
-          <Grid xs={10} item>
-            <TextField
-              InputLabelProps={{
-                style: { color: 'white' },
+              variant={'standard'}
+              name="lName"
+              onChange={(e) => {
+                parentDataOut(e, 'input');
               }}
-              style={{ borderBottom: '1px solid white', marginTop: '15px' }}
+            />
+            {
+              <>
+                {childInComing.typeOne === 'lName' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorLstName}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
+          </Box>
+          <Box>
+            <TextField
               fullWidth
               id="standard-basic"
               label={t(`${rgNumber}`)}
-              variant="standard"
-            />
-          </Grid>
-          <Grid xs={10} item>
-            <TextField
-              InputLabelProps={{
-                style: { color: 'white' },
+              variant={'standard'}
+              name="cNumber"
+              onChange={(e) => {
+                parentDataOut(e, 'input');
               }}
-              style={{ borderBottom: '1px solid white', marginTop: '15px' }}
+            />
+            {
+              <>
+                {childInComing.typeOne === 'cNumber' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorNumber}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
+          </Box>
+          <Box>
+            <TextField
               fullWidth
               id="standard-basic"
               label={t(`${rgEmail}`)}
-              variant="standard"
-            />
-          </Grid>
-          <Grid xs={10} item>
-            <TextField
-              InputLabelProps={{
-                style: { color: 'white' },
+              variant={'standard'}
+              name="email"
+              onChange={(e) => {
+                parentDataOut(e, 'input');
               }}
-              style={{ borderBottom: '1px solid white', marginTop: '15px' }}
+            />
+            {
+              <>
+                {childInComing.typeOne === 'email' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorEmail}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
+          </Box>
+          <Box>
+            <TextField
               fullWidth
               id="standard-basic"
               label={t(`${rgCode}`)}
               variant="standard"
-            />
-          </Grid>
-          <Grid xs={10} item>
-            <TextField
-              InputLabelProps={{
-                style: { color: 'white' },
+              name="code"
+              onChange={(e) => {
+                parentDataOut(e, 'input');
               }}
-              style={{ borderBottom: '1px solid white', marginTop: '15px' }}
+            />
+            {
+              <>
+                {childInComing.typeOne === 'code' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${reErrorCode}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
+          </Box>
+          <Box>
+            <TextField
+              className="firstName_textfield"
               fullWidth
               id="standard-basic"
               label={t(`${rgName}`)}
-              variant="standard"
+              variant={'standard'}
+              name="AgencyName"
+              onChange={(e) => {
+                parentDataOut(e, 'input');
+              }}
             />
-          </Grid>
-          <Grid xs={10} container>
-            <Grid xs={6} item alignItems={'center'} justifyContent={'center'}>
-              <TextField
-                InputLabelProps={{
-                  style: { color: 'white' },
-                }}
-                style={{
-                  borderBottom: '1px solid white',
-                  marginTop: '15px',
-                  width: '98%',
-                }}
-                type="dropdown"
-                // fullWidth
-                id="standard-basic"
-                label={t(`${rgCountry}`)}
-                variant="standard"
-              />
-            </Grid>
-            <Grid justifyContent={'flex-end'} xs={6} item>
-              <TextField
-                InputLabelProps={{
-                  style: { color: 'white' },
-                }}
-                style={{
-                  borderBottom: '1px solid white',
-                  marginTop: '15px',
-                }}
-                fullWidth
-                id="standard-basic"
-                label={t(`${rgCity}`)}
-                variant="standard"
-              />
-            </Grid>
-
-            <Grid marginTop={'30px'} xs={3} container>
-              <Grid item xs={8}>
-                <Typography color="white" variant="caption">
-                  {t(`${rgdocument}`)}
-                  {/* DOCUMENT UPLOADED */}
-                </Typography>
-              </Grid>
-              <Grid item xs={8}>
-                <input
-                  accept="image/*" // Specify accepted file types if needed
-                  style={{ display: 'none' }}
-                  id="file-input"
-                  type="file"
+            {
+              <>
+                {childInComing.typeOne === 'agencyName' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorAgencyName}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
+          </Box>
+          <Box display={'flex'} justifyContent={'space-between'}>
+            <Grid container spacing={2}>
+              <Grid item xs={matches ? 6 : 12}>
+                <TextField
+                  className="country_textfield"
+                  type="dropdown"
+                  id="standard-basic"
+                  label={t(`${rgCountry}`)}
+                  variant={'standard'}
+                  name="country"
+                  onChange={(e) => {
+                    parentDataOut(e, 'input');
+                  }}
                 />
-                <label htmlFor="file-input">
-                  <Button
-                    variant="contained"
-                    style={{ backgroundColor: 'rgb(236, 167, 46)' }}
-                    component="span"
-                  >
-                    <AddCircleIcon style={{ color: 'white' }} />
-                    {t(`${rgAddFile}`)}
-                  </Button>
-                </label>
+                {
+                  <>
+                    {childInComing.typeOne === 'country' ? (
+                      <>
+                        {childInComing.typeTwo === 'error' ? (
+                          <>
+                            <Typography color={'error'}>
+                              {t(`${rgErrorCountry}`)}
+                            </Typography>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                }
+              </Grid>
+              <Grid item xs={matches ? 6 : 12}>
+                <TextField
+                  className="firstName_textfield"
+                  fullWidth
+                  id="standard-basic"
+                  label={t(`${rgCity}`)}
+                  variant={'standard'}
+                  name="city"
+                  onChange={(e) => {
+                    parentDataOut(e, 'input');
+                  }}
+                />
+                {
+                  <>
+                    {childInComing.typeOne === 'city' ? (
+                      <>
+                        {childInComing.typeTwo === 'error' ? (
+                          <>
+                            <Typography color={'error'}>
+                              {t(`${rgErrorCity}`)}
+                            </Typography>
+                          </>
+                        ) : (
+                          <></>
+                        )}
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                }
               </Grid>
             </Grid>
-            <Grid container>
-              <Typography>
-                <Grid item xs={5}>
-                  <Typography color={'white'} variant="caption">
-                    {t(`${rgGuideline}`)}
-                  </Typography>
-                </Grid>
-              </Typography>
-            </Grid>
-            <Grid container xs={12}>
-              <TextareaAutosize
-                aria-label="minimum height"
-                minRows={6}
-                color="black"
-                // placeholder="Type your text here..."
-                style={{
-                  padding: '10px',
-                  background: 'black',
-                  border: '1px solid  rgb(251, 232, 200)',
-                  marginTop: '15px',
-                  color: 'white',
-                  width: '100%',
+          </Box>
+          <Box marginTop={3} marginBottom={2}>
+            <Box>
+              <Typography variant={'caption'}>{t(`${rgdocument}`)}</Typography>
+            </Box>
+
+            <Box>
+              <input
+                // accept="image/*"
+                className="button_addfile"
+                id="file-input"
+                type="file"
+                name="file"
+                onChange={(e) => {
+                  parentDataOut(e, 'input');
                 }}
               />
-            </Grid>
-            {/* <Grid justifyContent={'flex-end'} container xs={12}>
-              <Typography color={'white'} variant="caption">
-                500 Words left
-              </Typography>
-            </Grid> */}
-            <Grid xs={4} container>
-              {/* <ReCAPTCHA
-                style={{ width: '100%' }}
-                className="text-start mt-3"
-                sitekey="6LcIuconAAAAAGqGZ4_daYgUoj4OHVZEUFdEQC3f"
-              /> */}
-            </Grid>
-            <Grid xs={12} container>
-              <Button
-                style={{
-                  marginTop: '20px',
-                  marginBottom: '20px',
-                  color: 'rgb(251, 232, 200)',
-                  borderColor: 'rgb(251, 232, 200)',
-                }}
-                variant="outlined"
-              >
-                {t(`${rgExpression}`)}
-              </Button>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
+
+              <label htmlFor="file-input">
+                <Button
+                  variant={'contained'}
+                  component={'span'}
+                  startIcon={<AddCircleIcon />}
+                >
+                  {t(`${rgAddFile}`)}
+                </Button>
+              </label>
+            </Box>
+            <Box>
+              {
+                <>
+                  {childInComing.typeOne === 'file' ? (
+                    <>
+                      {childInComing.typeTwo === 'error' ? (
+                        <>
+                          <Typography color={'error'}>
+                            {t(`${rgErrorFile}`)}
+                          </Typography>
+                        </>
+                      ) : (
+                        <></>
+                      )}
+                    </>
+                  ) : (
+                    <></>
+                  )}
+                </>
+              }
+            </Box>
+          </Box>
+          <Box>
+            <Typography variant={'body1'}>{t(`${rgGuideline}`)}</Typography>
+          </Box>
+          <Box>
+            <TextareaAutosize
+              aria-label="minimum height"
+              minRows={4}
+              className="textarea"
+              name="message"
+              onChange={(e) => {
+                parentDataOut(e, 'input');
+              }}
+            />
+            {
+              <>
+                {childInComing.typeOne === 'message' ? (
+                  <>
+                    {childInComing.typeTwo === 'error' ? (
+                      <>
+                        <Typography color={'error'}>
+                          {t(`${rgErrorMessage}`)}
+                        </Typography>
+                      </>
+                    ) : (
+                      <></>
+                    )}
+                  </>
+                ) : (
+                  <></>
+                )}
+              </>
+            }
+          </Box>
+          <Box>
+            <Typography variant={'caption'}>500 Words left</Typography>
+          </Box>
+          <Box>
+            <Button
+              className="expressionOfInterest_button"
+              variant={'outlined'}
+              onClick={() => {
+                parentDataOut('button', 'btn');
+              }}
+            >
+              {t(`${rgExpression}`)}
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+      <Box>
+        <ErrorHandlingRegister
+          parentsDataIn={parentOutData}
+          ChildDataOut={childDataIn}
+        />
+      </Box>
     </>
   );
 };

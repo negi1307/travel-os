@@ -1,0 +1,11 @@
+.experience_boxImage {
+  /* border: solid red; */
+  width: 263px;
+  height: 137px;
+  border: 1.7px solid blue;
+}
+.experience_BoxButton {
+  width: 172px !important;
+  height: 56px;
+  border-radius: 0px !important;
+}

@@ -1,177 +1,30 @@
-.register {
-  display: flex !important;
-  flex-direction: column;
-  /* width: 200vh; */
-  align-items: center !important;
-  justify-content: center !important;
-  font-family: 'Times New Roman', Times, serif;
-  /* background-color: #007bff; */
-  color: white;
-  background-color: black;
+/* .register_form_main {
+  height: auto;
+}
+.firstName_textfield {
+  border-bottom: 1px solid white !important;
+  margin-top: 15px !important;
 }
 
-.inputs {
-  /* color: goldenrod;
-       */
+.country_textfield {
+  border-bottom: 1px solid white !important;
+  margin-top: 15px !important;
+  width: 98%;
+}
+
+.button_addfile {
+  display: none !important;
+}
+
+.textarea {
+  padding: 10px;
+  outline: none;
+  margin-top: 15px;
   width: 100%;
-  color: white !important;
-  border-bottom: 2px solid #fff;
-  border-radius: 0px !important;
 }
 
-/* .inputs::after {
-      border-bottom: rgb(251, 232, 200) !important;
-    } */
-
-.inputs label {
-  color: rgb(251, 232, 200) !important;
-  font-size: 12px;
-}
-
-.backBtn {
-  width: '50px';
-  height: '50px';
-  border-radius: '50%';
-  background-color: '#007bff';
-  color: 'white';
-  border: 'none';
-  cursor: 'pointer';
-}
-
-.back {
-  font-size: 24px !important;
-}
-
-/* 
-    .MuiButton-contained {
-      border-radius: 100% !important;
-    } */
-
-.form {
-  display: flex;
-  width: 700px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* border: black 1px solid;  */
-}
-
-.buttonn {
-  color: rgb(251, 232, 200);
-  width: 700px;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  /* padding: 5px; */
-  display: flex;
-  flex-direction: row;
-}
-.MuiInput-underline:after {
-  border-bottom-color: 'yellow';
-}
-
-.textArea {
-  color: black;
-  background-color: black;
-}
-
-.para {
-  color: rgb(251, 232, 200);
-}
-
-.uploadBtn {
-  color: rgb(251, 232, 200) !important;
-  /* border: 2px solid red !important; */
-  background: #8f7f67 !important;
-  font-size: 11px !important;
-  font-weight: 300 !important;
-}
-/* .MuiFormControl-root {
-    } */
-
-.MuiInput-input {
-  color: white !important;
-}
-
-.MuiSelect-select:after {
-  border-bottom-color: rgb(251, 232, 200) !important ;
-}
-
-.back_arrowIcon .MuiSvgIcon-root {
-  border: 1px solid rgb(236, 167, 46) !important;
-  width: 1.2rem !important    ;
-  height: 1.2rem !important   ;
-  border-radius: 14px !important    ;
-  display: flex !important    ;
-  align-items: center !important    ;
-  justify-content: center !important    ;
-  padding: 3px !important   ;
-}
-
-.back_arrowIcon {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  /* justify-content: center; */
-}
-
-.shortPara {
-  width: 40%;
-  font-size: small;
-}
-
-.expressionBtn {
-  border: 1px solid #8f7f67 !important;
-  color: #8f7f67 !important;
-}
-
-.cntry label::after {
-  color: #8f7f67 !important;
-}
-.select_parentBox .MuiInputBase-root {
-  border-bottom: 2px solid #ffffff;
-  border-radius: 0px;
-  color: #ffffff;
-}
-.select_parentBox .MuiSvgIcon-root {
-  color: #ffffff;
-}
-.select_parentBox .MuiOutlinedInput-notchedOutline {
-  border: 0px !important;
-}
-/* .cntry {
-      border-bottom-color: #8f7f67 !important ;
-    } */
-
-.wordsLeft {
-  color: #8f7f67 !important;
-}
-
-/* .MuiInputLabel-root::after {
-      color: #8f7f67 !important;
-    } */
-
-.fields {
-  border-bottom: 2px solid white !important;
-}
-
-.formm {
-  display: flex;
-  justify-content: center;
-}
-
-.country {
-  color: white !important;
-  border-bottom-color: white !important;
-}
-
-.country label {
-  color: white !important;
-}
-.selector_BoxParent .MuiSvgIcon-root {
-  color: #ffffff;
-}
-.selector_BoxParent .Mui-focused {
-  border: 0px !important;
-  outline: none !important;
-}
+.icon_style {
+  border: solid;
+  border-radius: 12px;
+  padding: 3px;
+} */

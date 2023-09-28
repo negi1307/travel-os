@@ -7,15 +7,15 @@ const availableLanguage = ['ko', 'en', 'chi'];
 // don't want to use this?
 // have a look at the Quick start guide
 // for passing in lng and translations on init
-const option = {
+const option: any = {
   order: ['navigator', 'htmlTag', 'path', 'subdomail'],
   checkwhitelist: true,
 };
 
+// load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
+// learn more: https://github.com/i18next/i18next-http-backend
+// want your translations to be loaded from a professional CDN? => https://github.com/locize/react-tutorial#step-2---use-the-locize-cdn
 i18n
-  // load translation using http -> see /public/locales (i.e. https://github.com/i18next/react-i18next/tree/master/example/react/public/locales)
-  // learn more: https://github.com/i18next/i18next-http-backend
-  // want your translations to be loaded from a professional CDN? => https://github.com/locize/react-tutorial#step-2---use-the-locize-cdn
   .use(Backend)
   // detect user language
   // learn more: https://github.com/i18next/i18next-browser-languageDetector
@@ -33,6 +33,9 @@ i18n
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
+  })
+  .then((t) => {
+    // Your code after initialization
   });
 
 export default i18n;

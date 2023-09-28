@@ -1,0 +1,88 @@
+/* .navbar_backGroud_clr {
+  background-color: #252525;
+}
+.toggle_parent {
+  position: relative;
+  width: 10rem;
+}
+.toggle_parent .inner_toggleParent {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.toggle_parent .css-1elwnq4-MuiPaper-root-MuiAccordion-root {
+  background-color: #252525;
+}
+.toggle_parent .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root {
+  min-height: 20px !important;
+  position: relative;
+}
+.toggle_parent .css-o4b71y-MuiAccordionSummary-content {
+  margin: 0px !important;
+}
+
+.toggle_parent .css-pwcg7p-MuiCollapse-root {
+  min-height: 0px;
+  height: 0px;
+  background: rgb(37, 37, 37);
+}
+
+.iconsNavbar {
+  margin-bottom: 3px;
+  height: 17px !important;
+}
+
+.navBar_link {
+  text-decoration: none;
+  color: #252525;
+}
+.navBar_link:hover {
+  color: #252525;
+}
+.navbar_linkcss {
+  height: 33px;
+  align-items: center;
+  border-radius: 18.5px;
+  padding: 0px 10px;
+  background: #0057b7;
+}
+
+.navbar_linkFont p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  display: flex;
+  align-items: center;
+}
+.navbar_linkcss .active_link p {
+  color: #ffffff !important;
+}
+.navbar_notActive img {
+  filter: invert(1);
+}
+.navbar_linkcss img {
+  filter: saturate(0.5);
+}
+.navbar_linkcss .navbar_linkFont p a {
+  color: #ffffff;
+}
+.navbar_parent::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 13rem;
+  opacity: 0.8;
+
+  background: linear-gradient(
+    0deg,
+    rgba(225, 225, 225, 402) -5.99%,
+    rgba(225, 225, 225, -511.729167) 1.48%,
+    #ffffff 51.78%
+  );
+}
+.z_index {
+  z-index: 1;
+} */
