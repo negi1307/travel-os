@@ -88,7 +88,7 @@ const RegisterForm = (props: MyComponentProps) => {
             </Typography>
           </Box>
           <Box marginLeft={2} display={'flex'} alignItems={'center'}>
-            <Typography variant={'h6'} color={'primary'}>
+            <Typography color={'primary'}>
               {t(`${meneItme?.[2]?.back}`)}
             </Typography>
           </Box>

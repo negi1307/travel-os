@@ -21,13 +21,30 @@
   display: flex;
   justify-content: end;
 }
-
+.login_business_font_style {
+  font-size: 28px !important;
+  font-weight: 400 !important;
+  line-height: 40.07px !important;
+  color: #ffffff !important;
+  width: 326px !important;
+}
+.login_form_main_box {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
 .input_Style {
-  border: 2px solid red !important;
-  width: 25rem;
-  border: solid 2px !important;
+  /* width: 360px !important; */
+  width: 286px !important;
+  border: solid 2px white !important;
   border-radius: 6px !important;
 }
+.input_Style::placeholder {
+  font-weight: bold;
+  opacity: 0.5;
+  color: red !important;
+}
+
 .input_Style::after {
   position: absolute;
   content: '';
@@ -74,13 +91,28 @@
 .login_button {
   padding: 12px 0 !important;
   box-shadow: none !important;
+  width: 286px !important;
+  height: 49px !important;
+  font-size: 15.37px !important;
+  font-weight: 400 !important;
+  line-height: 18.44px !important;
 }
-.logo_parentBox img {
-  width: -webkit-fill-available;
+.cursor {
+  cursor: pointer !important;
+}
+.logo_parentBox {
+  display: flex !important;
+  justify-content: center !important;
+  /* width: -webkit-fill-available;
   position: absolute;
   top: 0;
   transform: scale(1.33);
-  object-fit: scale-down;
+  object-fit: scale-down; */
+}
+.login_forget_font_style {
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 19.77px !important;
 }
 
 .MuiMenu-paper {
@@ -187,9 +219,11 @@
   letter-spacing: 8% !important;
   font-weight: 400 !important;
   font-size: 10px !important;
+  color: #fff;
 }
 
-.footer_parentBox .css-12y4fal {
+.footer_parentBox .css-12y4fal,
+.footer_parentBox .css-gg4vpm {
   margin: 0 auto;
   width: 85rem;
 }
@@ -197,6 +231,7 @@
   line-height: 20.51px !important;
   font-size: 17px !important;
   font-weight: 400 !important;
+  color: #fff;
 }
 /* footer css */
 /* pages css */
@@ -263,6 +298,11 @@
 .navBar_link {
   text-decoration: none;
   color: #252525;
+  margin-top: 2px !important;
+}
+.navBar_link_btn {
+  text-decoration: none;
+  color: #252525;
 }
 .navBar_link:hover {
   color: #252525;
@@ -313,7 +353,407 @@
 .z_index {
   z-index: 1;
 }
+.navbar_linkFont .css-k008qs {
+  align-items: center !important;
+}
 /* navBar css */
+
+/* home page css prnt*/
+.homePage_searchButton {
+  border-radius: 0 !important;
+  border-top-right-radius: 10px !important ;
+  border-bottom-right-radius: 10px !important ;
+  height: 64px !important;
+}
+.guest_roomsBox {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+.guest_roomsBox .homePage_searchButton {
+  padding: 36.5px 16px !important;
+  width: 150px;
+  border-radius: 0px !important;
+}
+/* home page css prnt */
+
+/* date pick css  */
+.Mui-selected {
+  border-radius: 10px !important;
+}
+.Mui-selected:hover {
+  border: none !important;
+}
+
+.MuiDateRangePickerDay-dayOutsideRangeInterval {
+  color: white !important;
+  font-size: larger !important;
+}
+
+.MuiDateRangePickerDay-dayInsideRangeInterval {
+  color: white !important;
+  font-size: larger !important;
+}
+
+.MuiSvgIcon-fontSizeInherit {
+  border-radius: 100%;
+  color: white;
+  border: 1px solid #a1887f;
+}
+
+/* .MuiDayCalendar-header .MuiDayCalendar-weekDayLabel {
+  color: white !important;
+} */
+
+.confirmDatebutton {
+  height: 45px;
+  border-radius: 0 !important;
+  width: 250px;
+}
+
+.MuiPickersDay-today {
+  border: 0 !important;
+}
+
+.stay_select {
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+  padding: 0px !important;
+}
+
+.date_pickerBox {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+.date_pickerBox
+  .css-8eaegj-MuiPaper-root-MuiAccordion-root.Mui-expanded:last-of-type,
+.date_pickerBox
+  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  position: relative;
+}
+.date_pickerBox .css-pwcg7p-MuiCollapse-root {
+  position: absolute;
+  transform: translate(0px, -18px);
+  width: 50rem;
+}
+.date_pickerBox .css-fz8a21-MuiDateRangeCalendar-root {
+  justify-content: space-around !important;
+}
+.date_pickerBox .css-fz8a21-MuiDateRangeCalendar-root div[style] {
+  display: none;
+}
+.date_pickerBox .MuiBox-root .css-4ukj1x-MuiTypography-root {
+  margin-bottom: 10px !important;
+}
+.date_pickerBox .css-cxmp86 {
+  padding: 0px 15px;
+}
+.date_pickerBox .css-1v6chqf {
+  background-color: #ffffff;
+  width: 76rem;
+  position: absolute;
+  top: 73px;
+}
+
+.date_active .css-1v6chqf {
+  -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes css-1v6chqf {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+
+.date_pickerBox .css-1v8yqdb-MuiPickersArrowSwitcher-root,
+.date_pickerBox .css-i5q14k-MuiDayCalendar-header span,
+.date_pickerBox .css-12p2adl-MuiDayCalendar-monthContainer button {
+  color: #0057b7 !important;
+}
+.date_pickerBox .css-1v8yqdb-MuiPickersArrowSwitcher-root svg {
+  color: #0057b7 !important;
+  font-size: 30px;
+}
+
+.date_pickerBox .css-1v8yqdb-MuiPickersArrowSwitcher-root span,
+.date_pickerBox .css-i5q14k-MuiDayCalendar-header span {
+  font-size: 13px;
+  font-weight: 500;
+}
+.css-12p2adl-MuiDayCalendar-monthContainer button {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.date_pickerBox
+  .css-cyzddl-MuiPickersSlideTransition-root-MuiDayCalendar-slideTransition:not {
+  color: white !important;
+}
+
+.date_pickerBox .dateShow_text {
+  display: block;
+  height: 1.42rem;
+  transform: translate(0px, -10px);
+}
+.date_pickerBox .css-gg4vpm,
+.date_pickerBox .css-1cpssoz-MuiTypography-root {
+  display: flex;
+  align-items: center;
+}
+/* date pick css  */
+
+/* guest component css */
+.guest_icon {
+  border: solid;
+  border-radius: 12px;
+  color: wheat;
+  cursor: pointer;
+}
+.guest_select {
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+  padding: 0px !important;
+}
+.guest_inputParent {
+  width: 100%;
+  position: relative;
+}
+.guest_inputParent .css-8eaegj-MuiPaper-root-MuiAccordion-root.Mui-expanded {
+  position: relative;
+}
+.guest_inputParent .css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
+  margin: 0 !important;
+}
+.guest_inputParent .css-pwcg7p-MuiCollapse-root {
+  position: absolute;
+  background: #ffff;
+  left: 0;
+  right: 0;
+  transform: translate(-25rem, 0px);
+  width: 58rem !important;
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.guest_inputParent .css-150nlgc-MuiAccordionDetails-root {
+  padding: 4px 25px 8px;
+}
+.guest_inputParent .MuiBox-root .css-4ukj1x-MuiTypography-root {
+  margin-bottom: 10px !important;
+}
+.guest_inputParent .css-1l53c0y-MuiGrid-root .MuiBox-root svg {
+  color: #0057b7;
+  border: 1px solid #0057b7;
+}
+
+.incremen_plus {
+  background-color: blue;
+  color: white !important;
+  border: solid;
+  border-radius: 12px;
+  /* color: wheat; */
+  cursor: pointer;
+}
+.decremen_minus {
+  background-color: white;
+  color: black;
+  border: solid;
+  border-radius: 12px;
+  /* color: wheat; */
+  cursor: pointer;
+}
+.guest_inputParent .open_guestDropdown {
+  background: #ffffff;
+  position: absolute;
+  left: -190px;
+  right: 0;
+  top: 73px;
+  width: 50rem;
+  z-index: 99;
+  padding: 5px;
+  padding: 10px 20px;
+}
+.guest_inputParent .open_guestDropdown {
+  -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes open_guestDropdown {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0%;
+    transform-origin: 100% 0%;
+  }
+}
+.guest_roomsBox .css-19zvbik {
+  padding: 0 15px;
+}
+.guest_roomsBox .css-1cpssoz-MuiTypography-root,
+.guest_roomsBox .css-gg4vpm {
+  display: flex;
+  align-items: center;
+}
+.guest_roomsBox .destination_select {
+  height: 1.42rem;
+  transform: translate(0px, -5px);
+}
+/* guest component css */
+
+/* destination css */
+.point_cursor {
+  cursor: pointer;
+}
+.destination_hding_css {
+  cursor: pointer !important;
+  background-color: blue !important;
+  height: 26px !important;
+  min-height: 26px !important;
+  border: solid 2px;
+  color: #ffff !important;
+}
+.destination_hding_css .css-8xiiju-MuiTypography-root {
+  color: #fff;
+}
+.destination_hding_css div:nth-child(2) {
+  transform: rotate(360deg) !important;
+}
+.destination_type_css {
+  font-weight: 400 !important;
+  font-size: 11px !important;
+  line-height: 13.31px !important;
+  letter-spacing: 13.5% !important;
+  color: #757575 !important;
+  cursor: pointer;
+}
+.destination_type_Btn_css {
+  font-weight: 400 !important;
+  font-size: 11px !important;
+  line-height: 13.31px !important;
+  letter-spacing: 13.5% !important;
+  cursor: pointer;
+  border-bottom: 1px blue !important;
+}
+
+.destination_select {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 19.36px !important;
+  margin-top: 1.22px !important;
+  margin-bottom: 1.22px !important;
+}
+.destination_select_first {
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  line-height: 15.75px !important;
+  height: 48px !important;
+  /* display: flex !important; */
+  /* align-items: center !important; */
+}
+.destination_selectorBox {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.destination_select_second {
+  /* font-weight: 400;
+  font-size: 11px;
+  line-height: 13.31px;
+  letter-spacing: 13.5%; */
+  color: #757575;
+  /* letter-spacing: 13.5%; */
+  font-weight: 500 !important;
+  font-size: 13px !important;
+  line-height: 15.75px !important;
+  height: 48px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.destination_selectorBox
+  .css-yw020d-MuiAccordionSummary-expandIconWrapper.Mui-expanded {
+  transform: rotate(0deg) !important;
+  -webkit-transform: rotate(0deg) !important;
+}
+.destination_selectorBox .css-o4b71y-MuiAccordionSummary-content.Mui-expanded,
+.destination_selectorBox .css-1ddsz0-MuiTypography-root {
+  margin: 0 !important;
+}
+.destination_selectorBox
+  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded,
+.destination_selectorBox
+  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  height: 0px !important;
+}
+.destination_selectorBox .css-150nlgc-MuiAccordionDetails-root {
+  padding: 5px 14px 8px !important;
+}
+.css-150nlgc-MuiAccordionDetails-root
+  .css-t7axzy-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  background-color: #393732;
+  height: 0px !important;
+  min-height: 33px !important;
+  border-radius: 5px !important;
+}
+
+.destination_selectorBox .MuiBox-root .css-1iszri5-MuiTypography-root {
+  margin-bottom: 10px !important;
+  /* border: 2px solid red !important; */
+}
+.destination_selectorBox .css-klkp6i-MuiPaper-root-MuiAccordion-root {
+  box-shadow: none !important;
+}
+.destination_selectorBox
+  .css-klkp6i-MuiPaper-root-MuiAccordion-root:last-of-type {
+  border-radius: 0px !important;
+}
+/* destination css */
 
 @media (max-width: 768px) {
   .guideline_point_style {

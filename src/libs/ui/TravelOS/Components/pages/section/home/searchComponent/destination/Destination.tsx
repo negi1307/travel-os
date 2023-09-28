@@ -36,6 +36,7 @@ const Destination = (props: MyComponentProps) => {
           expandIcon={<ExpandMoreIcon color="primary" />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+          sx={{ display: 'flex', alignItems: 'baseline' }}
         >
           <Box pl={2}>
             <Typography color={'primary'}>

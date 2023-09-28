@@ -157,10 +157,7 @@ const NavBar = (props: MyComponentProps) => {
               <Box>
                 <img src={speed} alt="" />
               </Box>
-              <Box
-                className="navbar_linkFont active_link"
-                marginLeft={marginLeft2}
-              >
+              <Box className="navbar_linkFont" marginLeft={marginLeft2}>
                 <Typography>
                   <Link to="/dashboard/dashboards" className="navBar_link">
                     {t(`${nvBarDashbaod}`)}
@@ -172,33 +169,36 @@ const NavBar = (props: MyComponentProps) => {
               <Box>
                 <img src={user} alt="" />
               </Box>
-              <Box
-                marginLeft={marginLeft2}
-                className="navbar_linkFont active_link"
-              >
-                <Link to="/" className="navBar_link">
-                  {t(`${nvBarMyAccount}`)}
-                </Link>
+              <Box marginLeft={marginLeft2} className="navbar_linkFont ">
+                <Typography>
+                  <Link to="/" className="navBar_link">
+                    {t(`${nvBarMyAccount}`)}
+                  </Link>
+                </Typography>
               </Box>
             </Box>
             <Box marginX={marginX4} display={'flex'}>
               <Box>
                 <img src={information} alt="" />
               </Box>
-              <Box marginLeft={marginLeft2}>
-                <Link to="/" className="navBar_link">
-                  {t(`${nvBarFAQs}`)}
-                </Link>
+              <Box marginLeft={marginLeft2} className="navbar_linkFont ">
+                <Typography>
+                  <Link to="/" className="navBar_link">
+                    {t(`${nvBarFAQs}`)}
+                  </Link>
+                </Typography>
               </Box>
             </Box>
             <Box display={'flex'}>
               <Box>
                 <img src={hotel} alt="" />
               </Box>
-              <Box marginLeft={marginLeft2}>
-                <Link to="/" className="navBar_link">
-                  {t(`${nvBarHoteInfo}`)}
-                </Link>
+              <Box marginLeft={marginLeft2} className="navbar_linkFont ">
+                <Typography>
+                  <Link to="/" className="navBar_link">
+                    {t(`${nvBarHoteInfo}`)}
+                  </Link>
+                </Typography>
               </Box>
             </Box>
           </Box>
