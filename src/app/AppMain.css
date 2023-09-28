@@ -85,7 +85,8 @@
   font-size: 16.25px !important;
   color: white;
 }
-.input_Style .css-1b57ao2-MuiInputBase-root-MuiOutlinedInput-root {
+.input_Style .css-1b57ao2-MuiInputBase-root-MuiOutlinedInput-root,
+.input_Style .css-e303lq {
   padding-right: 0 !important;
 }
 .input_password_icon {

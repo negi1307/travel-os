@@ -176,7 +176,7 @@ const Login = (props: MyComponentProps) => {
                     ),
                   }}
                   className="input_Style"
-                  placeholder="lorem@ipsum.com"
+                  placeholder="partner@agency.com"
                   name="email"
                   onChange={(e) => {
                     parentDataOut(e, 'input');
