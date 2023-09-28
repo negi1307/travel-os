@@ -10,7 +10,7 @@ const ForgetChangePassword = (props: any) => {
   const { open, handleClose } = props;
   const style = {
     position: 'absolute' as 'absolute',
-    top: '15%',
+    top: '17%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: 'auto',

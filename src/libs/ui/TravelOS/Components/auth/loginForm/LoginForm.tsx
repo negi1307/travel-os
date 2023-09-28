@@ -20,6 +20,7 @@ import i18next from 'i18next';
 import ErrorHandlingLogin from './errorLogin/ErrorHandlingLogin';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 interface MyComponentProps {
   meneItme: any; // Declare the prop here
@@ -100,8 +101,7 @@ const Login = (props: MyComponentProps) => {
         </FormControl>
       </Box> */}
       <Box>
-        <Box className="language_parentBox" marginTop={4}>
-          <FormControl>
+        {/* <FormControl>
             <Select
               className="languageChangeBtn "
               value={selected}
@@ -116,8 +116,30 @@ const Login = (props: MyComponentProps) => {
                 CH{' '}
               </MenuItem>
             </Select>
-          </FormControl>
+          </FormControl> */}
+        <Box
+          display={'flex'}
+          alignItems={'center'}
+          paddingLeft={4}
+          marginTop={4}
+          className="cursor"
+        >
+          <Box>
+            <Typography className="login_lngug login_lgnug_">En</Typography>
+          </Box>
+          <Box>
+            <KeyboardArrowDownIcon className="login_lgnug_" />
+          </Box>
         </Box>
+        {/* <Box className="custom-menu-item text-primary">hello</Box> */}
+        {/* <Box className="login_lngug_main_box">
+          <Typography className="login_lnguag_text_font_style">
+            hello
+          </Typography>
+          <Typography className="login_lnguag_text_font_style">
+            hello
+          </Typography>
+        </Box> */}
 
         <Box
           display={'flex'}
@@ -138,7 +160,7 @@ const Login = (props: MyComponentProps) => {
                 >
                   <img src={meneItme[0]?.logo} alt="" />
                 </Box>
-                <Box>
+                <Box display={'flex'} justifyContent={'center'}>
                   <Typography className="login_business_font_style">
                     BUSINESS CONNECT
                   </Typography>
@@ -210,7 +232,7 @@ const Login = (props: MyComponentProps) => {
                                 setHidde(!hidde);
                               }}
                             >
-                              <VisibilityIcon sx={{ color: 'white' }} />
+                              <VisibilityIcon className="input_password_icon" />
                             </InputAdornment>
                           </>
                         ) : (
@@ -222,7 +244,7 @@ const Login = (props: MyComponentProps) => {
                                 setHidde(!hidde);
                               }}
                             >
-                              <VisibilityOffIcon sx={{ color: 'white' }} />
+                              <VisibilityOffIcon className="input_password_icon" />
                               {/* <img src={meneItme[0]?.psWord_icon} alt="" /> */}
                             </InputAdornment>
                           </>
@@ -280,7 +302,7 @@ const Login = (props: MyComponentProps) => {
               </Box>
               <Box
                 marginBottom={3}
-                marginTop={2}
+                marginTop={1}
                 display={'flex'}
                 justifyContent={'center'}
                 alignContent={'center'}
@@ -288,8 +310,8 @@ const Login = (props: MyComponentProps) => {
                 <Typography>
                   <Link
                     underline="none"
+                    // color={'secondary'}
                     className="login_forget_font_style"
-                    color={'secondary'}
                     onClick={() => {
                       handleOpen();
                     }}

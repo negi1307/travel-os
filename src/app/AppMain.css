@@ -17,9 +17,28 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.login_top_btn {
+/* .login_top_btn {
   display: flex;
   justify-content: end;
+} */
+.login_lngug {
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 19.36px !important;
+}
+.login_lngug_main_box {
+  border: solid;
+  width: 185.77px !important;
+  height: 174.79px !important;
+  background-color: #ffffff !important;
+}
+.login_lnguag_text_font_style {
+  font-weight: 400 !important;
+  font-size: 12.49px !important;
+  line-height: 15.12px !important;
+}
+.login_lgnug_ {
+  color: #ffffff !important;
 }
 .login_business_font_style {
   font-size: 28px !important;
@@ -58,13 +77,29 @@
 .input_Style div {
   position: relative;
   z-index: 1;
+  height: 49px !important;
 }
+.input_Style input {
+  font-weight: 400 !important;
+  padding-left: 10px !important;
+  font-size: 16.25px !important;
+  color: white;
+}
+.input_Style .css-1b57ao2-MuiInputBase-root-MuiOutlinedInput-root {
+  padding-right: 0 !important;
+}
+.input_password_icon {
+  width: 17px !important;
+  height: 17px !important;
+  color: #fff;
+}
+/* 
 .input_Style .css-1ea1xhh-MuiInputBase-input-MuiOutlinedInput-input,
 .input_Style .css-vxvc7x-MuiInputBase-input-MuiOutlinedInput-input {
   font-weight: 400 !important;
   padding-left: 20px !important;
   font-size: 16.25px !important;
-}
+} */
 .languageChangeBtn {
   width: 150px !important;
   height: 50px;
@@ -102,6 +137,7 @@
 }
 .logo_parentBox {
   display: flex !important;
+  flex-direction: column;
   justify-content: center !important;
   /* width: -webkit-fill-available;
   position: absolute;
@@ -110,9 +146,10 @@
   object-fit: scale-down; */
 }
 .login_forget_font_style {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   font-size: 16px !important;
   line-height: 19.77px !important;
+  color: #ffffff !important;
 }
 
 .MuiMenu-paper {
