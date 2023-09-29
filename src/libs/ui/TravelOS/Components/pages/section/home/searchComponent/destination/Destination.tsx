@@ -47,7 +47,7 @@ const Destination = (props: MyComponentProps) => {
                     // className="destination_select"
                     color={'primary.light'}
                     variant="h6"
-                    marginLeft={3}
+                    // marginLeft={3}
                     // sx={{ color: 'wheat' }}
                     className="destination_main_box_media"
                   >
@@ -58,7 +58,7 @@ const Destination = (props: MyComponentProps) => {
                     marginBottom={2}
                     color={'primary.main'}
                     className="destination_select "
-                    marginLeft={3}
+                    // marginLeft={3}
                   >
                     {destinationData}
                   </Typography>

@@ -432,6 +432,12 @@
 .navbar_linkFont .css-k008qs {
   align-items: center !important;
 }
+.navBar_rightRuberFontStyle {
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  line-height: 16.8px !important;
+  color: #0057b7 !important;
+}
 /* navBar css */
 
 /* home page css prnt*/
@@ -459,7 +465,6 @@
 }
 .search_box_border {
   border-left: 2px solid #0057b7 !important;
-  border-right: 2px solid #0057b7 !important;
 }
 
 .Mui-selected {
@@ -865,8 +870,14 @@
   .destination_selectorBox .css-150nlgc-MuiAccordionDetails-root {
     padding: 0px 0px 0px !important;
   }
-  .destination_main_box_media {
+  /* .destination_main_box_media {
     height: 76px !important  ;
+  } */
+  .destination_selectorBox .destination_main_box_media {
+    line-height: 15px !important;
+  }
+  .destination_selectorBox .destination_select {
+    font-size: 15px !important;
   }
   .homePage_searchButton {
     display: none !important;

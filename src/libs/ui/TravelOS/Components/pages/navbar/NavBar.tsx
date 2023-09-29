@@ -204,7 +204,9 @@ const NavBar = (props: MyComponentProps) => {
             <img src={bell} alt="" />
           </Box>
           <Box marginX={3}>
-            <Typography color={'primary.main'}>Ruben</Typography>
+            <Typography className="navBar_rightRuberFontStyle">
+              Ruben
+            </Typography>
           </Box>
           <Box color="primary.main">
             {' '}
