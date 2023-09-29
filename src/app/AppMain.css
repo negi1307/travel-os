@@ -910,19 +910,41 @@
   padding-bottom: 0px !important;
 }
 
+/* .my-account-fc-label .MuiTypography-root .MuiTypography-caption .css-15b6asd-MuiTypography-root{
 .my-account-fc-label
   .MuiTypography-root
   .MuiTypography-caption
   .css-15b6asd-MuiTypography-root {
   font-size: '12px';
   line-height: '0px' !important;
-}
+} */
 
-.my-ac-select-menu {
-  background-color: #ffffff !important;
+  .my-ac-select-menu{
+    background-color: #ffffff !important;
+  }
+  .my-ac-select-menu:hover{
+    background: #d9d7d7 !important;
+  }
+
+
+/* *********************************************** MyAccount Css*************************************/
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 10px !important; }
+/* .Custom-line-heigth-myaccountpage
+{
+  line-height: 14.24px !important;
+} */
+.background-menu-item-gd{
+  border-radius: 0% !important;
+  background-color: white !important;
+  padding:15px 10px !important;
+  
 }
-.my-ac-select-menu:hover {
+.background-menu-item-gd:hover{
   background: #d9d7d7 !important;
+}
+.modal_Parent .css-tlc64q-MuiPaper-root-MuiDialog-paper{
+  background-color: transparent!important;  
 }
 .language_dropdownParent .login_lngug_main_box {
   position: absolute !important;

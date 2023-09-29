@@ -7,7 +7,7 @@ import {
   DialogTitle,
   Typography,
 } from '@mui/material';
-import { verify } from '../../../../../../../../../../public/staticImage/defaultImage/Image';
+import VerifiedIcon from '@mui/icons-material/Verified';
 
 const HoldPopupModel = ({ open, onClose }: any) => {
   return (
@@ -17,60 +17,73 @@ const HoldPopupModel = ({ open, onClose }: any) => {
       PaperProps={{
         sx: {
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           backgroundColor: '#0057B7',
           borderRadius: '16px',
-          // width: '811px',
-          // maxWidth: '80vw',
-          // height: '569px',
+          width: '80vw', // Adjust the width to a percentage of the viewport
+          maxWidth: '500px', // Set a maximum width for larger screens
+          padding: '20px',
+          boxShadow: '0px 5px 15px rgba(0, 0, 0, 0.3)',
+        },
+      }}
+      sx={{
+        '@media (max-width: 768px)': { // Adjust styles for screens up to 768px width (tablets and phones)
+          width: '90vw', // Make the dialog narrower on smaller screens
+          maxWidth: '90vw', // Remove the maximum width constraint
         },
       }}
     >
       <DialogTitle sx={{ textAlign: 'center' }}>
-        <img
-          src={verify}
-          alt="Hotel"
-          style={{ width: '82.78px', maxHeight: '85.58px', marginTop: '100px' }}
+        <VerifiedIcon
+          style={{ fontSize: '85px', color: '#FFFEFE' }}
         />
       </DialogTitle>
       <DialogContent
         sx={{
           display: 'flex',
+          flexDirection: 'column',
           alignItems: 'center',
           textAlign: 'center',
           color: '#FFFEFE',
+          padding: '16px',
         }}
       >
         <Typography
-          variant="body1"
+          variant="h4"
           sx={{
-            // width: '736px',
-            fontFamily: 'Atlantis Resorts',
-            fontSize: '35px', // Adjust the font size
-            lineHeight: '38.96px',
-            fontWeight: 400,
-            wordWrap: 'break-word',
+            fontFamily: 'cursive',
+            fontSize: '40px',
+            fontWeight: 700,
+            marginBottom: '20px',
           }}
         >
-          Your booking has been confirmed.
-          <br />
-          You will receive a confirmation email on your registered email
-          address.
+          Booking Confirmed
+        </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            fontFamily: 'serif',
+            fontSize: '24px',
+            lineHeight: '1.5',
+            fontWeight: 400,
+          }}
+        >
+          Thank you for booking with us! Your reservation has been confirmed. An email confirmation will be sent to your registered email address shortly.
         </Typography>
       </DialogContent>
-      <DialogActions sx={{ justifyContent: 'center' }}>
+      <DialogActions sx={{ justifyContent: 'center', marginTop: '20px' }}>
         <Button
           onClick={onClose}
           color="primary"
           variant="contained"
           sx={{
-            height: '60px',
-            backgroundColor: 'white',
+            backgroundColor: '#FFFEFE',
             color: '#0057B7',
-            // borderRadius: '8px',
-            minWidth: '180px',
-            marginBottom: '100px',
+            minWidth: '150px',
+            padding: '12px 24px',
+            borderRadius: '25px',
             '&:hover': {
               backgroundColor: '#EDF7F9',
             },

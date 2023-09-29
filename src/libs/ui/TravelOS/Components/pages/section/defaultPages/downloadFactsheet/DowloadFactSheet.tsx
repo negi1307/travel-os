@@ -4,7 +4,7 @@ import Typography from '@mui/material/Typography';
 import MenuItem from '@mui/material/MenuItem';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
-import { FormControl, InputLabel, Select } from '@mui/material';
+import { Divider, FormControl, InputLabel, Select } from '@mui/material';
 
 const DownloadFactSheet = () => {
   const [selectedOption, setSelectedOption] = useState('');
@@ -16,29 +16,28 @@ const DownloadFactSheet = () => {
   return (
     <Box
       sx={{
-        padding: 15,
+        padding: '10%',
         backgroundColor: '#EDF7F9',
       }}
     >
-      <Grid container spacing={5} display={'flex'} justifyContent={'center'}>
-        <Grid item xs={12} display={'flex'} justifyContent={'center'}>
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={4} display={'flex'} alignItems={'center'} justifyContent={'center'}>
           <Typography
+            variant='h4'
             sx={{
               fontWeight: 'bold',
               fontFamily: 'TFArrow',
               marginBottom: 2,
-              alignItems: 'center',
-              marginLeft: 2,
-              marginRight: 2,
-              fontSize: '35px',
+              textAlign: 'center',
             }}
           >
             Download Factsheet
           </Typography>
+        </Grid>
+        <Grid item xs={12} sm={8} md={6}>
           <FormControl
             sx={{
-              width: '55%',
-              marginRight: 5,
+              width: '100%',
               fontFamily: 'Averta PE',
             }}
           >
@@ -48,14 +47,13 @@ const DownloadFactSheet = () => {
               onChange={handleOptionChange}
               label="Choose"
             >
-              <MenuItem disabled value="">
-                <em>Choose</em>
-              </MenuItem>
-              <MenuItem value={10}>Atlantis, The Palm</MenuItem>
-              <MenuItem value={20}>Atlantis The Royal</MenuItem>
-              <MenuItem value={30}>Atlantis Sanya</MenuItem>
+              <MenuItem className='my-ac-select-menu' value={10}>Atlantis, The Palm</MenuItem>
+              <MenuItem className='my-ac-select-menu' value={20}>Atlantis The Royal</MenuItem>
+              <MenuItem className='my-ac-select-menu' value={30}>Atlantis Sanya</MenuItem>
             </Select>
           </FormControl>
+        </Grid>
+        <Grid item xs={12} sm={4} md={2}>
           <Button
             variant="contained"
             sx={{
@@ -64,6 +62,7 @@ const DownloadFactSheet = () => {
               color: 'white',
               padding: '15px 20px',
               marginBottom: 2,
+              width: '100%',
             }}
           >
             Download
@@ -73,27 +72,25 @@ const DownloadFactSheet = () => {
 
       <Grid
         container
-        spacing={3}
-        marginTop={15}
-        display={'flex'}
-        justifyContent={'center'}
+        spacing={5}
+        p={4}
+        marginTop={5}
       >
-        <Grid item xs={6}>
+        <Grid  item xs={12} md={6}>
           <Typography
-            variant="h6"
+            variant="h5"
             sx={{
               fontFamily: 'TFArrow',
-              borderBottom: '1px solid black',
-              paddingBottom: 1,
+              // borderBottom: '1px solid black',
+              // paddingBottom: 1,
               marginBottom: 2,
               fontWeight: 'bold',
-              fontSize: '25px',
               textAlign: 'start',
-              marginRight: 11,
             }}
           >
             Middle East
           </Typography>
+          <Divider sx={{width:'80%',color:'2px solid #000000'}}/>
           <Typography
             variant="h6"
             sx={{
@@ -103,32 +100,31 @@ const DownloadFactSheet = () => {
           >
             Dubai
           </Typography>
-
-          <Grid item display={'flex'} xs={12}>
-            <Grid item xs={4} display={'flex'} justifyContent={'start'}>
-              <Typography>Atlantis, The palm</Typography>
+          <Grid item xs={12} md={12} display={'flex'}>
+            <Grid item xs={4} md={6}>
+              <Typography variant='caption'>Atlantis, The palm</Typography>
             </Grid>
-            <Grid item xs={8} display={'flex'} justifyContent={'start'}>
-              {' '}
-              <Typography>Atlantis, The Royal</Typography>
+            <Grid item xs={8} md={6} >
+              <Typography variant='caption'>Atlantis, The Royal</Typography>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={6}>
+        <Grid  item xs={12} md={6}>
           <Typography
-            variant="h6"
+            variant="h5"
             sx={{
-              borderBottom: '1px solid black',
-              paddingBottom: 1,
+              // borderBottom: '1px solid black',
+              // paddingBottom: 1,
               marginBottom: 2,
               fontWeight: 'bold',
-              fontSize: '25px',
               fontFamily: 'TFArrow',
               textAlign: 'start',
             }}
           >
             Asia
           </Typography>
+          <Divider sx={{width:'80%',color:'2px solid #000000'}}/>
+
           <Typography
             variant="h6"
             sx={{
@@ -138,8 +134,8 @@ const DownloadFactSheet = () => {
           >
             China
           </Typography>
-          <Grid item display={'flex'} justifyContent={'start'} xs={12}>
-            <Typography>Atlantis Sayna</Typography>
+          <Grid item xs={12}>
+            <Typography variant='caption'>Atlantis Sayna</Typography>
           </Grid>
         </Grid>
       </Grid>

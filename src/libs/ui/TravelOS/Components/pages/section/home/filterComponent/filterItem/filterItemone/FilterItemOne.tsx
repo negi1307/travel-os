@@ -11,7 +11,7 @@ import {
   Grid,
   Slider,
 } from '@mui/material';
-
+import HoverRating from './HoverRating';
 const FilterItemOne = () => {
   const [priceRange, setPriceRange] = useState([200, 3200]);
   const [value, setValue] = useState(2);
@@ -30,7 +30,7 @@ const FilterItemOne = () => {
           <Slider
             value={priceRange}
             onChange={handlePriceRangeChange}
-            // valueLabelDisplay="on"
+            valueLabelDisplay="on"
             max={3146}
             min={250}
             color="primary"
@@ -72,12 +72,13 @@ const FilterItemOne = () => {
                   A daring destination resort where you’ll be left with a feeling of wonderment.
                 </Typography>
               </Box>
-              <Rating
+              {/* <Rating
                 name="simple-controlled"
                 value={3} // Set your initial rating value here
                 readOnly // Disable rating interactivity for mobile
                 sx={{ color: 'primary.main' }} // Change the star color
-              />
+              /> */}
+              <HoverRating/>
             </CardContent>
           </Grid>
           <Grid item xs={12} sm={6}>

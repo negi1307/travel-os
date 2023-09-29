@@ -52,10 +52,11 @@ const HotelInfoModel: React.FC<HotelInfoProps> = ({ open, onClose }) => {
   }, [] as { icon: string; text: string }[][]);
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth className='modal_Parent'>
       <Box
         sx={{
           bgcolor: 'white',
+          border: '2px solid #0057B7',
           borderRadius: '9px',
         }}
       >
@@ -66,8 +67,9 @@ const HotelInfoModel: React.FC<HotelInfoProps> = ({ open, onClose }) => {
           p={1}
         >
           <Typography
+          variant='h4'
             sx={{
-              fontSize: '28px',
+              // fontSize: '28px',
               flex: 1,
               textAlign: 'center',
               fontFamily: 'Averta PE',
@@ -88,12 +90,13 @@ const HotelInfoModel: React.FC<HotelInfoProps> = ({ open, onClose }) => {
         />
 
         <Box px={3}>
-          <Box pt={2}>
+          <Box pt={2} px={3}>
             <Typography
+            variant='h6'
               paragraph
-              fontSize={'14px'}
+              // fontSize={'14px'}
               fontFamily={'Averta PE'}
-              lineHeight={'22.3px'}
+              // lineHeight={'22.3px'}
             >
               Nestled between the calm turquoise waters of the Arabian Gulf and
               the majestic Dubai skyline, Atlantis, The Palm is the crown of the
@@ -103,11 +106,9 @@ const HotelInfoModel: React.FC<HotelInfoProps> = ({ open, onClose }) => {
               Waterpark, experience a world away from your everyday at Atlantis,
               The Palm.
             </Typography>
-            <Divider
-              sx={{ bgcolor: 'primary.main', border: '1px solid #0057B7' }}
-            />
+            <Divider sx={{border:'1px solid #0057B7'}} />
           </Box>
-          <Box>
+          <Box p={0} px={2}>
             <Grid p={2} container spacing={4}>
               {chunkedAmenities.map((chunk, index) => (
                 <Grid p={0} item container xs={4} key={index}>
@@ -121,10 +122,10 @@ const HotelInfoModel: React.FC<HotelInfoProps> = ({ open, onClose }) => {
                           height="16px"
                         />
                         <Typography
-                          p={0.5}
+                        variant='subtitle1'
+                          pl={1}
                           sx={{
                             lineHeight: '14.83px',
-                            fontSize: '12px',
                             fontWeight: '300',
                             fontFamily: 'Averta PE',
                             marginTop: '8px',

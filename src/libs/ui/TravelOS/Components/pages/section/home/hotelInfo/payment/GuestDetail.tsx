@@ -1,11 +1,11 @@
-import { Box, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import InputAdornment from '@mui/material/InputAdornment';
+// import InputAdornment from '@mui/material/InputAdornment';
 import Input from '@mui/material/Input';
 
 const GuestDetail = () => {
@@ -24,6 +24,9 @@ const GuestDetail = () => {
             fullWidth
             label="AGENT EMAIL ID"
             variant="standard"
+            InputProps={{
+              sx: { paddingTop: '10px' },
+            }}
           />
         </Box>
         <Box my={2}>
@@ -32,6 +35,9 @@ const GuestDetail = () => {
             fullWidth
             label="BOOKING REFERENCE NAME (IF ANY)"
             variant="standard"
+            InputProps={{
+              sx: { paddingTop: '10px' },
+            }}
           />
         </Box>
         <Box>
@@ -40,9 +46,13 @@ const GuestDetail = () => {
             fullWidth
             label="AGENT REFERENCE INFO (IF ANY)"
             variant="standard"
+            InputProps={{
+              sx: { paddingTop: '10px' },
+            }}
           />
         </Box>
       </Box>
+
       <Box my={4} paddingTop={3}>
         <Typography variant="h5">Guest Details</Typography>
       </Box>
@@ -52,7 +62,7 @@ const GuestDetail = () => {
         </Box>
         <Grid container>
           <Grid item xs={4}>
-            <FormControl variant="standard" sx={{ m: 1, minWidth: 350 }}>
+            <FormControl variant="standard" sx={{ m: 1, width:"75%" }}>
               <InputLabel id="demo-simple-select-standard-label">
                 TITLE
               </InputLabel>
@@ -64,10 +74,10 @@ const GuestDetail = () => {
                 onChange={handleChange}
                 label="TITLE"
               >
-                <MenuItem value={10} selected>
+                <MenuItem className='background-menu-item-gd' value={10} selected>
                   Mr.
                 </MenuItem>
-                <MenuItem value={20}>Ms.</MenuItem>
+                <MenuItem className='background-menu-item-gd' value={20}>Ms.</MenuItem>
               </Select>
             </FormControl>
           </Grid>
@@ -83,6 +93,9 @@ const GuestDetail = () => {
               fullWidth
               label="FIRST NAME"
               variant="standard"
+              InputProps={{
+                sx: { paddingTop: '10px' },
+              }}
             />
           </Grid>
           <Grid item xs={4} paddingLeft={5} display={'flex'} alignItems={'end'}>
@@ -91,6 +104,9 @@ const GuestDetail = () => {
               fullWidth
               label="LAST NAME"
               variant="standard"
+              InputProps={{
+                sx: { paddingTop: '10px' },
+              }}
             />
           </Grid>
         </Grid>
@@ -101,7 +117,7 @@ const GuestDetail = () => {
         </Box>
         <Grid container>
           <Grid item xs={4}>
-            <FormControl variant="standard" sx={{ m: 1, minWidth: 350 }}>
+            <FormControl variant="standard" sx={{ m: 1, width:"75%" }}>
               <InputLabel id="demo-simple-select-standard-label">
                 TITLE
               </InputLabel>
@@ -113,10 +129,10 @@ const GuestDetail = () => {
                 onChange={handleChange}
                 label="TITLE"
               >
-                <MenuItem value={10} selected>
+                <MenuItem className='background-menu-item-gd' value={10} selected>
                   Mr.
                 </MenuItem>
-                <MenuItem value={20}>Ms.</MenuItem>
+                <MenuItem className='background-menu-item-gd' value={20}>Ms.</MenuItem>
               </Select>
             </FormControl>
           </Grid>
@@ -132,6 +148,9 @@ const GuestDetail = () => {
               fullWidth
               label="FIRST NAME"
               variant="standard"
+              InputProps={{
+                sx: { paddingTop: '10px' },
+              }}
             />
           </Grid>
           <Grid item xs={4} paddingLeft={5} display={'flex'} alignItems={'end'}>
@@ -140,6 +159,9 @@ const GuestDetail = () => {
               fullWidth
               label="LAST NAME"
               variant="standard"
+              InputProps={{
+                sx: { paddingTop: '10px' },
+              }}
             />
           </Grid>
         </Grid>
@@ -152,7 +174,7 @@ const GuestDetail = () => {
       <Box my={3}>
         <Input
           id="standard-adornment-weight"
-          endAdornment={<InputAdornment position="end">ADD +</InputAdornment>}
+          endAdornment={<Button variant="text" >Add&nbsp;+</Button>}
           aria-describedby="standard-weight-helper-text"
           fullWidth
           placeholder="Please us know of any special requests we can forword to our customer care team"
@@ -162,7 +184,7 @@ const GuestDetail = () => {
         />
       </Box>
       <Box>
-        <Typography variant="subtitle1">
+        <Typography variant="subtitle1" sx={{paddingTop:'15px'}}>
           Can't find what you're looking in the list above?
         </Typography>
       </Box>
