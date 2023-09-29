@@ -69,6 +69,15 @@ const Login = (props: MyComponentProps) => {
   //end login form data get & error handling
 
   //language data
+  const [show, setShow] = useState(false);
+  const [getLanguage, setGetLanguage] = useState('English');
+  const onClickGetLanguage = (type: string) => {
+    setGetLanguage(type);
+    setShow(false);
+    let findLanguage =
+      type === 'English' ? 'En' : type === '中文' ? 'chi' : 'En';
+    i18next.changeLanguage(findLanguage);
+  };
   const languageData = [
     { type: 'English' },
     { type: 'Русский' },
@@ -128,35 +137,52 @@ const Login = (props: MyComponentProps) => {
             </MenuItem>
           </Select>
         </FormControl> */}
-        <Box
-          display={'flex'}
-          alignItems={'center'}
-          paddingLeft={4}
-          marginTop={4}
-          className="cursor"
-        >
-          <Box>
-            <Typography className="login_lngug login_lgnug_">En</Typography>
+        <Box position={'relative'} className="language_dropdownParent">
+          <Box
+            position={'relative'}
+            display={'flex'}
+            alignItems={'center'}
+            paddingLeft={4}
+            marginTop={4}
+            className="cursor"
+            onClick={() => {
+              setShow(!show);
+            }}
+          >
+            <Box>
+              <Typography className="login_lngug login_lgnug_">
+                {getLanguage === 'English' ? <>En</> : <>{getLanguage}</>}
+              </Typography>
+            </Box>
+            <Box>
+              <KeyboardArrowDownIcon className="login_lgnug_" />
+            </Box>
           </Box>
-          <Box>
-            <KeyboardArrowDownIcon className="login_lgnug_" />
-          </Box>
+          {show ? (
+            <Box className="login_lngug_main_box">
+              {languageData?.map((item) => {
+                return (
+                  <>
+                    <Typography
+                      className={
+                        getLanguage === item.type
+                          ? 'login_lnguag_text_font_style_active cursor'
+                          : 'login_lnguag_text_font_style cursor'
+                      }
+                      onClick={() => {
+                        onClickGetLanguage(item.type);
+                      }}
+                    >
+                      {item.type}
+                    </Typography>
+                  </>
+                );
+              })}
+            </Box>
+          ) : (
+            <></>
+          )}
         </Box>
-        {/* <Box className="custom-menu-item text-primary">hello</Box> */}
-        {/* <Box className="login_lngug_main_box">
-          {languageData?.map((item) => {
-            return (
-              <>
-                <Typography
-                  marginY={2}
-                  className="login_lnguag_text_font_style"
-                >
-                  {item.type}
-                </Typography>
-              </>
-            );
-          })}
-        </Box> */}
 
         <Box
           display={'flex'}
