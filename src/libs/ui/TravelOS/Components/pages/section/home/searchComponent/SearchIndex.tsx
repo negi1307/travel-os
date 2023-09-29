@@ -15,11 +15,13 @@ const SearchIndex = (props: any) => {
         <Grid
           container
           // marginTop={5}
-          border={2}
+          // border={2}
           borderColor={'primary.main'}
           borderRadius={2}
           height={'4.8rem'}
           position={'relative'}
+          columns={{ xs: 4, sm: 8, md: 12 }}
+          className="search_box_main_border"
         >
           <Grid position={'relative'} item xs={4}>
             <Destination meneItme={meneItme} />
@@ -28,15 +30,16 @@ const SearchIndex = (props: any) => {
             position={'relative'}
             item
             xs={4}
-            borderLeft={2}
-            borderRight={2}
+            // borderLeft={2}
+            // borderRight={2}
             borderColor={'primary.main'}
+            className="search_box_border"
           >
             <StayDate />
           </Grid>
           <Grid position={'relative'} item xs={4}>
             <Grid
-              className="guest_roomsBox"
+              className="guest_roomsBox search_box_border"
               display={'flex'}
               flexDirection={'row'}
             >

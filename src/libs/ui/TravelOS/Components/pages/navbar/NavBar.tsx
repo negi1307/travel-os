@@ -73,13 +73,12 @@ const NavBar = (props: MyComponentProps) => {
     <div>
       <Box
         display={'flex'}
-        // sx={{ backgroundImage: `url("${navBar_bground}")` }}
         height={'102px'}
         paddingLeft={4}
         paddingRight={4}
         alignItems={'center'}
         justifyContent={'space-between'}
-        className="navbar_parent"
+        className="navbar_parent displayNone"
         position={'relative'}
       >
         <Box
@@ -93,7 +92,16 @@ const NavBar = (props: MyComponentProps) => {
           position={'relative'}
         >
           <Box>
-            <img src={home_navBar_icon} alt="companyLogo" />
+            <img
+              src={home_navBar_icon}
+              alt="companyLogo"
+              className="navBar_left_side_logo_wt_ht"
+            />
+            <Box display={'flex'} justifyContent={'center '}>
+              <Typography className="navBar_left_side_Text_font_style">
+                BUSINESS CONNECT
+              </Typography>
+            </Box>
           </Box>
           <Box
             display={'flex'}
@@ -113,15 +121,6 @@ const NavBar = (props: MyComponentProps) => {
               alignItems={'center'}
               paddingLeft={2}
               paddingRight={2}
-              // paddingX={paddingX2}
-              // borderRadius={
-              //   location?.pathname === '/dashboard/home' ? borderRadius5 : ''
-              // }
-              // bgcolor={
-              //   location?.pathname === '/dashboard/home'
-              //     ? bgcolorPrimaryMain
-              //     : ''
-              // }
             >
               <Box>
                 <img src={home} alt="" />
@@ -138,16 +137,6 @@ const NavBar = (props: MyComponentProps) => {
               marginX={marginX4}
               paddingX={paddingX2}
               display={'flex'}
-              // borderRadius={
-              //   location?.pathname === '/dashboard/dashboards'
-              //     ? borderRadius5
-              //     : ''
-              // }
-              // bgcolor={
-              //   location?.pathname === '/dashboard/dashboards'
-              //     ? bgcolorPrimaryMain
-              //     : ''
-              // }
               className={
                 location?.pathname === '/dashboard/dashboards'
                   ? 'navbar_linkcss'
@@ -208,12 +197,13 @@ const NavBar = (props: MyComponentProps) => {
           position={'relative'}
           display={'flex'}
           alignItems={'center'}
+          alignContent={'end'}
         >
           <Box>
             {/* <NotificationsNoneOutlinedIcon /> */}
             <img src={bell} alt="" />
           </Box>
-          <Box marginX={4}>
+          <Box marginX={3}>
             <Typography color={'primary.main'}>Ruben</Typography>
           </Box>
           <Box color="primary.main">

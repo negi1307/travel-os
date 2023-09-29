@@ -47,6 +47,20 @@
   display: flex !important;
   align-items: center !important;
   border-left: solid #0057b7 6px !important;
+  color: #0057b7 !important
+  ;
+}
+.login_lnguag_text_font_style_active {
+  font-weight: 400 !important;
+  font-size: 22.25 !important;
+  font-size: 22.25px !important;
+  padding-left: 19px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-left: solid #0057b7 6px !important;
+  color: #0057b7 !important
+  ;
 }
 .login_lgnug_ {
   color: #ffffff !important;
@@ -311,6 +325,19 @@
 .navbar_backGroud_clr {
   background-color: #252525;
 }
+.navBar_left_side_logo_wt_ht {
+  width: 145px !important  ;
+}
+.navBar_left_side_Text_font_style {
+  /* border: solid red; */
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 13.36px !important;
+  color: #000000;
+}
+.navbar_parent {
+  padding-right: 1px !important;
+}
 .toggle_parent {
   position: relative;
   width: 10rem;
@@ -427,6 +454,14 @@
 /* home page css prnt */
 
 /* date pick css  */
+.search_box_main_border {
+  border: 2px solid #0057b7 !important;
+}
+.search_box_border {
+  border-left: 2px solid #0057b7 !important;
+  border-right: 2px solid #0057b7 !important;
+}
+
 .Mui-selected {
   border-radius: 10px !important;
 }
@@ -809,9 +844,36 @@
     width: 95%;
     text-align: center;
   }
+  .displayNone {
+    display: none !important;
+  }
+  .search_box_main_border {
+    border: none !important  ;
+  }
+  .search_box_border {
+    border: none !important;
+    margin-top: 6rem !important  ;
+  }
+  .media_quari_box_style {
+    z-index: 99999 !important;
+    position: absolute !important;
+    width: 100% !important;
+    padding: 0px !important;
+    margin-top: 10px !important;
+    background-color: #ffffff;
+  }
+  .destination_selectorBox .css-150nlgc-MuiAccordionDetails-root {
+    padding: 0px 0px 0px !important;
+  }
+  .destination_main_box_media {
+    height: 76px !important  ;
+  }
+  .homePage_searchButton {
+    display: none !important;
+  }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .input_Style {
     width: 21rem;
   }
@@ -829,7 +891,7 @@
     width: 134px;
     margin-right: 0px;
   }
-}
+} */
 
 /* ----------------------------card hotel details with map */
 .card-content-paragraph {
@@ -850,4 +912,11 @@
 }
 .my-ac-select-menu:hover {
   background: #d9d7d7 !important;
+}
+.language_dropdownParent .login_lngug_main_box {
+  position: absolute !important;
+  transform: translate(40px, 0px) !important;
+}
+.language_dropdownParent .login_lngug_main_box p {
+  padding: 7px 10px !important;
 }

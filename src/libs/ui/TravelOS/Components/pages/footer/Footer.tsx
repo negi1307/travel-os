@@ -25,7 +25,7 @@ const Footer = (props: any) => {
   let footerdataleftSide = [{ item: 'Phishing' }, { item: 'Contact Us' }];
   return (
     <Box
-      className="footer_parentBox"
+      className="footer_parentBox displayNone"
       bgcolor="info.dark"
       display={'flex'}
       pt={5}
