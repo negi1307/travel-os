@@ -28,7 +28,6 @@ const HoldPopupModel = ({ open, onClose }: any) => {
       }}
     >
       <DialogTitle sx={{ textAlign: 'center' }}>
-        {/* <VerifiedIcon fontSize="large" color="primary" sx={{ color: 'white' }} /> */}
         <img
           src={verify}
           alt="Hotel"

@@ -143,7 +143,7 @@ const Login = (props: MyComponentProps) => {
           </Box>
         </Box>
         {/* <Box className="custom-menu-item text-primary">hello</Box> */}
-        <Box className="login_lngug_main_box">
+        {/* <Box className="login_lngug_main_box">
           {languageData?.map((item) => {
             return (
               <>
@@ -156,11 +156,7 @@ const Login = (props: MyComponentProps) => {
               </>
             );
           })}
-
-          {/* <Typography className="login_lnguag_text_font_style">
-            hello
-          </Typography> */}
-        </Box>
+        </Box> */}
 
         <Box
           display={'flex'}
