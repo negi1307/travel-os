@@ -64,11 +64,11 @@ const MyAccount = () => {
           <Button variant="text" color="primary">
             Preferences
           </Button>
-          <Tooltip title="Coming Soon" placement="top" arrow sx={{ borderRadius: '10px', color: '#0057B7' }}>
+          {/* <Tooltip title="Coming Soon" placement="top" arrow sx={{ borderRadius: '10px', color: '#0057B7' }}> */}
             <Button variant="text" disabled>
               Group Booking
             </Button>
-          </Tooltip>
+          
         </Box>
 
         <Box
@@ -127,12 +127,12 @@ const MyAccount = () => {
             </Grid>
             <Grid item xs={3} sx={{ marginTop: '25px' }}>
               
-            <Box display={"flex"} >
+            <Box display={"flex"} alignItems={'center'}>
                     <Box>
                     <Checkbox defaultChecked/>
                     </Box>
                     <Box>
-                    <Typography variant="caption"  color="initial">I want to receive Email Notification in my primary account email address</Typography>
+                    <Typography variant="subtitle1"  color="initial">I want to receive Email Notification in my primary account email address</Typography>
 
                     </Box>
                 </Box>
@@ -201,22 +201,13 @@ const MyAccount = () => {
               </Typography>
             </Grid>
             <Grid item xs={3} sx={{ marginTop: '25px' }}>
-              {/* <FormGroup>
-                <FormControlLabel
-                className='my-account-fc-label'
-            
-
-                  control={<Checkbox />}
-                  label="I want to receive Email Notification in my primary account email address"
-                />
-              </FormGroup> */}
-               <Box display={"flex"} >
-                    <Box>
-                    <Checkbox />
+              
+               <Box display={"flex"} alignItems={'center'}>
+                    <Box >
+                    <Checkbox/>
                     </Box>
                     <Box>
-                    <Typography variant="caption"  color="initial">I want to receive Email Notification in my primary account email address</Typography>
-
+                    <Typography variant="subtitle1"  color="initial">I want to receive Email Notification in my primary account email address</Typography>
                     </Box>
                 </Box>
             </Grid>
