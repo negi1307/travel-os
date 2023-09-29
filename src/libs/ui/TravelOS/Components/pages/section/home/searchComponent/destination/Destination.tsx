@@ -36,6 +36,7 @@ const Destination = (props: MyComponentProps) => {
           expandIcon={<ExpandMoreIcon color="primary" />}
           aria-controls="panel1a-content"
           id="panel1a-header"
+          className="destination_main_box_media"
           sx={{ display: 'flex', alignItems: 'baseline' }}
         >
           <Box pl={2}>
@@ -46,8 +47,9 @@ const Destination = (props: MyComponentProps) => {
                     // className="destination_select"
                     color={'primary.light'}
                     variant="h6"
-                    marginLeft={3}
+                    // marginLeft={3}
                     // sx={{ color: 'wheat' }}
+                    className="destination_main_box_media"
                   >
                     Destination
                   </Typography>
@@ -55,8 +57,8 @@ const Destination = (props: MyComponentProps) => {
                     marginTop={2}
                     marginBottom={2}
                     color={'primary.main'}
-                    className="destination_select"
-                    marginLeft={3}
+                    className="destination_select "
+                    // marginLeft={3}
                   >
                     {destinationData}
                   </Typography>
@@ -66,8 +68,8 @@ const Destination = (props: MyComponentProps) => {
                   <Typography
                     paddingY={1}
                     color={'primary.light'}
-                    className="destination_select_first"
-                    marginLeft={3}
+                    className="destination_select_first "
+                    // marginLeft={3}
                   >
                     Destination
                   </Typography>
@@ -76,7 +78,7 @@ const Destination = (props: MyComponentProps) => {
             </Typography>
           </Box>
         </AccordionSummary>
-        <AccordionDetails>
+        <AccordionDetails className="media_quari_box_style ">
           {/* <Typography
             color={'secondary.main'}
             paddingX={2}
@@ -123,7 +125,6 @@ const Destination = (props: MyComponentProps) => {
                               className="destination_type_css"
                               marginY={2}
                               paddingX={2}
-                              variant={'subtitle1'}
                               onClick={() => {
                                 getAcc(items.typeName);
                               }}
