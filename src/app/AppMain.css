@@ -27,15 +27,26 @@
   line-height: 19.36px !important;
 }
 .login_lngug_main_box {
-  border: solid;
+  /* border: solid; */
   width: 185.77px !important;
-  height: 174.79px !important;
+  height: auto !important;
   background-color: #ffffff !important;
 }
 .login_lnguag_text_font_style {
   font-weight: 400 !important;
   font-size: 12.49px !important;
   line-height: 15.12px !important;
+  color: #0057b7 !important;
+}
+.login_lnguag_text_font_style:hover {
+  font-weight: 400 !important;
+  font-size: 22.25 !important;
+  font-size: 22.25px !important;
+  padding-left: 19px !important;
+  height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  border-left: solid #0057b7 6px !important;
 }
 .login_lgnug_ {
   color: #ffffff !important;
@@ -821,19 +832,22 @@
 }
 
 /* ----------------------------card hotel details with map */
-.card-content-paragraph{
+.card-content-paragraph {
   padding: 0px !important;
   padding-bottom: 0px !important;
 }
 
-.my-account-fc-label .MuiTypography-root .MuiTypography-caption .css-15b6asd-MuiTypography-root{
+.my-account-fc-label
+  .MuiTypography-root
+  .MuiTypography-caption
+  .css-15b6asd-MuiTypography-root {
   font-size: '12px';
   line-height: '0px' !important;
 }
 
-.my-ac-select-menu{
+.my-ac-select-menu {
   background-color: #ffffff !important;
 }
-.my-ac-select-menu:hover{
+.my-ac-select-menu:hover {
   background: #d9d7d7 !important;
 }

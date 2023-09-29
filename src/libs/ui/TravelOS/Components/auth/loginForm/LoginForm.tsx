@@ -68,6 +68,17 @@ const Login = (props: MyComponentProps) => {
   };
   //end login form data get & error handling
 
+  //language data
+  const languageData = [
+    { type: 'English' },
+    { type: 'Русский' },
+    { type: 'Deutsch' },
+    { type: 'Español' },
+    { type: 'Français' },
+    { type: 'العربية' },
+    { type: '中文' },
+  ];
+
   // model forget/ChangePassword
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -102,21 +113,21 @@ const Login = (props: MyComponentProps) => {
       </Box> */}
       <Box>
         {/* <FormControl>
-            <Select
-              className="languageChangeBtn "
-              value={selected}
-              onChange={(e) => {
-                handleChangeLanguage(e);
-              }}
-            >
-              <MenuItem className="custom-menu-item text-primary" value="en">
-                EN
-              </MenuItem>
-              <MenuItem className="custom-menu-item text-primary" value="chi">
-                CH{' '}
-              </MenuItem>
-            </Select>
-          </FormControl> */}
+          <Select
+            className="languageChangeBtn "
+            value={selected}
+            onChange={(e) => {
+              handleChangeLanguage(e);
+            }}
+          >
+            <MenuItem className="custom-menu-item text-primary" value="en">
+              EN
+            </MenuItem>
+            <MenuItem className="custom-menu-item text-primary" value="chi">
+              CH{' '}
+            </MenuItem>
+          </Select>
+        </FormControl> */}
         <Box
           display={'flex'}
           alignItems={'center'}
@@ -132,14 +143,24 @@ const Login = (props: MyComponentProps) => {
           </Box>
         </Box>
         {/* <Box className="custom-menu-item text-primary">hello</Box> */}
-        {/* <Box className="login_lngug_main_box">
-          <Typography className="login_lnguag_text_font_style">
+        <Box className="login_lngug_main_box">
+          {languageData?.map((item) => {
+            return (
+              <>
+                <Typography
+                  marginY={2}
+                  className="login_lnguag_text_font_style"
+                >
+                  {item.type}
+                </Typography>
+              </>
+            );
+          })}
+
+          {/* <Typography className="login_lnguag_text_font_style">
             hello
-          </Typography>
-          <Typography className="login_lnguag_text_font_style">
-            hello
-          </Typography>
-        </Box> */}
+          </Typography> */}
+        </Box>
 
         <Box
           display={'flex'}
@@ -169,6 +190,8 @@ const Login = (props: MyComponentProps) => {
               <Box marginTop={4} position={'relative'}>
                 <TextField
                   InputProps={{
+                    disableUnderline: false,
+                    autoFocus: false, // <== added this
                     startAdornment: (
                       <InputAdornment position={'start'}>
                         <img src={meneItme[0]?.lg_user_logo} alt="" />
