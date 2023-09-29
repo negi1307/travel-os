@@ -14,12 +14,12 @@ import {
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import '../../../../../../../../app/AppMain.css'
+import '../../../../../../../../app/AppMain.css';
 
 const MyAccount = () => {
   const [count, setCount] = useState(0);
   return (
-    <Grid  justifyContent="center">
+    <Grid justifyContent="center">
       <Box
         sx={{
           padding: '40px',
@@ -64,7 +64,12 @@ const MyAccount = () => {
           <Button variant="text" color="primary">
             Preferences
           </Button>
-          <Tooltip title="Coming Soon" placement="top" arrow sx={{ borderRadius: '10px', color: '#0057B7' }}>
+          <Tooltip
+            title="Coming Soon"
+            placement="top"
+            arrow
+            sx={{ borderRadius: '10px', color: '#0057B7' }}
+          >
             <Button variant="text" disabled>
               Group Booking
             </Button>
@@ -102,17 +107,30 @@ const MyAccount = () => {
                   alignItems: 'center',
                 }}
               >
-                Notify Me Before The Cancellation Deadline (Number of Days): &nbsp; &nbsp; &nbsp;
+                Notify Me Before The Cancellation Deadline (Number of Days):
+                &nbsp; &nbsp; &nbsp;
                 <IconButton
                   size="small"
                   onClick={() => setCount((c) => c - 1)}
                   sx={{ fontSize: '18px', color: '#0057B7' }}
                 >
-                  <RemoveIcon sx={{ fontSize: '20px', color: "#0057B7",borderRadius:"5px",border:'1px solid #0057B74D',backgroundColor:'#E7E7E7' }}/>
+                  <RemoveIcon
+                    sx={{
+                      fontSize: '20px',
+                      color: '#0057B7',
+                      borderRadius: '5px',
+                      border: '1px solid #0057B74D',
+                      backgroundColor: '#E7E7E7',
+                    }}
+                  />
                 </IconButton>
                 <Box
-              sx={{ backgroundColor: '#FFFFFF', padding: '2px 12px', border: '.5px solid lightgrey', borderRadius: '5px' }}
-
+                  sx={{
+                    backgroundColor: '#FFFFFF',
+                    padding: '2px 12px',
+                    border: '.5px solid lightgrey',
+                    borderRadius: '5px',
+                  }}
                 >
                   {count}
                 </Box>
@@ -121,21 +139,30 @@ const MyAccount = () => {
                   onClick={() => setCount((c) => c + 1)}
                   sx={{ fontSize: '18px', color: '#0057B7' }}
                 >
-                  <AddIcon sx={{ fontSize: '20px', color: "#0057B7",borderRadius:"5px",border:'1px solid #0057B74D',backgroundColor:'#E7E7E7' }}/>
+                  <AddIcon
+                    sx={{
+                      fontSize: '20px',
+                      color: '#0057B7',
+                      borderRadius: '5px',
+                      border: '1px solid #0057B74D',
+                      backgroundColor: '#E7E7E7',
+                    }}
+                  />
                 </IconButton>
               </Typography>
             </Grid>
             <Grid item xs={3} sx={{ marginTop: '25px' }}>
-              
-            <Box display={"flex"} >
-                    <Box>
-                    <Checkbox defaultChecked/>
-                    </Box>
-                    <Box>
-                    <Typography variant="caption"  color="initial">I want to receive Email Notification in my primary account email address</Typography>
-
-                    </Box>
+              <Box display={'flex'}>
+                <Box>
+                  <Checkbox defaultChecked />
                 </Box>
+                <Box>
+                  <Typography variant="caption" color="initial">
+                    I want to receive Email Notification in my primary account
+                    email address
+                  </Typography>
+                </Box>
+              </Box>
               {/* <FormGroup>
                 <FormControlLabel
                 className='my-account-fc-label'
@@ -179,15 +206,26 @@ const MyAccount = () => {
                   alignItems: 'center',
                 }}
               >
-                Notify Me Before The Hold Release Deadline (Hours): &nbsp; &nbsp; &nbsp;
-                <IconButton
-                  size="small"
-                  onClick={() => setCount((c) => c - 1)}
-                >
-                  <RemoveIcon sx={{ fontSize: '20px', color: "#0057B7",borderRadius:"5px",border:'1px solid #0057B74D',backgroundColor:'#E7E7E7' }}/>
+                Notify Me Before The Hold Release Deadline (Hours): &nbsp;
+                &nbsp; &nbsp;
+                <IconButton size="small" onClick={() => setCount((c) => c - 1)}>
+                  <RemoveIcon
+                    sx={{
+                      fontSize: '20px',
+                      color: '#0057B7',
+                      borderRadius: '5px',
+                      border: '1px solid #0057B74D',
+                      backgroundColor: '#E7E7E7',
+                    }}
+                  />
                 </IconButton>
                 <Box
-                  sx={{ backgroundColor: '#FFFFFF', padding: '2px 12px', border: '.5px solid lightgrey', borderRadius: '5px' }}
+                  sx={{
+                    backgroundColor: '#FFFFFF',
+                    padding: '2px 12px',
+                    border: '.5px solid lightgrey',
+                    borderRadius: '5px',
+                  }}
                 >
                   {count}
                 </Box>
@@ -196,7 +234,15 @@ const MyAccount = () => {
                   onClick={() => setCount((c) => c + 1)}
                   sx={{ fontSize: '18px', color: '#0057B7' }}
                 >
-                  <AddIcon sx={{ fontSize: '20px', color: "#0057B7",borderRadius:"5px",border:'1px solid #0057B74D',backgroundColor:'#E7E7E7' }}/>
+                  <AddIcon
+                    sx={{
+                      fontSize: '20px',
+                      color: '#0057B7',
+                      borderRadius: '5px',
+                      border: '1px solid #0057B74D',
+                      backgroundColor: '#E7E7E7',
+                    }}
+                  />
                 </IconButton>
               </Typography>
             </Grid>
@@ -210,15 +256,17 @@ const MyAccount = () => {
                   label="I want to receive Email Notification in my primary account email address"
                 />
               </FormGroup> */}
-               <Box display={"flex"} >
-                    <Box>
-                    <Checkbox />
-                    </Box>
-                    <Box>
-                    <Typography variant="caption"  color="initial">I want to receive Email Notification in my primary account email address</Typography>
-
-                    </Box>
+              <Box display={'flex'}>
+                <Box>
+                  <Checkbox />
                 </Box>
+                <Box>
+                  <Typography variant="caption" color="initial">
+                    I want to receive Email Notification in my primary account
+                    email address
+                  </Typography>
+                </Box>
+              </Box>
             </Grid>
           </Grid>
         </Box>
@@ -244,26 +292,58 @@ const MyAccount = () => {
               >
                 Currency Preference
               </Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '15px',
+                }}
+              >
                 <Typography variant="subtitle2" sx={{ marginLeft: '8px' }}>
                   Set my default indication currency:
                 </Typography>
-                <Select defaultValue="ADM" sx={{ width: '10%', height: '23px', marginLeft: 2, fontSize: '12px'}}>
-                  <MenuItem className='my-ac-select-menu' value="ADM">AED</MenuItem>
-                  <MenuItem className='my-ac-select-menu' value="UD">EUR</MenuItem>
-                  <MenuItem className='my-ac-select-menu' value="Rp">INR</MenuItem>
-                  <MenuItem className='my-ac-select-menu' value="Rupees">USD</MenuItem>
+                <Select
+                  defaultValue="ADM"
+                  sx={{
+                    width: '10%',
+                    height: '23px',
+                    marginLeft: 2,
+                    fontSize: '12px',
+                  }}
+                >
+                  <MenuItem className="my-ac-select-menu" value="ADM">
+                    AED
+                  </MenuItem>
+                  <MenuItem className="my-ac-select-menu" value="UD">
+                    EUR
+                  </MenuItem>
+                  <MenuItem className="my-ac-select-menu" value="Rp">
+                    INR
+                  </MenuItem>
+                  <MenuItem className="my-ac-select-menu" value="Rupees">
+                    USD
+                  </MenuItem>
                 </Select>
               </Box>
             </Grid>
           </Grid>
         </Box>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}>
-                    <Button variant='contained' sx={{ padding: '18px 70px', borderRadius: '0px', backgroundColor: '#0057B7' }}> Apply
-                    </Button>
-
-                </Box>
+        <Box
+          sx={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}
+        >
+          <Button
+            variant="contained"
+            sx={{
+              padding: '18px 70px',
+              borderRadius: '0px',
+              backgroundColor: '#0057B7',
+            }}
+          >
+            {' '}
+            Apply
+          </Button>
+        </Box>
       </Box>
     </Grid>
   );
