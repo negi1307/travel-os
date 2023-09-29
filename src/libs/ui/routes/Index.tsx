@@ -24,6 +24,9 @@ const FilterIndex = React.lazy(
       '../TravelOS/Components/pages/section/home/filterComponent/FilterIndex'
     )
 );
+const DefaultIndex = React.lazy(
+  () => import('../TravelOS/Components/pages/section/defaultPages/DefaultIndex')
+);
 
 const loading = () => <div className=""></div>;
 
@@ -91,6 +94,12 @@ const AllRoutes = (props: MyComponentProps) => {
               path: 'search',
               element: (
                 <LoadComponent component={FilterIndex} meneItme={meneItme} />
+              ),
+            },
+            {
+              path: 'dashboards',
+              element: (
+                <LoadComponent component={DefaultIndex} meneItme={meneItme} />
               ),
             },
           ],

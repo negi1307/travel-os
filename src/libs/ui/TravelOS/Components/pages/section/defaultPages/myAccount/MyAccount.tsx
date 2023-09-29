@@ -64,11 +64,11 @@ const MyAccount = () => {
           <Button variant="text" color="primary">
             Preferences
           </Button>
-          {/* <Tooltip title="Coming Soon" placement="top" arrow sx={{ borderRadius: '10px', color: '#0057B7' }}> */}
+          <Tooltip title="Coming Soon" placement="top" arrow>
             <Button variant="text" disabled>
               Group Booking
             </Button>
-          
+          </Tooltip>
         </Box>
 
         <Box
@@ -80,7 +80,7 @@ const MyAccount = () => {
           }}
         >
           <Grid container spacing={2}>
-            <Grid item xs={9}>
+            <Grid item md={9}>
               <Typography
                 variant="h6"
                 sx={{
@@ -125,14 +125,14 @@ const MyAccount = () => {
                 </IconButton>
               </Typography>
             </Grid>
-            <Grid item xs={3} sx={{ marginTop: '25px' }}>
+            <Grid item md={3} sx={{ marginTop: '25px' }}>
               
-            <Box display={"flex"} alignItems={'center'}>
+            <Box display={"flex"} >
                     <Box>
                     <Checkbox defaultChecked/>
                     </Box>
                     <Box>
-                    <Typography variant="subtitle1"  color="initial">I want to receive Email Notification in my primary account email address</Typography>
+                    <Typography variant="subtitle1" mt={2}  color="initial">I want to receive Email Notification in my primary account email address</Typography>
 
                     </Box>
                 </Box>
@@ -157,7 +157,7 @@ const MyAccount = () => {
           }}
         >
           <Grid container spacing={2}>
-            <Grid item xs={9}>
+            <Grid item md={9}>
               <Typography
                 variant="h6"
                 sx={{
@@ -200,14 +200,14 @@ const MyAccount = () => {
                 </IconButton>
               </Typography>
             </Grid>
-            <Grid item xs={3} sx={{ marginTop: '25px' }}>
+            <Grid item md={3} sx={{ marginTop: '25px' }}>
               
-               <Box display={"flex"} alignItems={'center'}>
-                    <Box >
-                    <Checkbox/>
+               <Box display={"flex"} >
+                    <Box>
+                    <Checkbox />
                     </Box>
                     <Box>
-                    <Typography variant="subtitle1"  color="initial">I want to receive Email Notification in my primary account email address</Typography>
+                    <Typography variant="subtitle1" mt={2}  color="initial">I want to receive Email Notification in my primary account email address</Typography>
                     </Box>
                 </Box>
             </Grid>
@@ -223,7 +223,7 @@ const MyAccount = () => {
           }}
         >
           <Grid container spacing={2}>
-            <Grid item xs={9}>
+            <Grid item md={9}>
               <Typography
                 variant="h6"
                 sx={{

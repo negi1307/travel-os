@@ -11,7 +11,7 @@ const Faq = () => {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         height: '100vh',
-        overflow:'scroll',
+        overflow:'scroll',  
     };
 
     const [expanded, setExpanded] = useState(null); // State to manage expanded accordion
