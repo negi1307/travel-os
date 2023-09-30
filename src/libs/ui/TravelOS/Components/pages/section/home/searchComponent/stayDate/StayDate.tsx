@@ -16,12 +16,20 @@ import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { DateRange } from '@mui/x-date-pickers-pro';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { makeStyles } from '@mui/styles';
 
 interface MyComponentProps {
-  mainConnent: any;
+  mainConnentFill: any;
+  mainConnentEmpty: any;
+  selectClose: any;
 }
+const useStyles = makeStyles((theme) => ({
+  customDatePicker: {
+    background: 'none', // Add your custom styles here
+  },
+}));
 const StayDate = (props: MyComponentProps) => {
-  const { mainConnent } = props;
+  const { mainConnentFill, selectClose, mainConnentEmpty } = props;
   const [expanded, setExpanded] = useState(false);
 
   const [value, setValue] = useState<any>([null, null]); // Initial date range is null
@@ -32,10 +40,15 @@ const StayDate = (props: MyComponentProps) => {
     firstDate: '',
     secondDate: '',
   });
+  const classes = useStyles();
 
   const stayDateOpne = () => {
     setExpanded(!expanded);
-    mainConnent();
+    mainConnentFill('stay');
+  };
+  const closeExpandedStay = () => {
+    mainConnentEmpty();
+    setExpanded(false);
   };
   useEffect(() => {
     if (value?.[0] !== null) {
@@ -59,6 +72,12 @@ const StayDate = (props: MyComponentProps) => {
     } else {
     }
   }, [value?.[0], value?.[1]]);
+
+  useEffect(() => {
+    if (selectClose === 'dest' || selectClose === 'guest') {
+      closeExpandedStay();
+    }
+  }, [selectClose]);
   return (
     <div className="date_pickerBox date_active">
       <Box onClick={() => stayDateOpne()} sx={{ backgroundColor: 'white' }}>
@@ -94,6 +113,7 @@ const StayDate = (props: MyComponentProps) => {
                   sx={{ color: 'primary.main' }}
                   value={value}
                   onChange={(newValue) => setValue(newValue)}
+                  className={classes.customDatePicker}
                 />
                 <Box textAlign={'center'}>
                   <Typography color={'error'}>

@@ -9,12 +9,18 @@ import { DummyData } from './dummydata';
 interface MyComponentProps {
   meneItme: any; // Declare the prop here
   selectClose: string;
+  mainConnentEmpty: any;
+  mainConnentFill: any;
 }
 
 const Destination = (props: MyComponentProps) => {
-  const { meneItme, selectClose } = props;
+  const { meneItme, selectClose, mainConnentEmpty, mainConnentFill } = props;
   const dropIcon = meneItme?.[6];
   const [expanded, setExpanded] = useState(false);
+  const closeexpanded = () => {
+    setExpanded(false);
+    mainConnentEmpty();
+  };
 
   const [destinationData, setDestinationData] = useState('');
 
@@ -23,9 +29,14 @@ const Destination = (props: MyComponentProps) => {
     setDestinationData(e);
   };
 
+  const openDestination = () => {
+    setExpanded(!expanded);
+    mainConnentFill('dest');
+  };
+
   useEffect(() => {
-    if (selectClose === 'off') {
-      setExpanded(false);
+    if (selectClose === 'stay' || selectClose === 'guest') {
+      closeexpanded();
     }
   }, [selectClose]);
   return (
@@ -37,7 +48,7 @@ const Destination = (props: MyComponentProps) => {
         }}
       >
         <AccordionSummary
-          onClick={() => setExpanded(!expanded)}
+          onClick={() => openDestination()}
           expandIcon={<ExpandMoreIcon color="primary" />}
           aria-controls="panel1a-content"
           id="panel1a-header"

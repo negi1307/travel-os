@@ -8,9 +8,12 @@ import { Link } from 'react-router-dom';
 
 const SearchIndex = (props: any) => {
   const { meneItme } = props;
-  const [selectClose, setSelectClose] = useState('on');
-  const mainConnent = () => {
-    setSelectClose('off');
+  const [selectClose, setSelectClose] = useState('');
+  const mainConnentFill = (type: string) => {
+    setSelectClose(type);
+  };
+  const mainConnentEmpty = () => {
+    setSelectClose('');
   };
   return (
     <div>
@@ -27,18 +30,25 @@ const SearchIndex = (props: any) => {
           className="search_box_main_border"
         >
           <Grid position={'relative'} item xs={4}>
-            <Destination meneItme={meneItme} selectClose={selectClose} />
+            <Destination
+              meneItme={meneItme}
+              selectClose={selectClose}
+              mainConnentEmpty={mainConnentEmpty}
+              mainConnentFill={mainConnentFill}
+            />
           </Grid>
           <Grid
             position={'relative'}
             item
             xs={4}
-            // borderLeft={2}
-            // borderRight={2}
             borderColor={'primary.main'}
             className="search_box_border"
           >
-            <StayDate mainConnent={mainConnent} />
+            <StayDate
+              selectClose={selectClose}
+              mainConnentFill={mainConnentFill}
+              mainConnentEmpty={mainConnentEmpty}
+            />
           </Grid>
           <Grid position={'relative'} item xs={4}>
             <Grid
@@ -46,11 +56,13 @@ const SearchIndex = (props: any) => {
               display={'flex'}
               flexDirection={'row'}
             >
-              <GuestRoom mainConnent={mainConnent} />
+              <GuestRoom
+                selectClose={selectClose}
+                mainConnentFill={mainConnentFill}
+                mainConnentEmpty={mainConnentEmpty}
+              />
               <Link to="/dashboard/search" className="navBar_link_btn">
                 <Button
-                  // fullWidth
-
                   className="homePage_searchButton"
                   color="primary"
                   variant="contained"
@@ -62,6 +74,19 @@ const SearchIndex = (props: any) => {
             </Grid>
           </Grid>
         </Grid>
+        <Box className="displayNone1">
+          <Link to="/dashboard/search" className="navBar_link_btn">
+            <Button
+              className="search_button"
+              fullWidth
+              color="primary"
+              variant="contained"
+            >
+              {/* {t(`${nvBarHome}`)} */}
+              SEARCH
+            </Button>
+          </Link>
+        </Box>
       </Box>
     </div>
   );

@@ -254,7 +254,7 @@
 /* guidline form css */
 
 /* footer css */
-.footer_parentBox {
+/* .footer_parentBox {
   padding-top: 5rem !important;
   padding-bottom: 2.5rem !important;
 }
@@ -277,6 +277,24 @@
   font-size: 12px;
 }
 
+
+
+.footer_parentBox .css-12y4fal,
+.footer_parentBox .css-gg4vpm {
+  margin: 0 auto;
+  width: 85rem;
+}
+ */
+
+.footer_mainPrnt {
+  height: 450px !important ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer_mainPrntColor {
+  background-color: #327bcb;
+}
 .footer_text_font {
   line-height: 12.1px !important;
   letter-spacing: 8% !important;
@@ -284,18 +302,22 @@
   font-size: 10px !important;
   color: #fff;
 }
-
-.footer_parentBox .css-12y4fal,
-.footer_parentBox .css-gg4vpm {
-  margin: 0 auto;
-  width: 85rem;
-}
 .footer_right_side_text {
   line-height: 20.51px !important;
   font-size: 17px !important;
   font-weight: 400 !important;
   color: #fff;
 }
+.footer_sectionBox {
+  margin: 0px 183px !important;
+}
+.footer_leftSide_ScondBox {
+  margin-left: 86px !important;
+}
+.footer_leftSide_firstBox {
+  padding-left: 165px !important;
+}
+
 /* footer css */
 /* pages css */
 .carousel_parentBox {
@@ -546,7 +568,7 @@
 }
 .date_pickerBox .css-1v6chqf {
   /* background-color: #ffffff; */
-  width: 76rem;
+  /* width: 76rem; */
   position: absolute;
   top: 73px;
 }
@@ -685,6 +707,8 @@
   border-radius: 12px;
   /* color: wheat; */
   cursor: pointer;
+  height: 21px !important  ;
+  width: 21px !important;
 }
 .guest_adultChild_fontStyle {
   font-weight: 500 !important;
@@ -701,7 +725,7 @@
 .guest_inputParent .open_guestDropdown {
   background: #ffffff;
   position: absolute;
-  left: -59px;
+  left: -115px;
   right: 0;
   top: 73px;
   /* width: 50rem; */
@@ -712,9 +736,11 @@
   padding: 10px 20px;
 }
 .guest_add_style {
-  width: 24px !important;
-  height: 19px !important;
+  width: 16px !important;
+  height: 14px !important;
   border: none !important;
+  color: #0057b7;
+  margin-right: 3px;
 }
 .guest_confirm_btnStyle {
   font-weight: 300 !important;
@@ -772,6 +798,22 @@
   height: 1.42rem;
   transform: translate(0px, -5px);
 }
+.guest_grindPrnt {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.guest_addMainPrnt1 .MuiBox-root {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  /* padding-top: 2rem; */
+  /* padding-bottom: 2rem; */
+}
+.guest_addMainPrnt2 {
+  text-align: center;
+}
 /* guest component css */
 
 /* destination css */
@@ -806,6 +848,7 @@
   line-height: 13.31px !important;
   letter-spacing: 13.5% !important;
   cursor: pointer;
+  color: #0057b7;
   border-bottom: 1px #0057b7 !important;
 }
 
@@ -881,6 +924,12 @@
 .destination_selectorBox
   .css-klkp6i-MuiPaper-root-MuiAccordion-root:last-of-type {
   border-radius: 0px !important;
+}
+.destination_selectorBox
+  .destination_main_box_media
+  .MuiAccordionSummary-expandIconWrapper
+  svg {
+  transform: translate(-3px, 10px) !important;
 }
 /* destination css */
 
@@ -1107,6 +1156,9 @@
 .choose_birthdaySection {
   padding: 50px 70px !important;
 }
+.displayNone1 {
+  display: none !important;
+}
 
 /* birthday component css */
 
@@ -1118,12 +1170,18 @@
   .displayNone {
     display: none !important;
   }
+  .displayNone1 {
+    display: block !important;
+  }
   .search_box_main_border {
     border: none !important  ;
   }
   .search_box_border {
     border: none !important;
     margin-top: 6rem !important  ;
+  }
+  .search_button {
+    margin-top: 13rem !important  ;
   }
   .media_quari_box_style {
     z-index: 99999 !important;
@@ -1136,9 +1194,7 @@
   .destination_selectorBox .css-150nlgc-MuiAccordionDetails-root {
     padding: 0px 0px 0px !important;
   }
-  /* .destination_main_box_media {
-    height: 76px !important  ;
-  } */
+
   .destination_selectorBox .destination_main_box_media {
     line-height: 15px !important;
   }
@@ -1147,6 +1203,101 @@
   }
   .homePage_searchButton {
     display: none !important;
+  }
+  .footer_sectionBox {
+    margin: 0 !important;
+  }
+  .css-a5rdam-MuiGrid-root > .MuiGrid-item {
+    padding-left: 35px;
+  }
+
+  .footer_right_side_text {
+    text-align: center;
+  }
+  .social_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+  .footer_leftSide_firstBox {
+    padding-left: 55px !important;
+  }
+  .guest_inputParent .open_guestDropdown {
+    /* background: #ffffff !important; */
+    /* position: absolute !important; */
+    left: 0px !important;
+    right: 0px !important;
+    top: 73px !important;
+    /* width: 50rem; */
+    width: auto !important;
+    height: auto !important;
+    /* z-index: 99 !important; */
+    /* padding: 5px !important; */
+    /* padding: 10px 20px !important; */
+  }
+  .guest_confirm_btnStyle {
+    font-weight: 300 !important;
+    font-size: 15.37px !important;
+    line-height: 18.6px !important;
+    width: 100% !important;
+    height: 50px !important;
+    border-radius: 0 !important;
+    background-color: #0057b7 !important;
+    color: #ffffff !important;
+  }
+  .navbar_parent {
+    border: 2px solid red !important;
+    background: red !important;
+    position: absolute !important;
+    flex-direction: column !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    padding: 0 !important;
+    position: relative !important;
+    align-items: start !important;
+  }
+  .navbar_parent .mobile_navbar {
+    flex-direction: column !important;
+    /* justify-content: start!important; */
+    align-items: start !important;
+    border: 2px solid red !important;
+    width: 100% !important;
+    height: 100vh !important;
+    padding: 14px 0px !important;
+    z-index: 99 !important;
+    position: relative !important;
+    background: red !important;
+  }
+  .mobile_navbar .navBar_left_side_logo_wt_ht {
+    margin-bottom: 15px !important;
+    /* padding-left: 15px; */
+  }
+  .padding_width {
+    padding-left: 15px !important;
+    width: 100% !important;
+  }
+  .mobile_navbar .mobile_innerLinkBox {
+    flex-direction: column !important;
+    align-items: start !important;
+    padding: 0 !important;
+    border: 2px solid red !important;
+    /* width: 100%; */
+    /* padding-left: 18px; */
+  }
+  .mobile_navbar .inner_link {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 11px !important;
+  }
+  .navbar_parent .toggle_parent {
+    /* padding-left: 15px; */
+    /* width: 100%; */
+    background: red !important;
+    padding-bottom: 10px !important;
   }
 }
 
