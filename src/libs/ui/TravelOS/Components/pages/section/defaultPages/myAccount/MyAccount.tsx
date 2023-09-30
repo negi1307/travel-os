@@ -14,18 +14,24 @@ import {
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
-import '../../../../../../../../app/AppMain.css'
+import '../../../../../../../../app/AppMain.css';
+import NavBar from '../../../navbar/NavBar';
 
-const MyAccount = () => {
+const MyAccount = (props: any) => {
+  const { meneItme } = props;
+
   const [count, setCount] = useState(0);
   return (
     <Grid  justifyContent="center">
+      <Box sx={{position:'fixed',width:'100%'}}>
+        <NavBar meneItme={meneItme} />  
+      </Box>
       <Box
         sx={{
           padding: '40px',
           borderRadius: '8px',
           backgroundColor: '#EDF7F9',
-          paddingTop: '6%',
+          paddingTop: '8%',
         }}
       >
         <Typography
@@ -84,6 +90,7 @@ const MyAccount = () => {
               <Typography
                 variant="h6"
                 sx={{
+                  lineHeight:'19.77px',
                   marginTop: '8px',
                   marginBottom: '10px',
                   width: '255px',
@@ -161,8 +168,9 @@ const MyAccount = () => {
               <Typography
                 variant="h6"
                 sx={{
-                  marginTop: '8px',
-                  marginBottom: '10px',
+                  lineHeight:'19.77px',
+                  marginTop: '18px',
+                  marginBottom: '5px',
                   width: '197px',
                   borderBottom: '1px solid gray',
                 }}
@@ -227,6 +235,7 @@ const MyAccount = () => {
               <Typography
                 variant="h6"
                 sx={{
+                  lineHeight:'19.77px',
                   marginTop: '8px',
                   marginBottom: '10px',
                   width: '160px',

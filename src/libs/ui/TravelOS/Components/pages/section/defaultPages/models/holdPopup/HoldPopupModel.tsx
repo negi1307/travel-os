@@ -65,8 +65,8 @@ const HoldPopupModel = ({ open, onClose }: any) => {
           variant="body1"
           sx={{
             fontFamily: 'serif',
-            fontSize: '24px',
-            lineHeight: '1.5',
+            // fontSize: '24px',
+            // lineHeight: '38.96px',
             fontWeight: 400,
           }}
         >

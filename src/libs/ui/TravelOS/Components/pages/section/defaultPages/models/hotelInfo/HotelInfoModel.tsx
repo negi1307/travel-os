@@ -52,11 +52,11 @@ const HotelInfoModel: React.FC<HotelInfoProps> = ({ open, onClose }) => {
   }, [] as { icon: string; text: string }[][]);
 
   return (
-    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth className='modal_Parent'>
+    <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth  >
       <Box
         sx={{
           bgcolor: 'white',
-          border: '2px solid #0057B7',
+          // border: '2px solid #0057B7',
           borderRadius: '9px',
         }}
       >
@@ -97,6 +97,7 @@ const HotelInfoModel: React.FC<HotelInfoProps> = ({ open, onClose }) => {
               // fontSize={'14px'}
               fontFamily={'Averta PE'}
               // lineHeight={'22.3px'}
+              lineHeight={'17.3px'}
             >
               Nestled between the calm turquoise waters of the Arabian Gulf and
               the majestic Dubai skyline, Atlantis, The Palm is the crown of the

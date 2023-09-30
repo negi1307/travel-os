@@ -154,37 +154,51 @@ const NavBar = (props: MyComponentProps) => {
                 </Typography>
               </Box>
             </Box>
-            <Box display={'flex'}>
+            <Box display={'flex'}
+            className={
+              location?.pathname === '/dashboard/myaccount'
+                ? 'navbar_linkcss'
+                : ''
+            }>
               <Box>
                 <img src={user} alt="" />
               </Box>
               <Box marginLeft={marginLeft2} className="navbar_linkFont ">
                 <Typography>
-                  <Link to="/" className="navBar_link">
+                  <Link to="/dashboard/myaccount" className="navBar_link">
                     {t(`${nvBarMyAccount}`)}
                   </Link>
                 </Typography>
               </Box>
             </Box>
-            <Box marginX={marginX4} display={'flex'}>
+            <Box marginX={marginX4} display={'flex'}  className={
+              location?.pathname === '/dashboard/faq'
+                ? 'navbar_linkcss'
+                : ''
+            }>
               <Box>
                 <img src={information} alt="" />
               </Box>
               <Box marginLeft={marginLeft2} className="navbar_linkFont ">
                 <Typography>
-                  <Link to="/" className="navBar_link">
+                  <Link to="/dashboard/faq" className="navBar_link">
                     {t(`${nvBarFAQs}`)}
                   </Link>
                 </Typography>
               </Box>
             </Box>
-            <Box display={'flex'}>
+            <Box display={'flex'}
+            className={
+              location?.pathname === '/dashboard/hotelinfo'
+                ? 'navbar_linkcss'
+                : ''
+            }>
               <Box>
                 <img src={hotel} alt="" />
               </Box>
               <Box marginLeft={marginLeft2} className="navbar_linkFont ">
                 <Typography>
-                  <Link to="/" className="navBar_link">
+                  <Link to="/dashboard/hotelinfo" className="navBar_link">
                     {t(`${nvBarHoteInfo}`)}
                   </Link>
                 </Typography>

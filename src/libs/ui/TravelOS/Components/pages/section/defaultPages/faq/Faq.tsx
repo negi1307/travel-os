@@ -4,14 +4,17 @@ import Box from '@mui/material/Box';
 import { Typography, Accordion, AccordionSummary, Grid, IconButton } from '@mui/material';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
+import NavBar from '../../../navbar/NavBar';
 
-const Faq = () => {
+const Faq = (props: any) => {
+    const { meneItme } = props;
+
     const containerStyle = {
         backgroundImage: `url(https://images.pexels.com/photos/12565208/pexels-photo-12565208.jpeg?auto=compress&cs=tinysrgb&w=800)`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         height: '100vh',
-        overflow:'scroll',  
+        overflow: 'scroll',
     };
 
     const [expanded, setExpanded] = useState(null); // State to manage expanded accordion
@@ -72,7 +75,10 @@ const Faq = () => {
 
     return (
         <Box sx={containerStyle} >
-            <Box p={5} px={10}>
+            <Box sx={{ position: 'fixed', width: '100%' }}>
+                <NavBar meneItme={meneItme} />
+            </Box>
+            <Box mt={5} p={5} px={10}>
                 <Typography variant='subtitle2' sx={{ fontFamily: 'Averta PE', textAlign: 'left' }}>
                     ATLANTIS BUSINESS CONNECT
                 </Typography>
@@ -81,9 +87,10 @@ const Faq = () => {
                 </Typography>
             </Box>
             <Box >
-                <Box px={5}>
+                <Grid  px={5}>
                     {faqData.map((faq, index) => (
                         <Accordion
+                        
                             key={index}
                             expanded={expanded === index}
                             onChange={handleAccordionChange(index)}
@@ -94,21 +101,21 @@ const Faq = () => {
                                 id={`faq-header-${index}`}
 
                             >
-                                <Box px={2}>{
+                                <Grid item px={2}>{
                                     expanded === index ? (
                                         <RemoveCircleOutlineIcon fontSize='large' sx={{ color: 'primary.main' }} />
                                     ) : (
                                         <AddCircleOutlineIcon fontSize='large' sx={{ color: 'primary.main' }} />
                                     )
                                 }
-                                </Box> <Typography px={2} sx={{ fontFamily: 'Inter' }} variant="h6">{faq.question}</Typography>
+                                </Grid> <Typography px={2} sx={{ fontFamily: 'Inter',lineHeight:'16.94px' }} variant="h6">{faq.question}</Typography>
                             </AccordionSummary>
-                            <Box p={2}>
+                            <Grid item p={2}>
                                 <Typography>{faq.answer}</Typography>
-                            </Box>
+                            </Grid>
                         </Accordion>
                     ))}
-                </Box>
+                </Grid>
             </Box>
         </Box>
     );

@@ -12,7 +12,8 @@ const AuthIndex = React.lazy(
 const SectionIndex = React.lazy(
   () => import('../TravelOS/Components/pages/PageIndex')
 );
-import HomeIndex from '../TravelOS/Components/pages/section/home/HomeIndex';
+// import HomeIndex from '../TravelOS/Components/pages/section/home/HomeIndex';
+// import MyAccount from '../TravelOS/Components/pages/section/defaultPages/myAccount/MyAccount';
 
 const TestingComponent = React.lazy(
   () => import('../TravelOS/Components/auth/TestingComponent')
@@ -26,6 +27,15 @@ const FilterIndex = React.lazy(
 );
 const DefaultIndex = React.lazy(
   () => import('../TravelOS/Components/pages/section/defaultPages/DefaultIndex')
+);
+const MyAccount = React.lazy(
+  () => import('../TravelOS/Components/pages/section/defaultPages/myAccount/MyAccount')
+);
+const Faq = React.lazy(
+  () => import('../TravelOS/Components/pages/section/defaultPages/faq/Faq')
+);
+const DownloadFactSheet = React.lazy(
+  () => import('../TravelOS/Components/pages/section/defaultPages/downloadFactsheet/DowloadFactSheet')
 );
 
 const loading = () => <div className=""></div>;
@@ -100,6 +110,24 @@ const AllRoutes = (props: MyComponentProps) => {
               path: 'dashboards',
               element: (
                 <LoadComponent component={DefaultIndex} meneItme={meneItme} />
+              ),
+            },
+            {
+              path: 'myaccount',
+              element: (
+                <LoadComponent component={MyAccount} meneItme={meneItme} />
+              ),
+            },
+            {
+              path: 'faq',
+              element: (
+                <LoadComponent component={Faq} meneItme={meneItme} />
+              ),
+            },
+            {
+              path: 'hotelinfo',
+              element: (
+                <LoadComponent component={DownloadFactSheet} meneItme={meneItme} />
               ),
             },
           ],

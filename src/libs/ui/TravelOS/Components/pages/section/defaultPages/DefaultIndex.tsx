@@ -35,15 +35,15 @@ const DefaultIndex = (props: any) => {
       <Box>
         <ModelIndex />
       </Box>
-      <Box>
+      {/* <Box>
         <MyAccount />
-      </Box>
-      <Box>
+      </Box> */}
+      {/* <Box>
         <DownloadFactSheet />
-      </Box>
-      <Box>
+      </Box> */}
+      {/* <Box>
         <Faq />
-      </Box>
+      </Box> */}
     </Box>
   );
 };
