@@ -4,8 +4,6 @@ import OceanQueenRooms from './oceanQueenRoom/OceanQueenRoom';
 import ChooseYourRate from './chooseYourRate/ChooseYourRate';
 import BirthDaySage from './birthdaySale/BirthDaySage';
 
-import '../ChooseRoom.css';
-import './Room.css';
 const Room = (props: any) => {
   const { meneItme } = props;
   const { choose_user, choose_down_arrow_img } =

@@ -82,7 +82,7 @@ const NavBar = (props: MyComponentProps) => {
         position={'relative'}
       >
         <Box
-          className="z_index"
+          className="z_index mobile_navbar padding_width"
           display={'flex'}
           justifyContent={'space-between'}
           alignItems={'center'}
@@ -110,6 +110,7 @@ const NavBar = (props: MyComponentProps) => {
             flexBasis={1}
             paddingLeft={4}
             alignItems={'center'}
+            className="mobile_innerLinkBox padding_width"
           >
             <Box
               className={
@@ -139,14 +140,17 @@ const NavBar = (props: MyComponentProps) => {
               display={'flex'}
               className={
                 location?.pathname === '/dashboard/dashboards'
-                  ? 'navbar_linkcss'
-                  : ''
+                  ? 'navbar_linkcss inner_link'
+                  : 'inner_link'
               }
             >
               <Box>
                 <img src={speed} alt="" />
               </Box>
-              <Box className="navbar_linkFont" marginLeft={marginLeft2}>
+              <Box
+                className="navbar_linkFont inner_link"
+                marginLeft={marginLeft2}
+              >
                 <Typography>
                   <Link to="/dashboard/dashboards" className="navBar_link">
                     {t(`${nvBarDashbaod}`)}
@@ -214,7 +218,6 @@ const NavBar = (props: MyComponentProps) => {
           alignContent={'end'}
         >
           <Box>
-            {/* <NotificationsNoneOutlinedIcon /> */}
             <img src={bell} alt="" />
           </Box>
           <Box marginX={3}>
@@ -229,34 +232,7 @@ const NavBar = (props: MyComponentProps) => {
                 dispatch(logoutUser());
               }}
             />
-            {/* <Button className={classes.testing}>Hook</Button> */}
           </Box>
-          {/* <Box className="inner_toggleParent">
-            <Accordion className="navbar_logOut">
-              <AccordionSummary
-                // className="navbar_logOut"
-
-                expandIcon={<ExpandMoreIcon color={'primary'} />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Typography variant={'body1'} color={'primary'}>
-                  Viju Varma
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails>
-                <Box>
-                  <Button
-                    onClick={() => {
-                      dispatch(logoutUser());
-                    }}
-                  >
-                    Logout
-                  </Button>
-                </Box>
-              </AccordionDetails>
-            </Accordion>
-          </Box> */}
         </Box>
       </Box>
     </div>
