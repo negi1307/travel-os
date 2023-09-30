@@ -13,8 +13,11 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 // import './guestRoom.css';
 
 // import '../destination/Destination.css';
-
-const GuestRoom = () => {
+interface MyComponentProps {
+  mainConnent: any;
+}
+const GuestRoom = (props: MyComponentProps) => {
+  const { mainConnent } = props;
   const [expanded, setExpanded] = useState(false);
   const [guestAdults, setGuestAdults] = useState(0);
   const [guestChildren, setGuestChildren] = useState(0);
@@ -27,6 +30,10 @@ const GuestRoom = () => {
     rooms: '',
   });
 
+  const openGuestRoom = () => {
+    setExpanded(!expanded);
+    mainConnent();
+  };
   const addBox = () => {
     setGuestBox([...guestBox, 1]);
     setGuestCalculator(guestCalculator + 1);
@@ -51,7 +58,7 @@ const GuestRoom = () => {
 
   return (
     <div className="guest_inputParent">
-      <Box onClick={() => setExpanded(!expanded)}>
+      <Box onClick={() => openGuestRoom()}>
         <Box color={'primary.main'} bgcolor={'primary.contrastText'}>
           <Box display={'flex'} justifyContent={'space-between'}>
             <Box>
@@ -99,6 +106,7 @@ const GuestRoom = () => {
                 {guestBox.length > 1 ? (
                   <Box display={'flex'} justifyContent={'end'} marginRight={3}>
                     <ClearIcon
+                      className="guest_room_deletIcon"
                       onClick={() => {
                         Remove(index);
                       }}
@@ -116,8 +124,10 @@ const GuestRoom = () => {
                       borderBottom={3}
                       borderColor={'#252525'}
                     >
-                      <Box>
-                        <Typography color={'primary'}>ADULTS</Typography>
+                      <Box display={'flex'} alignItems={'center'}>
+                        <Typography className="guest_adultChild_fontStyle">
+                          ADULTS
+                        </Typography>
                       </Box>
                       <Box display={'flex'}>
                         <Box>
@@ -159,8 +169,10 @@ const GuestRoom = () => {
                       borderBottom={3}
                       borderColor={'#252525'}
                     >
-                      <Box>
-                        <Typography color={'primary'}>CHILDREN</Typography>
+                      <Box display={'flex'} alignItems={'center'}>
+                        <Typography className="guest_adultChild_fontStyle">
+                          CHILDREN
+                        </Typography>
                       </Box>
                       <Box display={'flex'}>
                         <Box>
@@ -206,25 +218,24 @@ const GuestRoom = () => {
                 // borderColor={'primary'}
                 justifyContent={'center'}
                 marginY={3}
+                alignItems={'center'}
               >
-                <Button
-                  startIcon={<AddIcon />}
+                <AddIcon className="guest_add_style" />
+                <a
+                  // startIcon={}
                   className="destination_type_Btn_css"
-                  color={'primary'}
                   onClick={() => {
                     addBox();
                   }}
                 >
                   ADD ANOTHER ROOM
-                </Button>
+                </a>
               </Box>
             </Grid>
             <Grid item xs={6} padding={3}>
               <Box display={'flex'} justifyContent={'center'} marginY={3}>
                 <Button
-                  // startIcon={<AddIcon />}
-                  variant={'contained'}
-                  color={'primary'}
+                  className="guest_confirm_btnStyle"
                   onClick={() => {
                     submitGuestRoom();
                   }}

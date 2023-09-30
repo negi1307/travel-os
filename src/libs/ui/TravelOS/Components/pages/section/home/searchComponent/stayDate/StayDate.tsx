@@ -9,8 +9,6 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DateRangeCalendar } from '@mui/x-date-pickers-pro/DateRangeCalendar';
 // import './StayDate.css';
 
-import '../destination/Destination.css';
-
 import dayjs, { Dayjs } from 'dayjs';
 import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 // import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -19,7 +17,11 @@ import { DateRange } from '@mui/x-date-pickers-pro';
 import { DateRangePicker } from '@mui/x-date-pickers-pro/DateRangePicker';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-const StayDate = () => {
+interface MyComponentProps {
+  mainConnent: any;
+}
+const StayDate = (props: MyComponentProps) => {
+  const { mainConnent } = props;
   const [expanded, setExpanded] = useState(false);
 
   const [value, setValue] = useState<any>([null, null]); // Initial date range is null
@@ -31,6 +33,10 @@ const StayDate = () => {
     secondDate: '',
   });
 
+  const stayDateOpne = () => {
+    setExpanded(!expanded);
+    mainConnent();
+  };
   useEffect(() => {
     if (value?.[0] !== null) {
       let date = value?.[0]?.toJSON().slice(0, 10);
@@ -55,10 +61,7 @@ const StayDate = () => {
   }, [value?.[0], value?.[1]]);
   return (
     <div className="date_pickerBox date_active">
-      <Box
-        onClick={() => setExpanded(!expanded)}
-        sx={{ backgroundColor: 'white' }}
-      >
+      <Box onClick={() => stayDateOpne()} sx={{ backgroundColor: 'white' }}>
         <Box color={'primary.main'}>
           <Box display={'flex'} justifyContent={'space-between'}>
             <Box>

@@ -4,11 +4,14 @@ import { Box, Button, Grid } from '@mui/material';
 import Destination from './destination/Destination';
 import StayDate from './stayDate/StayDate';
 import GuestRoom from './guest&Room/GuestRoom';
-import './search.css';
 import { Link } from 'react-router-dom';
 
 const SearchIndex = (props: any) => {
   const { meneItme } = props;
+  const [selectClose, setSelectClose] = useState('on');
+  const mainConnent = () => {
+    setSelectClose('off');
+  };
   return (
     <div>
       <Box paddingX={4}>
@@ -24,7 +27,7 @@ const SearchIndex = (props: any) => {
           className="search_box_main_border"
         >
           <Grid position={'relative'} item xs={4}>
-            <Destination meneItme={meneItme} />
+            <Destination meneItme={meneItme} selectClose={selectClose} />
           </Grid>
           <Grid
             position={'relative'}
@@ -35,7 +38,7 @@ const SearchIndex = (props: any) => {
             borderColor={'primary.main'}
             className="search_box_border"
           >
-            <StayDate />
+            <StayDate mainConnent={mainConnent} />
           </Grid>
           <Grid position={'relative'} item xs={4}>
             <Grid
@@ -43,7 +46,7 @@ const SearchIndex = (props: any) => {
               display={'flex'}
               flexDirection={'row'}
             >
-              <GuestRoom />
+              <GuestRoom mainConnent={mainConnent} />
               <Link to="/dashboard/search" className="navBar_link_btn">
                 <Button
                   // fullWidth
