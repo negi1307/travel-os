@@ -13,7 +13,7 @@ const DefaultIndex = (props: any) => {
   return (
     <Box>
       <Box>
-        <NavBar meneItme={meneItme} />  
+        <NavBar meneItme={meneItme} />
       </Box>
       <Box>
         <Grid container sx={{ mt: 3 }}>
@@ -35,7 +35,7 @@ const DefaultIndex = (props: any) => {
       <Box>
         <ModelIndex />
       </Box>
-      <Box>
+      {/* <Box>
         <MyAccount />
       </Box>
       <Box>
@@ -43,7 +43,7 @@ const DefaultIndex = (props: any) => {
       </Box>
       <Box>
         <Faq />
-      </Box>
+      </Box> */}
     </Box>
   );
 };
