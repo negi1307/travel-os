@@ -1,6 +1,5 @@
 import { Grid, Typography, Box } from '@mui/material';
 import React from 'react';
-import './ChooseRoom.css';
 const ChooseYourRate = (props: any) => {
   const { meneItme } = props;
   const { choose_Room_section } = meneItme?.[9]?.chooseRoomImg?.[0];

@@ -13,7 +13,7 @@ import {
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
-import '../../../../TravelOS/Components/pages/style.css';
+// import '../../../../TravelOS/Components/pages/style.css';
 import ForgetChangePassword from '../../../../../models/forgetChangePassword/ForgetChangePassword';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';

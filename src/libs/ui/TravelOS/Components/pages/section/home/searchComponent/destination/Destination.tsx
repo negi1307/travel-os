@@ -1,20 +1,26 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import { Typography, Box, Grid, MenuItem } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { DummyData } from './dummydata';
-import './Destination.css';
 
 interface MyComponentProps {
   meneItme: any; // Declare the prop here
+  selectClose: string;
+  mainConnentEmpty: any;
+  mainConnentFill: any;
 }
 
 const Destination = (props: MyComponentProps) => {
-  const { meneItme } = props;
+  const { meneItme, selectClose, mainConnentEmpty, mainConnentFill } = props;
   const dropIcon = meneItme?.[6];
   const [expanded, setExpanded] = useState(false);
+  const closeexpanded = () => {
+    setExpanded(false);
+    mainConnentEmpty();
+  };
 
   const [destinationData, setDestinationData] = useState('');
 
@@ -23,6 +29,16 @@ const Destination = (props: MyComponentProps) => {
     setDestinationData(e);
   };
 
+  const openDestination = () => {
+    setExpanded(!expanded);
+    mainConnentFill('dest');
+  };
+
+  useEffect(() => {
+    if (selectClose === 'stay' || selectClose === 'guest') {
+      closeexpanded();
+    }
+  }, [selectClose]);
   return (
     <div className="destination_selectorBox">
       <Accordion
@@ -32,7 +48,7 @@ const Destination = (props: MyComponentProps) => {
         }}
       >
         <AccordionSummary
-          onClick={() => setExpanded(!expanded)}
+          onClick={() => openDestination()}
           expandIcon={<ExpandMoreIcon color="primary" />}
           aria-controls="panel1a-content"
           id="panel1a-header"
@@ -44,11 +60,8 @@ const Destination = (props: MyComponentProps) => {
               {destinationData !== '' ? (
                 <>
                   <Typography
-                    // className="destination_select"
                     color={'primary.light'}
                     variant="h6"
-                    // marginLeft={3}
-                    // sx={{ color: 'wheat' }}
                     className="destination_main_box_media"
                   >
                     Destination
@@ -58,7 +71,6 @@ const Destination = (props: MyComponentProps) => {
                     marginBottom={2}
                     color={'primary.main'}
                     className="destination_select "
-                    // marginLeft={3}
                   >
                     {destinationData}
                   </Typography>
@@ -69,7 +81,6 @@ const Destination = (props: MyComponentProps) => {
                     paddingY={1}
                     color={'primary.light'}
                     className="destination_select_first "
-                    // marginLeft={3}
                   >
                     Destination
                   </Typography>
@@ -79,15 +90,6 @@ const Destination = (props: MyComponentProps) => {
           </Box>
         </AccordionSummary>
         <AccordionDetails className="media_quari_box_style ">
-          {/* <Typography
-            color={'secondary.main'}
-            paddingX={2}
-            paddingY={1}
-            marginY={5}
-            variant={'button'}
-          >
-            MIDDLE EAST
-          </Typography> */}
           {DummyData?.map((item) => {
             const secondType = item?.secondType;
             return (
@@ -103,7 +105,7 @@ const Destination = (props: MyComponentProps) => {
                 >
                   <AccordionSummary
                     expandIcon={
-                      <Typography color={'primary.light'} variant={'subtitle1'}>
+                      <Typography className="destination_selectHder_fontStyle">
                         Select All
                       </Typography>
                     }
@@ -111,7 +113,7 @@ const Destination = (props: MyComponentProps) => {
                     id="panel1a-header"
                     className="destination_hding_css"
                   >
-                    <Typography color={'primary.light'} variant={'subtitle1'}>
+                    <Typography className="destination_selectHder_fontStyle">
                       {item.firstType}
                     </Typography>
                   </AccordionSummary>
@@ -121,7 +123,6 @@ const Destination = (props: MyComponentProps) => {
                         <>
                           <Box>
                             <Typography
-                              color={'primary.contrastText'}
                               className="destination_type_css"
                               marginY={2}
                               paddingX={2}

@@ -18,7 +18,6 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import LocationCityOutlinedIcon from '@mui/icons-material/LocationCityOutlined';
 // import RoomPage from './RoomsPage';
 import Room from './room/Room';
-import './ChooseRoom.css';
 
 const ChooseRoomTable = (props: any) => {
   const { meneItme } = props;

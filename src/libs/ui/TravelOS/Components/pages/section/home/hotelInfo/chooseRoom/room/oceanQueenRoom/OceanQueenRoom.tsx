@@ -1,6 +1,5 @@
 import { Box, Button, Grid, Typography } from '@mui/material';
 import React from 'react';
-import './OceanQueen.css';
 
 const OceanQueenRoom = (props: any) => {
   const { meneItme } = props;

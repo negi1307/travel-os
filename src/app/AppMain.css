@@ -254,7 +254,7 @@
 /* guidline form css */
 
 /* footer css */
-.footer_parentBox {
+/* .footer_parentBox {
   padding-top: 5rem !important;
   padding-bottom: 2.5rem !important;
 }
@@ -277,6 +277,24 @@
   font-size: 12px;
 }
 
+
+
+.footer_parentBox .css-12y4fal,
+.footer_parentBox .css-gg4vpm {
+  margin: 0 auto;
+  width: 85rem;
+}
+ */
+
+.footer_mainPrnt {
+  height: 450px !important ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer_mainPrntColor {
+  background-color: #327bcb;
+}
 .footer_text_font {
   line-height: 12.1px !important;
   letter-spacing: 8% !important;
@@ -284,18 +302,22 @@
   font-size: 10px !important;
   color: #fff;
 }
-
-.footer_parentBox .css-12y4fal,
-.footer_parentBox .css-gg4vpm {
-  margin: 0 auto;
-  width: 85rem;
-}
 .footer_right_side_text {
   line-height: 20.51px !important;
   font-size: 17px !important;
   font-weight: 400 !important;
   color: #fff;
 }
+.footer_sectionBox {
+  margin: 0px 183px !important;
+}
+.footer_leftSide_ScondBox {
+  margin-left: 86px !important;
+}
+.footer_leftSide_firstBox {
+  padding-left: 165px !important;
+}
+
 /* footer css */
 /* pages css */
 .carousel_parentBox {
@@ -489,6 +511,12 @@
   color: white;
   border: 1px solid #a1887f;
 }
+.destination_selectHder_fontStyle {
+  font-weight: 400 !important;
+  font-size: 11px !important;
+  line-height: 13.31px !important;
+  color: #ffffff !important;
+}
 
 /* .MuiDayCalendar-header .MuiDayCalendar-weekDayLabel {
   color: white !important;
@@ -539,8 +567,8 @@
   padding: 0px 15px;
 }
 .date_pickerBox .css-1v6chqf {
-  background-color: #ffffff;
-  width: 76rem;
+  /* background-color: #ffffff; */
+  /* width: 76rem; */
   position: absolute;
   top: 73px;
 }
@@ -615,6 +643,11 @@
   display: flex;
   align-items: center;
 }
+.date_pickerBox
+  .css-1dwwfqx-MuiButtonBase-root-MuiPickersDay-root-MuiDateRangePickerDay-day.Mui-selected {
+  background-color: #0057b7 !important;
+  color: #ffffff !important;
+}
 /* date pick css  */
 
 /* guest component css */
@@ -660,7 +693,7 @@
 }
 
 .incremen_plus {
-  background-color: blue;
+  background-color: #0057b7 !important;
   color: white !important;
   border: solid;
   border-radius: 12px;
@@ -674,18 +707,52 @@
   border-radius: 12px;
   /* color: wheat; */
   cursor: pointer;
+  height: 21px !important  ;
+  width: 21px !important;
+}
+.guest_adultChild_fontStyle {
+  font-weight: 500 !important;
+  font-size: 12.5px !important;
+  line-height: 15.13px !important;
+  color: #0057b7 !important;
+}
+.guest_room_deletIcon {
+  width: 19px !important;
+  height: 19px !important;
+  margin-bottom: 9px !important;
+  color: #0057b7;
 }
 .guest_inputParent .open_guestDropdown {
   background: #ffffff;
   position: absolute;
-  left: -190px;
+  left: -115px;
   right: 0;
   top: 73px;
-  width: 50rem;
+  /* width: 50rem; */
+  width: 668px !important;
+  height: auto !important ;
   z-index: 99;
   padding: 5px;
   padding: 10px 20px;
 }
+.guest_add_style {
+  width: 16px !important;
+  height: 14px !important;
+  border: none !important;
+  color: #0057b7;
+  margin-right: 3px;
+}
+.guest_confirm_btnStyle {
+  font-weight: 300 !important;
+  font-size: 15.37px !important;
+  line-height: 18.6px !important;
+  width: 186px !important;
+  height: 50px !important;
+  border-radius: 0 !important;
+  background-color: #0057b7 !important;
+  color: #ffffff !important;
+}
+
 .guest_inputParent .open_guestDropdown {
   -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
     both;
@@ -732,6 +799,22 @@
   height: 1.42rem;
   transform: translate(0px, -5px);
 }
+.guest_grindPrnt {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.guest_addMainPrnt1 .MuiBox-root {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+  /* padding-top: 2rem; */
+  /* padding-bottom: 2rem; */
+}
+.guest_addMainPrnt2 {
+  text-align: center;
+}
 /* guest component css */
 
 /* destination css */
@@ -740,7 +823,7 @@
 }
 .destination_hding_css {
   cursor: pointer !important;
-  background-color: blue !important;
+  background-color: #0057b7 !important;
   height: 26px !important;
   min-height: 26px !important;
   border: solid 2px;
@@ -756,17 +839,18 @@
   font-weight: 400 !important;
   font-size: 11px !important;
   line-height: 13.31px !important;
-  letter-spacing: 13.5% !important;
   color: #757575 !important;
   cursor: pointer;
 }
+
 .destination_type_Btn_css {
   font-weight: 400 !important;
   font-size: 11px !important;
   line-height: 13.31px !important;
   letter-spacing: 13.5% !important;
   cursor: pointer;
-  border-bottom: 1px blue !important;
+  color: #0057b7;
+  border-bottom: 1px #0057b7 !important;
 }
 
 .destination_select {
@@ -842,9 +926,253 @@
   .css-klkp6i-MuiPaper-root-MuiAccordion-root:last-of-type {
   border-radius: 0px !important;
 }
+.destination_selectorBox
+  .destination_main_box_media
+  .MuiAccordionSummary-expandIconWrapper
+  svg {
+  transform: translate(-3px, 10px) !important;
+}
 /* destination css */
 
+/* choose room component css */
+.back_btn_top {
+  line-height: 20.24px !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  /* border: solid; */
+  color: #000000;
+  font-family: TFArrow !important;
+}
+.choose_room_img_radius {
+  border: 1px;
+  border-radius: 20px;
+}
+.atlantis_font_style {
+  line-height: 32.2px !important;
+  font-size: 35px !important;
+  font-weight: 700 !important;
+  font-family: TFArrow !important;
+  color: #000000 !important;
+}
+.choose_dubai_font_style {
+  font-family: Inter !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 16.94px !important;
+  letter-spacing: 15.5% !important;
+  color: #3c3c3c;
+}
+.choose_right_hotel_font_style {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  color: #000000 !important;
+}
+.choose_roomRate_ront_style {
+  line-height: 16.94px !important;
+  font-weight: 400 !important;
+  font-size: 14px !important;
+  color: #0057b7 !important;
+}
+.choose_roomType_font_style {
+  line-height: 15.13px !important;
+  font-size: 12.5px !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+}
+.choose_room_hding_style {
+  line-height: 24.35px !important;
+  font-size: 26.47px !important;
+  font-weight: 700 !important;
+  letter-spacing: -1.5% !important;
+  color: #0057b7;
+}
+.choose_accordin_text_font_style {
+  line-height: 13.31px !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  color: #000000;
+}
+.choose_accordin_right_side_down_img {
+  border-radius: 20px !important;
+  background-color: blue !important;
+  padding: 9px !important;
+}
+
+.choose_roomParent {
+  margin-top: 7.9px;
+  -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.choose_roomCardbox1 img {
+  width: -webkit-fill-available;
+}
+.choose_roomCardbox2 {
+  padding-left: 30px !important ;
+}
+.choose_roomCardbox2 .child_box {
+  height: -webkit-fill-available;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.choose_roomCardbox2 button {
+  padding-left: 0 !important;
+}
+.choose_roomCardbox3 .child_box {
+  padding-top: 10px;
+  margin-right: 79px;
+}
+/* choose room component css */
+
+/* ocean component css */
+.ocean_start_fom_flex {
+  display: flex;
+  justify-content: end;
+  /* align-items: center; */
+}
+.ocean_heading_font_style {
+  line-height: 26.47px !important;
+  font-weight: 700 !important;
+  font-size: 27.77px !important;
+  color: #000000 !important;
+}
+.ocean_text_font_style {
+  line-height: 15.6px !important;
+  font-weight: 400 !important;
+  font-size: Averta Demo !important;
+  font-size: 13px !important;
+  width: 350px !important;
+  color: #3c3c3c !important;
+}
+.ocean_btn_font_style {
+  font-size: 13.81px !important;
+  border: 0 !important;
+  font-weight: 400 !important;
+  line-height: 16.58px !important;
+}
+.ocean_starting_font_style {
+  font-size: 13.81px !important;
+  font-weight: 400 !important;
+  color: #6c87a5 !important;
+  line-height: 16.58px !important;
+}
+.ocen_aed_font_style {
+  line-height: 25.76px !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  letter-spacing: 11% !important;
+}
+.ocen_exc_font_style {
+  font-size: 13.29px !important;
+  font-weight: 400 !important;
+  color: #6c87a5 !important;
+  line-height: 15.95px !important;
+}
+.ocen_unit_btn_font_style {
+  line-height: 15.95px;
+  font-size: 400;
+  font-weight: 400;
+  width: 237px;
+  border-radius: 25px !important;
+  background-color: blue !important;
+  color: white !important;
+  font-size: 13.29px !important;
+  font-weight: 400 !important;
+}
+.choose_roomCardParent {
+  height: 210px !important;
+  padding: 15px 20px !important;
+  margin-left: 0 !important;
+}
+.custom_heigth {
+  height: -webkit-fill-available;
+}
+
+/* ocean component css */
+
+/* choose rate component css */
+.choose_rate_text_style {
+  line-height: 41.11px !important;
+  font-weight: 700 !important;
+  font-size: 44.68px !important;
+  color: #ffffff !important;
+  text-align: center;
+}
+
+.choose_roomCardSection {
+  height: 200px;
+}
+.width_Height {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+}
+/* choose rate component css */
+
+/* birthday component css */
+.birthday_sale_hading_font_style {
+  line-height: 19.44px !important;
+  font-weight: 700 !important;
+  font-size: 21.13px !important;
+}
+.birthday_daily_font_style {
+  line-height: 13.83px !important;
+  font-size: 12px !important;
+  font-weight: 300 !important;
+}
+.birthday_atlantis_btn_font_style {
+  font-weight: 400 !important;
+  border: solid !important;
+  font-size: 12.46px !important;
+  line-height: 14.95px !important;
+  width: 304px !important;
+  border-radius: 40px !important;
+  background-color: #046bdd !important  ;
+  color: #ffffff !important;
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+.birthday_aed_font_Style {
+  font-size: 19.5px !important;
+  font-weight: 700 !important;
+  line-height: 17.94px !important;
+}
+.birthday_exc_font_style {
+  font-size: 11.44px !important;
+  font-weight: 400 !important;
+  line-height: 17.74px !important;
+  color: #6c87a5;
+}
+.birthday_select_btn_font_style {
+  font-size: 13.81px !important;
+  font-weight: 400 !important;
+  width: 233px !important;
+  background-color: #0057b7 !important;
+  color: #ffffff !important;
+  height: 71px !important;
+  border-radius: 0 !important;
+  font-size: 400 !important;
+  line-height: 13.58px !important;
+}
+.choose_birthdaySection {
+  padding: 50px 70px !important;
+}
+.displayNone1 {
+  display: none !important;
+}
+
+/* birthday component css */
+
+.only_ShowMobile {
+  display: none !important;
+}
 @media (max-width: 768px) {
+  .mobile_nvbDisplayNone {
+    display: none !important;
+  }
+  .only_ShowMobile {
+    display: block !important;
+  }
   .guideline_point_style {
     width: 95%;
     text-align: center;
@@ -852,12 +1180,21 @@
   .displayNone {
     display: none !important;
   }
+  /* .displayNone1 {
+    display: block !important;
+  } */
+  .displayNone1 {
+    display: block !important;
+  }
   .search_box_main_border {
     border: none !important  ;
   }
   .search_box_border {
     border: none !important;
     margin-top: 6rem !important  ;
+  }
+  .search_button {
+    margin-top: 13rem !important  ;
   }
   .media_quari_box_style {
     z-index: 99999 !important;
@@ -870,9 +1207,7 @@
   .destination_selectorBox .css-150nlgc-MuiAccordionDetails-root {
     padding: 0px 0px 0px !important;
   }
-  /* .destination_main_box_media {
-    height: 76px !important  ;
-  } */
+
   .destination_selectorBox .destination_main_box_media {
     line-height: 15px !important;
   }
@@ -881,6 +1216,159 @@
   }
   .homePage_searchButton {
     display: none !important;
+  }
+  .footer_sectionBox {
+    margin: 0 !important;
+  }
+  .css-a5rdam-MuiGrid-root > .MuiGrid-item {
+    padding-left: 35px;
+  }
+
+  .footer_right_side_text {
+    text-align: center;
+  }
+  .social_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+  .footer_leftSide_firstBox {
+    padding-left: 55px !important;
+  }
+  .guest_inputParent .open_guestDropdown {
+    /* background: #ffffff !important; */
+    /* position: absolute !important; */
+    left: 0px !important;
+    right: 0px !important;
+    top: 73px !important;
+    /* width: 50rem; */
+    width: auto !important;
+    height: auto !important;
+    /* z-index: 99 !important; */
+    /* padding: 5px !important; */
+    /* padding: 10px 20px !important; */
+  }
+  .guest_confirm_btnStyle {
+    font-weight: 300 !important;
+    font-size: 15.37px !important;
+    line-height: 18.6px !important;
+    width: 100% !important;
+    height: 50px !important;
+    border-radius: 0 !important;
+    background-color: #0057b7 !important;
+    color: #ffffff !important;
+  }
+  .navbar_parent {
+    position: fixed !important;
+    flex-direction: column !important;
+    height: auto !important;
+    /* left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: 0 !important;
+    z-index: 9999 !important;
+    padding: 0 !important;
+    position: relative !important; */
+    align-items: start !important;
+    z-index: 9999 !important;
+    padding: 0 !important;
+    width: 100%;
+  }
+  .navbar_parent .mobile_navbar {
+    flex-direction: column !important;
+    /* justify-content: start!important; */
+    align-items: start !important;
+    /* border: 2px solid red !important; */
+    width: 100% !important;
+    /* height: 100vh !important; */
+    /* padding: 14px 0px !important; */
+    /* z-index: 99 !important; */
+    /* position: relative !important; */
+    /* background: red !important; */
+  }
+  .mobile_navbar .website_logo {
+    /* margin-bottom: 15px !important; */
+    /* padding-left: 15px; */
+    padding: 10px 15px;
+    width: 100%;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: inherit;
+  }
+  .padding_width {
+    padding-left: 15px !important;
+    width: 100% !important;
+  }
+  .mobile_navbar .mobile_innerLinkBox {
+    flex-direction: column !important;
+    align-items: start !important;
+    /* padding: 0 !important; */
+    /* width: 100%; */
+    padding: 0 0 15px 15px;
+    position: absolute;
+    background: #0057b7;
+    /* transform: translate(0px, 50px); */
+    top: 65px;
+    z-index: 99;
+  }
+
+  .mobile_navbar .mobile_innerLinkBox {
+    -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+      both;
+    animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+
+  @-webkit-keyframes mobile_innerLinkBox {
+    0% {
+      -webkit-transform: scaleY(0.4);
+      transform: scaleY(0.4);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+  }
+  @keyframes scale-up-ver-top {
+    0% {
+      -webkit-transform: scaleY(0.4);
+      transform: scaleY(0.4);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+    }
+  }
+  .mobile_navbar .inner_link {
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-top: 5px !important;
+  }
+  .inner_link .bell_image {
+    filter: brightness(0.5);
+    width: 21px;
+    margin-right: 6px;
+  }
+  .navbar_parent .toggle_parent {
+    /* padding-left: 15px; */
+    /* display: none; */
+    /* width: 100%; */
+    padding: 5px 0 10px 15px !important;
+    /* padding-top: 5px; */
+    background: red !important;
+    /* padding-bottom: 10px !important; */
+  }
+  .navbar_linkcss {
+    background-color: transparent !important;
   }
 }
 
@@ -919,32 +1407,31 @@
   line-height: '0px' !important;
 } */
 
-  .my-ac-select-menu{
-    background-color: #ffffff !important;
-  }
-  .my-ac-select-menu:hover{
-    background: #d9d7d7 !important;
-  }
-
+.my-ac-select-menu {
+  background-color: #ffffff !important;
+}
+.my-ac-select-menu:hover {
+  background: #d9d7d7 !important;
+}
 
 /* *********************************************** MyAccount Css*************************************/
 .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-  padding: 10px !important; }
+  padding: 10px !important;
+}
 /* .Custom-line-heigth-myaccountpage
 {
   line-height: 14.24px !important;
 } */
-.background-menu-item-gd{
+.background-menu-item-gd {
   border-radius: 0% !important;
   background-color: white !important;
-  padding:15px 10px !important;
-  
+  padding: 15px 10px !important;
 }
-.background-menu-item-gd:hover{
+.background-menu-item-gd:hover {
   background: #d9d7d7 !important;
 }
-.modal_Parent .css-tlc64q-MuiPaper-root-MuiDialog-paper{
-  background-color: transparent!important;  
+.modal_Parent .css-tlc64q-MuiPaper-root-MuiDialog-paper {
+  background-color: transparent !important;
 }
 .language_dropdownParent .login_lngug_main_box {
   position: absolute !important;
