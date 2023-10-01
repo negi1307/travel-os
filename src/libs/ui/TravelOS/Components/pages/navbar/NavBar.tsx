@@ -180,7 +180,14 @@ const NavBar = (props: MyComponentProps) => {
                     </Typography>
                   </Box>
                 </Box>
-                <Box display={'flex'} className="inner_link">
+                <Box
+                  display={'flex'}
+                  className={
+                    location?.pathname === '/dashboard/myaccount'
+                      ? 'navbar_linkcss'
+                      : ''
+                  }
+                >
                   <Box>
                     <img src={user} alt="" />
                   </Box>
@@ -192,7 +199,15 @@ const NavBar = (props: MyComponentProps) => {
                     </Typography>
                   </Box>
                 </Box>
-                <Box marginX={marginX4} className="inner_link" display={'flex'}>
+                <Box
+                  marginX={marginX4}
+                  display={'flex'}
+                  className={
+                    location?.pathname === '/dashboard/faq'
+                      ? 'navbar_linkcss'
+                      : ''
+                  }
+                >
                   <Box>
                     <img src={information} alt="" />
                   </Box>
@@ -204,7 +219,14 @@ const NavBar = (props: MyComponentProps) => {
                     </Typography>
                   </Box>
                 </Box>
-                <Box display={'flex'} className="inner_link">
+                <Box
+                  display={'flex'}
+                  className={
+                    location?.pathname === '/dashboard/hotelinfo'
+                      ? 'navbar_linkcss'
+                      : ''
+                  }
+                >
                   <Box>
                     <img src={hotel} alt="" />
                   </Box>
