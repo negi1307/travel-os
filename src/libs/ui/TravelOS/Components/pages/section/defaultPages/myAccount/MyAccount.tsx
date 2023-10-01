@@ -22,9 +22,9 @@ const MyAccount = (props: any) => {
 
   const [count, setCount] = useState(0);
   return (
-    <Grid  justifyContent="center">
-      <Box sx={{position:'fixed',width:'100%'}}>
-        <NavBar meneItme={meneItme} />  
+    <Grid justifyContent="center">
+      <Box sx={{ position: 'fixed', width: '100%' }}>
+        <NavBar meneItme={meneItme} />
       </Box>
       <Box
         sx={{
@@ -90,7 +90,7 @@ const MyAccount = (props: any) => {
               <Typography
                 variant="h6"
                 sx={{
-                  lineHeight:'19.77px',
+                  lineHeight: '19.77px',
                   marginTop: '8px',
                   marginBottom: '10px',
                   width: '255px',
@@ -109,17 +109,30 @@ const MyAccount = (props: any) => {
                   alignItems: 'center',
                 }}
               >
-                Notify Me Before The Cancellation Deadline (Number of Days): &nbsp; &nbsp; &nbsp;
+                Notify Me Before The Cancellation Deadline (Number of Days):
+                &nbsp; &nbsp; &nbsp;
                 <IconButton
                   size="small"
                   onClick={() => setCount((c) => c - 1)}
                   sx={{ fontSize: '18px', color: '#0057B7' }}
                 >
-                  <RemoveIcon sx={{ fontSize: '20px', color: "#0057B7",borderRadius:"5px",border:'1px solid #0057B74D',backgroundColor:'#E7E7E7' }}/>
+                  <RemoveIcon
+                    sx={{
+                      fontSize: '20px',
+                      color: '#0057B7',
+                      borderRadius: '5px',
+                      border: '1px solid #0057B74D',
+                      backgroundColor: '#E7E7E7',
+                    }}
+                  />
                 </IconButton>
                 <Box
-              sx={{ backgroundColor: '#FFFFFF', padding: '2px 12px', border: '.5px solid lightgrey', borderRadius: '5px' }}
-
+                  sx={{
+                    backgroundColor: '#FFFFFF',
+                    padding: '2px 12px',
+                    border: '.5px solid lightgrey',
+                    borderRadius: '5px',
+                  }}
                 >
                   {count}
                 </Box>
@@ -128,21 +141,30 @@ const MyAccount = (props: any) => {
                   onClick={() => setCount((c) => c + 1)}
                   sx={{ fontSize: '18px', color: '#0057B7' }}
                 >
-                  <AddIcon sx={{ fontSize: '20px', color: "#0057B7",borderRadius:"5px",border:'1px solid #0057B74D',backgroundColor:'#E7E7E7' }}/>
+                  <AddIcon
+                    sx={{
+                      fontSize: '20px',
+                      color: '#0057B7',
+                      borderRadius: '5px',
+                      border: '1px solid #0057B74D',
+                      backgroundColor: '#E7E7E7',
+                    }}
+                  />
                 </IconButton>
               </Typography>
             </Grid>
             <Grid item md={3} sx={{ marginTop: '25px' }}>
-              
-            <Box display={"flex"} >
-                    <Box>
-                    <Checkbox defaultChecked/>
-                    </Box>
-                    <Box>
-                    <Typography variant="subtitle1" mt={2}  color="initial">I want to receive Email Notification in my primary account email address</Typography>
-
-                    </Box>
+              <Box display={'flex'}>
+                <Box>
+                  <Checkbox defaultChecked />
                 </Box>
+                <Box>
+                  <Typography variant="subtitle1" mt={2} color="initial">
+                    I want to receive Email Notification in my primary account
+                    email address
+                  </Typography>
+                </Box>
+              </Box>
               {/* <FormGroup>
                 <FormControlLabel
                 className='my-account-fc-label'
@@ -168,7 +190,7 @@ const MyAccount = (props: any) => {
               <Typography
                 variant="h6"
                 sx={{
-                  lineHeight:'19.77px',
+                  lineHeight: '19.77px',
                   marginTop: '18px',
                   marginBottom: '5px',
                   width: '197px',
@@ -187,15 +209,26 @@ const MyAccount = (props: any) => {
                   alignItems: 'center',
                 }}
               >
-                Notify Me Before The Hold Release Deadline (Hours): &nbsp; &nbsp; &nbsp;
-                <IconButton
-                  size="small"
-                  onClick={() => setCount((c) => c - 1)}
-                >
-                  <RemoveIcon sx={{ fontSize: '20px', color: "#0057B7",borderRadius:"5px",border:'1px solid #0057B74D',backgroundColor:'#E7E7E7' }}/>
+                Notify Me Before The Hold Release Deadline (Hours): &nbsp;
+                &nbsp; &nbsp;
+                <IconButton size="small" onClick={() => setCount((c) => c - 1)}>
+                  <RemoveIcon
+                    sx={{
+                      fontSize: '20px',
+                      color: '#0057B7',
+                      borderRadius: '5px',
+                      border: '1px solid #0057B74D',
+                      backgroundColor: '#E7E7E7',
+                    }}
+                  />
                 </IconButton>
                 <Box
-                  sx={{ backgroundColor: '#FFFFFF', padding: '2px 12px', border: '.5px solid lightgrey', borderRadius: '5px' }}
+                  sx={{
+                    backgroundColor: '#FFFFFF',
+                    padding: '2px 12px',
+                    border: '.5px solid lightgrey',
+                    borderRadius: '5px',
+                  }}
                 >
                   {count}
                 </Box>
@@ -204,20 +237,30 @@ const MyAccount = (props: any) => {
                   onClick={() => setCount((c) => c + 1)}
                   sx={{ fontSize: '18px', color: '#0057B7' }}
                 >
-                  <AddIcon sx={{ fontSize: '20px', color: "#0057B7",borderRadius:"5px",border:'1px solid #0057B74D',backgroundColor:'#E7E7E7' }}/>
+                  <AddIcon
+                    sx={{
+                      fontSize: '20px',
+                      color: '#0057B7',
+                      borderRadius: '5px',
+                      border: '1px solid #0057B74D',
+                      backgroundColor: '#E7E7E7',
+                    }}
+                  />
                 </IconButton>
               </Typography>
             </Grid>
             <Grid item md={3} sx={{ marginTop: '25px' }}>
-              
-               <Box display={"flex"} >
-                    <Box>
-                    <Checkbox />
-                    </Box>
-                    <Box>
-                    <Typography variant="subtitle1" mt={2}  color="initial">I want to receive Email Notification in my primary account email address</Typography>
-                    </Box>
+              <Box display={'flex'}>
+                <Box>
+                  <Checkbox />
                 </Box>
+                <Box>
+                  <Typography variant="subtitle1" mt={2} color="initial">
+                    I want to receive Email Notification in my primary account
+                    email address
+                  </Typography>
+                </Box>
+              </Box>
             </Grid>
           </Grid>
         </Box>
@@ -235,7 +278,7 @@ const MyAccount = (props: any) => {
               <Typography
                 variant="h6"
                 sx={{
-                  lineHeight:'19.77px',
+                  lineHeight: '19.77px',
                   marginTop: '8px',
                   marginBottom: '10px',
                   width: '160px',
@@ -244,26 +287,58 @@ const MyAccount = (props: any) => {
               >
                 Currency Preference
               </Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '15px' }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  marginBottom: '15px',
+                }}
+              >
                 <Typography variant="subtitle2" sx={{ marginLeft: '8px' }}>
                   Set my default indication currency:
                 </Typography>
-                <Select defaultValue="ADM" sx={{ width: '10%', height: '23px', marginLeft: 2, fontSize: '12px'}}>
-                  <MenuItem className='my-ac-select-menu' value="ADM">AED</MenuItem>
-                  <MenuItem className='my-ac-select-menu' value="UD">EUR</MenuItem>
-                  <MenuItem className='my-ac-select-menu' value="Rp">INR</MenuItem>
-                  <MenuItem className='my-ac-select-menu' value="Rupees">USD</MenuItem>
+                <Select
+                  defaultValue="ADM"
+                  sx={{
+                    width: '10%',
+                    height: '23px',
+                    marginLeft: 2,
+                    fontSize: '12px',
+                  }}
+                >
+                  <MenuItem className="my-ac-select-menu" value="ADM">
+                    AED
+                  </MenuItem>
+                  <MenuItem className="my-ac-select-menu" value="UD">
+                    EUR
+                  </MenuItem>
+                  <MenuItem className="my-ac-select-menu" value="Rp">
+                    INR
+                  </MenuItem>
+                  <MenuItem className="my-ac-select-menu" value="Rupees">
+                    USD
+                  </MenuItem>
                 </Select>
               </Box>
             </Grid>
           </Grid>
         </Box>
 
-        <Box sx={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}>
-                    <Button variant='contained' sx={{ padding: '18px 70px', borderRadius: '0px', backgroundColor: '#0057B7' }}> Apply
-                    </Button>
-
-                </Box>
+        <Box
+          sx={{ display: 'flex', justifyContent: 'center', marginTop: '30px' }}
+        >
+          <Button
+            variant="contained"
+            sx={{
+              padding: '18px 70px',
+              borderRadius: '0px',
+              backgroundColor: '#0057B7',
+            }}
+          >
+            {' '}
+            Apply
+          </Button>
+        </Box>
       </Box>
     </Grid>
   );

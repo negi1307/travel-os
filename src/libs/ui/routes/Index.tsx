@@ -29,13 +29,19 @@ const DefaultIndex = React.lazy(
   () => import('../TravelOS/Components/pages/section/defaultPages/DefaultIndex')
 );
 const MyAccount = React.lazy(
-  () => import('../TravelOS/Components/pages/section/defaultPages/myAccount/MyAccount')
+  () =>
+    import(
+      '../TravelOS/Components/pages/section/defaultPages/myAccount/MyAccount'
+    )
 );
 const Faq = React.lazy(
   () => import('../TravelOS/Components/pages/section/defaultPages/faq/Faq')
 );
 const DownloadFactSheet = React.lazy(
-  () => import('../TravelOS/Components/pages/section/defaultPages/downloadFactsheet/DowloadFactSheet')
+  () =>
+    import(
+      '../TravelOS/Components/pages/section/defaultPages/downloadFactsheet/DowloadFactSheet'
+    )
 );
 
 const loading = () => <div className=""></div>;
@@ -120,16 +126,38 @@ const AllRoutes = (props: MyComponentProps) => {
             },
             {
               path: 'faq',
-              element: (
-                <LoadComponent component={Faq} meneItme={meneItme} />
-              ),
+              element: <LoadComponent component={Faq} meneItme={meneItme} />,
             },
             {
               path: 'hotelinfo',
               element: (
-                <LoadComponent component={DownloadFactSheet} meneItme={meneItme} />
+                <LoadComponent
+                  component={DownloadFactSheet}
+                  meneItme={meneItme}
+                />
               ),
             },
+            // {
+            //   path: 'dashboard',
+            //   children: [
+            //     {
+            //       path: 'home',
+            //       element: (
+            //         <LoadComponent component={SectionIndex} meneItme={meneItme} />
+            //       ),
+            //     },
+            //     {
+            //       path: 'search',
+            //       element: (
+            //         <LoadComponent component={FilterIndex} meneItme={meneItme} />
+            //       ),
+            //     },
+            //     {
+            //       path: 'dashboards',
+            //       element: (
+            //         <LoadComponent component={DefaultIndex} meneItme={meneItme} />
+            //       ),
+            //     },
           ],
         },
       ],
