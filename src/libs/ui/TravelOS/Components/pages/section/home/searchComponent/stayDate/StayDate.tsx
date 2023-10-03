@@ -50,21 +50,16 @@ const StayDate = (props: MyComponentProps) => {
     mainConnentEmpty();
     setExpanded(false);
   };
+
   useEffect(() => {
     if (value?.[0] !== null) {
-      let date = value?.[0]?.toJSON().slice(0, 10);
-      let nDate =
-        date.slice(8, 10) + '/' + date.slice(5, 7) + '/' + date.slice(0, 4);
+      let { $D, $M, $y } = value?.[0];
+      let nDate = `${$D}/${$M}/${$y}`;
       setGetDate({ ...getDate, firstDate: nDate });
-      let dates = value?.[1]?.toJSON().slice(0, 10);
 
       if (value?.[1] !== null) {
-        let nDates =
-          dates.slice(8, 10) +
-          '/' +
-          dates.slice(5, 7) +
-          '/' +
-          dates.slice(0, 4);
+        let { $D, $M, $y } = value?.[1];
+        let nDates = `${$D}/${$M}/${$y}`;
         setGetDate({ ...getDate, secondDate: nDates });
         setExpanded(false);
       } else {
@@ -108,12 +103,16 @@ const StayDate = (props: MyComponentProps) => {
         {expanded === true ? (
           <>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <Box sx={{ backgroundColor: '#252525' }}>
+              <Box
+                sx={{ backgroundColor: '#252525' }}
+                className="stayData_zIndex"
+              >
                 <DateRangeCalendar
                   sx={{ color: 'primary.main' }}
                   value={value}
                   onChange={(newValue) => setValue(newValue)}
-                  className={classes.customDatePicker}
+                  // className={classes.customDatePicker}
+                  className="dateRange_prnt"
                 />
                 <Box textAlign={'center'}>
                   <Typography color={'error'}>
@@ -137,6 +136,79 @@ const StayDate = (props: MyComponentProps) => {
           <></>
         )}
       </Box>
+
+      {/* <Accordion
+        expanded={expanded}
+        sx={{
+          backgroundColor: 'white',
+        }}
+      >
+        <AccordionSummary
+          onClick={() => setExpanded(!expanded)}
+          expandIcon={<ExpandMoreIcon color="primary" />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Box pl={2}>
+            <Typography color={'primary'}>
+              {' '}
+              {getDate.secondDate !== '' ? (
+                <>
+                  <Typography
+                    className="destination_select"
+                    color={'primary.light'}
+                    marginY={5}
+                  >
+                    Stay Date
+                  </Typography>
+                  <Box marginY={1}>
+                    <Typography
+                      // color={'warning.main'}
+                      className="destination_select"
+                      marginTop={2}
+                      marginBottom={2}
+                    >
+                      {`${getDate.firstDate}-${getDate.secondDate}`}
+                    </Typography>
+                  </Box>
+                </>
+              ) : (
+                <>
+                  <Typography
+                    paddingY={1}
+                    className="destination_select_first"
+                    color={'primary.light'}
+                  >
+                    Stay Date
+                  </Typography>
+                </>
+              )}
+            </Typography>
+          </Box>
+        </AccordionSummary>
+        <Box width={'112%'}>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Box sx={{ backgroundColor: '#252525' }}>
+              <DateRangeCalendar
+                sx={{ color: 'primary.main' }}
+                value={value}
+                onChange={(newValue) => setValue(newValue)}
+              />
+              <Box textAlign={'center'}>
+                <Typography color={'error'}>
+                  {errorFirtsData ? (
+                    <>Please Select First Date</>
+                  ) : (
+                    <>
+                      {errorSecondData ? <>Please Select Second Date</> : <></>}
+                    </>
+                  )}
+                </Typography>
+              </Box>
+            </Box>
+          </LocalizationProvider>
+        </Box>
+      </Accordion> */}
     </div>
   );
 };

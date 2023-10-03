@@ -3,11 +3,12 @@ import React from 'react';
 
 const BirthDaySage = () => {
   return (
-    <Box paddingX={3}>
+    <Box>
       <Grid
         container
         className="choose_birthdaySection"
         sx={{ backgroundColor: '#ffff' }}
+        columns={{ xs: 4, sm: 8, md: 12 }}
       >
         <Grid item xs={8}>
           <Box className="child_birthdaybox">
@@ -35,7 +36,7 @@ const BirthDaySage = () => {
               </Box>
             </Box>
           </Box>
-          <Box>
+          <Box className="birthday_atlantisMoblie">
             <Button className="birthday_atlantis_btn_font_style">
               ATLANTIS.COM Rate:AED 2600 (+18%)
             </Button>
@@ -72,6 +73,7 @@ const BirthDaySage = () => {
         sx={{ backgroundColor: '#ffff' }}
         border={3}
         borderColor={'primary.main'}
+        columns={{ xs: 4, sm: 8, md: 12 }}
       >
         <Grid item xs={8}>
           <Box className="child_birthdaybox">
@@ -99,7 +101,7 @@ const BirthDaySage = () => {
               </Box>
             </Box>
           </Box>
-          <Box marginTop={5}>
+          <Box marginTop={5} className="birthday_atlantisMoblie2">
             <Button className="birthday_atlantis_btn_font_style">
               ATLANTIS.COM Rate:AED 2600 (+18%)
             </Button>

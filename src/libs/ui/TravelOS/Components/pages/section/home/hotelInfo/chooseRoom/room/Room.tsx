@@ -33,7 +33,7 @@ const Room = (props: any) => {
               </Typography>
             </Box>
             <Box flex={1}>
-              <Typography className="choose_accordin_text_font_style">
+              <Typography className="choose_accordin_text_font_style mobile_nvbDisplayNone">
                 2 Queen Beds
               </Typography>
             </Box>
@@ -55,12 +55,12 @@ const Room = (props: any) => {
                 </Typography>
               </Box>
               <Box>
-                <Typography className="choose_accordin_text_font_style">
+                <Typography className="choose_accordin_text_font_style mobile_nvbDisplayNone">
                   4 Rates
                 </Typography>
               </Box>
               <Box>
-                <Typography className="choose_accordin_text_font_style">
+                <Typography className="choose_accordin_text_font_style mobile_nvbDisplayNone">
                   From AED 2,050
                 </Typography>
               </Box>
@@ -78,9 +78,9 @@ const Room = (props: any) => {
         {show ? (
           <>
             <Box className="choose_roomParent">
-              {/* <Box sx={{ backgroundColor: '#ffff' }}>
+              <Box sx={{ backgroundColor: '#ffff' }}>
                 <OceanQueenRooms meneItme={meneItme} />
-              </Box> */}
+              </Box>
               <Box paddingX={3}>
                 <ChooseYourRate meneItme={meneItme} />
               </Box>

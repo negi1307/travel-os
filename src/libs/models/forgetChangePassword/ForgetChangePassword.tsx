@@ -8,15 +8,17 @@ import TextField from '@mui/material/TextField';
 import './ForgetChange.css';
 const ForgetChangePassword = (props: any) => {
   const { open, handleClose } = props;
+
   const style = {
     position: 'absolute' as 'absolute',
-    top: '17%',
+    top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 'auto',
+    width: 400,
     bgcolor: 'background.paper',
     boxShadow: 24,
     p: 4,
+    outline: 'none',
   };
   return (
     <div>
@@ -27,42 +29,38 @@ const ForgetChangePassword = (props: any) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Box className="model_padding media_width">
-            <Typography id="modal-modal-title" align="center">
-              <HighlightOffIcon
-                className="close_icon"
-                onClick={() => {
-                  handleClose();
-                }}
-              />
-            </Typography>
-            <Typography
-              id="modal-modal-description"
-              variant={'h5'}
-              align={'center'} //   sx={{ mt: 2 }}
+          <Typography id="modal-modal-title" align="center">
+            <HighlightOffIcon
+              className="close_icon"
+              onClick={() => {
+                handleClose();
+              }}
+            />
+          </Typography>
+          <Typography
+            id="modal-modal-description"
+            variant={'h5'}
+            align={'center'} //   sx={{ mt: 2 }}
+          >
+            Forget/Change Password
+          </Typography>
+          <Typography marginY={3}>
+            <TextField
+              fullWidth
+              placeholder="Please Enter Your Registered Email"
+              variant={'standard'}
+            />
+          </Typography>
+          <Typography>
+            <Button
+              fullWidth
+              variant={'contained'}
+              className="btn_hight"
+              color={'primary'}
             >
-              Forget/Change Password
-            </Typography>
-            <Typography marginY={3}>
-              <TextField
-                fullWidth
-                //   id="standard-basic"
-                //   label="Standard"
-                placeholder="Please Enter Your Registered Email"
-                variant={'standard'}
-              />
-            </Typography>
-            <Typography>
-              <Button
-                fullWidth
-                variant={'contained'}
-                className="btn_hight"
-                color={'primary'}
-              >
-                SEND REQUEST
-              </Button>
-            </Typography>
-          </Box>
+              SEND REQUEST
+            </Button>
+          </Typography>
         </Box>
       </Modal>
     </div>

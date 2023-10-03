@@ -79,6 +79,7 @@
 }
 .input_Style {
   /* width: 360px !important; */
+  outline: none !important;
   width: 286px !important;
   border: solid 2px white !important;
   border-radius: 6px !important;
@@ -157,6 +158,7 @@
   font-size: 15.37px !important;
   font-weight: 400 !important;
   line-height: 18.44px !important;
+  border: none !important  ;
 }
 .cursor {
   cursor: pointer !important;
@@ -573,8 +575,6 @@
   padding: 0px 15px;
 }
 .date_pickerBox .css-1v6chqf {
-  /* background-color: #ffffff; */
-  /* width: 76rem; */
   position: absolute;
   top: 73px;
 }
@@ -731,7 +731,7 @@
 .guest_inputParent .open_guestDropdown {
   background: #ffffff;
   position: absolute;
-  left: -115px;
+  /* left: -115px; */
   right: 0;
   top: 73px;
   /* width: 50rem; */
@@ -1172,6 +1172,21 @@
 .only_ShowMobile {
   display: none !important;
 }
+.input_Style .css-lo9s3wi-MuiInputBase-input-MuiOutlinedInput-input:focus {
+  outline: none;
+}
+
+/* .input_Style .css-lo9s3wi-MuiInputBase-input-MuiOutlinedInput-input:focus {
+  outline: none !important;
+} */
+/* .MuiInputBase-root */
+/* .MuiOutlinedInput-root */
+/* .MuiInputBase-colorPrimary */
+/* .MuiInputBase-formControl */
+/* .MuiInputBase-adornedStart */
+.css-nzx4tz-MuiInputBase-root-MuiOutlinedInput-root {
+  outline: none !important  ;
+}
 
 /* guest detail form */
 
@@ -1179,9 +1194,97 @@
   height: auto !important;
   padding: 64px 150px;
 }
+
+/* experience component css */
+.experience_boxImage {
+  /* border: solid red; */
+  width: 263px;
+  height: 137px;
+  border: 1.7px solid blue;
+}
+.experience_BoxButton {
+  width: 172px !important;
+  height: 56px;
+  border-radius: 0px !important;
+}
+.login_inputParent .Mui-focused {
+  outline: none !important;
+  box-shadow: none !important;
+}
+.dateRange_prnt .MuiDateRangeCalendar-monthContainer .MuiTypography-subtitle1 {
+  color: #ffffff !important;
+}
+.MuiDayCalendar-header span {
+  color: #ffffff !important;
+}
+/* experience component css */
+
+.label_textStyle .css-10ex34u-MuiFormLabel-root-MuiInputLabel-root {
+  font-weight: 400 !important;
+  font-size: 10px !important;
+  line-height: 12px !important;
+}
+.label_TitletextStyle {
+  font-weight: 400 !important;
+  /* border: solid red !important; */
+  font-size: 10px !important;
+  line-height: 12.36px !important;
+}
+.guestForm_guestTextStyle {
+  font-weight: 700 !important;
+  font-size: 24px !important;
+  line-height: 22.08px !important;
+}
+.guestForm_guest1TextStyle {
+  font-weight: 700 !important;
+  font-size: 16px !important ;
+  line-height: 14.72px !important  ;
+}
+.guestForm_anySpecialFontStyle {
+  font-weight: 700 !important;
+  font-size: 24px !important;
+  line-height: 24.08px !important;
+}
+.guestForm_cantFontStyle {
+  line-height: 14.4px !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+}
+.guest_titleFontStyle {
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 14.4px !important;
+}
+.experience_grindPrnt {
+  margin-right: 64px !important;
+  margin-top: 32px !important  ;
+}
+.experience_hadingMainFontStyle {
+  font-weight: 700;
+  font-size: 24px !important;
+  line-height: 22.24px !important;
+}
+.experience_addButton_fontStyle {
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  border-radius: 0px !important  ;
+  /* border: solid red; */
+  line-height: 19.02px !important;
+  width: 176px !important;
+  height: 55px !important;
+  margin-top: 1rem !important;
+}
 @media (max-width: 768px) {
   .mobile_nvbDisplayNone {
     display: none !important;
+  }
+  .dateRange_prnt {
+    display: flex !important;
+    /* justify-content: center; */
+    flex-direction: column !important  ;
+  }
+  .dateRange_prnt .css-10qkmc3 .dateRange_prnt .css-1bvsnh {
+    color: #ffff !important;
   }
   .only_ShowMobile {
     display: block !important;
@@ -1214,7 +1317,7 @@
     position: absolute !important;
     width: 100% !important;
     padding: 0px !important;
-    margin-top: 10px !important;
+    /* margin-top: 10px !important; */
     background-color: #ffffff;
   }
   .destination_selectorBox .css-150nlgc-MuiAccordionDetails-root {
@@ -1411,6 +1514,8 @@
   }
   .choose_roomCardParent {
     height: auto !important ;
+    display: flex;
+    justify-content: center;
   }
   .ocean_text_font_style {
     /* width: 0px !important ; */
@@ -1430,10 +1535,64 @@
   /* .date_pickerBox .css-fz8a21-MuiDateRangeCalendar-root {
     justify-content: space-around !important;
     flex-direction: column !important  ;
-  }
-  .date_active {
+  } */
+  /* .date_pickerBox {
     z-index: 99999 !important;
   } */
+  .choose_rate_text_style {
+    font-size: 24px !important ;
+    margin-bottom: -11px !important;
+  }
+  .choose_birthdaySection {
+    padding: 24px 7px !important;
+  }
+  .birthday_sale_hading_font_style {
+    font-size: 14px !important;
+  }
+
+  .birthday_select_btn_font_style {
+    width: auto !important;
+    height: auto !important;
+    padding: 10px 22px !important;
+  }
+  .birthday_atlantisMoblie {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem !important;
+  }
+  .birthday_atlantisMoblie2 {
+    margin-top: 0 !important;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem !important;
+  }
+  .birthday_atlantis_btn_font_style {
+    width: auto !important;
+    height: auto !important  ;
+  }
+  .ocean_heading_font_style {
+    font-size: 24px !important  ;
+  }
+  .choose_roomMobileImage {
+    /* width: '100%' !important; */
+    display: flex !important;
+    justify-content: center !important;
+  }
+  .stayData_zIndex {
+    z-index: 99999 !important;
+  }
+  .ocean_text_font_style {
+    margin: 8px 0px !important;
+  }
+  .choose_roomCardbox3 .child_box {
+    margin-right: 0px !important;
+  }
+  .experience_boxImage {
+    width: 308 !important;
+  }
+  .date_pickerBox .css-1v6chqf {
+    width: 100% !important ;
+  }
 }
 
 /* @media (max-width: 768px) {

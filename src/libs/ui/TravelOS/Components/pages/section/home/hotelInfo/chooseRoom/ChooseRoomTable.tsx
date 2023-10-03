@@ -29,9 +29,9 @@ const ChooseRoomTable = (props: any) => {
       <Box
         padding={5}
         className="chooseRoom_mobileMainParent"
-        sx={{
-          minHeight: '100vh',
-        }}
+        // sx={{
+        //   minHeight: '100vh',
+        // }}
       >
         <Box>
           <IconButton sx={{ color: '#2196F3' }}>

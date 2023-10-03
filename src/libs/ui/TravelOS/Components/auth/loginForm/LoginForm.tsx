@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   Button,
-  TextField,
+  // TextField,
   Typography,
   Link,
   Select,
@@ -22,12 +22,27 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
+import TextField from '@mui/material/TextField';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles((theme) => ({
+  textField: {
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        border: 'none', // Remove the border
+      },
+    },
+  },
+}));
+
 interface MyComponentProps {
   meneItme: any; // Declare the prop here
   connectUpdate: any;
 }
 
 const Login = (props: MyComponentProps) => {
+  const classes = useStyles();
+
   const { connectUpdate, meneItme } = props;
   const {
     logErrorEmailRquid,
@@ -209,17 +224,32 @@ const Login = (props: MyComponentProps) => {
                   </Typography>
                 </Box>
               </Box>
-              <Box marginTop={4} position={'relative'}>
+              <Box
+                marginTop={4}
+                className="login_inputParent"
+                position={'relative'}
+              >
                 <TextField
                   InputProps={{
-                    disableUnderline: false,
-                    autoFocus: false, // <== added this
+                    // disableUnderline: false,
+                    disableUnderline: false, // <== added this
                     startAdornment: (
                       <InputAdornment position={'start'}>
                         <img src={meneItme[0]?.lg_user_logo} alt="" />
                       </InputAdornment>
                     ),
                   }}
+                  // InputLabelProps={{
+                  //   shrink: true,
+                  //   FormLabelClasses: {
+                  //     'root': {
+                  //       '&:focused': {
+                  //         color: 'white'
+                  //       }
+                  //     },
+                  //     focused: 'true'
+                  //   }
+                  // }}
                   className="input_Style"
                   placeholder="partner@agency.com"
                   name="email"
@@ -356,7 +386,7 @@ const Login = (props: MyComponentProps) => {
                   <Link
                     underline="none"
                     // color={'secondary'}
-                    className="login_forget_font_style"
+                    className="login_forget_font_style cursor"
                     onClick={() => {
                       handleOpen();
                     }}

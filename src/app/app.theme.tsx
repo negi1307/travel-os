@@ -46,6 +46,13 @@ import table_card3_right_side_cros from '../../public/staticImage/error_tableCar
 import mainTable_plus from '../../public/staticImage/mainTable_+.png';
 import mainTable_mainus from '../../public/staticImage/mainTable_.png';
 
+//add unique image
+import addUnique1 from '../../public/staticImage/addUnique1.png';
+import addUnique2 from '../../public/staticImage/addUnique2.png';
+import addUnique3 from '../../public/staticImage/addUnique3.png';
+import addUnique4 from '../../public/staticImage/addUnique4.png';
+import addUnique5 from '../../public/staticImage/addUnique5.png';
+
 export const meneItme: any = [
   {
     logo: atlantis_logo,
@@ -176,5 +183,15 @@ export const meneItme: any = [
       },
     ],
   },
-  
+  {
+    addUniqueImg: [
+      {
+        addUnique1,
+        addUnique2,
+        addUnique3,
+        addUnique4,
+        addUnique5,
+      },
+    ],
+  },
 ];

@@ -17,7 +17,9 @@ const OceanQueenRoom = (props: any) => {
         padding={0}
         className="choose_roomCardbox1 custom_heigth"
       >
-        <img className="custom_heigth" src={choose_Room_section} alt="" />
+        <Box className="choose_roomMobileImage">
+          <img className="custom_heigth" src={choose_Room_section} alt="" />
+        </Box>
       </Grid>
       <Grid item xs={4} className="choose_roomCardbox2 custom_heigth">
         <Box className="child_box">

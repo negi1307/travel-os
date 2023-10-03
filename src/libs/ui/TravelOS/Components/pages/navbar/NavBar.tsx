@@ -101,8 +101,9 @@ const NavBar = (props: MyComponentProps) => {
     }
   }, [userd]);
 
+  console.log(windowFind, 'winnnn');
   useEffect(() => {
-    if (windowFind < 768) {
+    if (windowFind <= 960) {
       setMobileNavbar(false);
     } else {
       setMobileNavbar(true);

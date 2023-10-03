@@ -22,6 +22,7 @@ const GuestDetail = () => {
           <TextField
             id="standard-basic"
             fullWidth
+            className="label_textStyle"
             label="AGENT EMAIL ID"
             variant="standard"
             InputProps={{
@@ -32,6 +33,7 @@ const GuestDetail = () => {
         <Box my={2}>
           <TextField
             id="standard-basic"
+            className="label_textStyle"
             fullWidth
             label="BOOKING REFERENCE NAME (IF ANY)"
             variant="standard"
@@ -43,6 +45,7 @@ const GuestDetail = () => {
         <Box>
           <TextField
             id="standard-basic"
+            className="label_textStyle"
             fullWidth
             label="AGENT REFERENCE INFO (IF ANY)"
             variant="standard"
@@ -54,8 +57,11 @@ const GuestDetail = () => {
       </Box>
 
       <Box my={4} paddingTop={3}>
-        <Typography variant="h5">Guest Details</Typography>
+        <Typography className="guestForm_guestTextStyle">
+          Guest Details
+        </Typography>
       </Box>
+
       <Box>
         <Box>
           <Typography>Guest 1</Typography>
@@ -63,9 +69,7 @@ const GuestDetail = () => {
         <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
           <Grid item xs={4}>
             <FormControl variant="standard" sx={{ m: 1, width: '75%' }}>
-              <InputLabel id="demo-simple-select-standard-label">
-                TITLE
-              </InputLabel>
+              <InputLabel className="label_TitletextStyle">TITLE</InputLabel>
               <Select
                 labelId="demo-simple-select-standard-label"
                 id="demo-simple-select-standard"
@@ -90,13 +94,14 @@ const GuestDetail = () => {
           <Grid
             item
             xs={4}
-            paddingRight={5}
             display={'flex'}
+            paddingRight={5}
             alignItems={'end'}
           >
             <TextField
               id="standard-basic"
               fullWidth
+              className="label_textStyle"
               label="FIRST NAME"
               variant="standard"
               InputProps={{
@@ -109,6 +114,7 @@ const GuestDetail = () => {
               id="standard-basic"
               fullWidth
               label="LAST NAME"
+              className="label_textStyle"
               variant="standard"
               InputProps={{
                 sx: { paddingTop: '10px' },
@@ -124,9 +130,7 @@ const GuestDetail = () => {
         <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
           <Grid item xs={4}>
             <FormControl variant="standard" sx={{ m: 1, width: '75%' }}>
-              <InputLabel id="demo-simple-select-standard-label">
-                TITLE
-              </InputLabel>
+              <InputLabel className="label_TitletextStyle">TITLE</InputLabel>
               <Select
                 labelId="demo-simple-select-standard-label"
                 id="demo-simple-select-standard"
@@ -158,6 +162,7 @@ const GuestDetail = () => {
             <TextField
               id="standard-basic"
               fullWidth
+              className="label_textStyle"
               label="FIRST NAME"
               variant="standard"
               InputProps={{
@@ -170,6 +175,7 @@ const GuestDetail = () => {
               id="standard-basic"
               fullWidth
               label="LAST NAME"
+              className="label_textStyle"
               variant="standard"
               InputProps={{
                 sx: { paddingTop: '10px' },
@@ -179,7 +185,11 @@ const GuestDetail = () => {
         </Grid>
       </Box>
       <Box>
-        <Typography variant="h5" my={4} paddingTop={3}>
+        <Typography
+          className="guestForm_anySpecialFontStyle"
+          my={4}
+          paddingTop={3}
+        >
           Any Special Request?
         </Typography>
       </Box>
@@ -196,7 +206,7 @@ const GuestDetail = () => {
         />
       </Box>
       <Box>
-        <Typography variant="subtitle1" sx={{ paddingTop: '15px' }}>
+        <Typography className="guestForm_cantFontStyle">
           Can't find what you're looking in the list above?
         </Typography>
       </Box>

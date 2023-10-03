@@ -12,6 +12,7 @@ import HotelInfoIndex from '../hotelInfo/HotelInfoIndex';
 import IndexDashboardSeaction from '../../dashboard/dashboarSection/IndexDashboardSection';
 
 import DefaultIndex from '../../defaultPages/DefaultIndex';
+
 const FilterIndex: React.FC = (props: any) => {
   const { meneItme } = props;
   return (
