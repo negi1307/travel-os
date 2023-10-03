@@ -5,7 +5,12 @@ const OceanQueenRoom = (props: any) => {
   const { meneItme } = props;
   const { choose_Room_section } = meneItme?.[9]?.chooseRoomImg?.[0];
   return (
-    <Grid container spacing={2} className="choose_roomCardParent">
+    <Grid
+      container
+      spacing={2}
+      className="choose_roomCardParent"
+      columns={{ xs: 4, sm: 8, md: 12 }}
+    >
       <Grid
         item
         xs={3}

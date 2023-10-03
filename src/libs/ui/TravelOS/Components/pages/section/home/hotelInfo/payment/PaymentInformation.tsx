@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 
 const PaymentInformation = () => {
   return (
-    <Box p={5}>
+    <Box className="guestForm_mainParent">
       <Grid container spacing={2}>
         <Grid item xs={12} sm={4} sx={{ backgroundColor: '#ecf7fa' }}>
           <Box>

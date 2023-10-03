@@ -78,9 +78,9 @@ const Room = (props: any) => {
         {show ? (
           <>
             <Box className="choose_roomParent">
-              <Box sx={{ backgroundColor: '#ffff' }}>
+              {/* <Box sx={{ backgroundColor: '#ffff' }}>
                 <OceanQueenRooms meneItme={meneItme} />
-              </Box>
+              </Box> */}
               <Box paddingX={3}>
                 <ChooseYourRate meneItme={meneItme} />
               </Box>

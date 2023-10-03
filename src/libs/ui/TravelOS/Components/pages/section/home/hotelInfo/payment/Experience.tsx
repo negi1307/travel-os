@@ -40,7 +40,7 @@ const Experience: React.FC = () => {
           <Typography variant="h5">Add Unique Experiences</Typography>
         </Box>
         <Box>
-          <Grid container>
+          <Grid container columns={{ xs: 4, sm: 8, md: 12 }}>
             {data?.map((item) => {
               return (
                 <>
@@ -73,41 +73,6 @@ const Experience: React.FC = () => {
         </Box>
       </Box>
     </>
-    // <div style={{ padding: '20px 40px' }}>
-    //   <div
-    //     style={{ display: 'flex', alignItems: 'center', marginBottom: '20px' }}
-    //   >
-    //     <Button onClick={handleBackButtonClick}>
-    //       <ArrowCircleLeftOutlinedIcon /> &nbsp;{' '}
-    //       <strong style={{ color: '#007FFF' }}>Back</strong>
-    //     </Button>
-    //   </div>
-
-    //   <h2>Add Unique Experiences</h2>
-
-    //   <div style={{ display: 'flex', flexWrap: 'wrap', gap: 40 }}>
-    //     {data.map((item, index) => (
-    //       <div key={index} >
-    //         <img
-    //           src={item.imageUrl}
-    //           alt={item.name}
-    //           style={{
-    //             width: '350px',
-    //             height: '230px',
-    //             border: '2px solid lightblue',
-    //           }}
-    //         />
-    //         <CardContent>
-    //           <div>
-    //             <span>{item.name}</span>
-    //           </div>
-
-    //           <Button variant="contained">Add</Button>
-    //         </CardContent>
-    //       </div>
-    //     ))}
-    //   </div>
-    // </div>
   );
 };
 
