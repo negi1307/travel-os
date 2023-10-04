@@ -16,10 +16,10 @@ const HotelInfoIndex = (props: MyComponentProps) => {
   const { meneItme } = props;
 
   return (
-    <Grid container spacing={2} >
+    <Grid container spacing={2}>
       <Grid item xs={12} sm={10} sx={{ backgroundColor: '#ecf7fa' }}>
         <ChooseRoomTable meneItme={meneItme} />
-        <Experience />
+        <Experience meneItme={meneItme} />
         <GuestDetail />
         <PaymentInformation />
       </Grid>

@@ -33,7 +33,7 @@ const Room = (props: any) => {
               </Typography>
             </Box>
             <Box flex={1}>
-              <Typography className="choose_accordin_text_font_style">
+              <Typography className="choose_accordin_text_font_style mobile_nvbDisplayNone">
                 2 Queen Beds
               </Typography>
             </Box>
@@ -55,12 +55,12 @@ const Room = (props: any) => {
                 </Typography>
               </Box>
               <Box>
-                <Typography className="choose_accordin_text_font_style">
+                <Typography className="choose_accordin_text_font_style mobile_nvbDisplayNone">
                   4 Rates
                 </Typography>
               </Box>
               <Box>
-                <Typography className="choose_accordin_text_font_style">
+                <Typography className="choose_accordin_text_font_style mobile_nvbDisplayNone">
                   From AED 2,050
                 </Typography>
               </Box>

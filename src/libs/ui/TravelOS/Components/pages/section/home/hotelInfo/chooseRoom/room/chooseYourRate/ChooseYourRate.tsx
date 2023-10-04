@@ -12,7 +12,7 @@ const ChooseYourRate = (props: any) => {
       <Grid
         item
         xs={12}
-        className="choose_roomCard2"
+        // className="choose_roomCard2"
         display={'flex'}
         alignItems={'end'}
         justifyContent={'center'}
@@ -27,7 +27,7 @@ const ChooseYourRate = (props: any) => {
           <Typography className="choose_rate_text_style">
             Choose your rate for{' '}
           </Typography>
-          <Typography className="choose_rate_text_style">
+          <Typography className="choose_rate_text_style choose_rate_text_style">
             Ocean Queen Room
           </Typography>
         </Box>

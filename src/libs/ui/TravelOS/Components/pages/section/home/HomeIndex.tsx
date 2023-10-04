@@ -12,9 +12,6 @@ const HomeIndex: React.FC = (props: any) => {
         <Box marginTop={'180px'}>
           <SearchIndex meneItme={meneItme} />
         </Box>
-        {/* <Box>
-          <FilterIndex />
-        </Box> */}
       </Box>
     </>
   );

@@ -65,14 +65,45 @@ const NavBar = (props: MyComponentProps) => {
   const userd = store?.Auth?.user;
   const navigate = useNavigate();
 
+  // navBar data
+  const navBarLink = [
+    {
+      pathname: '/dashboard/home',
+      linkName: nvBarHome,
+      linkIcon: home,
+    },
+    {
+      pathname: '/dashboard/dashboards',
+      linkName: nvBarDashbaod,
+      linkIcon: speed,
+    },
+    {
+      pathname: '/dashboard/myaccount',
+      linkName: nvBarMyAccount,
+      linkIcon: user,
+    },
+    {
+      pathname: '/dashboard/faq',
+      linkName: nvBarFAQs,
+      linkIcon: information,
+    },
+    {
+      pathname: '/dashboard/hotelinfo',
+      linkName: nvBarHoteInfo,
+      linkIcon: hotel,
+    },
+  ];
+  // navBar data
+
   useEffect(() => {
     if (userd == null) {
       navigate('/');
     }
   }, [userd]);
 
+  console.log(windowFind, 'winnnn');
   useEffect(() => {
-    if (windowFind < 768) {
+    if (windowFind <= 960) {
       setMobileNavbar(false);
     } else {
       setMobileNavbar(true);
@@ -87,7 +118,7 @@ const NavBar = (props: MyComponentProps) => {
         paddingRight={4}
         alignItems={'center'}
         justifyContent={'space-between'}
-        className="navbar_parent mobile_nvbDisplayNone"
+        className="navbar_parent"
         position={'relative'}
       >
         <Box
@@ -120,10 +151,7 @@ const NavBar = (props: MyComponentProps) => {
                 setMobileNavbar(!mobileNavBar);
               }}
             >
-              <MenuIcon
-                sx={{ color: 'black' }}
-                className="mobile_nvbDisplayNone"
-              />
+              <MenuIcon sx={{ color: 'black' }} />
             </Box>
           </Box>
           {mobileNavBar ? (
@@ -135,109 +163,39 @@ const NavBar = (props: MyComponentProps) => {
                 flexBasis={1}
                 paddingLeft={4}
                 alignItems={'center'}
-                className="mobile_innerLinkBox padding_width mobile_nvbDisplayNone"
+                className="mobile_innerLinkBox padding_width "
               >
-                <Box
-                  className={
-                    location?.pathname === '/dashboard/home'
-                      ? 'navbar_linkcss inner_link'
-                      : 'navbar_notActive inner_link'
-                  }
-                  display={'flex'}
-                  alignItems={'center'}
-                  paddingLeft={2}
-                  paddingRight={2}
-                >
-                  <Box>
-                    <img src={home} alt="" />
-                  </Box>
-                  <Box className="navbar_linkFont " marginLeft={2}>
-                    <Typography>
-                      <Link to="/dashboard/home" className="navBar_link">
-                        {t(`${nvBarHome}`)}
-                      </Link>
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  marginX={marginX4}
-                  paddingX={paddingX2}
-                  display={'flex'}
-                  className={
-                    location?.pathname === '/dashboard/dashboards'
-                      ? 'navbar_linkcss inner_link'
-                      : 'inner_link'
-                  }
-                >
-                  <Box>
-                    <img src={speed} alt="" />
-                  </Box>
-                  <Box className="navbar_linkFont " marginLeft={marginLeft2}>
-                    <Typography>
-                      <Link to="/dashboard/dashboards" className="navBar_link">
-                        {t(`${nvBarDashbaod}`)}
-                      </Link>
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  display={'flex'}
-                  className={
-                    location?.pathname === '/dashboard/myaccount'
-                      ? 'navbar_linkcss'
-                      : ''
-                  }
-                >
-                  <Box>
-                    <img src={user} alt="" />
-                  </Box>
-                  <Box marginLeft={marginLeft2} className="navbar_linkFont ">
-                    <Typography>
-                      <Link to="/dashboard/myaccount" className="navBar_link">
-                        {t(`${nvBarMyAccount}`)}
-                      </Link>
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  marginX={marginX4}
-                  display={'flex'}
-                  className={
-                    location?.pathname === '/dashboard/faq'
-                      ? 'navbar_linkcss'
-                      : ''
-                  }
-                >
-                  <Box>
-                    <img src={information} alt="" />
-                  </Box>
-                  <Box marginLeft={marginLeft2} className="navbar_linkFont ">
-                    <Typography>
-                      <Link to="/dashboard/faq" className="navBar_link">
-                        {t(`${nvBarFAQs}`)}
-                      </Link>
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box
-                  display={'flex'}
-                  className={
-                    location?.pathname === '/dashboard/hotelinfo'
-                      ? 'navbar_linkcss'
-                      : ''
-                  }
-                >
-                  <Box>
-                    <img src={hotel} alt="" />
-                  </Box>
-                  <Box marginLeft={marginLeft2} className="navbar_linkFont ">
-                    <Typography>
-                      <Link to="/dashboard/hotelinfo" className="navBar_link">
-                        {t(`${nvBarHoteInfo}`)}
-                      </Link>
-                    </Typography>
-                  </Box>
-                </Box>
+                {navBarLink?.map((item) => {
+                  return (
+                    <>
+                      <Box
+                        marginX={3}
+                        paddingX={paddingX2}
+                        display={'flex'}
+                        className={
+                          location?.pathname === item.pathname
+                            ? 'navbar_linkcss inner_link'
+                            : 'inner_link'
+                        }
+                      >
+                        <Box>
+                          <img src={item.linkIcon} alt="" />
+                        </Box>
+                        <Box
+                          className="navbar_linkFont "
+                          marginLeft={marginLeft2}
+                        >
+                          <Typography>
+                            <Link to={item.pathname} className="navBar_link">
+                              {t(`${item.linkName}`)}
+                            </Link>
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </>
+                  );
+                })}
+
                 <Box
                   className="inner_link only_ShowMobile "
                   position={'relative'}
@@ -267,11 +225,11 @@ const NavBar = (props: MyComponentProps) => {
           )}
         </Box>
         <Box
-          className="toggle_parent z_index padding_width "
-          position={'relative'}
-          display={'flex'}
-          alignItems={'center'}
-          alignContent={'end'}
+          className="toggle_parent z_index padding_width mobile_nvbDisplayNone"
+          // position={'relative'}
+          // display={'flex'}
+          // alignItems={'center'}
+          // alignContent={'end'}
         >
           <Box>
             <img src={bell} alt="" />

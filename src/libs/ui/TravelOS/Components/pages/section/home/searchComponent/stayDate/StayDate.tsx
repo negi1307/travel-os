@@ -50,21 +50,16 @@ const StayDate = (props: MyComponentProps) => {
     mainConnentEmpty();
     setExpanded(false);
   };
+
   useEffect(() => {
     if (value?.[0] !== null) {
-      let date = value?.[0]?.toJSON().slice(0, 10);
-      let nDate =
-        date.slice(8, 10) + '/' + date.slice(5, 7) + '/' + date.slice(0, 4);
+      let { $D, $M, $y } = value?.[0];
+      let nDate = `${$D}/${$M}/${$y}`;
       setGetDate({ ...getDate, firstDate: nDate });
-      let dates = value?.[1]?.toJSON().slice(0, 10);
 
       if (value?.[1] !== null) {
-        let nDates =
-          dates.slice(8, 10) +
-          '/' +
-          dates.slice(5, 7) +
-          '/' +
-          dates.slice(0, 4);
+        let { $D, $M, $y } = value?.[1];
+        let nDates = `${$D}/${$M}/${$y}`;
         setGetDate({ ...getDate, secondDate: nDates });
         setExpanded(false);
       } else {
@@ -108,12 +103,16 @@ const StayDate = (props: MyComponentProps) => {
         {expanded === true ? (
           <>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <Box sx={{ backgroundColor: '#252525' }}>
+              <Box
+                sx={{ backgroundColor: '#252525' }}
+                className="stayData_zIndex"
+              >
                 <DateRangeCalendar
                   sx={{ color: 'primary.main' }}
                   value={value}
                   onChange={(newValue) => setValue(newValue)}
-                  className={classes.customDatePicker}
+                  // className={classes.customDatePicker}
+                  className="dateRange_prnt"
                 />
                 <Box textAlign={'center'}>
                   <Typography color={'error'}>
